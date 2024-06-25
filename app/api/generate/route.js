@@ -16,7 +16,7 @@ export async function GET(req, res) {
   }
 
   const inputcodes = await db.collection("inputcode").find({}).toArray()
-  const codes = inputcodes[0].codes
+  // const codes = inputcodes[0].codes
 
   const submissions = await db.collection("submissions").find({}).toArray()
   const teamitems = submissions.map((submission) => {
@@ -100,24 +100,25 @@ export async function GET(req, res) {
   }
   const studies = []
 
-  codes.map((code) => {
-    const crossInputId = []
+  // codes.map((code) => {
+  //   const crossInputId = []
 
-    teamitems.map((teamitem) => {
-      teamitem.map((videoitem) => {
-        if (videoitem.inputid === code) {
-          crossInputId.push(videoitem)
-        }
-      })
-    })
+  //   teamitems.map((teamitem) => {
+  //     teamitem.map((videoitem) => {
+  //       if (videoitem.inputid === code) {
+  //         crossInputId.push(videoitem)
+  //       }
+  //     })
+  //   })
 
-    for (let i = 0; i < crossInputId.length; i++) {
-      for (let j = i + 1; j < crossInputId.length; j++) {
-        studies.push({ videos: [crossInputId[i], crossInputId[j]] })
-      }
-    }
-    // console.log(inputid)
-  })
+  //   for (let i = 0; i < crossInputId.length; i++) {
+  //     for (let j = i + 1; j < crossInputId.length; j++) {
+  //       studies.push({ videos: [crossInputId[i], crossInputId[j]] })
+  //     }
+  //   }
+  //   // console.log(inputid)
+  // })
+
   // console.log(submissions[0].submissions)
 
   // const insertResult = await db
@@ -130,7 +131,7 @@ export async function GET(req, res) {
       {
         success: true,
         msg: "Your submission uploaded successfully.",
-        codes: codes,
+        codes: [], //codes,
         videoitems: teamitems,
         studies: studies,
         error: null,

@@ -18,7 +18,6 @@
     "@next/mdx": "^14.2.4",
     "@popperjs/core": "^2.11.8",
     "@shikijs/twoslash": "^1.9.1",
-    "@supabase/ssr": "^0.4.0",
     "@theguild/remark-mermaid": "^0.0.6",
     "@types/mdx": "^2.0.13",
     "axios": "^1.7.2",

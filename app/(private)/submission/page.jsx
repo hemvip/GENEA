@@ -6,7 +6,7 @@ import InputCode from "./inputcode"
 export default async function Page() {
   //
 
-  const { codes, videocodes } = await fetchInputCodes()
+  // const { codes, videocodes } = await fetchInputCodes()
   // console.log(codes)
   return (
     <>
@@ -16,7 +16,7 @@ export default async function Page() {
       <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
         Download input codes
       </h2>
-      <InputCode codes={codes} />
+      {/* <InputCode codes={codes} /> */}
       <p className="mt-3 leading-7 first:mt-0">
         First please download input codes csv file. Which contain inputcode. If
         the input code is <code>4345345</code>, then the inference video output
