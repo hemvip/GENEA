@@ -12,7 +12,7 @@ export const signOut = async (e) => {
 
 export async function getFirstUser() {
   const client = await clientPromise
-  const collection = client.db("HemVip").collection("users")
+  const collection = client.db("hemvip").collection("users")
   const results = await collection.findOne(
     {},
     {

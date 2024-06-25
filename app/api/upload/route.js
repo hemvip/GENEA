@@ -37,7 +37,7 @@ export async function POST(req, res) {
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const client = await clientPromise
-  const db = client.db("HemVip")
+  const db = client.db("hemvip")
   if (!db) {
     return Response.json(
       {

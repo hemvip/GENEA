@@ -11,7 +11,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       Sessions: "sessions",
       VerificationTokens: "verification_tokens",
     },
-    databaseName: "HemVip",
+    databaseName: "hemvip",
   }),
   providers: [
     GitHubProvider({

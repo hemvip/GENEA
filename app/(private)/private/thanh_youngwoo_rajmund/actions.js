@@ -4,7 +4,7 @@ import clientPromise from "@/server/mongodb"
 
 export default async function updateGeneratedCode(newCodes) {
   const client = await clientPromise
-  const db = client.db("HemVip")
+  const db = client.db("hemvip")
 
   const res = await db
     .collection("inputcode")

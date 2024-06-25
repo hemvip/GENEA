@@ -3,7 +3,7 @@ import clientPromise from "@/server/mongodb"
 
 export default async function fetchInputCodes() {
   const client = await clientPromise
-  const db = client.db("HemVip")
+  const db = client.db("hemvip")
 
   const inputcode = await db.collection("inputcode").find({}).toArray()
   const { codes, videocodes } = inputcode[0]
