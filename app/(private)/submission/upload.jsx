@@ -7,7 +7,7 @@ import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 
-export default function Upload() {
+export default function Upload({ codes }) {
   const { data: session, status } = useSession()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
@@ -17,6 +17,8 @@ export default function Upload() {
 
   const [email, setEmail] = useState("")
   const [teamname, setTeamName] = useState("")
+
+  const [missingList, setMissingList] = useState([])
 
   useEffect(() => {
     if (session) {
@@ -30,8 +32,17 @@ export default function Upload() {
     setUploading("")
     setSuccess("")
 
+    const missing = []
+    codes.map((code) => {
+      const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
+      if (!found) {
+        missing.push(`${code}.mp4`)
+      }
+    })
+    setMissingList(missing)
+
     // Do something with the files, like upload to a server
-    // console.log(acceptedFiles)
+    console.log(acceptedFiles)
     setFiles(acceptedFiles)
     const selectedFiles = Array.from(acceptedFiles).map((file) => ({
       file,
@@ -59,6 +70,11 @@ export default function Upload() {
 
     if (files.length <= 0) {
       setErrorMsg("Please upload video")
+      return
+    }
+
+    if (missingList.length > 0) {
+      setErrorMsg("Please upload missing files")
       return
     }
 
@@ -237,6 +253,19 @@ export default function Upload() {
             {errorMsg}
           </Callout>
         </div>
+      )}
+
+      {missingList.length > 0 && (
+        <Callout type="error">
+          You upload missing following files:
+          <div className="flex flex-wrap gap-2 text-sm">
+            {missingList.map((filemis, index) => (
+              <code key={index} className="text-xs px-2">
+                {filemis}
+              </code>
+            ))}
+          </div>
+        </Callout>
       )}
 
       <div className="flex flex-col items-center">

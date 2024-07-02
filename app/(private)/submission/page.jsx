@@ -14,7 +14,7 @@ export default function Page() {
   async function fetchInputCodes() {
     setLoading(false)
     const res = await axios.get("/api/inputcode")
-    console.log(res)
+    // console.log(res)
     if (res.data.success) {
       setCodes(res.data.codes)
       setLoading(true)
@@ -58,7 +58,7 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        <Upload />
+        {loading && <Upload codes={codes} />}
       </div>
     </>
   )
