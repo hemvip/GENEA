@@ -1,11 +1,10 @@
 // import { useState } from "react"
+import Image from "next/image"
 import Upload from "./upload"
 // import fetchInputCodes from "./actions"
 // import InputCode from "./inputcode"
 
 export default async function Page() {
-  //
-
   // const { codes, videocodes } = await fetchInputCodes()
   // console.log(codes)
   return (
@@ -25,7 +24,12 @@ export default async function Page() {
       <p className="mt-3 leading-7 first:mt-0">
         Run your model to get inference output
       </p>
-      <img className="w-[70%] mx-auto" src="/upload_page.png" />
+      <Image
+        width={739}
+        height={439}
+        className="w-[70%] mx-auto"
+        src="/upload_page.png"
+      />
       <p className="mt-3 leading-7 first:mt-0">
         Login with github and Create submission result in below section.
       </p>

@@ -27,18 +27,22 @@ export default function Page() {
   const [failCode, setFailCode] = useState("C70GVE95")
 
   async function fetchData() {
-    const resInput = await axios.get("/api/inputcode")
-    setCodes(resInput.data.codes)
-    // console.log(resInput)
+    try {
+      const [resInput, resSubmission, resStudies] = await Promise.all([
+        axios.get("/api/inputcode"),
+        axios.get("/api/submission"),
+        axios.get("/api/studies"),
+      ])
 
-    const resSubmission = await axios.get("/api/submission")
-    setSubmission(resSubmission.data.submissions)
-    setNTeam(resSubmission.data.submissions.length)
-    // console.log(resSubmission)
-
-    const resStudies = await axios.get("/api/studies")
-    setStudies(resStudies.data.studies)
-    // console.log(resStudies)
+      setCodes(resInput.data.codes)
+      setTotalCode(resInput.data.codes.length)
+      // resInput
+      setSubmission(resSubmission.data.submissions)
+      setNTeam(resSubmission.data.submissions.length)
+      setStudies(resStudies.data.studies)
+    } catch (error) {
+      console.error(error)
+    }
   }
   useEffect(() => {
     fetchData()
@@ -46,8 +50,6 @@ export default function Page() {
 
   const handleGenerate = async () => {
     const formData = {
-      totalInput: totalCode,
-      totalSubmission: nteam,
       fractionTotalCodes: fractionTotalCodes,
       ncheck: ncheck,
       completionCode: completionCode,
@@ -161,11 +163,11 @@ export default function Page() {
             Total Submission (Team)
           </label>
           <input
-            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            className="flex-grow min-w-0 disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
             id="nteam"
             type="number"
+            disabled={true}
             value={nteam}
-            onChange={(e) => setNTeam(e.target.value)}
             name="nteam"
           />
         </div>

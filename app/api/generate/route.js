@@ -1,16 +1,19 @@
 import clientPromise from "@/server/mongodb"
+import { shuffleArray } from "./utils"
+import {
+  ATTENTION_CHECK_PAGE,
+  FINISH_PAGE,
+  MAIN_PAGE,
+  STARTUP_PAGE,
+  TEMPLATE_STUDY,
+} from "./constant"
+import { ObjectId } from "bson"
 
 export async function POST(req, res) {
   const data = await req.json()
 
-  const {
-    totalInput,
-    totalSubmission,
-    fractionTotalCodes,
-    ncheck,
-    completionCode,
-    failCode,
-  } = data
+  const { fractionTotalCodes, ncheck, completionCode, failCode } = data
+  console.log("fractionTotalCodes", fractionTotalCodes, "ncheck", ncheck)
 
   // ~~~~~~~~~ CONNECT DATABASE ~~~~~~~~~
   const client = await clientPromise
@@ -39,7 +42,7 @@ export async function POST(req, res) {
     )
   }
   const { codes } = inputcodes[0]
-  // console.log("codes", codes)
+  console.log("codes", codes.length)
 
   // ~~~~~~~~~ GET SUBMISSION ~~~~~~~~~
   const submissions = await db.collection("submissions").find({}).toArray()
@@ -53,41 +56,65 @@ export async function POST(req, res) {
       { status: 500 }
     )
   }
-  const pairwises = []
+  let pairwises = []
   for (let i = 0; i < submissions.length; i++) {
     for (let j = i + 1; j < submissions.length; j++) {
-      pairwises.push({
-        id: String(submissions[i]._id),
-        id: String(submissions[j]._id),
-      })
+      pairwises.push([submissions[i].userId, submissions[j].userId])
     }
   }
-  console.log(pairwises)
+  pairwises = shuffleArray(pairwises)
+  console.log("pairwises", pairwises.length)
+  // console.log(pairwises.length)
 
-  // ~~~~~~~~~ TEMPLATE FOR STUDY ~~~~~~~~~
-  const templateStudies = {
-    status: "new",
-    name: "Pairwise Comparison of Gesture Generation AI Model Studies",
-    prolific_userid: "",
-    prolific_studyid: "",
-    prolific_sessionid: "",
-    completion_code: "CMTN9LUK",
-    total_actions: [],
-    pages: [],
+  // ~~~~~~~~~ RANDOM ATTENTION CHECK POSITION ~~~~~~~~~
+  // Random position of attention check
+  let randPos = new Set()
+  while (randPos.size < ncheck) {
+    let randomPos = Math.floor(Math.random() * pairwises.length)
+    randPos.add(randomPos)
+  }
+  const randAttentionPos = Array.from(randPos)
+
+  // ~~~~~~~~~ GENERATE STUDY ~~~~~~~~~
+  const studies = []
+  for (let i = 0; i < codes.length; i += fractionTotalCodes) {
+    const splittedCode = codes.slice(i, i + fractionTotalCodes)
+    splittedCode.map((code) => {
+      const pageItem = []
+      // ~~~~~~ Startup Page ~~~~~~
+      pageItem.push({ ...STARTUP_PAGE, pageid: new ObjectId() })
+
+      // ~~~~~~ Main Page ~~~~~~
+      pairwises.map((pairwise, pos) => {
+        randAttentionPos.map((attentionPos) => {
+          if (pos === attentionPos) {
+            pageItem.push({ ...ATTENTION_CHECK_PAGE, pageid: new ObjectId() })
+          }
+        })
+
+        pageItem.push({ ...MAIN_PAGE, pageid: new ObjectId() })
+      })
+
+      // ~~~~~~ Finish Page ~~~~~~
+      pageItem.push({ ...FINISH_PAGE, pageid: new ObjectId() })
+
+      studies.push({
+        ...TEMPLATE_STUDY,
+        completion_code: completionCode,
+        fail_code: failCode,
+        pages: pageItem,
+      })
+    })
   }
 
-  codes.map((inputcode) => {
-    // const input
-  })
+  console.log("studies", studies.length)
 
   // const teamitems = submissions.map((submission) => {
   //   return submission.videoitems
   // })
 
-  return Response.json({ codes, pairwises }, { status: 200 })
+  return Response.json({ codes, pairwises, studies }, { status: 200 })
   // const codes = inputcodes[0].codes
-
-  const studies = []
 
   // codes.map((code) => {
   //   const crossInputId = []
