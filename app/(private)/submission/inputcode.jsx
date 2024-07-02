@@ -6,7 +6,14 @@ export default function InputCode({ codes }) {
   // const csvString = codes.map((codes) => codes.join(",")).join("\n")
 
   const handleDownload = () => {
-    const csvContent = "inputcode\n" + codes.join("\n")
+    const csvArray = []
+    csvArray.push("id, code, text_input, video_output")
+    codes.map((code, index) => {
+      csvArray.push(
+        `${index + 1} , ${code}, Text Input ${index + 1}, ${code}.mp4`
+      )
+    })
+    const csvContent = csvArray.join("\n")
     const blob = new Blob([csvContent], { type: "text/csv" })
     const link = document.createElement("a")
     link.href = URL.createObjectURL(blob)

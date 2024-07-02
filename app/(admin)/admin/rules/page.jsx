@@ -68,6 +68,7 @@ export default function Page() {
       const code = generateUUID(codeSize)
       randCodes.push(code)
     }
+    randCodes.sort()
     setCodes(randCodes)
     // console.log("object", JSON.stringify(randCodes))
   }
