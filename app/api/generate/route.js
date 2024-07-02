@@ -62,6 +62,7 @@ export async function POST(req, res) {
       })
     }
   }
+  console.log(pairwises)
 
   // ~~~~~~~~~ TEMPLATE FOR STUDY ~~~~~~~~~
   const templateStudies = {

@@ -1,7 +1,7 @@
 // import { useState } from "react"
 import Upload from "./upload"
-import fetchInputCodes from "./actions"
-import InputCode from "./inputcode"
+// import fetchInputCodes from "./actions"
+// import InputCode from "./inputcode"
 
 export default async function Page() {
   //

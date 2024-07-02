@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react"
 import React, { useCallback, useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import { Callout } from "@/nextra"
-import Loading from "@/components/loading/loading"
+import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 
 export default function Upload() {

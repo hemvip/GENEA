@@ -29,6 +29,7 @@ export default function Page() {
   async function fetchData() {
     const resInput = await axios.get("/api/inputcode")
     setCodes(resInput.data.codes)
+    // console.log(resInput)
 
     const resSubmission = await axios.get("/api/submission")
     setSubmission(resSubmission.data.submissions)
@@ -37,6 +38,7 @@ export default function Page() {
 
     const resStudies = await axios.get("/api/studies")
     setStudies(resStudies.data.studies)
+    // console.log(resStudies)
   }
   useEffect(() => {
     fetchData()
