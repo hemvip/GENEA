@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
-import Loading from "@/components/loading/loading"
+import { Loading } from "@/components/loading/loading"
 
 export default function AuthButton() {
   const { data: session, status } = useSession()

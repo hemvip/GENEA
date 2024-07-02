@@ -21,22 +21,37 @@ export default function Page() {
   const [screenPerStudy, setScreenPerStudy] = useState(20)
   const [totalStudies, setTotalStudies] = useState(1000)
   const [ncheck, setNCheck] = useState(2)
-  // const inputCodes = fetchInputCodes()
+
+  // Prolific
+  const [completionCode, setCompletionCode] = useState("CMTN9LUK")
+  const [failCode, setFailCode] = useState("C70GVE95")
 
   async function fetchData() {
-    const response = await axios.get("/api/inputcode")
-    setCodes(response.data.codes)
+    const resInput = await axios.get("/api/inputcode")
+    setCodes(resInput.data.codes)
+
+    const resSubmission = await axios.get("/api/submission")
+    setSubmission(resSubmission.data.submissions)
+    console.log(resSubmission)
   }
   useEffect(() => {
     fetchData()
   }, [])
 
   const handleGenerate = async () => {
-    const res = await axios.get("/api/generate")
-    setSubmission(JSON.stringify(res.data.videoitems, null, 2))
-    setCodes(JSON.stringify(res.data.codes, null, 2))
-    setStudies(JSON.stringify(res.data.studies, null, 2))
-    console.log("result", res)
+    const formData = {
+      totalInput: totalCode,
+      totalSubmission: nteam,
+      fractionTotalCodes: fractionTotalCodes,
+      ncheck: ncheck,
+      completionCode: completionCode,
+      failCode: failCode,
+    }
+    const res = await axios.post("/api/generate", formData)
+    // setSubmission(JSON.stringify(res.data.videoitems, null, 2))
+    // setCodes(JSON.stringify(res.data.codes, null, 2))
+    // setStudies(JSON.stringify(res.data.studies, null, 2))
+    console.log("result", res.data)
   }
 
   const randomInputCodes = async () => {
@@ -59,13 +74,13 @@ export default function Page() {
     }
   }
 
-  if (status === "loading") {
-    return <Loading></Loading>
-  }
+  // if (status === "loading") {
+  //   return <Loading></Loading>
+  // }
 
-  if (status === "loading" || status === "unauthenticated") {
-    return <div>Unauthenticated</div>
-  }
+  // if (status === "loading" || status === "unauthenticated") {
+  //   return <div>Unauthenticated</div>
+  // }
 
   return (
     <div className="flex flex-col gap-3">
@@ -150,6 +165,20 @@ export default function Page() {
         </div>
 
         <div className="flex flex-row items-center gap-4">
+          <label htmlFor="submission" className="flex justify-end w-[15%]">
+            All Submission
+          </label>
+          <textarea
+            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="submission"
+            rows="4"
+            name="submission"
+            value={JSON.stringify(submission, null, 2)}
+            onChange={(e) => setSubmission(e.target.value)}
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
           <label
             htmlFor="totalVideo"
             className="w-[20%] flex flex-col justify-center text-left"
@@ -183,7 +212,7 @@ export default function Page() {
 
         <div className="flex flex-row items-center gap-4">
           <label htmlFor="totalScreen" className="w-[20%] flex text-left">
-            Total Screen
+            Total Pairwise Screen
           </label>
           <input
             className="flex-grow min-w-0 appearance-none  disabled:bg-gray-200 rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
@@ -268,6 +297,55 @@ export default function Page() {
             name="ncheck"
           />
         </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="npage" className="w-[20%] flex flex-col text-left">
+            Total Pages
+            <span className="text-xs">(Attention check + Pairwise Screen)</span>
+          </label>
+          <input
+            className="flex-grow min-w-0 disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="npage"
+            disabled={true}
+            type="number"
+            value={
+              ((calculateCombinations(nteam, 2) * totalCode) /
+                (totalCode / fractionTotalCodes)) *
+                ncheck +
+              calculateCombinations(nteam, 2) * totalCode
+            }
+            name="npage"
+          />
+        </div>
+
+        <hr />
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="completionCode" className="w-[20%] flex text-left">
+            Prolific Completion Code
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="completionCode"
+            type="string"
+            value={completionCode}
+            onChange={(e) => setCompletionCode(e.target.value)}
+            name="completionCode"
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="failCode" className="w-[20%] flex text-left">
+            Prolific Fail Code
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="failCode"
+            type="string"
+            value={failCode}
+            onChange={(e) => setFailCode(e.target.value)}
+            name="failCode"
+          />
+        </div>
       </div>
       <div className="mt-3 text-center">
         <button
@@ -278,20 +356,6 @@ export default function Page() {
           Generate All Studies
         </button>
       </div>
-
-      {/* <div className="flex flex-row items-center gap-4">
-        <label htmlFor="submission" className="flex justify-end w-[15%]">
-          All Submission
-        </label>
-        <textarea
-          className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-          id="submission"
-          rows="10"
-          name="submission"
-          value={submission}
-          onChange={(e) => setSubmission(e.target.value)}
-        />
-      </div> */}
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="studies" className="flex justify-end w-[15%]">
