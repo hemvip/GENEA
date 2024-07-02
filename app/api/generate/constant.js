@@ -52,3 +52,10 @@ export const FINISH_PAGE = {
   content: "",
   actions: [],
 }
+
+export const VIDEO_ITEM = {
+  teamid: "",
+  inputid: "",
+  videoid: "",
+  url: "",
+}

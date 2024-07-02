@@ -6,6 +6,7 @@ import {
   MAIN_PAGE,
   STARTUP_PAGE,
   TEMPLATE_STUDY,
+  VIDEO_ITEM,
 } from "./constant"
 import { ObjectId } from "bson"
 
@@ -56,6 +57,13 @@ export async function POST(req, res) {
       { status: 500 }
     )
   }
+  const videoSources = {}
+  // submissions.map((submission) => {
+  //   videoSources[submissions.userId] = {}
+  //   submission.videos.map((video) => {
+  //     const item = { url: video.url, videoid: video.videoid }
+  //   })
+  // })
   let pairwises = []
   for (let i = 0; i < submissions.length; i++) {
     for (let j = i + 1; j < submissions.length; j++) {
@@ -77,22 +85,46 @@ export async function POST(req, res) {
 
   // ~~~~~~~~~ GENERATE STUDY ~~~~~~~~~
   const studies = []
-  for (let i = 0; i < codes.length; i += fractionTotalCodes) {
-    const splittedCode = codes.slice(i, i + fractionTotalCodes)
-    splittedCode.map((code) => {
+  const nscreenPerStudy = codes.length / fractionTotalCodes
+  for (let i = 0; i < codes.length; i += nscreenPerStudy) {
+    const splittedCode = codes.slice(i, i + nscreenPerStudy)
+    // console.log("splittedCode", JSON.stringify(splittedCode))
+
+    pairwises.map((pairwise, pos) => {
       const pageItem = []
+
       // ~~~~~~ Startup Page ~~~~~~
       pageItem.push({ ...STARTUP_PAGE, pageid: new ObjectId() })
 
       // ~~~~~~ Main Page ~~~~~~
-      pairwises.map((pairwise, pos) => {
+      splittedCode.map((code) => {
         randAttentionPos.map((attentionPos) => {
           if (pos === attentionPos) {
             pageItem.push({ ...ATTENTION_CHECK_PAGE, pageid: new ObjectId() })
           }
         })
 
-        pageItem.push({ ...MAIN_PAGE, pageid: new ObjectId() })
+        const videos = []
+        // First video
+        videos.push({
+          ...VIDEO_ITEM,
+          teamid: String(pairwise[0]),
+          inputid: code,
+          videoid: "",
+          url: "",
+        })
+        videos.push({
+          ...VIDEO_ITEM,
+          teamid: String(pairwise[1]),
+          inputid: "",
+          videoid: "",
+          url: "",
+        })
+        pageItem.push({
+          ...MAIN_PAGE,
+          pageid: new ObjectId(),
+          videos,
+        })
       })
 
       // ~~~~~~ Finish Page ~~~~~~
@@ -108,10 +140,6 @@ export async function POST(req, res) {
   }
 
   console.log("studies", studies.length)
-
-  // const teamitems = submissions.map((submission) => {
-  //   return submission.videoitems
-  // })
 
   return Response.json({ codes, pairwises, studies }, { status: 200 })
   // const codes = inputcodes[0].codes
@@ -148,7 +176,7 @@ export async function POST(req, res) {
         success: true,
         msg: "Your submission uploaded successfully.",
         codes: [], //codes,
-        videoitems: [],
+        videos: [],
         studies: studies,
         error: null,
       },
@@ -160,7 +188,7 @@ export async function POST(req, res) {
         success: false,
         msg: "Upload success but failed insert submissions, please contact for support.",
         inputids: "",
-        videoitems: "",
+        videos: "",
         studies: "",
         error: null,
       },
@@ -174,7 +202,7 @@ export async function POST(req, res) {
   //       success: false,
   //       msg: "Your submissions is failed, please contact for support.",
   //       inputids: "",
-  //       videoitems: "",
+  //       videos: "",
   //       studies: "",
   //       error: error,
   //     },

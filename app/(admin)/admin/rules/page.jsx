@@ -56,7 +56,7 @@ export default function Page() {
       failCode: failCode,
     }
     const res = await axios.post("/api/generate", formData)
-    // setSubmission(JSON.stringify(res.data.videoitems, null, 2))
+    // setSubmission(JSON.stringify(res.data.videos, null, 2))
     // setCodes(JSON.stringify(res.data.codes, null, 2))
     // setStudies(JSON.stringify(res.data.studies, null, 2))
     console.log("result", res.data)
@@ -173,7 +173,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-row items-center gap-4">
-          <label htmlFor="submission" className="flex justify-end w-[15%]">
+          <label htmlFor="submission" className="w-[20%] flex justify-start">
             All Submission
           </label>
           <textarea

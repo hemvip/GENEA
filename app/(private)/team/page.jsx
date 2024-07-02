@@ -64,7 +64,7 @@ export default async function Page() {
                 <td className="py-2 pl-6">{team.teamname}</td>
                 <td className="py-2 pl-6 h-24">
                   <div className="w-full overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96">
-                    {team.videoitems.map((info, index) => {
+                    {team.videos.map((info, index) => {
                       return <SubmissionInfo submission={info} key={index} />
                     })}
                   </div>
