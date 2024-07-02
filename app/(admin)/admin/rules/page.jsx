@@ -32,7 +32,11 @@ export default function Page() {
 
     const resSubmission = await axios.get("/api/submission")
     setSubmission(resSubmission.data.submissions)
-    console.log(resSubmission)
+    setNTeam(resSubmission.data.submissions.length)
+    // console.log(resSubmission)
+
+    const resStudies = await axios.get("/api/studies")
+    setStudies(resStudies.data.studies)
   }
   useEffect(() => {
     fetchData()
@@ -362,12 +366,12 @@ export default function Page() {
           Studies
         </label>
         <textarea
-          className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+          className="flex-grow min-w-0 disabled:bg-gray-50 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
           id="studies"
           rows="20"
+          disabled={true}
           name="studies"
-          value={studies}
-          onChange={(e) => setStudies(e.target.value)}
+          value={JSON.stringify(studies, null, 2)}
         />
       </div>
     </div>
