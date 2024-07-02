@@ -17,10 +17,10 @@ export default function Page() {
   const [codeSize, setCodeSize] = useState(12)
   const [totalCode, setTotalCode] = useState(40)
   const [nteam, setNTeam] = useState(8)
-  const [npairwise, setNPairwise] = useState(4)
   const [fractionTotalCodes, setFractionTotalCodes] = useState(2)
   const [screenPerStudy, setScreenPerStudy] = useState(20)
   const [totalStudies, setTotalStudies] = useState(1000)
+  const [ncheck, setNCheck] = useState(2)
   // const inputCodes = fetchInputCodes()
 
   async function fetchData() {
@@ -227,22 +227,8 @@ export default function Page() {
             id="screen_per_studies"
             type="number"
             disabled={true}
-            value={screenPerStudy}
+            value={totalCode / fractionTotalCodes}
             name="screen_per_studies"
-          />
-        </div>
-
-        <div className="flex flex-row items-center gap-4">
-          <label htmlFor="npairwise" className="w-[20%] flex justify-end">
-            Pairse Compare Screen Per Team
-          </label>
-          <input
-            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-            id="npairwise"
-            type="number"
-            value={npairwise}
-            onChange={(e) => setNTeam(e.target.value)}
-            name="npairwise"
           />
         </div>
 
@@ -258,10 +244,28 @@ export default function Page() {
             id="screen_per_studies"
             type="number"
             disabled={true}
-            value={totalStudies}
-            onChange={(e) => setTotalStudies(e.target.value)}
+            value={
+              (calculateCombinations(nteam, 2) * totalCode) /
+              (totalCode / fractionTotalCodes)
+            }
+            // onChange={(e) => setTotalStudies(e.target.value)}
             readOnly
             name="screen_per_studies"
+          />
+        </div>
+
+        <hr />
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="ncheck" className="w-[20%] flex text-left">
+            Attention Check Per Study
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="ncheck"
+            type="number"
+            value={ncheck}
+            onChange={(e) => setNCheck(e.target.value)}
+            name="ncheck"
           />
         </div>
       </div>
@@ -275,7 +279,7 @@ export default function Page() {
         </button>
       </div>
 
-      <div className="flex flex-row items-center gap-4">
+      {/* <div className="flex flex-row items-center gap-4">
         <label htmlFor="submission" className="flex justify-end w-[15%]">
           All Submission
         </label>
@@ -287,7 +291,7 @@ export default function Page() {
           value={submission}
           onChange={(e) => setSubmission(e.target.value)}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="studies" className="flex justify-end w-[15%]">
