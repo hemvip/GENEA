@@ -1,13 +1,12 @@
 // "use server"
-
 import {
   S3Client,
   CreateBucketCommand,
   PutObjectCommand,
 } from "@aws-sdk/client-s3"
-import { v4 as uuid } from "uuid"
 import { Upload } from "@aws-sdk/lib-storage"
 import clientPromise from "@/server/mongodb"
+import { ObjectId } from "bson"
 
 export async function POST(req, res) {
   const formData = await req.formData()
@@ -85,6 +84,7 @@ export async function POST(req, res) {
         }
         const inputid = filename.join(".")
         videos.push({
+          _id: new ObjectId(),
           inputid: inputid,
           videoid: uploadResult.Key,
           teamid: userId,

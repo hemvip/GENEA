@@ -1,12 +1,12 @@
 "use client"
 
-import { generateUUID } from "@/utils/generateUUID"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { generateUUID } from "@/utils/generateUUID"
 import { fetchInputCodes, updateGeneratedCode } from "./actions"
 import { calculateCombinations } from "./utils"
 import { useSession } from "next-auth/react"
-import { Loading } from "@/components/loading/loading"
+// import { Loading } from "@/components/loading/loading"
 
 export default function Page() {
   const { data: session, status } = useSession()

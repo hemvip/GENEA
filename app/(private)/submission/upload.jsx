@@ -13,6 +13,8 @@ export default function Upload({ codes }) {
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
+  // const [uploadProgress, setUploadProgress] = useState({})
+  const [progress, setProgress] = useState(0)
   const [success, setSuccess] = useState("")
 
   const [email, setEmail] = useState("")
@@ -103,6 +105,12 @@ export default function Upload({ codes }) {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          )
+          setProgress(percentCompleted)
+        },
       })
 
       const { success, msg, error } = response.data
@@ -144,9 +152,20 @@ export default function Upload({ codes }) {
   if (uploading) {
     return (
       <div className="w-full p-12  justify-center ">
-        <div className="flex w-full justify-center">
-          <Loading className="" />
-        </div>
+        {progress < 99 ? (
+          <div className="overflow-hidden mx-auto w-96 h-2 mb-4 text-xs flex rounded bg-blue-200">
+            <div
+              style={{ width: `${progress}%` }}
+              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
+            >
+              <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
+            </div>
+          </div>
+        ) : (
+          <div className="flex w-full justify-center">
+            <Loading className="" />
+          </div>
+        )}
 
         <Callout type="warning" className="mt-0">
           {uploading}
