@@ -26,7 +26,7 @@ export default function InputCode({ codes }) {
         rows="10"
         name="inputcode"
         disabled={true}
-        defaultValue={JSON.stringify(codes, null, 2)}
+        value={JSON.stringify(codes, null, 2)}
       />
 
       <div className="pl-14 flex justify-start">
