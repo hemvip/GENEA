@@ -2,20 +2,28 @@
 
 import { generateUUID } from "@/utils/generateUUID"
 import axios from "axios"
-import React, { useState } from "react"
-import updateGeneratedCode from "./actions"
+import React, { useEffect, useState } from "react"
+import { fetchInputCodes, updateGeneratedCode } from "./actions"
 
 export default function Page() {
   const [submission, setSubmission] = useState("")
   const [studies, setStudies] = useState("")
-  const [codes, setCodes] = useState("")
+  const [codes, setCodes] = useState([])
 
   const [codeSize, setCodeSize] = useState(12)
   const [totalCode, setTotalCode] = useState(40)
-  const [nteam, setNTeam] = useState(4)
+  const [nteam, setNTeam] = useState(8)
   const [npairwise, setNPairwise] = useState(4)
   const [screenPerStudy, setScreenPerStudy] = useState(20)
   const [totalStudies, setTotalStudies] = useState(1000)
+  // const inputCodes = fetchInputCodes()
+
+  // useEffect(async () => {
+  //   const inputCodes = await fetchInputCodes()
+  //   console.log(inputCodes)
+  //   // setCodes(inputCodes.codes)
+  //   return () => {}
+  // }, [])
 
   const handleGenerate = async () => {
     const res = await axios.get("/api/generate")
@@ -31,10 +39,14 @@ export default function Page() {
       const code = generateUUID(codeSize)
       randCodes.push(code)
     }
-    setCodes(randCodes.join(",\n"))
-    const res = await updateGeneratedCode(randCodes)
-    console.log(res)
+    setCodes(randCodes)
     // console.log("object", JSON.stringify(randCodes))
+  }
+
+  const updateDatabase = async () => {
+    const res = await updateGeneratedCode(codes)
+
+    console.log("randomInputCodes: ", res)
   }
 
   return (
@@ -74,13 +86,21 @@ export default function Page() {
         </div>
       </div>
       <hr />
-      <div className="mt-3 text-center">
+      <div className="mt-3 text-center flex gap-2 justify-center items-center">
         <button
-          className="text-sm py-2 px-4 border border-blue-500 bg-blue-500 text-white contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap subpixel-antialiased hover:underline rounded-md transition-all"
+          className="text-sm py-2 px-4 border border-gray-800 bg-gray-800 text-white contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap subpixel-antialiased hover:underline rounded-md transition-all"
           aria-current="true"
           onClick={randomInputCodes}
         >
           Generate Random Input Codes
+        </button>
+
+        <button
+          className="text-sm py-2 px-4 border border-blue-500 bg-blue-500 text-white contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap subpixel-antialiased hover:underline rounded-md transition-all"
+          aria-current="true"
+          onClick={updateDatabase}
+        >
+          Update Database
         </button>
       </div>
       <div className="flex flex-row items-center gap-4">
@@ -92,7 +112,7 @@ export default function Page() {
           id="codes"
           rows="7"
           name="codes"
-          value={codes}
+          value={codes.join(",\n")}
           onChange={(e) => setCodes(e.target.value)}
         />
       </div>

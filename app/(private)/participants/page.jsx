@@ -3,7 +3,6 @@
 import React from "react"
 import clientPromise from "@/server/mongodb"
 import Study from "./User"
-import { Table, Th, Tr } from "@/nextra"
 import cn from "clsx"
 import ActionList from "@/components/actionlist"
 
