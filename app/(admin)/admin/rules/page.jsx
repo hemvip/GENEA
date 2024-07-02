@@ -60,6 +60,10 @@ export default function Page() {
     // setCodes(JSON.stringify(res.data.codes, null, 2))
     // setStudies(JSON.stringify(res.data.studies, null, 2))
     console.log("result", res.data)
+    const { success, msg, studies, error } = res.data
+    if (success) {
+      setStudies(studies)
+    }
   }
 
   const randomInputCodes = async () => {

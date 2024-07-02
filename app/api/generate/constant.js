@@ -8,6 +8,7 @@ export const TEMPLATE_STUDY = {
   fail_code: "",
   total_actions: [],
   pages: [],
+  time_start: "",
 }
 
 export const STARTUP_PAGE = {
@@ -27,7 +28,7 @@ export const ATTENTION_CHECK_PAGE = {
     value: 0,
     label: "",
   },
-  attention: {},
+  attention_correct_value: "",
   actions: [],
   videos: [],
 }
@@ -58,4 +59,25 @@ export const VIDEO_ITEM = {
   inputid: "",
   videoid: "",
   url: "",
+}
+
+export const VIDEO_CHECK_LEFTBETTER = {
+  teamid: "",
+  inputid: "",
+  videoid: "",
+  url: "https://f005.backblazeb2.com/file/gesture/attentioncheck/attetioncheck_leftbetter.mp4",
+}
+
+export const VIDEO_CHECK_EQUAL = {
+  teamid: "",
+  inputid: "",
+  videoid: "",
+  url: "https://f005.backblazeb2.com/file/gesture/attentioncheck/attetioncheck_equal.mp4",
+}
+
+export const VIDEO_CHECK_RIGHTBETTER = {
+  teamid: "",
+  inputid: "",
+  videoid: "",
+  url: "https://f005.backblazeb2.com/file/gesture/attentioncheck/attetioncheck_rightbetter.mp4",
 }
