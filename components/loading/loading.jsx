@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import cn from "clsx"
 
-const Loading = ({ color = "#000", className }) => {
+export const Loading = ({ color = "#000", className }) => {
   return (
     <span className={cn(styles.loading, className)}>
       <span style={{ backgroundColor: color }} />
@@ -10,5 +10,3 @@ const Loading = ({ color = "#000", className }) => {
     </span>
   )
 }
-
-export default Loading

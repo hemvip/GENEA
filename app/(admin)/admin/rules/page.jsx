@@ -4,8 +4,12 @@ import { generateUUID } from "@/utils/generateUUID"
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { fetchInputCodes, updateGeneratedCode } from "./actions"
+import { calculateCombinations } from "./utils"
+import { useSession } from "next-auth/react"
+import { Loading } from "@/components/loading/loading"
 
 export default function Page() {
+  const { data: session, status } = useSession()
   const [submission, setSubmission] = useState("")
   const [studies, setStudies] = useState("")
   const [codes, setCodes] = useState([])
@@ -14,16 +18,18 @@ export default function Page() {
   const [totalCode, setTotalCode] = useState(40)
   const [nteam, setNTeam] = useState(8)
   const [npairwise, setNPairwise] = useState(4)
+  const [fractionTotalCodes, setFractionTotalCodes] = useState(2)
   const [screenPerStudy, setScreenPerStudy] = useState(20)
   const [totalStudies, setTotalStudies] = useState(1000)
   // const inputCodes = fetchInputCodes()
 
-  // useEffect(async () => {
-  //   const inputCodes = await fetchInputCodes()
-  //   console.log(inputCodes)
-  //   // setCodes(inputCodes.codes)
-  //   return () => {}
-  // }, [])
+  async function fetchData() {
+    const response = await axios.get("/api/inputcode")
+    setCodes(response.data.codes)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   const handleGenerate = async () => {
     const res = await axios.get("/api/generate")
@@ -46,7 +52,19 @@ export default function Page() {
   const updateDatabase = async () => {
     const res = await updateGeneratedCode(codes)
 
-    console.log("randomInputCodes: ", res)
+    if (res.success) {
+      console.log("Insert new inputs code success", res)
+    } else {
+      console.log("Insert new inputs code failed", res)
+    }
+  }
+
+  if (status === "loading") {
+    return <Loading></Loading>
+  }
+
+  if (status === "loading" || status === "unauthenticated") {
+    return <div>Unauthenticated</div>
   }
 
   return (
@@ -54,9 +72,8 @@ export default function Page() {
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
         Generate all study screen
       </h1>
-      <p className="mt-6 leading-7 first:mt-0">
-        This page is private to only for Thanh Youngwoo Rajmund
-      </p>
+      {/* <p className="mt-6 leading-7 first:mt-0">
+      </p> */}
       <div className="mt-6 flex flex-col  px-10 gap-4">
         <div className="flex flex-row items-center gap-4">
           <label htmlFor="codesize" className="w-[20%] flex justify-end">
@@ -119,24 +136,7 @@ export default function Page() {
       <hr />
       <div className="mt-6 flex flex-col  px-10 gap-4">
         <div className="flex flex-row items-center gap-4">
-          <label
-            htmlFor="screen_per_studies"
-            className="w-[20%] flex justify-end"
-          >
-            Screen Per Study
-          </label>
-          <input
-            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-            id="screen_per_studies"
-            type="number"
-            value={screenPerStudy}
-            onChange={(e) => setScreenPerStudy(e.target.value)}
-            name="screen_per_studies"
-          />
-        </div>
-
-        <div className="flex flex-row items-center gap-4">
-          <label htmlFor="nteam" className="w-[20%] flex justify-end">
+          <label htmlFor="nteam" className="w-[20%] flex text-left">
             Total Submission (Team)
           </label>
           <input
@@ -150,23 +150,106 @@ export default function Page() {
         </div>
 
         <div className="flex flex-row items-center gap-4">
-          <label htmlFor="nteam" className="w-[20%] flex justify-end">
-            Pairse Compare Screen Per Team
+          <label
+            htmlFor="totalVideo"
+            className="w-[20%] flex flex-col justify-center text-left"
+          >
+            Total Video <br />
+            <span className="text-xs">(Submission x Input)</span>
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none disabled:bg-gray-200 rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="totalVideo"
+            type="number"
+            disabled={true}
+            value={nteam * totalCode}
+            name="totalVideo"
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="npairEachInput" className="w-[20%] flex justify-end">
+            Pairwise Combinations of Each Input
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none  disabled:bg-gray-200 rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="npairEachInput"
+            type="number"
+            disabled={true}
+            value={calculateCombinations(nteam, 2)}
+            name="npairEachInput"
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="totalScreen" className="w-[20%] flex text-left">
+            Total Screen
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none  disabled:bg-gray-200 rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="totalScreen"
+            type="number"
+            disabled={true}
+            value={calculateCombinations(nteam, 2) * totalCode}
+            name="totalScreen"
+          />
+        </div>
+
+        <hr />
+        <div className="flex flex-row items-center gap-4">
+          <label
+            htmlFor="fractionTotalCodes"
+            className="w-[20%] flex flex-col justify-end"
+          >
+            Fraction of Total Input
+            <span className="text-xs">To calculate Screen Per Study</span>
           </label>
           <input
             className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-            id="nteam"
+            id="fractionTotalCodes"
             type="number"
-            value={nteam}
-            onChange={(e) => setNTeam(e.target.value)}
-            name="nteam"
+            value={fractionTotalCodes}
+            onChange={(e) => setFractionTotalCodes(e.target.value)}
+            name="fractionTotalCodes"
           />
         </div>
 
         <div className="flex flex-row items-center gap-4">
           <label
             htmlFor="screen_per_studies"
-            className="w-[20%] flex justify-end"
+            className="w-[20%] flex flex-col justify-end"
+          >
+            Screen Per Study
+            <span className="text-xs">(Total Input / Fraction)</span>
+          </label>
+          <input
+            className="flex-grow min-w-0 disabled:bg-gray-200  appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="screen_per_studies"
+            type="number"
+            disabled={true}
+            value={screenPerStudy}
+            name="screen_per_studies"
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label htmlFor="npairwise" className="w-[20%] flex justify-end">
+            Pairse Compare Screen Per Team
+          </label>
+          <input
+            className="flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="npairwise"
+            type="number"
+            value={npairwise}
+            onChange={(e) => setNTeam(e.target.value)}
+            name="npairwise"
+          />
+        </div>
+
+        <div className="flex flex-row items-center gap-4">
+          <label
+            htmlFor="screen_per_studies"
+            className="w-[20%] flex text-left"
           >
             Total Studies
           </label>

@@ -1,4 +1,4 @@
-function calculateCombinations(n, k) {
+export function calculateCombinations(n, k) {
   // Helper function to calculate factorial
   function factorial(num) {
     if (num === 0 || num === 1) return 1
