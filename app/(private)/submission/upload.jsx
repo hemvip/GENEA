@@ -29,36 +29,39 @@ export default function Upload({ codes }) {
     }
   }, [session])
 
-  const onDrop = useCallback(async (acceptedFiles) => {
-    setErrorMsg("")
-    setUploading("")
-    setSuccess("")
+  const onDrop = useCallback(
+    async (acceptedFiles) => {
+      setErrorMsg("")
+      setUploading("")
+      setSuccess("")
 
-    const missing = []
-    codes.map((code) => {
-      const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
-      if (!found) {
-        missing.push(`${code}.mp4`)
+      const missing = []
+      codes.map((code) => {
+        const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
+        if (!found) {
+          missing.push(`${code}.mp4`)
+        }
+      })
+      setMissingList(missing)
+
+      // Do something with the files, like upload to a server
+      console.log(acceptedFiles)
+      setFiles(acceptedFiles)
+      const selectedFiles = Array.from(acceptedFiles).map((file) => ({
+        file,
+        url: URL.createObjectURL(file),
+      }))
+      setPreviews(selectedFiles)
+
+      try {
+        // handleUpload()
+        // console.log(response.data.message)
+      } catch (error) {
+        console.error("Error uploading files:", error)
       }
-    })
-    setMissingList(missing)
-
-    // Do something with the files, like upload to a server
-    console.log(acceptedFiles)
-    setFiles(acceptedFiles)
-    const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-      file,
-      url: URL.createObjectURL(file),
-    }))
-    setPreviews(selectedFiles)
-
-    try {
-      // handleUpload()
-      // console.log(response.data.message)
-    } catch (error) {
-      console.error("Error uploading files:", error)
-    }
-  }, [])
+    },
+    [codes]
+  )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
