@@ -7,7 +7,7 @@ import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 
-export default function Upload({ codes }) {
+export default function Upload({ teams }) {
   const { data: session, status } = useSession()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
@@ -29,39 +29,36 @@ export default function Upload({ codes }) {
     }
   }, [session])
 
-  const onDrop = useCallback(
-    async (acceptedFiles) => {
-      setErrorMsg("")
-      setUploading("")
-      setSuccess("")
+  const onDrop = useCallback(async (acceptedFiles) => {
+    setErrorMsg("")
+    setUploading("")
+    setSuccess("")
 
-      const missing = []
-      codes.map((code) => {
-        const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
-        if (!found) {
-          missing.push(`${code}.mp4`)
-        }
-      })
-      setMissingList(missing)
+    const missing = []
+    //  .map((code) => {
+    //   const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
+    //   if (!found) {
+    //     missing.push(`${code}.mp4`)
+    //   }
+    // })
+    setMissingList(missing)
 
-      // Do something with the files, like upload to a server
-      console.log(acceptedFiles)
-      setFiles(acceptedFiles)
-      const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-        file,
-        url: URL.createObjectURL(file),
-      }))
-      setPreviews(selectedFiles)
+    // Do something with the files, like upload to a server
+    console.log(acceptedFiles)
+    setFiles(acceptedFiles)
+    const selectedFiles = Array.from(acceptedFiles).map((file) => ({
+      file,
+      url: URL.createObjectURL(file),
+    }))
+    setPreviews(selectedFiles)
 
-      try {
-        // handleUpload()
-        // console.log(response.data.message)
-      } catch (error) {
-        console.error("Error uploading files:", error)
-      }
-    },
-    [codes]
-  )
+    try {
+      // handleUpload()
+      // console.log(response.data.message)
+    } catch (error) {
+      console.error("Error uploading files:", error)
+    }
+  }, [])
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
