@@ -1,15 +1,15 @@
-import Sidebar from "@/components/sidebar"
 import { Callout } from "@/nextra"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
 import { File } from "@/nextra/sidebar"
 import { useSession } from "next-auth/react"
 // import { Sidebar } from "@/nextra/sidebar"
 import React from "react"
+import AdminSidebar from "./AdminSidebar"
 
 export default function Layout({ children }) {
   return (
     <div className="mx-auto flex max-w-[90rem]">
-      {/* <Sidebar /> */}
+      <AdminSidebar />
       <aside className="nextra-sidebar-container flex flex-col md:top-16 md:shrink-0 motion-reduce:transform-none transform-gpu transition-all ease-in-out print:hidden md:w-64 md:sticky md:self-start max-md:[transform:translate3d(0,-100%,0)]">
         <div className="overflow-y-auto overflow-x-hidden p-4 grow md:h-[calc(100vh-var(--nextra-navbar-height)-var(--nextra-menu-height))] nextra-scrollbar">
           <div className="transform-gpu overflow-hidden transition-all ease-in-out motion-reduce:transition-none">
