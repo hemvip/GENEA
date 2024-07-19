@@ -49,8 +49,6 @@ export async function handleUpload(client, request, env) {
 
 	const formData = await request.formData();
 	const userId = formData.get('userId');
-	const email = formData.get('email');
-	const teamname = formData.get('teamname');
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	const s3 = new S3Client({

@@ -73,8 +73,6 @@ export default function UploadBVH({ codes }) {
   const uploadPromise = (file, onProgress) => {
     const formData = new FormData()
     formData.append("userId", session.userId)
-    formData.append("email", email)
-    formData.append("teamname", teamname)
     formData.append("motion_files", file)
 
     console.log("UPLOAD_API_ENDPOINT", UPLOAD_API_ENDPOINT)
@@ -130,8 +128,16 @@ export default function UploadBVH({ codes }) {
 
     try {
       setUploading("Uploading your submission, please waiting ...")
+      const formData = new FormData()
+      formData.append("userId", session.userId)
+      formData.append("email", email)
+      formData.append("teamname", teamname)
+      const res = await axios.post("/api/submission", formData)
 
-      axios.post("/api/submission", {})
+      if (!res.data.success) {
+        console.log(res.data)
+        setErrorMsg("Failed to upload your submission, please contact support")
+      }
 
       const uploadPromises = Array.from(files).map((file) => {
         return uploadPromise(file, (fileName, percent) => {
@@ -145,14 +151,6 @@ export default function UploadBVH({ codes }) {
         })
       })
 
-      // const { success, msg, error } = response.data
-      // if (success) {
-      //   setSuccess(msg)
-      //   console.log("Success", success, "msg", msg, "error", error)
-      // } else {
-      //   setErrorMsg(msg)
-      //   console.log("Success", success, "msg", msg, "error", error)
-      // }
       const results = await Promise.all(uploadPromises)
       console.log("results", results)
       const allSuccessful = results.every((result) => result.success)

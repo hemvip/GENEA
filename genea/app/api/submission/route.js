@@ -1,9 +1,5 @@
 import clientPromise from "@/server/mongodb"
-import {
-  S3Client,
-  CreateBucketCommand,
-  PutObjectCommand,
-} from "@aws-sdk/client-s3"
+
 import { ObjectId } from "bson"
 
 export async function GET(req, res) {
@@ -23,27 +19,6 @@ export async function POST(req, res) {
   const userId = formData.get("userId")
   const email = formData.get("email")
   const teamname = formData.get("teamname")
-  // console.log("go here", formData.get("motion_files").name)
-
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const s3 = new S3Client({
-    endpoint: process.env.B2_ENDPOINT,
-    region: process.env.B2_REGION,
-    credentials: {
-      accessKeyId: process.env.B2_KEYID,
-      secretAccessKey: process.env.B2_APPLICATIONKEY,
-    },
-  })
-  if (!s3) {
-    return Response.json(
-      {
-        success: false,
-        msg: "Cannot connect to blackblaze storage.",
-        error: null,
-      },
-      { status: 500 }
-    )
-  }
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const client = await clientPromise
@@ -62,7 +37,7 @@ export async function POST(req, res) {
   try {
     const insertResult = await db
       .collection("submissions")
-      .insertOne({ _id: new ObjectId(), userId, teamname, email })
+      .insertOne({ _id: userId, userId, teamname, email })
     console.log("insertResult", insertResult)
 
     if (insertResult.insertedId) {
