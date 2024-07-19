@@ -13,10 +13,12 @@ export function reply(output) {
 
 export function responseWithCORS(data) {
 	const headers = new Headers({
+		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin': '*',
 		'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
 		'Access-Control-Max-Age': '86400',
 		'Access-Control-Allow-Credentials': 'true',
+		'Access-Control-Allow-Headers': 'origin, content-type, accept',
 	});
 
 	return new Response(JSON.stringify(data), { headers, status: 200 });
@@ -31,6 +33,7 @@ export function responseJSON(data) {
 			'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
 			'Access-Control-Max-Age': '86400',
 			'Access-Control-Allow-Credentials': 'true',
+			'Access-Control-Allow-Headers': 'origin, content-type, accept',
 		},
 	});
 

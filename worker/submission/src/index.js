@@ -14,6 +14,10 @@ export default {
 			return handleOptions(request);
 		}
 
+		if (request.method === 'GET') {
+			return responseJSON({ message: 'It work' });
+		}
+
 		const url = new URL(request.url);
 		App = App || new Realm.App(env.ATLAS_APPID);
 		const method = request.method;
