@@ -62,7 +62,7 @@ export default function Upload({ codes }) {
       } catch (error) {
         console.error("Error uploading files:", error)
       }
-      // setUploading("")
+      setUploading("")
     },
     [codes]
   )
@@ -90,12 +90,11 @@ export default function Upload({ codes }) {
       })
       .then((response) => {
         console.log("response", response)
-        alert("success")
-        return `Uploaded ${file.name}`
+        return response.data
       })
       .catch((error) => {
-        console.error("error", error)
-        throw new Error(`Failed to upload ${file.name}`)
+        console.error("error", error.response.data)
+        return error.response.data
       })
   }
 
@@ -129,31 +128,7 @@ export default function Upload({ codes }) {
 
     try {
       setUploading("Uploading your submission, please waiting ...")
-      // const formData = new FormData({
-      //   userId: session.userId,
-      //   email: email,
-      //   teamname: teamname,
-      //   motion_files: files[i],
-      // })
-      // formData.append("userId", session.userId)
-      // formData.append("email", email)
-      // formData.append("teamname", teamname)
 
-      // for (let i = 0; i < files.length; i++) {
-      //   formData.append("motion_files", files[i])
-      // }
-
-      // const response = await axios.post("/api/upload", formData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      //   onUploadProgress: (progressEvent) => {
-      //     const percentCompleted = Math.round(
-      //       (progressEvent.loaded * 100) / progressEvent.total
-      //     )
-      //     setProgress(percentCompleted)
-      //   },
-      // })
       const uploadPromises = Array.from(files).map((file) => {
         return uploadPromise(file, (fileName, percent) => {
           setProgress((prevProgress) => {
@@ -175,9 +150,20 @@ export default function Upload({ codes }) {
       //   console.log("Success", success, "msg", msg, "error", error)
       // }
       const results = await Promise.all(uploadPromises)
-      alert("Success", results)
       console.log("results", results)
+      const allSuccessful = results.every((result) => result.success)
+      if (allSuccessful) {
+        const { success, msg, error } = results.at(-1)
+        setSuccess(msg)
+        console.log("Success", success, "msg", msg, "error", error)
+      } else {
+        const failedResult = results.filter((result) => !result.success)[0]
+        const { success, msg, error } = failedResult
+        setErrorMsg(msg)
+        console.log("Success", success, "msg", msg, "error", error)
+      }
     } catch (error) {
+      console.log(error)
       setErrorMsg(
         "EXCEPTION: Error with uploading your submission, please contact support"
       )
@@ -241,15 +227,12 @@ export default function Upload({ codes }) {
                     )}
                   </div>
                 </div>
-                <span className="text-sm bg-gray-200 px-2 rounded-xl">
-                  {progress[file.name] && (
-                    <span>{`${progress[file.name]}%`}</span>
-                  )}
+                <span className="text-xs bg-gray-200 px-2 rounded-xl">
+                  {`${progress[file.name] || 0}%`}
                 </span>
               </div>
             )
           })}
-          {JSON.stringify(progress)}
         </div>
         <Callout type="warning" className="mt-0">
           {uploading}

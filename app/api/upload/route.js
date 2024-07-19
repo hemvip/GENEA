@@ -13,7 +13,7 @@ export async function POST(req, res) {
   const userId = formData.get("userId")
   const email = formData.get("email")
   const teamname = formData.get("teamname")
-  console.log("go here", formData)
+  console.log("go here", formData.get("motion_files").name)
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const s3 = new S3Client({
@@ -49,16 +49,23 @@ export async function POST(req, res) {
     )
   }
 
-  const videos = []
-  console.log("sdfsdf")
-  return Response.json(
-    {
-      success: true,
-      msg: "Your submission uploaded successfully.",
-      error: null,
-    },
-    { status: 200 }
-  )
+  const bvhfiles = []
+  // return Response.json(
+  //   {
+  //     success: true,
+  //     msg: "Your submission uploaded successfully.",
+  //     error: null,
+  //   },
+  //   { status: 200 }
+  // )
+  // return Response.json(
+  //   {
+  //     success: false,
+  //     msg: "Upload success but failed insert submissions, please contact for support.",
+  //     error: null,
+  //   },
+  //   { status: 500 }
+  // )
 
   try {
     for (let [key, value] of formData.entries()) {
@@ -88,7 +95,6 @@ export async function POST(req, res) {
 
         // Upload the video file to B2 storage
         const uploadResult = await s3.send(new PutObjectCommand(params))
-        console.log("upload_result", uploadResult)
         // const uploadResult = await parallelUploads3.done()
         // console.log("Upload complete:", uploadResult)
 
@@ -97,40 +103,66 @@ export async function POST(req, res) {
           filename.pop()
         }
         const inputid = filename.join(".")
-        videos.push({
+        bvhfiles.push({
           _id: new ObjectId(),
           inputid: inputid,
-          videoid: uploadResult.Key,
+          bvhid: uploadResult.ETag,
           teamid: userId,
-          url: uploadResult.Location,
+          url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
         })
       }
     }
 
-    const insertResult = await db
+    // Check if the document exists
+    const existingDocument = await db
       .collection("submissions")
-      .insertOne({ userId, teamname, email, videos: videos })
-    // console.log("insertResult", insertResult)
+      .findOne({ userId: userId })
 
-    if (insertResult.insertedId) {
-      return Response.json(
-        {
-          success: true,
-          msg: "Your submission uploaded successfully.",
-          error: null,
-        },
-        { status: 200 }
-      )
+    if (existingDocument) {
+      const updateDoc = {
+        $push: { bvhfiles: { $each: bvhfiles } },
+      }
+      const updateResult = await db
+        .collection("submissions")
+        .updateOne({ userId: userId }, updateDoc)
+
+      console.log("updateResult", updateResult)
+      if (updateResult.modifiedCount) {
+        return Response.json(
+          {
+            success: true,
+            msg: "Your submission uploaded successfully.",
+            error: null,
+          },
+          { status: 200 }
+        )
+      }
     } else {
-      return Response.json(
-        {
-          success: false,
-          msg: "Upload success but failed insert submissions, please contact for support.",
-          error: null,
-        },
-        { status: 500 }
-      )
+      const insertResult = await db
+        .collection("submissions")
+        .insertOne({ userId, teamname, email, videos: [], bvh: bvhfiles })
+      console.log("insertResult", insertResult)
+
+      if (insertResult.insertedId) {
+        return Response.json(
+          {
+            success: true,
+            msg: "Your submission inserted successfully.",
+            error: null,
+          },
+          { status: 200 }
+        )
+      }
     }
+
+    return Response.json(
+      {
+        success: false,
+        msg: "Upload success but failed insert submissions, please contact for support.",
+        error: null,
+      },
+      { status: 500 }
+    )
   } catch (error) {
     console.log("Exception: ", error)
     return Response.json(
