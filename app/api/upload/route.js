@@ -106,7 +106,7 @@ export async function POST(req, res) {
         bvhfiles.push({
           _id: new ObjectId(),
           inputid: inputid,
-          bvhid: uploadResult.ETag,
+          bvhid: uploadResult.ETag.replace('"', ""),
           teamid: userId,
           url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
         })

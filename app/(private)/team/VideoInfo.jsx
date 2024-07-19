@@ -1,7 +1,7 @@
 import React from "react"
 import cn from "clsx"
 
-export default function SubmissionInfo({ submission }) {
+export default function VideoInfo({ submission }) {
   return (
     <div
       className={cn(

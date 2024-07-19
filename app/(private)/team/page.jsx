@@ -2,10 +2,11 @@
 
 import React from "react"
 import clientPromise from "@/server/mongodb"
-import Study from "./SubmissionInfo"
+import Study from "./VideoInfo"
 import { Code, Pre, Table, Th, Tr } from "@/nextra"
 import cn from "clsx"
-import SubmissionInfo from "./SubmissionInfo"
+import VideoInfo from "./VideoInfo"
+import BVHInfo from "./BVHInfo"
 
 async function fetchTeam() {
   try {
@@ -51,7 +52,8 @@ export default async function Page() {
             <tr className="border-b py-4 text-left dark:border-neutral-700">
               <th className="py-2 font-semibold">ID</th>
               <th className="py-2 font-semibold">Team name</th>
-              <th className="py-2 pl-6 font-semibold">Submissions</th>
+              <th className="py-2 pl-6 font-semibold">BVH</th>
+              <th className="py-2 pl-6 font-semibold">Videos</th>
             </tr>
           </thead>
           <tbody className="align-baseline text-gray-900 dark:text-gray-100">
@@ -60,13 +62,22 @@ export default async function Page() {
                 key={index}
                 className="border-b border-gray-100 dark:border-neutral-700/50"
               >
-                <td className="py-2 pl-6">{team.userId}</td>
+                <td className="py-2 pl-6">{index + 1}</td>
                 <td className="py-2 pl-6">{team.teamname}</td>
                 <td className="py-2 pl-6 h-24">
                   <div className="w-full overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96">
-                    {team.videos.map((info, index) => {
-                      return <SubmissionInfo submission={info} key={index} />
-                    })}
+                    {team.bvh &&
+                      team.bvh.map((bvh, index) => {
+                        return <BVHInfo submission={bvh} key={index} />
+                      })}
+                  </div>
+                </td>
+                <td className="py-2 pl-6 h-24">
+                  <div className="w-full overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96">
+                    {team.videos &&
+                      team.videos.map((info, index) => {
+                        return <VideoInfo submission={info} key={index} />
+                      })}
                   </div>
                 </td>
               </tr>
