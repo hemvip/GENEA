@@ -40,13 +40,20 @@ export default {
 			// POST /api/submission
 			if (path === '/api/submission' && method === 'POST') {
 				console.log('Start upload');
+
 				// const prolificid = url.searchParams.get('prolificid') || '';
 				// const studyid = url.searchParams.get('studyid') || '';
 				// const sessionid = url.searchParams.get('sessionid') || '';
 				// // console.log("prolificid", prolificid, "studyid", studyid, "sessionid", sessionid)
-				const { errors, success, data, msg } = await handleUpload(client, prolificid, studyid, sessionid);
-				// // console.log(errors, success, data, msg)
-				// return responseJSON({ errors, success, data, msg });
+				const formData = await request.formData();
+				const userId = formData.get('userId');
+
+				return responseJSON({
+					errors: null,
+					success: true,
+					data: '',
+					msg: 'Success to start a study',
+				});
 			}
 			// unknown method
 			return responseError('Method not allowed.', 405);

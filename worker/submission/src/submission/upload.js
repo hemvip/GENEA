@@ -1,4 +1,4 @@
-export async function handleUpload(client, prolificid, studyid, sessionid) {
+export async function handleUpload(client, request) {
 	// try {
 	// Use Zod to validate the received data against the UserSchema
 
@@ -49,6 +49,10 @@ export async function handleUpload(client, prolificid, studyid, sessionid) {
 	// 		msg: 'Internal server error',
 	// 	};
 	// }
+
+	const formData = await request.formData();
+	const userId = formData.get('userId');
+
 	return {
 		errors: null,
 		success: true,
