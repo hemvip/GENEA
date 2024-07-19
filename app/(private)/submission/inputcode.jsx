@@ -7,10 +7,10 @@ export default function InputCode({ codes }) {
 
   const handleDownload = () => {
     const csvArray = []
-    csvArray.push("id, code, text_input, video_output")
+    csvArray.push("id, code, text_input, motion_file_output")
     codes.map((code, index) => {
       csvArray.push(
-        `${index + 1} , ${code}, Text Input ${index + 1}, ${code}.mp4`
+        `${index + 1} , ${code}, Text Input ${index + 1}, ${code}.bvh`
       )
     })
     const csvContent = csvArray.join("\n")

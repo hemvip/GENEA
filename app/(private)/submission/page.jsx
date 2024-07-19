@@ -37,8 +37,8 @@ export default function Page() {
       {loading && <InputCode codes={codes} />}
       <p className="mt-3 leading-7 first:mt-0">
         First please download input codes csv file. Which contain inputcode. If
-        the input code is <code>4345345</code>, then the inference video output
-        should be <code>4345345.mp4</code>
+        the input code is <code>417010272047</code>, then the inference output
+        file of your model should be <code>417010272047.bvh</code>
       </p>
       <p className="mt-3 leading-7 first:mt-0">
         Run your model to get inference output

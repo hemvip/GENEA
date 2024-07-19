@@ -4,7 +4,7 @@ import {
   CreateBucketCommand,
   PutObjectCommand,
 } from "@aws-sdk/client-s3"
-import { Upload } from "@aws-sdk/lib-storage"
+// import { Upload } from "@aws-sdk/lib-storage"
 import clientPromise from "@/server/mongodb"
 import { ObjectId } from "bson"
 
@@ -52,9 +52,10 @@ export async function POST(req, res) {
 
   try {
     for (let [key, value] of formData.entries()) {
-      if (key === "video") {
+      if (key === "motion_files") {
         const arrayBuffer = await value.arrayBuffer()
-        const uniqueKey = `genea/${userId}/${Date.now()}_${value.name}`
+        // const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
+        const uniqueKey = `bvh/${userId}/${value.name}`
         console.log("Uploading uniqueKey: ", uniqueKey)
 
         // Create the parameters for the PutObjectCommand
@@ -62,20 +63,23 @@ export async function POST(req, res) {
           Bucket: "gesture",
           Key: uniqueKey,
           Body: new Uint8Array(arrayBuffer),
-          ContentType: value.type,
+          ContentType: "binary/octet-stream",
         }
 
-        const parallelUploads3 = new Upload({
-          client: s3,
-          params: params,
-          leavePartsOnError: false, // Whether to abort the multipart upload on error
-        })
+        // const parallelUploads3 = new Upload({
+        //   client: s3,
+        //   params: params,
+        //   leavePartsOnError: true, // Whether to abort the multipart upload on error
+        // })
 
-        parallelUploads3.on("httpUploadProgress", (progress) => {
-          console.log("progress", progress.Key)
-        })
+        // parallelUploads3.on("httpUploadProgress", (progress) => {
+        //   console.log("progress", progress.Key)
+        // })
 
-        const uploadResult = await parallelUploads3.done()
+        // Upload the video file to B2 storage
+        const uploadResult = await s3.send(new PutObjectCommand(params))
+        console.log("upload_result", uploadResult)
+        // const uploadResult = await parallelUploads3.done()
         // console.log("Upload complete:", uploadResult)
 
         const filename = value.name.split(".")
@@ -90,9 +94,6 @@ export async function POST(req, res) {
           teamid: userId,
           url: uploadResult.Location,
         })
-
-        // Upload the video file to B2 storage
-        // await s3.send(new PutObjectCommand(putObjectParams))
       }
     }
 
@@ -121,6 +122,7 @@ export async function POST(req, res) {
       )
     }
   } catch (error) {
+    console.log("Exception: ", error)
     return Response.json(
       {
         success: false,
