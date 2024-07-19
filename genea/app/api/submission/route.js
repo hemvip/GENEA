@@ -125,7 +125,7 @@ export async function POST(req, res) {
         return Response.json(
           {
             success: true,
-            msg: "Your submission uploaded successfully.",
+            msg: "Your submission updated successfully.",
             error: null,
           },
           { status: 200 }
@@ -141,7 +141,7 @@ export async function POST(req, res) {
         return Response.json(
           {
             success: true,
-            msg: "Your submission inserted successfully.",
+            msg: "Your submission are successfully.",
             error: null,
           },
           { status: 200 }

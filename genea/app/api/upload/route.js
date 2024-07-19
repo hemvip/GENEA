@@ -98,7 +98,7 @@ export async function POST(req, res) {
         return Response.json(
           {
             success: true,
-            msg: "Your submission uploaded successfully.",
+            msg: "Your submission updated successfully.",
             error: null,
           },
           { status: 200 }

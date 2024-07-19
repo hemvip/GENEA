@@ -236,7 +236,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: true,
-        msg: "Your submission uploaded successfully.",
+        msg: "Your submission updated successfully.",
         codes: [], //codes,
         videos: [],
         studies: studies,

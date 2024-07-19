@@ -127,7 +127,7 @@ export async function handleUpload(client, request, env) {
 			if (updateResult.modifiedCount) {
 				return {
 					success: true,
-					msg: 'Your submission uploaded successfully.',
+					msg: 'Your submission updated successfully.',
 					error: null,
 				};
 			}
@@ -138,7 +138,7 @@ export async function handleUpload(client, request, env) {
 			if (insertResult.insertedId) {
 				return {
 					success: true,
-					msg: 'Your submission inserted successfully.',
+					msg: 'Your submission are successfully.',
 					error: null,
 				};
 			}
