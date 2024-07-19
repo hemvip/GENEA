@@ -1,11 +1,10 @@
 "use server"
 import clientPromise from "@/server/mongodb"
 
-export default async function fetchInputCodes() {
+export default async function fetchSubmission() {
   const client = await clientPromise
   const db = client.db("hemvip")
 
-  const inputcode = await db.collection("inputcode").find({}).toArray()
-  const { codes, videocodes } = inputcode[0]
-  return { codes, videocodes }
+  const submission = await db.collection("submission").find({}).toArray()
+  return submission
 }
