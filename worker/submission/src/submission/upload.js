@@ -8,7 +8,7 @@ export async function handleUpload(client, request, env) {
 	// 	// Check if the validation is successful
 	// 	if (result.success) {
 	// const db2 = client.db('hemvip');
-	// const result = await db2.collection('submissions').findOne({});
+	// const result = await db2.collection('bvh').findOne({});
 	// console.log('result', result);
 
 	// 		if (result) {
@@ -103,7 +103,7 @@ export async function handleUpload(client, request, env) {
 				}
 				const inputid = filename.join('.');
 
-				const insertResult = await db.collection('submissions').insertOne({
+				const insertResult = await db.collection('bvh').insertOne({
 					_id: new ObjectId(),
 					inputid: inputid,
 					bvhid: uploadResult.ETag.replace(/\"/g, ''),

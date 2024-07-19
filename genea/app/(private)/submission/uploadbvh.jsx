@@ -131,6 +131,8 @@ export default function UploadBVH({ codes }) {
     try {
       setUploading("Uploading your submission, please waiting ...")
 
+      axios.post("/api/submission", {})
+
       const uploadPromises = Array.from(files).map((file) => {
         return uploadPromise(file, (fileName, percent) => {
           setProgress((prevProgress) => {

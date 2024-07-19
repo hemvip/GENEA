@@ -59,94 +59,21 @@ export async function POST(req, res) {
     )
   }
 
-  const bvhfiles = []
-
   try {
-    for (let [key, value] of formData.entries()) {
-      if (key === "motion_files") {
-        const arrayBuffer = await value.arrayBuffer()
-        // const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
-        const uniqueKey = `bvh/${userId}/${value.name}`
-        console.log("Uploading uniqueKey: ", uniqueKey)
-
-        // Create the parameters for the PutObjectCommand
-        const params = {
-          Bucket: "gesture",
-          Key: uniqueKey,
-          Body: new Uint8Array(arrayBuffer),
-          ContentType: "binary/octet-stream",
-        }
-
-        // const parallelUploads3 = new Upload({
-        //   client: s3,
-        //   params: params,
-        //   leavePartsOnError: true, // Whether to abort the multipart upload on error
-        // })
-
-        // parallelUploads3.on("httpUploadProgress", (progress) => {
-        //   console.log("progress", progress.Key)
-        // })
-
-        // Upload the video file to B2 storage
-        const uploadResult = await s3.send(new PutObjectCommand(params))
-        // const uploadResult = await parallelUploads3.done()
-        // console.log("Upload complete:", uploadResult)
-
-        const filename = value.name.split(".")
-        if (filename.length > 1) {
-          filename.pop()
-        }
-        const inputid = filename.join(".")
-        bvhfiles.push({
-          _id: new ObjectId(),
-          inputid: inputid,
-          bvhid: uploadResult.ETag.replace(/\"/g, ""),
-          teamid: userId,
-          url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-        })
-      }
-    }
-
-    // Check if the document exists
-    const existingDocument = await db
+    const insertResult = await db
       .collection("submissions")
-      .findOne({ userId: userId })
+      .insertOne({ _id: new ObjectId(), userId, teamname, email })
+    console.log("insertResult", insertResult)
 
-    if (existingDocument) {
-      const updateDoc = {
-        $push: { bvh: { $each: bvhfiles } },
-      }
-      const updateResult = await db
-        .collection("submissions")
-        .updateOne({ userId: userId }, updateDoc)
-
-      console.log("updateResult", updateResult)
-      if (updateResult.modifiedCount) {
-        return Response.json(
-          {
-            success: true,
-            msg: "Your submission updated successfully.",
-            error: null,
-          },
-          { status: 200 }
-        )
-      }
-    } else {
-      const insertResult = await db
-        .collection("submissions")
-        .insertOne({ userId, teamname, email, videos: [], bvh: bvhfiles })
-      console.log("insertResult", insertResult)
-
-      if (insertResult.insertedId) {
-        return Response.json(
-          {
-            success: true,
-            msg: "Your submission are successfully.",
-            error: null,
-          },
-          { status: 200 }
-        )
-      }
+    if (insertResult.insertedId) {
+      return Response.json(
+        {
+          success: true,
+          msg: "Your submission are successfully.",
+          error: null,
+        },
+        { status: 200 }
+      )
     }
 
     return Response.json(
@@ -168,4 +95,114 @@ export async function POST(req, res) {
       { status: 500 }
     )
   }
+
+  // const bvhfiles = []
+
+  // try {
+  //   for (let [key, value] of formData.entries()) {
+  //     if (key === "motion_files") {
+  //       const arrayBuffer = await value.arrayBuffer()
+  //       // const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
+  //       const uniqueKey = `bvh/${userId}/${value.name}`
+  //       console.log("Uploading uniqueKey: ", uniqueKey)
+
+  //       // Create the parameters for the PutObjectCommand
+  //       const params = {
+  //         Bucket: "gesture",
+  //         Key: uniqueKey,
+  //         Body: new Uint8Array(arrayBuffer),
+  //         ContentType: "binary/octet-stream",
+  //       }
+
+  //       // const parallelUploads3 = new Upload({
+  //       //   client: s3,
+  //       //   params: params,
+  //       //   leavePartsOnError: true, // Whether to abort the multipart upload on error
+  //       // })
+
+  //       // parallelUploads3.on("httpUploadProgress", (progress) => {
+  //       //   console.log("progress", progress.Key)
+  //       // })
+
+  //       // Upload the video file to B2 storage
+  //       const uploadResult = await s3.send(new PutObjectCommand(params))
+  //       // const uploadResult = await parallelUploads3.done()
+  //       // console.log("Upload complete:", uploadResult)
+
+  //       const filename = value.name.split(".")
+  //       if (filename.length > 1) {
+  //         filename.pop()
+  //       }
+  //       const inputid = filename.join(".")
+  //       bvhfiles.push({
+  //         _id: new ObjectId(),
+  //         inputid: inputid,
+  //         bvhid: uploadResult.ETag.replace(/\"/g, ""),
+  //         teamid: userId,
+  //         url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+  //       })
+  //     }
+  //   }
+
+  //   // Check if the document exists
+  //   const existingDocument = await db
+  //     .collection("submissions")
+  //     .findOne({ userId: userId })
+
+  //   if (existingDocument) {
+  //     const updateDoc = {
+  //       $push: { bvh: { $each: bvhfiles } },
+  //     }
+  //     const updateResult = await db
+  //       .collection("submissions")
+  //       .updateOne({ userId: userId }, updateDoc)
+
+  //     console.log("updateResult", updateResult)
+  //     if (updateResult.modifiedCount) {
+  //       return Response.json(
+  //         {
+  //           success: true,
+  //           msg: "Your submission updated successfully.",
+  //           error: null,
+  //         },
+  //         { status: 200 }
+  //       )
+  //     }
+  //   } else {
+  //     const insertResult = await db
+  //       .collection("submissions")
+  //       .insertOne({ userId, teamname, email, videos: [], bvh: bvhfiles })
+  //     console.log("insertResult", insertResult)
+
+  //     if (insertResult.insertedId) {
+  //       return Response.json(
+  //         {
+  //           success: true,
+  //           msg: "Your submission are successfully.",
+  //           error: null,
+  //         },
+  //         { status: 200 }
+  //       )
+  //     }
+  //   }
+
+  //   return Response.json(
+  //     {
+  //       success: false,
+  //       msg: "Upload success but failed insert submissions, please contact for support.",
+  //       error: null,
+  //     },
+  //     { status: 500 }
+  //   )
+  // } catch (error) {
+  //   console.log("Exception: ", error)
+  //   return Response.json(
+  //     {
+  //       success: false,
+  //       msg: "Your submissions is failed, please contact for support.",
+  //       error: error,
+  //     },
+  //     { status: 500 }
+  //   )
+  // }
 }
