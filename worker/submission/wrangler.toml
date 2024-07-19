@@ -20,6 +20,7 @@ workers_dev = true
 # [vars]
 # MY_VARIABLE = "production_value"
 [vars]
+ATLAS_APPID = "application-0-rklllju"
 MONGODB_URI="mongodb+srv://hemvip:jQMTlXASSauKo5Dk@hemvip.uugp7bb.mongodb.net"
 CLOUDFLARE_WORKER_API_AUTHEN_TOKEN="XnabV4Pa2RV6lgyJAj0uAun6X5KM6p0yJceHEm3EJ80757sasEjpP2smYNJaSkcv"
 
