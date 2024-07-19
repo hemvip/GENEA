@@ -111,20 +111,20 @@ export default function UploadBVH({ codes }) {
       return
     }
 
-    // if (missingList.length > 0) {
-    //   setErrorMsg("Please upload missing files")
-    //   return
-    // }
+    if (missingList.length > 0) {
+      setErrorMsg("Please upload missing files")
+      return
+    }
 
-    // if (!email) {
-    //   setErrorMsg("Please add email address")
-    //   return
-    // }
+    if (!email) {
+      setErrorMsg("Please add email address")
+      return
+    }
 
-    // if (!teamname) {
-    //   setErrorMsg("Please add your team name")
-    //   return
-    // }
+    if (!teamname) {
+      setErrorMsg("Please add your team name")
+      return
+    }
 
     try {
       setUploading("Uploading your submission, please waiting ...")

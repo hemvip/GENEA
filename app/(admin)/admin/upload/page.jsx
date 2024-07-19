@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 // import fetchInputCodes from "./actions"
 import InputCode from "./inputcode"
 import axios from "axios"
+import { Loading } from "@/components"
 
 export default function Page() {
   const [codes, setCodes] = useState([])
@@ -43,7 +44,13 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        {loading && <UploadVideos codes={codes} teams={teams} />}
+        {loading && teams.length > 0 ? (
+          <UploadVideos codes={codes} teams={teams} />
+        ) : (
+          <div className="text-center">
+            <Loading />
+          </div>
+        )}
       </div>
     </>
   )

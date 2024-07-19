@@ -10,9 +10,6 @@ import { ObjectId } from "bson"
 export async function POST(req, res) {
   const formData = await req.formData()
   const userId = formData.get("userId")
-  const email = formData.get("email")
-  const teamname = formData.get("teamname")
-  console.log("go here", formData.get("motion_files").name)
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const s3 = new S3Client({
@@ -48,14 +45,13 @@ export async function POST(req, res) {
     )
   }
 
-  const bvhfiles = []
+  const videofiles = []
 
   try {
     for (let [key, value] of formData.entries()) {
-      if (key === "motion_files") {
+      if (key === "video") {
         const arrayBuffer = await value.arrayBuffer()
-        // const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
-        const uniqueKey = `bvh/${userId}/${value.name}`
+        const uniqueKey = `genea/${userId}/${value.name}`
         console.log("Uploading uniqueKey: ", uniqueKey)
 
         // Create the parameters for the PutObjectCommand
@@ -63,7 +59,7 @@ export async function POST(req, res) {
           Bucket: "gesture",
           Key: uniqueKey,
           Body: new Uint8Array(arrayBuffer),
-          ContentType: "binary/octet-stream",
+          ContentType: value.type,
         }
 
         // const parallelUploads3 = new Upload({
@@ -86,12 +82,12 @@ export async function POST(req, res) {
           filename.pop()
         }
         const inputid = filename.join(".")
-        bvhfiles.push({
+        videofiles.push({
           _id: new ObjectId(),
           inputid: inputid,
-          bvhid: uploadResult.ETag.replace('"', ""),
+          videoid: uploadResult.Key,
           teamid: userId,
-          url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+          url: uploadResult.Location,
         })
       }
     }
@@ -103,13 +99,13 @@ export async function POST(req, res) {
 
     if (existingDocument) {
       const updateDoc = {
-        $push: { bvh: { $each: bvhfiles } },
+        $push: { videos: { $each: videofiles } },
       }
       const updateResult = await db
         .collection("submissions")
         .updateOne({ userId: userId }, updateDoc)
+      // console.log("updateResult", updateResult)
 
-      console.log("updateResult", updateResult)
       if (updateResult.modifiedCount) {
         return Response.json(
           {
@@ -123,14 +119,14 @@ export async function POST(req, res) {
     } else {
       const insertResult = await db
         .collection("submissions")
-        .insertOne({ userId, teamname, email, videos: [], bvh: bvhfiles })
-      console.log("insertResult", insertResult)
+        .insertOne({ userId, teamname, email, videos: videofiles, bvh: [] })
+      // console.log("insertResult", insertResult)
 
       if (insertResult.insertedId) {
         return Response.json(
           {
             success: true,
-            msg: "Your submission inserted successfully.",
+            msg: "Your videos inserted successfully.",
             error: null,
           },
           { status: 200 }
@@ -141,7 +137,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Upload success but failed insert submissions, please contact for support.",
+        msg: "Upload success but failed insert videos, please contact for support.",
         error: null,
       },
       { status: 500 }
@@ -151,7 +147,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Your submissions is failed, please contact for support.",
+        msg: "Your videos is failed, please contact for support.",
         error: error,
       },
       { status: 500 }

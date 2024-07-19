@@ -11,6 +11,8 @@ import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
 
 export default function UploadVideos({ codes, teams }) {
+  const [team, setTeam] = useState(teams[0])
+  const [teamID, setTeamID] = useState(teams[0].userId)
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
@@ -20,8 +22,6 @@ export default function UploadVideos({ codes, teams }) {
   const [success, setSuccess] = useState("")
 
   const [missingList, setMissingList] = useState([])
-
-  const [userId, setUserId] = useState("234234235234")
 
   const onDrop = useCallback(
     async (acceptedFiles) => {
@@ -64,13 +64,11 @@ export default function UploadVideos({ codes, teams }) {
 
   const uploadPromise = (file, onProgress) => {
     const formData = new FormData()
-    formData.append("userId", userId)
-    formData.append("email", email)
-    formData.append("teamname", teamname)
+    formData.append("userId", teamID)
     formData.append("video", file)
 
     return axios
-      .post("/api/submission", formData, {
+      .post("/api/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -104,18 +102,8 @@ export default function UploadVideos({ codes, teams }) {
     //   return
     // }
 
-    // if (!email) {
-    //   setErrorMsg("Please add email address")
-    //   return
-    // }
-
-    // if (!teamname) {
-    //   setErrorMsg("Please add your team name")
-    //   return
-    // }
-
     try {
-      setUploading("Uploading your submission, please waiting ...")
+      setUploading("Uploading your videos, please waiting ...")
 
       const uploadPromises = Array.from(files).map((file) => {
         return uploadPromise(file, (fileName, percent) => {
@@ -143,14 +131,18 @@ export default function UploadVideos({ codes, teams }) {
         console.log("Success", success, "msg", msg, "error", error)
       }
     } catch (error) {
-      console.log(error)
+      console.log("EXCEPTION ", error)
       setErrorMsg(
-        "EXCEPTION: Error with uploading your submission, please contact support"
+        "EXCEPTION: Error with uploading your videos, please contact support"
       )
       console.log("Exception", error)
     } finally {
       setUploading("")
     }
+  }
+
+  if (teams.length <= 0) {
+    return <></>
   }
 
   if (success) {
@@ -223,32 +215,18 @@ export default function UploadVideos({ codes, teams }) {
                 hover && "shadow",
                 "flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
               )}
+              onChange={(e) => setTeamID(e.target.value)}
               aria-label="Project status"
             >
-              <option
-                className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                value="active"
-              >
-                Active
-              </option>
-              <option
-                className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                value="paused"
-              >
-                Paused
-              </option>
-              <option
-                className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                value="delayed"
-              >
-                Delayed
-              </option>
-              <option
-                className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                value="canceled"
-              >
-                Canceled
-              </option>
+              {teams.map((team, index) => (
+                <option
+                  key={index}
+                  className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
+                  value={team.userId}
+                >
+                  {team.teamname}
+                </option>
+              ))}
             </select>
           )}
         </Select>
@@ -256,7 +234,7 @@ export default function UploadVideos({ codes, teams }) {
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="userId" className="w-[20%] flex justify-end">
-          Your ID
+          Team ID
         </label>
         <input
           disabled={true}
@@ -264,7 +242,7 @@ export default function UploadVideos({ codes, teams }) {
           id="userId"
           type="userId"
           name="userId"
-          value={userId}
+          value={teamID}
         />
       </div>
 
@@ -277,7 +255,7 @@ export default function UploadVideos({ codes, teams }) {
           style={{ border: "2px dashed #666666" }}
           className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
-          <input id="upload" {...getInputProps()} accept=".bvh" />
+          <input id="upload" {...getInputProps()} accept="video/*" />
           {previews.length > 0 && (
             <ul className="w-full flex flex-wrap gap-2 justify-center">
               {previews.map(({ file, url }, index) => (
