@@ -21,6 +21,7 @@ export async function handleOptions(request) {
 		// Handle standard OPTIONS request.
 		return new Response(null, {
 			headers: {
+				...corsHeaders,
 				Allow: 'GET, HEAD, POST, OPTIONS',
 			},
 		});
