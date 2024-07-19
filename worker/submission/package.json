@@ -1,0 +1,23 @@
+{
+	"name": "submission",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.4.5",
+		"mongodb": "^6.7.0",
+		"vitest": "1.5.0",
+		"wrangler": "^3.62.0",
+		"zod": "^3.23.8"
+	},
+	"dependencies": {
+		"mongodb": "^6.7.0",
+		"realm-web": "^2.0.1",
+		"zod": "^3.23.8"
+	}
+}
