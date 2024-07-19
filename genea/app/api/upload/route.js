@@ -60,17 +60,6 @@ export async function POST(req, res) {
           Body: new Uint8Array(arrayBuffer),
           ContentType: value.type,
         }
-
-        // const parallelUploads3 = new Upload({
-        //   client: s3,
-        //   params: params,
-        //   leavePartsOnError: true, // Whether to abort the multipart upload on error
-        // })
-
-        // parallelUploads3.on("httpUploadProgress", (progress) => {
-        //   console.log("progress", progress.Key)
-        // })
-
         // Upload the video file to B2 storage
         const uploadResult = await s3.send(new PutObjectCommand(params))
         // const uploadResult = await parallelUploads3.done()
