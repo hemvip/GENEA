@@ -120,7 +120,7 @@ export async function POST(req, res) {
 
     if (existingDocument) {
       const updateDoc = {
-        $push: { bvhfiles: { $each: bvhfiles } },
+        $push: { bvh: { $each: bvhfiles } },
       }
       const updateResult = await db
         .collection("submissions")
