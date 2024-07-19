@@ -4,7 +4,6 @@ import {
   CreateBucketCommand,
   PutObjectCommand,
 } from "@aws-sdk/client-s3"
-// import { Upload } from "@aws-sdk/lib-storage"
 import { ObjectId } from "bson"
 
 export async function GET(req, res) {
