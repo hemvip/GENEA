@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "submission"
+name = "genea-api"
 main = "src/index.js"
 compatibility_date = "2024-06-20"
 compatibility_flags = ["nodejs_compat"]
@@ -21,9 +21,14 @@ workers_dev = true
 # MY_VARIABLE = "production_value"
 [vars]
 ATLAS_APPID = "application-0-rklllju"
+B2_KEYID="005ab245bb45bb20000000002"
+B2_APPLICATIONKEY="K005z2e5S9dwfVezJ3FEB9hrQt/EOJk"
+B2_ENDPOINT="https://s3.us-east-005.backblazeb2.com"
+B2_REGION="us-east-005"
+
 
 [dev]
-port = 8032
+port = 8031
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai

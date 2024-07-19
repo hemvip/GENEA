@@ -1,6 +1,7 @@
-export async function handleUpload(client, request) {
+import { S3Client, CreateBucketCommand, PutObjectCommand } from '@aws-sdk/client-s3';
+
+export async function handleUpload(client, request, env) {
 	// try {
-	// Use Zod to validate the received data against the UserSchema
 
 	// 	// Check if the validation is successful
 	// 	if (result.success) {
@@ -52,11 +53,31 @@ export async function handleUpload(client, request) {
 
 	const formData = await request.formData();
 	const userId = formData.get('userId');
+	const email = formData.get('email');
+	const teamname = formData.get('teamname');
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	const s3 = new S3Client({
+		endpoint: env.B2_ENDPOINT,
+		region: env.B2_REGION,
+		credentials: {
+			accessKeyId: env.B2_KEYID,
+			secretAccessKey: env.B2_APPLICATIONKEY,
+		},
+	});
+	if (!s3) {
+		return {
+			success: false,
+			msg: 'Cannot connect to blackblaze storage.',
+			error: null,
+		};
+	}
+
+	const bvhfiles = [];
 
 	return {
 		errors: null,
 		success: true,
-		data: '',
 		msg: 'Success to start a study',
 	};
 }
