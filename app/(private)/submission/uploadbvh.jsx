@@ -8,7 +8,7 @@ import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 import BVHFile from "@/components/icons/bvhfile"
 
-export default function Upload({ codes }) {
+export default function UploadBVH({ codes }) {
   const { data: session, status } = useSession()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
