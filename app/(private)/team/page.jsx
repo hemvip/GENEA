@@ -1,31 +1,29 @@
-"use server"
+"use client"
 
-import React from "react"
-import clientPromise from "@/server/mongodb"
+import React, { useEffect, useState } from "react"
 import Study from "./VideoInfo"
 import { Code, Pre, Table, Th, Tr } from "@/nextra"
 import cn from "clsx"
 import VideoInfo from "./VideoInfo"
 import BVHInfo from "./BVHInfo"
+import axios from "axios"
 
-async function fetchTeam() {
-  try {
-    const client = await clientPromise
-    const db = client.db("hemvip")
+export default function Page() {
+  const [teams, setTeams] = useState([])
+  const [loading, setLoading] = useState(true)
 
-    const team = await db.collection("submissions").find({}).toArray()
-
-    // const newteam = team.filter((study) => study.status === "new")
-
-    return team
-  } catch (e) {
-    console.error(e)
-    return JSON.stringify({ message: "Internal Server Error" })
+  async function fetchTeams() {
+    const res = await axios.get("/api/submission")
+    if (res.data.success) {
+      setTeams(res.data.submissions)
+    } else {
+      console.error(res.error)
+    }
   }
-}
 
-export default async function Page() {
-  const data = await fetchTeam()
+  useEffect(() => {
+    fetchTeams()
+  }, [])
 
   return (
     <div>
@@ -57,7 +55,7 @@ export default async function Page() {
             </tr>
           </thead>
           <tbody className="align-baseline text-gray-900 dark:text-gray-100">
-            {data.map((team, index) => (
+            {teams.map((team, index) => (
               <tr
                 key={index}
                 className="border-b border-gray-100 dark:border-neutral-700/50"
@@ -65,7 +63,7 @@ export default async function Page() {
                 <td className="py-2 pl-6">{index + 1}</td>
                 <td className="py-2 pl-6">{team.teamname}</td>
                 <td className="py-2 pl-6 h-24">
-                  <div className="w-full overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96">
+                  <div className="overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96 max-w-96">
                     {team.bvh &&
                       team.bvh.map((bvh, index) => {
                         return <BVHInfo submission={bvh} key={index} />
@@ -73,7 +71,7 @@ export default async function Page() {
                   </div>
                 </td>
                 <td className="py-2 pl-6 h-24">
-                  <div className="w-full overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96">
+                  <div className="overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96 max-w-96">
                     {team.videos &&
                       team.videos.map((info, index) => {
                         return <VideoInfo submission={info} key={index} />

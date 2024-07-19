@@ -28,12 +28,3 @@ export async function updateGeneratedCode(newCodes) {
 
   return { success: true, error: null, msg: "Insert new inputs code success" }
 }
-
-// export async function fetchInputCodes() {
-//   const client = await clientPromise
-//   const db = client.db("hemvip")
-
-//   const inputcode = await db.collection("inputcode").find({}).toArray()
-//   const { codes } = inputcode[0]
-//   return { codes }
-// }

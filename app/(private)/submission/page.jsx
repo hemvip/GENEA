@@ -3,7 +3,6 @@
 import Image from "next/image"
 import UploadBVH from "./uploadbvh"
 import { useEffect, useState } from "react"
-// import fetchInputCodes from "./actions"
 import InputCode from "./inputcode"
 import axios from "axios"
 

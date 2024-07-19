@@ -1,44 +1,37 @@
-"use server"
+"use client"
 
-import React from "react"
-import clientPromise from "@/server/mongodb"
+import React, { useEffect, useState } from "react"
 import Study from "./User"
 import cn from "clsx"
 import ActionList from "@/components/actionlist"
+import axios from "axios"
 
-async function fetchUsers() {
-  try {
-    const client = await clientPromise
-    const db = client.db("hemvip")
+export default function Page() {
+  const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true)
 
-    const studies = await db.collection("studies").find({}).toArray()
-    const users = studies.map((study) => ({
-      prolific_userid: study.prolific_userid,
-      prolific_studyid: study.prolific_studyid,
-      prolific_sessionid: study.prolific_sessionid,
-      completion_code: study.completion_code,
-      total_actions: study.total_actions,
-    }))
+  async function fetchUsers() {
+    const res = await axios.get("/api/studies")
+    console.log(res)
+    if (res.data.success) {
+      console.log("res.data.studies", res.data.studies)
+      const users = res.data.studies.map((study) => ({
+        prolific_userid: study.prolific_userid,
+        prolific_studyid: study.prolific_studyid,
+        prolific_sessionid: study.prolific_sessionid,
+        completion_code: study.completion_code,
+        total_actions: study.total_actions,
+      }))
 
-    // const newStudies = studies.filter((study) => study.status === "new")
-
-    return users
-  } catch (e) {
-    console.error(e)
-    return JSON.stringify({ message: "Internal Server Error" })
+      setUsers(users)
+    } else {
+      console.error(res.error)
+    }
   }
 
-  // if (!res.ok) {
-  //   // This will activate the closest `error.js` Error Boundary
-  //   throw new Error("Failed to fetch data")
-  // }
-
-  // return res.json()
-}
-
-export default async function Page() {
-  const users = await fetchUsers()
-  // console.log(data)
+  useEffect(() => {
+    fetchUsers()
+  }, [])
 
   return (
     <div>
