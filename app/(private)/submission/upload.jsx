@@ -77,7 +77,7 @@ export default function Upload({ codes }) {
     formData.append("motion_files", file)
 
     return axios
-      .post("/api/upload", formData, {
+      .post("/api/submission", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

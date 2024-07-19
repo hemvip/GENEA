@@ -1,4 +1,3 @@
-// "use server"
 import {
   S3Client,
   CreateBucketCommand,
@@ -50,22 +49,6 @@ export async function POST(req, res) {
   }
 
   const bvhfiles = []
-  // return Response.json(
-  //   {
-  //     success: true,
-  //     msg: "Your submission uploaded successfully.",
-  //     error: null,
-  //   },
-  //   { status: 200 }
-  // )
-  // return Response.json(
-  //   {
-  //     success: false,
-  //     msg: "Upload success but failed insert submissions, please contact for support.",
-  //     error: null,
-  //   },
-  //   { status: 500 }
-  // )
 
   try {
     for (let [key, value] of formData.entries()) {
