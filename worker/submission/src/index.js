@@ -8,6 +8,7 @@ const ObjectId = Realm.BSON.ObjectID;
 
 export default {
 	async fetch(request, env, ctx) {
+		console.log('go here OPTIONS');
 		if (request.method === 'OPTIONS') {
 			// Handle CORS preflight requests
 			return handleOptions(request);
