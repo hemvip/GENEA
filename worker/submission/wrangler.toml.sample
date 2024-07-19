@@ -19,9 +19,6 @@ workers_dev = true
 # - https://developers.cloudflare.com/workers/configuration/secrets/
 # [vars]
 # MY_VARIABLE = "production_value"
-[vars]
-ATLAS_APPID = "application-0-rklllju"
-
 
 [dev]
 port = 8032

@@ -73,7 +73,7 @@ export async function POST(req, res) {
         videofiles.push({
           _id: new ObjectId(),
           inputid: inputid,
-          videoid: uploadResult.ETag.replace('"', ""),
+          videoid: uploadResult.ETag.replace(/\"/g, ""),
           teamid: userId,
           url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
         })

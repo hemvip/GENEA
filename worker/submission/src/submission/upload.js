@@ -1,19 +1,15 @@
+// @ts-ignore
 import { S3Client, CreateBucketCommand, PutObjectCommand } from '@aws-sdk/client-s3';
+import { ObjectId } from 'bson';
 
 export async function handleUpload(client, request, env) {
 	// try {
 
 	// 	// Check if the validation is successful
 	// 	if (result.success) {
-	// 		const filter = {
-	// 			status: 'started',
-	// 			prolific_userid: prolificid,
-	// 			prolific_studyid: studyid,
-	// 			prolific_sessionid: sessionid,
-	// 		};
-	// 		const db = client.db('hemvip');
-
-	// 		const result = await db.collection('studies').findOne(filter);
+	// const db2 = client.db('hemvip');
+	// const result = await db2.collection('submissions').findOne({});
+	// console.log('result', result);
 
 	// 		if (result) {
 	// 			delete result._id;
@@ -73,11 +69,92 @@ export async function handleUpload(client, request, env) {
 		};
 	}
 
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	const db = client.db('hemvip');
+	if (!db) {
+		return {
+			success: false,
+			msg: 'Cannot connect to MongoDB storage.',
+			error: null,
+		};
+	}
+
 	const bvhfiles = [];
 
-	return {
-		errors: null,
-		success: true,
-		msg: 'Success to start a study',
-	};
+	try {
+		for (let [key, value] of formData.entries()) {
+			if (key === 'motion_files') {
+				const arrayBuffer = await value.arrayBuffer();
+				// const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
+				const uniqueKey = `bvh/${userId}/${value.name}`;
+				console.log('Uploading uniqueKey: ', uniqueKey);
+
+				// Create the parameters for the PutObjectCommand
+				const params = {
+					Bucket: 'gesture',
+					Key: uniqueKey,
+					Body: new Uint8Array(arrayBuffer),
+					ContentType: 'binary/octet-stream',
+				};
+				// Upload the video file to B2 storage
+				const uploadResult = await s3.send(new PutObjectCommand(params));
+
+				const filename = value.name.split('.');
+				if (filename.length > 1) {
+					filename.pop();
+				}
+				const inputid = filename.join('.');
+				bvhfiles.push({
+					_id: new ObjectId(),
+					inputid: inputid,
+					bvhid: uploadResult.ETag.replace(/\"/g, ''),
+					teamid: userId,
+					url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+				});
+			}
+		}
+
+		// Check if the document exists
+		const existingDocument = await db.collection('submissions').findOne({ userId: userId });
+
+		if (existingDocument) {
+			const updateDoc = {
+				$push: { bvh: { $each: bvhfiles } },
+			};
+			const updateResult = await db.collection('submissions').updateOne({ userId: userId }, updateDoc);
+
+			console.log('updateResult', updateResult);
+			if (updateResult.modifiedCount) {
+				return {
+					success: true,
+					msg: 'Your submission uploaded successfully.',
+					error: null,
+				};
+			}
+		} else {
+			const insertResult = await db.collection('submissions').insertOne({ userId, teamname, email, videos: [], bvh: bvhfiles });
+			console.log('insertResult', insertResult);
+
+			if (insertResult.insertedId) {
+				return {
+					success: true,
+					msg: 'Your submission inserted successfully.',
+					error: null,
+				};
+			}
+		}
+
+		return {
+			success: false,
+			msg: 'Upload success but failed insert submissions, please contact for support.',
+			error: null,
+		};
+	} catch (error) {
+		console.log('Exception: ', error);
+		return {
+			success: false,
+			msg: 'Your submissions is failed, please contact for support.',
+			error: error,
+		};
+	}
 }
