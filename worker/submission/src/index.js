@@ -41,19 +41,6 @@ export default {
 			if (path === '/api/submission' && method === 'POST') {
 				console.log('Start upload');
 
-				// / TEST
-				// return responseJSON({
-				// 	errors: null,
-				// 	success: true,
-				// 	data: '',
-				// 	msg: 'Success to start a study',
-				// });
-
-				// const prolificid = url.searchParams.get('prolificid') || '';
-				// const studyid = url.searchParams.get('studyid') || '';
-				// const sessionid = url.searchParams.get('sessionid') || '';
-				// // console.log("prolificid", prolificid, "studyid", studyid, "sessionid", sessionid)
-
 				const { errors, success, msg } = await handleUpload(client, request, env);
 				// console.log(errors, success, data, msg)
 				return responseJSON({ errors, success, msg });

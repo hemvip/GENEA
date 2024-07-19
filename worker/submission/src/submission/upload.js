@@ -5,6 +5,7 @@ import { ObjectId } from 'bson';
 export async function handleUpload(client, request, env) {
 	const formData = await request.formData();
 	const userId = formData.get('userId');
+	console.log('motion_files', formData.get('motion_files'));
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	const s3 = new S3Client({
@@ -15,6 +16,7 @@ export async function handleUpload(client, request, env) {
 			secretAccessKey: env.B2_APPLICATIONKEY,
 		},
 	});
+
 	if (!s3) {
 		return {
 			success: false,
@@ -49,8 +51,16 @@ export async function handleUpload(client, request, env) {
 					Body: new Uint8Array(arrayBuffer),
 					ContentType: 'binary/octet-stream',
 				};
+
 				// Upload the video file to B2 storage
 				const uploadResult = await s3.send(new PutObjectCommand(params));
+				if (!uploadResult) {
+					return {
+						success: false,
+						msg: 'Upload failed, please contact for support.',
+						error: null,
+					};
+				}
 
 				const filename = value.name.split('.');
 				if (filename.length > 1) {
@@ -58,31 +68,40 @@ export async function handleUpload(client, request, env) {
 				}
 				const inputid = filename.join('.');
 
-				const insertResult = await db.collection('bvh').insertOne({
-					_id: new ObjectId(),
-					inputid: inputid,
-					time: new Date(),
-					bvhid: uploadResult.ETag.replace(/\"/g, ''),
-					teamid: userId,
-					url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-				});
-				console.log('insertResult', insertResult);
+				if (uploadResult.ETag) {
+					const insertResult = await db.collection('bvh').insertOne({
+						_id: new ObjectId(),
+						inputid: inputid,
+						time: new Date(),
+						bvhid: uploadResult.ETag.replace(/\"/g, ''),
+						teamid: userId,
+						url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+					});
 
-				if (insertResult.insertedId) {
-					return {
-						success: true,
-						msg: 'Your submission are successfully.',
-						error: null,
-					};
+					console.log('insertResult', insertResult);
+
+					if (insertResult.insertedId) {
+						return {
+							success: true,
+							msg: 'Your submission are successfully.',
+							error: null,
+						};
+					}
 				}
 
 				return {
 					success: false,
-					msg: 'Upload success but failed insert submissions, please contact for support.',
+					msg: 'Motion file is not inform data, please contact for support.',
 					error: null,
 				};
 			}
 		}
+
+		return {
+			success: false,
+			msg: 'Upload success but failed insert submissions, please contact for support.',
+			error: null,
+		};
 	} catch (error) {
 		console.log('Exception: ', error);
 		return {
