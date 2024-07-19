@@ -7,6 +7,7 @@ import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 import BVHFile from "@/components/icons/bvhfile"
+import { UPLOAD_API_ENDPOINT } from "@/config/constants"
 
 export default function UploadBVH({ codes }) {
   const { data: session, status } = useSession()
@@ -76,8 +77,9 @@ export default function UploadBVH({ codes }) {
     formData.append("teamname", teamname)
     formData.append("motion_files", file)
 
+    console.log("UPLOAD_API_ENDPOINT", UPLOAD_API_ENDPOINT)
     return axios
-      .post("/api/submission", formData, {
+      .post(UPLOAD_API_ENDPOINT, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
