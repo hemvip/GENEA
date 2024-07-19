@@ -33,7 +33,8 @@ export function responseJSON(data) {
 			'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
 			'Access-Control-Max-Age': '86400',
 			'Access-Control-Allow-Credentials': 'true',
-			'Access-Control-Allow-Headers': 'origin, content-type, accept',
+			'Access-Control-Allow-Headers': 'origin, content-type, accept,x-requested-with',
+			'Access-Control-Request-Headers': 'content-type,x-pingother,x-requested-with,authorization',
 		},
 	});
 
@@ -46,6 +47,8 @@ export function responseError(data, status = 401) {
 		'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
 		'Access-Control-Max-Age': '86400',
 		'Access-Control-Allow-Credentials': 'true',
+		'Access-Control-Allow-Headers': 'origin, content-type, accept,x-requested-with',
+		'Access-Control-Request-Headers': 'content-type,x-pingother,x-requested-with,authorization',
 	});
 
 	return new Response(JSON.stringify(data), { headers, status });
