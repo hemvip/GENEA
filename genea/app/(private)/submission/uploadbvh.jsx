@@ -128,17 +128,21 @@ export default function UploadBVH({ codes }) {
 
     try {
       setUploading("Uploading your submission, please waiting ...")
+
+      //~~~~~~~~  Update submission info to database ~~~~~~~~
       const formData = new FormData()
       formData.append("userId", session.userId)
       formData.append("email", email)
       formData.append("teamname", teamname)
       const res = await axios.post("/api/submission", formData)
+      console.log("res", res)
 
       if (!res.data.success) {
         console.log(res.data)
         setErrorMsg("Failed to upload your submission, please contact support")
       }
 
+      //~~~~~~~~  Upload all bvh files ~~~~~~~~
       const uploadPromises = Array.from(files).map((file) => {
         return uploadPromise(file, (fileName, percent) => {
           setProgress((prevProgress) => {

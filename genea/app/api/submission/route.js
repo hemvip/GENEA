@@ -1,5 +1,4 @@
 import clientPromise from "@/server/mongodb"
-
 import { ObjectId } from "bson"
 
 export async function GET(req, res) {
@@ -37,7 +36,7 @@ export async function POST(req, res) {
   try {
     const insertResult = await db
       .collection("submissions")
-      .insertOne({ _id: userId, userId, teamname, email })
+      .insertOne({ _id: new ObjectId(userId), userId, teamname, email })
     console.log("insertResult", insertResult)
 
     if (insertResult.insertedId) {

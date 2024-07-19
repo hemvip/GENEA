@@ -3,50 +3,6 @@ import { S3Client, CreateBucketCommand, PutObjectCommand } from '@aws-sdk/client
 import { ObjectId } from 'bson';
 
 export async function handleUpload(client, request, env) {
-	// try {
-
-	// 	// Check if the validation is successful
-	// 	if (result.success) {
-	// const db2 = client.db('hemvip');
-	// const result = await db2.collection('bvh').findOne({});
-	// console.log('result', result);
-
-	// 		if (result) {
-	// 			delete result._id;
-	// 			// console.log(result)
-	// 			return {
-	// 				errors: null,
-	// 				success: true,
-	// 				data: result,
-	// 				msg: 'Success to start a study',
-	// 			};
-	// 		} else {
-	// 			return {
-	// 				errors: null,
-	// 				success: true,
-	// 				data: null,
-	// 				msg: 'Studies not exist with prolificid, studyid, sessionid',
-	// 			};
-	// 		}
-	// 	} else {
-	// 		// If validation errors, map them into an object
-	// 		let serverErrors = Object.fromEntries(result.error?.issues?.map((issue) => [issue.path[0], issue.message]) || []);
-	// 		return {
-	// 			errors: serverErrors,
-	// 			success: false,
-	// 			data: null,
-	// 			msg: 'Failed to parse proflificid, studyid, sessionid',
-	// 		};
-	// 	}
-	// } catch (error) {
-	// 	return {
-	// 		errors: error,
-	// 		success: false,
-	// 		data: null,
-	// 		msg: 'Internal server error',
-	// 	};
-	// }
-
 	const formData = await request.formData();
 	const userId = formData.get('userId');
 
@@ -77,6 +33,7 @@ export async function handleUpload(client, request, env) {
 		};
 	}
 
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	try {
 		for (let [key, value] of formData.entries()) {
 			if (key === 'motion_files') {
@@ -104,6 +61,7 @@ export async function handleUpload(client, request, env) {
 				const insertResult = await db.collection('bvh').insertOne({
 					_id: new ObjectId(),
 					inputid: inputid,
+					time: new Date(),
 					bvhid: uploadResult.ETag.replace(/\"/g, ''),
 					teamid: userId,
 					url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
