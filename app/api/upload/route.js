@@ -13,6 +13,7 @@ export async function POST(req, res) {
   const userId = formData.get("userId")
   const email = formData.get("email")
   const teamname = formData.get("teamname")
+  console.log("go here", formData)
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const s3 = new S3Client({
@@ -49,6 +50,15 @@ export async function POST(req, res) {
   }
 
   const videos = []
+  console.log("sdfsdf")
+  return Response.json(
+    {
+      success: true,
+      msg: "Your submission uploaded successfully.",
+      error: null,
+    },
+    { status: 200 }
+  )
 
   try {
     for (let [key, value] of formData.entries()) {

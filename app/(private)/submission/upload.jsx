@@ -15,8 +15,7 @@ export default function Upload({ codes }) {
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
   // const [uploadProgress, setUploadProgress] = useState({})
-  const [progress, setProgress] = useState(50)
-  const [progressList, setProgressList] = useState([])
+  const [progress, setProgress] = useState({})
   const [success, setSuccess] = useState("")
 
   const [email, setEmail] = useState("")
@@ -47,8 +46,9 @@ export default function Upload({ codes }) {
       setMissingList(missing)
 
       // Do something with the files, like upload to a server
-      console.log("acceptedFiles", acceptedFiles)
+      // console.log("acceptedFiles", acceptedFiles)
       setFiles(acceptedFiles)
+      setProgress({})
 
       const selectedFiles = Array.from(acceptedFiles).map((file) => ({
         file,
@@ -62,12 +62,42 @@ export default function Upload({ codes }) {
       } catch (error) {
         console.error("Error uploading files:", error)
       }
-      setUploading("sdfsdf")
+      // setUploading("")
     },
     [codes]
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+
+  const uploadPromise = (file, onProgress) => {
+    const formData = new FormData()
+    formData.append("userId", session.userId)
+    formData.append("email", email)
+    formData.append("teamname", teamname)
+    formData.append("motion_files", file)
+
+    return axios
+      .post("/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          )
+          onProgress(file.name, percentCompleted)
+        },
+      })
+      .then((response) => {
+        console.log("response", response)
+        alert("success")
+        return `Uploaded ${file.name}`
+      })
+      .catch((error) => {
+        console.error("error", error)
+        throw new Error(`Failed to upload ${file.name}`)
+      })
+  }
 
   const handleUpload = async (e) => {
     e.preventDefault()
@@ -82,10 +112,10 @@ export default function Upload({ codes }) {
       return
     }
 
-    if (missingList.length > 0) {
-      setErrorMsg("Please upload missing files")
-      return
-    }
+    // if (missingList.length > 0) {
+    //   setErrorMsg("Please upload missing files")
+    //   return
+    // }
 
     // if (!email) {
     //   setErrorMsg("Please add email address")
@@ -97,41 +127,56 @@ export default function Upload({ codes }) {
     //   return
     // }
 
-    const progressFile = files.map((file) => ({ progress: 0 }))
-    console.log("222progressFile", progressFile)
-    setProgressList(progressFile)
-
     try {
       setUploading("Uploading your submission, please waiting ...")
-      const formData = new FormData()
-      formData.append("userId", session.userId)
-      formData.append("email", email)
-      formData.append("teamname", teamname)
+      // const formData = new FormData({
+      //   userId: session.userId,
+      //   email: email,
+      //   teamname: teamname,
+      //   motion_files: files[i],
+      // })
+      // formData.append("userId", session.userId)
+      // formData.append("email", email)
+      // formData.append("teamname", teamname)
 
-      for (let i = 0; i < files.length; i++) {
-        formData.append("motion_files", files[i])
-      }
+      // for (let i = 0; i < files.length; i++) {
+      //   formData.append("motion_files", files[i])
+      // }
 
-      const response = await axios.post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          )
-          setProgress(percentCompleted)
-        },
+      // const response = await axios.post("/api/upload", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      //   onUploadProgress: (progressEvent) => {
+      //     const percentCompleted = Math.round(
+      //       (progressEvent.loaded * 100) / progressEvent.total
+      //     )
+      //     setProgress(percentCompleted)
+      //   },
+      // })
+      const uploadPromises = Array.from(files).map((file) => {
+        return uploadPromise(file, (fileName, percent) => {
+          setProgress((prevProgress) => {
+            // console.log("prevProgress", prevProgress)
+            return {
+              ...prevProgress,
+              [fileName]: percent,
+            }
+          })
+        })
       })
 
-      const { success, msg, error } = response.data
-      if (success) {
-        setSuccess(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      } else {
-        setErrorMsg(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      }
+      // const { success, msg, error } = response.data
+      // if (success) {
+      //   setSuccess(msg)
+      //   console.log("Success", success, "msg", msg, "error", error)
+      // } else {
+      //   setErrorMsg(msg)
+      //   console.log("Success", success, "msg", msg, "error", error)
+      // }
+      const results = await Promise.all(uploadPromises)
+      alert("Success", results)
+      console.log("results", results)
     } catch (error) {
       setErrorMsg(
         "EXCEPTION: Error with uploading your submission, please contact support"
@@ -170,13 +215,9 @@ export default function Upload({ codes }) {
         <p className="text-center p-4">Uploading...</p>
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
-            console.log("file", file)
-            console.log(
-              "progressList[idx]",
-              progressList[idx],
-              "progressList",
-              progressList
-            )
+            // console.log("file", file)
+            // console.log("progress", progress)
+
             return (
               <div
                 className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
@@ -186,11 +227,11 @@ export default function Upload({ codes }) {
                   <BVHFile />
                 </div>
                 <span className="text-sm">{file.name}</span>
-                <div className="">
-                  <div className="overflow-hidden mx-auto w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
-                    {progressList[idx] && progressList[idx].progress ? (
+                <div className="flex-grow">
+                  <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
+                    {progress[file.name] ? (
                       <div
-                        style={{ width: `${progressList[idx].progress}%` }}
+                        style={{ width: `${progress[file.name]}%` }}
                         className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
                       >
                         <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
@@ -201,28 +242,15 @@ export default function Upload({ codes }) {
                   </div>
                 </div>
                 <span className="text-sm bg-gray-200 px-2 rounded-xl">
-                  {progressList[idx] && (
-                    <span>{`${progressList[idx].progress}%`}333</span>
+                  {progress[file.name] && (
+                    <span>{`${progress[file.name]}%`}</span>
                   )}
                 </span>
               </div>
             )
           })}
+          {JSON.stringify(progress)}
         </div>
-        {/* {progress < 99 ? (
-          <div className="overflow-hidden mx-auto w-96 h-2 mb-4 text-xs flex rounded bg-blue-200">
-            <div
-              style={{ width: `${progress}%` }}
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-            >
-              <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
-            </div>
-          </div>
-        ) : (
-          <div className="flex w-full justify-center">
-            <Loading className="" />
-          </div>
-        )} */}
         <Callout type="warning" className="mt-0">
           {uploading}
         </Callout>
