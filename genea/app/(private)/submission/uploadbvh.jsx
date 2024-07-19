@@ -75,7 +75,6 @@ export default function UploadBVH({ codes }) {
     formData.append("userId", session.userId)
     formData.append("motion_files", file)
 
-    console.log("UPLOAD_API_ENDPOINT", UPLOAD_API_ENDPOINT)
     return axios
       .post(UPLOAD_API_ENDPOINT, formData, {
         headers: {
