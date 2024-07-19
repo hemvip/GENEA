@@ -138,7 +138,9 @@ export default function UploadBVH({ codes }) {
 
       if (!res.data.success) {
         console.log(res.data)
-        setErrorMsg("Failed to upload your submission, please contact support")
+        setErrorMsg(
+          "Duplicated submission, only submit once, please contact support"
+        )
       }
 
       //~~~~~~~~  Upload all bvh files ~~~~~~~~

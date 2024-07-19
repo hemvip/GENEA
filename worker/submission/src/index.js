@@ -1,5 +1,5 @@
 import * as Realm from 'realm-web';
-import { toError, addCORS, responseError, responseJSON } from './utils';
+import { responseError, responseJSON } from './utils';
 import { handleUpload } from './submission/upload';
 import { handleOptions } from './handleOptions';
 
