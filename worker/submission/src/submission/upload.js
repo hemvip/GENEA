@@ -14,16 +14,16 @@ async function initMultipartUpload(s3Client, key) {
 	const params = {
 		Bucket: 'gesture',
 		Key: key,
-		ContentType: 'binary/octet-stream',
+		ContentType: 'application/octet-stream',
 	};
 
 	const createResponse = await s3Client.send(new CreateMultipartUploadCommand(params));
-	console.log('createResponse', createResponse);
+	// console.log('createResponse', createResponse);
 	return createResponse.UploadId;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPLOAD CHUNK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-async function uploadChunk(s3Client, key, dataChunk, start, end, partNumber, uploadId) {
+async function uploadChunk(s3Client, key, dataChunk, partNumber, uploadId) {
 	const params = {
 		Bucket: 'gesture',
 		Key: key,
@@ -32,6 +32,7 @@ async function uploadChunk(s3Client, key, dataChunk, start, end, partNumber, upl
 		PartNumber: partNumber,
 		UploadId: uploadId,
 	};
+	console.log('params', params);
 
 	const uploadPartResponse = await s3Client.send(new UploadPartCommand(params));
 	console.log('uploadPartResponse', uploadPartResponse);
@@ -51,13 +52,14 @@ async function completeMultipartUpload(s3Client, key, parts, uploadId) {
 	};
 
 	const completeResponse = await s3Client.send(new CompleteMultipartUploadCommand(params));
-	console.log('completeResponse', completeResponse);
+	// console.log('completeResponse', completeResponse);
+	return completeResponse;
 }
 
 async function multipartUpload(s3Client, key, data) {
 	// initalize multipart upload
 	const uploadId = await initMultipartUpload(s3Client, key);
-	console.log('uploadId', uploadId);
+	// console.log('uploadId', uploadId);
 
 	// upload parts
 	const chunkSize = 5 * 1024 * 1024; // 5MB
@@ -66,15 +68,14 @@ async function multipartUpload(s3Client, key, data) {
 	for (let start = 0; start < data.size; start += chunkSize) {
 		const end = Math.min(start + chunkSize, data.size);
 		const dataChunk = data.slice(start, end);
-		const part = await uploadChunk(s3Client, key, dataChunk, start, end, partNumber, uploadId);
+		const part = await uploadChunk(s3Client, key, dataChunk, partNumber, uploadId);
 		parts.push(part);
 		partNumber++;
 	}
 
 	// complete multipart upload
-	await completeMultipartUpload(s3Client, key, parts, uploadId);
-
-	return true;
+	const { Location, Key, ETag } = await completeMultipartUpload(s3Client, key, parts, uploadId);
+	return { Location, Key, ETag };
 }
 
 export async function handleUpload(client, request, env) {
@@ -112,70 +113,72 @@ export async function handleUpload(client, request, env) {
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	try {
-		for (let [key, value] of formData.entries()) {
-			if (key === 'motion_files') {
-				const arrayBuffer = await value.arrayBuffer();
-				// const uniqueKey = `bvh/${userId}/${Date.now()}_${value.name}`
-				const uniqueKey = `bvh/${userId}/${value.name}`;
-				console.log('Uploading uniqueKey: ', uniqueKey);
+		const motionFiles = formData.getAll('motion_files');
+		if (motionFiles.length === 0) {
+			return {
+				success: false,
+				msg: 'No motion files found.',
+				error: null,
+			};
+		}
 
-				// // Create the parameters for the PutObjectCommand
-				// const params = {
-				// 	Bucket: 'gesture',
-				// 	Key: uniqueKey,
-				// 	Body: new Uint8Array(arrayBuffer),
-				// 	ContentType: 'binary/octet-stream',
-				// };
+		for (let i = 0; i < motionFiles.length; i++) {
+			const motionFile = motionFiles[i];
 
-				// // Upload the video file to B2 storage
-				// const uploadResult = await s3.send(new PutObjectCommand(params));
-				const uploadResult = multipartUpload(s3Client, uniqueKey, new Uint8Array(arrayBuffer));
-				if (!uploadResult) {
-					return {
-						success: false,
-						msg: 'Upload failed, please contact for support.',
-						error: null,
-					};
-				}
+			// PATH: bvh/{userId}/{motionFile.name}
+			const uniqueKey = `bvh/${userId}/${motionFile.name}`;
+			console.log('Uploading uniqueKey: ', uniqueKey);
 
-				const filename = value.name.split('.');
-				if (filename.length > 1) {
-					filename.pop();
-				}
-				const inputid = filename.join('.');
+			const filename = motionFile.name.split('.');
+			if (filename.length > 1) {
+				filename.pop();
+			}
 
-				const insertResult = await db.collection('bvh').insertOne({
-					_id: new ObjectId(),
-					inputid: inputid,
-					time: new Date(),
-					bvhid: uniqueKey, // uploadResult.ETag.replace(/\"/g, ''),
-					teamid: userId,
-					url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-				});
-
-				// console.log('insertResult', insertResult);
-
-				if (insertResult.insertedId) {
-					return {
-						success: true,
-						msg: 'Your submission are successfully.',
-						error: null,
-					};
-				}
-
+			const uploadResult = await multipartUpload(s3Client, uniqueKey, motionFile);
+			if (!uploadResult) {
 				return {
 					success: false,
-					msg: 'Motion file is not inform data, please contact for support.',
+					msg: 'Upload to blackblaze failed, please contact for support.',
+					error: null,
+				};
+			}
+
+			const { Location, Key } = uploadResult;
+			const insertResult = await db.collection('bvh').insertOne({
+				_id: ObjectId.createFromHexString(Key),
+				inputid: filename.join('.'),
+				time: new Date(),
+				bvhid: Location, // uploadResult.ETag.replace(/\"/g, ''),
+				teamid: userId,
+				url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+			});
+
+			if (insertResult.insertedId) {
+				return {
+					success: true,
+					msg: 'Your submission are successfully.',
+					error: null,
+				};
+			} else {
+				return {
+					success: true,
+					msg: 'Upload file successful but unable to update database.',
 					error: null,
 				};
 			}
 		}
 
 		return {
-			success: false,
-			msg: 'Upload success but failed insert submissions, please contact for support.',
+			success: true,
+			msg: 'Your submission are successfully.',
 			error: null,
 		};
+
+		// return {
+		// 	success: false,
+		// 	msg: 'Upload success but failed insert submissions, please contact for support.',
+		// 	error: null,
+		// };
 	} catch (error) {
 		console.log('Exception: ', error);
 		return {

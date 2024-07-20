@@ -36,7 +36,12 @@ export async function POST(req, res) {
   try {
     const filter = { _id: new ObjectId(userId) }
     const update = {
-      $set: { userId: userId, teamname: teamname, email: email },
+      $set: {
+        userId: userId,
+        teamname: teamname,
+        email: email,
+        submittedAt: new Date(),
+      },
     }
 
     const result = await db
