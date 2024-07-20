@@ -55,12 +55,12 @@ async function completeMultipartUpload(s3Client, key, parts, uploadId) {
 }
 
 async function multipartUpload(s3Client, key, data) {
-	const chunkSize = 5 * 1024 * 1024; // 5MB
-
 	// initalize multipart upload
 	const uploadId = await initMultipartUpload(s3Client, key);
+	console.log('uploadId', uploadId);
 
 	// upload parts
+	const chunkSize = 5 * 1024 * 1024; // 5MB
 	const parts = [];
 	let partNumber = 1;
 	for (let start = 0; start < data.size; start += chunkSize) {
@@ -73,15 +73,17 @@ async function multipartUpload(s3Client, key, data) {
 
 	// complete multipart upload
 	await completeMultipartUpload(s3Client, key, parts, uploadId);
+
+	return true;
 }
 
 export async function handleUpload(client, request, env) {
 	const formData = await request.formData();
 	const userId = formData.get('userId');
-	console.log('motion_files', formData.get('motion_files'));
+	// console.log('motion_files', formData.get('motion_files'));
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	const s3 = new S3Client({
+	const s3Client = new S3Client({
 		endpoint: env.B2_ENDPOINT,
 		region: env.B2_REGION,
 		credentials: {
@@ -90,7 +92,7 @@ export async function handleUpload(client, request, env) {
 		},
 	});
 
-	if (!s3) {
+	if (!s3Client) {
 		return {
 			success: false,
 			msg: 'Cannot connect to blackblaze storage.',
@@ -117,16 +119,17 @@ export async function handleUpload(client, request, env) {
 				const uniqueKey = `bvh/${userId}/${value.name}`;
 				console.log('Uploading uniqueKey: ', uniqueKey);
 
-				// Create the parameters for the PutObjectCommand
-				const params = {
-					Bucket: 'gesture',
-					Key: uniqueKey,
-					Body: new Uint8Array(arrayBuffer),
-					ContentType: 'binary/octet-stream',
-				};
+				// // Create the parameters for the PutObjectCommand
+				// const params = {
+				// 	Bucket: 'gesture',
+				// 	Key: uniqueKey,
+				// 	Body: new Uint8Array(arrayBuffer),
+				// 	ContentType: 'binary/octet-stream',
+				// };
 
-				// Upload the video file to B2 storage
-				const uploadResult = await s3.send(new PutObjectCommand(params));
+				// // Upload the video file to B2 storage
+				// const uploadResult = await s3.send(new PutObjectCommand(params));
+				const uploadResult = multipartUpload(s3Client, uniqueKey, new Uint8Array(arrayBuffer));
 				if (!uploadResult) {
 					return {
 						success: false,
@@ -141,25 +144,23 @@ export async function handleUpload(client, request, env) {
 				}
 				const inputid = filename.join('.');
 
-				if (uploadResult.ETag) {
-					const insertResult = await db.collection('bvh').insertOne({
-						_id: new ObjectId(),
-						inputid: inputid,
-						time: new Date(),
-						bvhid: uploadResult.ETag.replace(/\"/g, ''),
-						teamid: userId,
-						url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-					});
+				const insertResult = await db.collection('bvh').insertOne({
+					_id: new ObjectId(),
+					inputid: inputid,
+					time: new Date(),
+					bvhid: uniqueKey, // uploadResult.ETag.replace(/\"/g, ''),
+					teamid: userId,
+					url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+				});
 
-					console.log('insertResult', insertResult);
+				// console.log('insertResult', insertResult);
 
-					if (insertResult.insertedId) {
-						return {
-							success: true,
-							msg: 'Your submission are successfully.',
-							error: null,
-						};
-					}
+				if (insertResult.insertedId) {
+					return {
+						success: true,
+						msg: 'Your submission are successfully.',
+						error: null,
+					};
 				}
 
 				return {

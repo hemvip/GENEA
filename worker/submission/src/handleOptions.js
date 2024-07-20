@@ -1,6 +1,6 @@
 export async function handleOptions(request) {
 	const corsHeaders = {
-		'Access-Control-Allow-Origin': 'https://genea.vercel.app',
+		'Access-Control-Allow-Origin': '*',
 		'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
 		'Access-Control-Allow-Credentials': 'true',
 		'Access-Control-Max-Age': '86400',

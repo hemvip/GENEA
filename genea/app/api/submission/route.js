@@ -34,16 +34,30 @@ export async function POST(req, res) {
   }
 
   try {
-    const insertResult = await db
-      .collection("submissions")
-      .insertOne({ _id: new ObjectId(userId), userId, teamname, email })
-    console.log("insertResult", insertResult)
+    const filter = { _id: new ObjectId(userId) }
+    const update = {
+      $set: { userId: userId, teamname: teamname, email: email },
+    }
 
-    if (insertResult.insertedId) {
+    const result = await db
+      .collection("submissions")
+      .updateOne(filter, update, { upsert: true })
+    console.log("result", result)
+
+    if (result.modifiedCount >= 0) {
       return Response.json(
         {
           success: true,
-          msg: "Your submission are successfully.",
+          msg: "Your submission are update successfully.",
+          error: null,
+        },
+        { status: 200 }
+      )
+    } else if (result.upsertedId) {
+      return Response.json(
+        {
+          success: true,
+          msg: "Your submission are created successfully.",
           error: null,
         },
         { status: 200 }
