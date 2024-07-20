@@ -263,7 +263,6 @@ export default function UploadBVH({ codes }) {
   if (uploading) {
     return (
       <div className="w-full px-12  justify-center ">
-        <p className="text-center p-4">Uploading...</p>
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
             // console.log("file", file)
