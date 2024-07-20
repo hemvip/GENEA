@@ -72,7 +72,7 @@ export async function handleCompleteUpload(request, env) {
 		}
 
 		const insertResult = await db.collection("bvh").insertOne({
-			_id: new ObjectId(),
+			_id: new MongoId(),
 			inputid: fileName,
 			time: new Date(),
 			bvhid: response.Location,

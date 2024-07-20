@@ -54,7 +54,13 @@ export default function UploadBVH({ codes }) {
       // Do something with the files, like upload to a server
       // console.log("acceptedFiles", acceptedFiles)
       setFiles(acceptedFiles)
-      setProgress({})
+      // setProgress({})
+      setProgress(
+        Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
+          progressItems[fileItem.name] = { percent: 0, status: "uploading" }
+          return progressItems
+        }, {})
+      )
 
       const selectedFiles = Array.from(acceptedFiles).map((file) => ({
         file,
@@ -327,7 +333,7 @@ export default function UploadBVH({ codes }) {
                 </div>
                 <span className="text-sm">{file.name}</span>
                 <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
+                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl bg-blue-200">
                     {progress[file.name] && progress[file.name].percent ? (
                       <div
                         style={{ width: `${progress[file.name].percent}%` }}
