@@ -166,7 +166,12 @@ export default function UploadBVH({ codes }) {
           })
         )
       }
-      const uploadChunkResp = await Promise.all(uploadPromises)
+      // const uploadChunkResp = await Promise.all(uploadPromises)
+      const uploadChunkResp = []
+      for (const promise of uploadPromises) {
+        const result = await promise
+        uploadChunkResp.push(result)
+      }
 
       // Complete multipart upload
       const parts = uploadChunkResp.map((result, index) => ({
