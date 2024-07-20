@@ -1,6 +1,79 @@
 // @ts-ignore
-import { S3Client, CreateBucketCommand, PutObjectCommand } from '@aws-sdk/client-s3';
+import {
+	S3Client,
+	CreateBucketCommand,
+	PutObjectCommand,
+	CreateMultipartUploadCommand,
+	UploadPartCommand,
+	CompleteMultipartUploadCommand,
+} from '@aws-sdk/client-s3';
 import { ObjectId } from 'bson';
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INIT MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+async function initMultipartUpload(s3Client, key) {
+	const params = {
+		Bucket: 'gesture',
+		Key: key,
+		ContentType: 'binary/octet-stream',
+	};
+
+	const createResponse = await s3Client.send(new CreateMultipartUploadCommand(params));
+	console.log('createResponse', createResponse);
+	return createResponse.UploadId;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPLOAD CHUNK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+async function uploadChunk(s3Client, key, dataChunk, start, end, partNumber, uploadId) {
+	const params = {
+		Bucket: 'gesture',
+		Key: key,
+		Body: dataChunk, // data.slice(start, end),
+		ContentType: 'binary/octet-stream',
+		PartNumber: partNumber,
+		UploadId: uploadId,
+	};
+
+	const uploadPartResponse = await s3Client.send(new UploadPartCommand(params));
+	console.log('uploadPartResponse', uploadPartResponse);
+	return { ETag: uploadPartResponse.ETag, PartNumber: partNumber };
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ COMPLETE MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+async function completeMultipartUpload(s3Client, key, parts, uploadId) {
+	const params = {
+		Bucket: 'gesture',
+		Key: key,
+		ContentType: 'binary/octet-stream',
+		UploadId: uploadId,
+		MultipartUpload: {
+			Parts: parts,
+		},
+	};
+
+	const completeResponse = await s3Client.send(new CompleteMultipartUploadCommand(params));
+	console.log('completeResponse', completeResponse);
+}
+
+async function multipartUpload(s3Client, key, data) {
+	const chunkSize = 5 * 1024 * 1024; // 5MB
+
+	// initalize multipart upload
+	const uploadId = await initMultipartUpload(s3Client, key);
+
+	// upload parts
+	const parts = [];
+	let partNumber = 1;
+	for (let start = 0; start < data.size; start += chunkSize) {
+		const end = Math.min(start + chunkSize, data.size);
+		const dataChunk = data.slice(start, end);
+		const part = await uploadChunk(s3Client, key, dataChunk, start, end, partNumber, uploadId);
+		parts.push(part);
+		partNumber++;
+	}
+
+	// complete multipart upload
+	await completeMultipartUpload(s3Client, key, parts, uploadId);
+}
 
 export async function handleUpload(client, request, env) {
 	const formData = await request.formData();
