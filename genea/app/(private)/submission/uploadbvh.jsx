@@ -245,9 +245,14 @@ export default function UploadBVH({ codes }) {
 
       //~~~~~~~~  Upload all bvh files ~~~~~~~~
       // Upload all files concurrently
-      const results = await Promise.all(
-        files.map((file, index) => uploadFile(file, index, session.userId))
-      )
+      // const results = await Promise.all(
+      //   files.map((file, index) => uploadFile(file, index, session.userId))
+      // )
+      const results = []
+      for (let index = 0; index < files.length; index++) {
+        const result = await uploadFile(files[index], index, session.userId)
+        results.push(result)
+      }
       console.log("results", results)
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
