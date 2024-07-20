@@ -12,6 +12,7 @@ import {
   START_UPLOAD_API_ENDPOINT,
   UPLOAD_PART_API_ENDPOINT,
 } from "@/config/constants"
+import { UploadStatus } from "./UploadStatus"
 
 export default function UploadBVH({ codes }) {
   const { data: session, status } = useSession()
@@ -101,14 +102,25 @@ export default function UploadBVH({ codes }) {
   //     })
   // }
 
+  const updateUploadProgress = useCallback((fileName, percent, status) => {
+    setProgress((prevProgress) => {
+      return {
+        ...prevProgress,
+        [fileName]: { percent: percent, status: status },
+      }
+    })
+  }, [])
+
   const uploadFile = async (file, index, userId) => {
     const chunkSize = 5 * 1024 * 1024 // 5MB chunks
     const totalChunks = Math.ceil(file.size / chunkSize)
     const fileName = file.name
 
     try {
+      updateUploadProgress(fileName, 0, "uploading")
+
       // Start multipart upload
-      const startResponse = await axios.post(
+      const startResp = await axios.post(
         START_UPLOAD_API_ENDPOINT,
         {
           userId: userId,
@@ -116,7 +128,7 @@ export default function UploadBVH({ codes }) {
         },
         { headers: { "Content-Type": "multipart/form-data" } }
       )
-      const { uploadId } = startResponse.data
+      const { uploadId } = startResp.data
 
       // Upload all parts
       const uploadPromises = []
@@ -135,50 +147,47 @@ export default function UploadBVH({ codes }) {
         uploadPromises.push(
           axios.post(UPLOAD_PART_API_ENDPOINT, formData, {
             headers: { "Content-Type": "multipart/form-data" },
-            // onUploadProgress: (progressEvent) => {
-            //   const percentCompleted = Math.round(
-            //     (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
-            //   )
-            //   const overallProgress = Math.round(
-            //     ((i - 1 + percentCompleted / 100) * 100) / totalChunks
-            //   )
-            //   // updateFileStatus(fileName, { progress: overallProgress })
-            // },
             onUploadProgress: (progressEvent) => {
               const percentCompleted = Math.round(
-                (progressEvent.loaded * 100) / progressEvent.total
+                (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
               )
-              // onProgress(file.name, percentCompleted)
-              setProgress((prevProgress) => {
-                // console.log("prevProgress", prevProgress)
-                return {
-                  ...prevProgress,
-                  [file.name]: percentCompleted,
-                }
-              })
+              const overallProgress = Math.round(
+                ((i - 1 + percentCompleted / 100) * 100) / totalChunks
+              )
+
+              updateUploadProgress(fileName, overallProgress, "uploading")
             },
           })
         )
       }
-      const results = await Promise.all(uploadPromises)
+      const uploadChunkResp = await Promise.all(uploadPromises)
 
       // Complete multipart upload
-      await axios.post(
+      const parts = uploadChunkResp.map((result, index) => ({
+        PartNumber: index + 1,
+        ETag: result.data.ETag.replace(/\"/g, ""),
+      }))
+      console.log("parts", parts)
+      const completeUploadResp = await axios.post(
         COMPLETE_UPLOAD_API_ENDPOINT,
         {
           userId: userId,
           uploadId: uploadId,
           fileName: fileName,
-          parts: results.map((result, index) => ({
-            PartNumber: index + 1,
-            ETag: result.data.ETag,
-          })),
+          parts: JSON.stringify(parts),
         },
         { headers: { "Content-Type": "multipart/form-data" } }
       )
-    } catch (error) {
-      console.error("Error uploading file:", error)
+      updateUploadProgress(fileName, 100, "completed")
+
+      return completeUploadResp.data
+      // return partUploadResponse.data
+    } catch (err) {
+      console.error("Error uploading file:", err)
       // setErrorMsg("Error uploading file")
+      updateUploadProgress(fileName, 0, "error")
+      const { success, msg, error } = err.response.data
+      return { success, msg, error }
     }
   }
 
@@ -195,10 +204,10 @@ export default function UploadBVH({ codes }) {
       return
     }
 
-    if (missingList.length > 0) {
-      setErrorMsg("Please upload missing files")
-      return
-    }
+    // if (missingList.length > 0) {
+    //   setErrorMsg("Please upload missing files")
+    //   return
+    // }
 
     if (!email) {
       setErrorMsg("Please add email address")
@@ -230,9 +239,21 @@ export default function UploadBVH({ codes }) {
 
       //~~~~~~~~  Upload all bvh files ~~~~~~~~
       // Upload all files concurrently
-      await Promise.all(
+      const results = await Promise.all(
         files.map((file, index) => uploadFile(file, index, session.userId))
       )
+      console.log("results", results)
+      const allSuccessful = results.every((result) => result.success)
+      if (allSuccessful) {
+        const { success, msg, error } = results.at(-1)
+        setSuccess(msg)
+        console.log("Success", success, "msg", msg, "error", error)
+      } else {
+        const failedResult = results.filter((result) => !result.success)[0]
+        const { success, msg, error } = failedResult
+        setErrorMsg(msg)
+        console.log("Success", success, "msg", msg, "error", error)
+      }
       // const uploadPromises = Array.from(files).map((file) => {
       //   return uploadPromise(file, (fileName, percent) => {
       //     setProgress((prevProgress) => {
@@ -265,7 +286,7 @@ export default function UploadBVH({ codes }) {
       )
       console.log("Exception", error)
     } finally {
-      setUploading("")
+      // setUploading("")
     }
   }
 
@@ -281,15 +302,11 @@ export default function UploadBVH({ codes }) {
     return <Callout type="error">Please login with github</Callout>
   }
 
-  if (success) {
-    return (
-      <div className="w-full p-12 justify-center ">
-        <Callout type="info" className="mt-0">
-          {success}
-        </Callout>
-      </div>
-    )
-  }
+  // if (success) {
+  //   return (
+
+  //   )
+  // }
 
   if (uploading) {
     return (
@@ -311,9 +328,9 @@ export default function UploadBVH({ codes }) {
                 <span className="text-sm">{file.name}</span>
                 <div className="flex-grow">
                   <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
-                    {progress[file.name] ? (
+                    {progress[file.name] && progress[file.name].percent ? (
                       <div
-                        style={{ width: `${progress[file.name]}%` }}
+                        style={{ width: `${progress[file.name].percent}%` }}
                         className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
                       >
                         <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
@@ -324,15 +341,27 @@ export default function UploadBVH({ codes }) {
                   </div>
                 </div>
                 <span className="text-xs bg-gray-200 px-2 rounded-xl">
-                  {`${progress[file.name] || 0}%`}
+                  {`${progress[file.name].percent || 0}%`}
                 </span>
+
+                {progress[file.name] && progress[file.name].status && (
+                  <UploadStatus type={progress[file.name].status} />
+                )}
               </div>
             )
           })}
         </div>
-        <Callout type="warning" className="mt-0">
-          {uploading}
-        </Callout>
+        {success ? (
+          <div className="w-full p-12 justify-center ">
+            <Callout type="info" className="mt-0">
+              {success}
+            </Callout>
+          </div>
+        ) : (
+          <Callout type="warning" className="mt-0">
+            {uploading}
+          </Callout>
+        )}
       </div>
     )
   }
