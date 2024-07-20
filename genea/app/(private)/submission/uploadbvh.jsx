@@ -107,7 +107,7 @@ export default function UploadBVH({ codes }) {
 
       // Upload all parts
       // const uploadChunkResp = await Promise.all(uploadPromises)
-      const uploadChunkResp = []
+      const parts = []
       for (let i = 1; i <= totalChunks; i++) {
         const start = (i - 1) * chunkSize
         const end = Math.min(start + chunkSize, file.size)
@@ -137,14 +137,14 @@ export default function UploadBVH({ codes }) {
             },
           }
         )
-        uploadChunkResp.push(result)
+        // uploadChunkResp.push(result)
+        parts.push({
+          PartNumber: parts.length + 1,
+          ETag: uploadChunkResp.data.ETag.replace(/\"/g, ""),
+        })
       }
 
       // Complete multipart upload
-      const parts = uploadChunkResp.map((result, index) => ({
-        PartNumber: index + 1,
-        ETag: result.data.ETag.replace(/\"/g, ""),
-      }))
       console.log("parts", parts)
       const completeUploadResp = await axios.post(
         COMPLETE_UPLOAD_API_ENDPOINT,

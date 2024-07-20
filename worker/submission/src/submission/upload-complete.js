@@ -81,9 +81,16 @@ export async function handleCompleteUpload(request, env) {
 		})
 
 		if (insertResult.insertedId) {
-			return new Response(JSON.stringify({ success: true, msg: "Your submission are successfully.", error: null }), {
-				headers: { ...corsHeaders, "Content-Type": "application/json" },
-			})
+			return new Response(
+				JSON.stringify({
+					success: true,
+					msg: "Your submission are successfully, visit \\team for get submission infor.",
+					error: null,
+				}),
+				{
+					headers: { ...corsHeaders, "Content-Type": "application/json" },
+				}
+			)
 		} else {
 			return new Response(JSON.stringify({ success: false, msg: "Upload file successful but unable to update database.", error: null }), {
 				headers: { ...corsHeaders, "Content-Type": "application/json" },
