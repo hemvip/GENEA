@@ -106,7 +106,8 @@ export default function UploadBVH({ codes }) {
       const { uploadId } = startResp.data
 
       // Upload all parts
-      const uploadPromises = []
+      // const uploadChunkResp = await Promise.all(uploadPromises)
+      const uploadChunkResp = []
       for (let i = 1; i <= totalChunks; i++) {
         const start = (i - 1) * chunkSize
         const end = Math.min(start + chunkSize, file.size)
@@ -119,8 +120,10 @@ export default function UploadBVH({ codes }) {
         formData.append("uploadId", uploadId)
         formData.append("fileName", fileName)
 
-        uploadPromises.push(
-          axios.post(UPLOAD_PART_API_ENDPOINT, formData, {
+        const uploadChunkResp = await axios.post(
+          UPLOAD_PART_API_ENDPOINT,
+          formData,
+          {
             headers: { "Content-Type": "multipart/form-data" },
             onUploadProgress: (progressEvent) => {
               const percentCompleted = Math.round(
@@ -132,13 +135,8 @@ export default function UploadBVH({ codes }) {
 
               updateUploadProgress(fileName, overallProgress, "uploading")
             },
-          })
+          }
         )
-      }
-      // const uploadChunkResp = await Promise.all(uploadPromises)
-      const uploadChunkResp = []
-      for (const promise of uploadPromises) {
-        const result = await promise
         uploadChunkResp.push(result)
       }
 
@@ -184,10 +182,10 @@ export default function UploadBVH({ codes }) {
       return
     }
 
-    // if (missingList.length > 0) {
-    //   setErrorMsg("Please upload missing files")
-    //   return
-    // }
+    if (missingList.length > 0) {
+      setErrorMsg("Please upload missing files")
+      return
+    }
 
     if (!email) {
       setErrorMsg("Please add email address")
@@ -203,19 +201,19 @@ export default function UploadBVH({ codes }) {
       setUploading("Uploading your submission, please waiting ...")
 
       //~~~~~~~~  Update submission info to database ~~~~~~~~
-      // const formData = new FormData()
-      // formData.append("userId", session.userId)
-      // formData.append("email", email)
-      // formData.append("teamname", teamname)
-      // const res = await axios.post("/api/submission", formData)
-      // console.log("res", res)
+      const formData = new FormData()
+      formData.append("userId", session.userId)
+      formData.append("email", email)
+      formData.append("teamname", teamname)
+      const res = await axios.post("/api/submission", formData)
+      console.log("res", res)
 
-      // if (!res.data.success) {
-      //   console.log(res.data)
-      //   setErrorMsg(
-      //     "Duplicated submission, only submit once, please contact support"
-      //   )
-      // }
+      if (!res.data.success) {
+        console.log(res.data)
+        setErrorMsg(
+          "Duplicated submission, only submit once, please contact support"
+        )
+      }
 
       //~~~~~~~~  Upload all bvh files ~~~~~~~~
       // Upload all files concurrently
@@ -261,12 +259,6 @@ export default function UploadBVH({ codes }) {
   if (!session) {
     return <Callout type="error">Please login with github</Callout>
   }
-
-  // if (success) {
-  //   return (
-
-  //   )
-  // }
 
   if (uploading) {
     return (
