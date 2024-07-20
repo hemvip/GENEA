@@ -10,7 +10,7 @@ export async function handleUploadChunk(request, env) {
 	const uploadId = formData.get("uploadId")
 	const fileName = formData.get("fileName")
 
-	console.log("handleUploadChunk", "fileName", fileName, "uploadId", uploadId)
+	// console.log("handleUploadChunk", "fileName", fileName, "uploadId", uploadId)
 
 	if (!file) {
 		return new Response(JSON.stringify({ msg: "File not found", error: null, success: false }), {
@@ -49,6 +49,7 @@ export async function handleUploadChunk(request, env) {
 			headers: { ...corsHeaders, "Content-Type": "application/json" },
 		})
 	} catch (error) {
+		console.log("error", error)
 		return new Response(JSON.stringify({ success: false, msg: `Exception chunk upload ${partNumber}-${uploadId}.`, error: error }), {
 			status: 500,
 			headers: { ...corsHeaders, "Content-Type": "application/json" },

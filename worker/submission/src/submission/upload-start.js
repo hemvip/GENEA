@@ -42,6 +42,7 @@ export async function handleStartUpload(request, env) {
 			headers: { ...corsHeaders, "Content-Type": "application/json" },
 		})
 	} catch (error) {
+		console.log("error", error)
 		return new Response(JSON.stringify({ success: false, msg: "Exception created mutipart upload.", error: error }), {
 			status: 500,
 			headers: { ...corsHeaders, "Content-Type": "application/json" },
