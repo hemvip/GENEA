@@ -21,7 +21,7 @@ export default function UploadBVH({ codes }) {
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
   // const [uploadProgress, setUploadProgress] = useState({})
-  const [progress, setProgress] = useState({})
+  const [progress, setProgress] = useState([])
   const [success, setSuccess] = useState("")
 
   const [email, setEmail] = useState("")
@@ -50,16 +50,11 @@ export default function UploadBVH({ codes }) {
         }
       })
       setMissingList(missing)
-
-      // Do something with the files, like upload to a server
-      // console.log("acceptedFiles", acceptedFiles)
       setFiles(acceptedFiles)
-      // setProgress({})
       setProgress(
-        Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
-          progressItems[fileItem.name] = { percent: 0, status: "uploading" }
-          return progressItems
-        }, {})
+        Array.from(acceptedFiles).map((fileItem) => {
+          return { fileName: fileItem.name, percent: 0, status: "pending" }
+        })
       )
 
       const selectedFiles = Array.from(acceptedFiles).map((file) => ({
@@ -109,12 +104,13 @@ export default function UploadBVH({ codes }) {
   // }
 
   const updateUploadProgress = useCallback((fileName, percent, status) => {
-    setProgress((prevProgress) => {
-      return {
-        ...prevProgress,
-        [fileName]: { percent: percent, status: status },
-      }
-    })
+    setProgress((prevProgress) =>
+      prevProgress.map((item) => {
+        if (item.fileName === fileName) {
+          return { ...item, percent: percent, status: status }
+        }
+      })
+    )
   }, [])
 
   const uploadFile = async (file, index, userId) => {
