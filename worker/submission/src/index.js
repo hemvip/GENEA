@@ -40,7 +40,6 @@ export default {
 		}
 
 		try {
-			// console.log("path", path)
 			// POST /api/submission
 			if (path === '/api/submission' && method === 'POST') {
 				console.log('Start upload');

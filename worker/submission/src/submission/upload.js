@@ -35,7 +35,7 @@ async function uploadChunk(s3Client, key, dataChunk, partNumber, uploadId) {
 	console.log('params', params);
 
 	const uploadPartResponse = await s3Client.send(new UploadPartCommand(params));
-	console.log('uploadPartResponse', uploadPartResponse);
+	// console.log('uploadPartResponse', uploadPartResponse);
 	return { ETag: uploadPartResponse.ETag, PartNumber: partNumber };
 }
 
@@ -145,7 +145,7 @@ export async function handleUpload(client, request, env) {
 
 			const { Location, Key } = uploadResult;
 			const insertResult = await db.collection('bvh').insertOne({
-				_id: ObjectId.createFromHexString(Key),
+				_id: new ObjectId(),
 				inputid: filename.join('.'),
 				time: new Date(),
 				bvhid: Location, // uploadResult.ETag.replace(/\"/g, ''),
