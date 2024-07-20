@@ -1,12 +1,5 @@
 // @ts-ignore
-import {
-	S3Client,
-	CreateBucketCommand,
-	PutObjectCommand,
-	CreateMultipartUploadCommand,
-	UploadPartCommand,
-	CompleteMultipartUploadCommand,
-} from '@aws-sdk/client-s3';
+import { S3Client, CreateMultipartUploadCommand, UploadPartCommand, CompleteMultipartUploadCommand } from '@aws-sdk/client-s3';
 import { ObjectId } from 'bson';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INIT MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +71,8 @@ async function multipartUpload(s3Client, key, data) {
 	return { Location, Key, ETag };
 }
 
-export async function handleUpload(client, request, env) {
+// export async function handleUpload(client, request, env) {
+export async function handleUpload(request, env) {
 	const formData = await request.formData();
 	const userId = formData.get('userId');
 	// console.log('motion_files', formData.get('motion_files'));
@@ -102,14 +96,14 @@ export async function handleUpload(client, request, env) {
 	}
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	const db = client.db('hemvip');
-	if (!db) {
-		return {
-			success: false,
-			msg: 'Cannot connect to MongoDB storage.',
-			error: null,
-		};
-	}
+	// const db = client.db('hemvip');
+	// if (!db) {
+	// 	return {
+	// 		success: false,
+	// 		msg: 'Cannot connect to MongoDB storage.',
+	// 		error: null,
+	// 	};
+	// }
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	try {
@@ -144,28 +138,33 @@ export async function handleUpload(client, request, env) {
 			}
 
 			const { Location, Key } = uploadResult;
-			const insertResult = await db.collection('bvh').insertOne({
-				_id: new ObjectId(),
-				inputid: filename.join('.'),
-				time: new Date(),
-				bvhid: Location, // uploadResult.ETag.replace(/\"/g, ''),
-				teamid: userId,
-				url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-			});
+			// const insertResult = await db.collection('bvh').insertOne({
+			// 	_id: new ObjectId(),
+			// 	inputid: filename.join('.'),
+			// 	time: new Date(),
+			// 	bvhid: Location, // uploadResult.ETag.replace(/\"/g, ''),
+			// 	teamid: userId,
+			// 	url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+			// });
 
-			if (insertResult.insertedId) {
-				return {
-					success: true,
-					msg: 'Your submission are successfully.',
-					error: null,
-				};
-			} else {
-				return {
-					success: true,
-					msg: 'Upload file successful but unable to update database.',
-					error: null,
-				};
-			}
+			// if (insertResult.insertedId) {
+			// 	return {
+			// 		success: true,
+			// 		msg: 'Your submission are successfully.',
+			// 		error: null,
+			// 	};
+			// } else {
+			// 	return {
+			// 		success: true,
+			// 		msg: 'Upload file successful but unable to update database.',
+			// 		error: null,
+			// 	};
+			// }
+			return {
+				success: true,
+				msg: 'Your submission are successfully.',
+				error: null,
+			};
 		}
 
 		return {

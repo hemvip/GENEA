@@ -7,7 +7,11 @@ import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 import BVHFile from "@/components/icons/bvhfile"
-import { UPLOAD_API_ENDPOINT } from "@/config/constants"
+import {
+  COMPLETE_UPLOAD_API_ENDPOINT,
+  START_UPLOAD_API_ENDPOINT,
+  UPLOAD_PART_API_ENDPOINT,
+} from "@/config/constants"
 
 export default function UploadBVH({ codes }) {
   const { data: session, status } = useSession()
@@ -70,31 +74,112 @@ export default function UploadBVH({ codes }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
-  const uploadPromise = (file, onProgress) => {
-    const formData = new FormData()
-    formData.append("userId", session.userId)
-    formData.append("motion_files", file)
+  // const uploadPromise = (file, onProgress) => {
+  //   const formData = new FormData()
+  //   formData.append("userId", session.userId)
+  //   formData.append("motion_files", file)
 
-    return axios
-      .post(UPLOAD_API_ENDPOINT, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
+  //   return axios
+  //     .post(UPLOAD_API_ENDPOINT, formData, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //       onUploadProgress: (progressEvent) => {
+  //         const percentCompleted = Math.round(
+  //           (progressEvent.loaded * 100) / progressEvent.total
+  //         )
+  //         onProgress(file.name, percentCompleted)
+  //       },
+  //     })
+  //     .then((response) => {
+  //       console.log("response", response)
+  //       return response.data
+  //     })
+  //     .catch((error) => {
+  //       console.error("error", error.response.data)
+  //       return error.response.data
+  //     })
+  // }
+
+  const uploadFile = async (file, index, userId) => {
+    const chunkSize = 5 * 1024 * 1024 // 5MB chunks
+    const totalChunks = Math.ceil(file.size / chunkSize)
+    const fileName = file.name
+
+    try {
+      // Start multipart upload
+      const startResponse = await axios.post(
+        START_UPLOAD_API_ENDPOINT,
+        {
+          userId: userId,
+          fileName: fileName,
         },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          )
-          onProgress(file.name, percentCompleted)
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+      const { uploadId } = startResponse.data
+
+      // Upload all parts
+      const uploadPromises = []
+      for (let i = 1; i <= totalChunks; i++) {
+        const start = (i - 1) * chunkSize
+        const end = Math.min(start + chunkSize, file.size)
+        const chunk = file.slice(start, end)
+
+        const formData = new FormData()
+        formData.append("userId", userId)
+        formData.append("file", chunk, fileName)
+        formData.append("partNumber", i.toString())
+        formData.append("uploadId", uploadId)
+        formData.append("fileName", fileName)
+
+        uploadPromises.push(
+          axios.post(UPLOAD_PART_API_ENDPOINT, formData, {
+            headers: { "Content-Type": "multipart/form-data" },
+            // onUploadProgress: (progressEvent) => {
+            //   const percentCompleted = Math.round(
+            //     (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
+            //   )
+            //   const overallProgress = Math.round(
+            //     ((i - 1 + percentCompleted / 100) * 100) / totalChunks
+            //   )
+            //   // updateFileStatus(fileName, { progress: overallProgress })
+            // },
+            onUploadProgress: (progressEvent) => {
+              const percentCompleted = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total
+              )
+              // onProgress(file.name, percentCompleted)
+              setProgress((prevProgress) => {
+                // console.log("prevProgress", prevProgress)
+                return {
+                  ...prevProgress,
+                  [file.name]: percentCompleted,
+                }
+              })
+            },
+          })
+        )
+      }
+      const results = await Promise.all(uploadPromises)
+
+      // Complete multipart upload
+      await axios.post(
+        COMPLETE_UPLOAD_API_ENDPOINT,
+        {
+          userId: userId,
+          uploadId: uploadId,
+          fileName: fileName,
+          parts: results.map((result, index) => ({
+            PartNumber: index + 1,
+            ETag: result.data.ETag,
+          })),
         },
-      })
-      .then((response) => {
-        console.log("response", response)
-        return response.data
-      })
-      .catch((error) => {
-        console.error("error", error.response.data)
-        return error.response.data
-      })
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+    } catch (error) {
+      console.error("Error uploading file:", error)
+      // setErrorMsg("Error uploading file")
+    }
   }
 
   const handleUpload = async (e) => {
@@ -129,46 +214,50 @@ export default function UploadBVH({ codes }) {
       setUploading("Uploading your submission, please waiting ...")
 
       //~~~~~~~~  Update submission info to database ~~~~~~~~
-      const formData = new FormData()
-      formData.append("userId", session.userId)
-      formData.append("email", email)
-      formData.append("teamname", teamname)
-      const res = await axios.post("/api/submission", formData)
-      console.log("res", res)
+      // const formData = new FormData()
+      // formData.append("userId", session.userId)
+      // formData.append("email", email)
+      // formData.append("teamname", teamname)
+      // const res = await axios.post("/api/submission", formData)
+      // console.log("res", res)
 
-      if (!res.data.success) {
-        console.log(res.data)
-        setErrorMsg(
-          "Duplicated submission, only submit once, please contact support"
-        )
-      }
+      // if (!res.data.success) {
+      //   console.log(res.data)
+      //   setErrorMsg(
+      //     "Duplicated submission, only submit once, please contact support"
+      //   )
+      // }
 
       //~~~~~~~~  Upload all bvh files ~~~~~~~~
-      const uploadPromises = Array.from(files).map((file) => {
-        return uploadPromise(file, (fileName, percent) => {
-          setProgress((prevProgress) => {
-            // console.log("prevProgress", prevProgress)
-            return {
-              ...prevProgress,
-              [fileName]: percent,
-            }
-          })
-        })
-      })
+      // Upload all files concurrently
+      await Promise.all(
+        files.map((file, index) => uploadFile(file, index, session.userId))
+      )
+      // const uploadPromises = Array.from(files).map((file) => {
+      //   return uploadPromise(file, (fileName, percent) => {
+      //     setProgress((prevProgress) => {
+      //       // console.log("prevProgress", prevProgress)
+      //       return {
+      //         ...prevProgress,
+      //         [fileName]: percent,
+      //       }
+      //     })
+      //   })
+      // })
 
-      const results = await Promise.all(uploadPromises)
-      console.log("results", results)
-      const allSuccessful = results.every((result) => result.success)
-      if (allSuccessful) {
-        const { success, msg, error } = results.at(-1)
-        setSuccess(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      } else {
-        const failedResult = results.filter((result) => !result.success)[0]
-        const { success, msg, error } = failedResult
-        setErrorMsg(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      }
+      // const results = await Promise.all(uploadPromises)
+      // console.log("results", results)
+      // const allSuccessful = results.every((result) => result.success)
+      // if (allSuccessful) {
+      //   const { success, msg, error } = results.at(-1)
+      //   setSuccess(msg)
+      //   console.log("Success", success, "msg", msg, "error", error)
+      // } else {
+      //   const failedResult = results.filter((result) => !result.success)[0]
+      //   const { success, msg, error } = failedResult
+      //   setErrorMsg(msg)
+      //   console.log("Success", success, "msg", msg, "error", error)
+      // }
     } catch (error) {
       console.log(error)
       setErrorMsg(
