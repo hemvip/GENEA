@@ -76,33 +76,6 @@ export default function UploadBVH({ codes }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
-  // const uploadPromise = (file, onProgress) => {
-  //   const formData = new FormData()
-  //   formData.append("userId", session.userId)
-  //   formData.append("motion_files", file)
-
-  //   return axios
-  //     .post(UPLOAD_API_ENDPOINT, formData, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //       onUploadProgress: (progressEvent) => {
-  //         const percentCompleted = Math.round(
-  //           (progressEvent.loaded * 100) / progressEvent.total
-  //         )
-  //         onProgress(file.name, percentCompleted)
-  //       },
-  //     })
-  //     .then((response) => {
-  //       console.log("response", response)
-  //       return response.data
-  //     })
-  //     .catch((error) => {
-  //       console.error("error", error.response.data)
-  //       return error.response.data
-  //     })
-  // }
-
   const updateUploadProgress = useCallback((fileName, percent, status) => {
     setProgress((prevProgress) =>
       prevProgress.map((item) => {
@@ -266,31 +239,6 @@ export default function UploadBVH({ codes }) {
         setErrorMsg(msg)
         console.log("Success", success, "msg", msg, "error", error)
       }
-      // const uploadPromises = Array.from(files).map((file) => {
-      //   return uploadPromise(file, (fileName, percent) => {
-      //     setProgress((prevProgress) => {
-      //       // console.log("prevProgress", prevProgress)
-      //       return {
-      //         ...prevProgress,
-      //         [fileName]: percent,
-      //       }
-      //     })
-      //   })
-      // })
-
-      // const results = await Promise.all(uploadPromises)
-      // console.log("results", results)
-      // const allSuccessful = results.every((result) => result.success)
-      // if (allSuccessful) {
-      //   const { success, msg, error } = results.at(-1)
-      //   setSuccess(msg)
-      //   console.log("Success", success, "msg", msg, "error", error)
-      // } else {
-      //   const failedResult = results.filter((result) => !result.success)[0]
-      //   const { success, msg, error } = failedResult
-      //   setErrorMsg(msg)
-      //   console.log("Success", success, "msg", msg, "error", error)
-      // }
     } catch (error) {
       console.log(error)
       setErrorMsg(
