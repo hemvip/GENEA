@@ -278,7 +278,7 @@ export default function UploadBVH({ codes }) {
                 </div>
                 <span className="text-sm">{file.name}</span>
                 <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl bg-blue-200">
+                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
                     {progress[file.name] && progress[file.name].percent ? (
                       <div
                         style={{ width: `${progress[file.name].percent}%` }}
