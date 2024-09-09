@@ -22,24 +22,22 @@ export default function Page() {
     }
   }
 
-  useEffect(() => {
-    fetchInputCodes()
-  }, [])
+  // useEffect(() => {
+  //   fetchInputCodes()
+  // }, [])
   return (
     <>
       <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
         Submission
       </h1>
-      <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
+      {/* <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
         Download input codes
       </h2>
-      {loading && <InputCode codes={codes} />}
+      {loading && <InputCode codes={codes} />} */}
       <p className="mt-3 leading-7 first:mt-0">
-        First please download input codes csv file. Which contain inputcode. If
-        the input code is <code>417010272047</code>, then the inference output
-        file of your model should be <code>417010272047.bvh</code>
+      We provided input speech audio files and you need to generate speech gesture motion data for all test inputs. The output motion data should be in the format ... (to be updated)
       </p>
-      <p className="mt-3 leading-7 first:mt-0">
+      {/* <p className="mt-3 leading-7 first:mt-0">
         Run your model to get inference output
       </p>
       <Image
@@ -48,12 +46,12 @@ export default function Page() {
         alt="Upload page"
         className="w-[70%] mx-auto"
         src="/upload_page.png"
-      />
+      /> */}
       <p className="mt-3 leading-7 first:mt-0">
-        Login with github and Create submission result in below section.
+      Login with Github and upload your generated NPY files in the section below. Please use the same file names of the input files (e.g., TODO: add example names). You should upload individual NPY files; do not upload a zip file.
       </p>
       <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
-        Upload BVH files
+        Upload NPY files
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
