@@ -50,7 +50,7 @@ export default function UploadNPY() {
       //   }
       // })
       // setMissingList(missing)
-      // setFiles(acceptedFiles)
+      setFiles(acceptedFiles)
       setProgress(
         Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
           progressItems[fileItem.name] = { percent: 0, status: "pending" }
@@ -221,12 +221,13 @@ export default function UploadNPY() {
       // const results = await Promise.all(
       //   files.map((file, index) => uploadFile(file, index, session.userId))
       // )
+      console.log("files", files)
       const results = []
       for (let index = 0; index < files.length; index++) {
         const result = await uploadFile(files[index], index, session.userId)
         results.push(result)
       }
-      console.log("results", results)
+      console.log("results.uploadFile", results)
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
         const { success, msg, error } = results.at(-1)
