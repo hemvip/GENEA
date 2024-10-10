@@ -14,7 +14,7 @@ import {
 } from "@/config/constants"
 import { UploadStatus } from "./UploadStatus"
 
-export default function UploadBVH({ codes }) {
+export default function UploadNPY() {
   const { data: session, status } = useSession()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
@@ -43,14 +43,14 @@ export default function UploadBVH({ codes }) {
       setSuccess("")
 
       const missing = []
-      codes.map((code) => {
-        const found = acceptedFiles.find((file) => file.name === `${code}.bvh`)
-        if (!found) {
-          missing.push(`${code}.bvh`)
-        }
-      })
-      setMissingList(missing)
-      setFiles(acceptedFiles)
+      // codes.map((code) => {
+      //   const found = acceptedFiles.find((file) => file.name === `${code}.bvh`)
+      //   if (!found) {
+      //     missing.push(`${code}.bvh`)
+      //   }
+      // })
+      // setMissingList(missing)
+      // setFiles(acceptedFiles)
       setProgress(
         Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
           progressItems[fileItem.name] = { percent: 0, status: "pending" }
@@ -72,7 +72,8 @@ export default function UploadBVH({ codes }) {
       }
       setUploading("")
     },
-    [codes]
+    // [codes]
+    []
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
@@ -377,14 +378,14 @@ export default function UploadBVH({ codes }) {
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="upload" className="w-[20%] flex justify-end">
-          BVH Files Upload
+          NPY Files Upload
         </label>
         <div
           {...getRootProps()}
           style={{ border: "2px dashed #666666" }}
           className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
-          <input id="upload" {...getInputProps()} accept=".bvh" />
+          <input id="upload" {...getInputProps()} accept=".npy" />
           {previews.length > 0 && (
             <ul className="w-full flex flex-wrap gap-2 justify-center">
               {previews.map(({ file, url }, index) => (

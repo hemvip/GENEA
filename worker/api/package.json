@@ -9,14 +9,14 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.4.5",
-		"mongodb": "^6.7.0",
-		"vitest": "1.5.0",
-		"wrangler": "^3.62.0",
+		"@cloudflare/vitest-pool-workers": "^0.5.16",
+		"mongodb": "^6.9.0",
+		"vitest": "2.1.2",
+		"wrangler": "^3.80.2",
 		"zod": "^3.23.8"
 	},
 	"dependencies": {
-		"mongodb": "^6.7.0",
+		"mongodb": "^6.9.0",
 		"realm-web": "^2.0.1",
 		"zod": "^3.23.8"
 	}
