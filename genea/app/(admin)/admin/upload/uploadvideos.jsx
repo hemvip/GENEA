@@ -10,7 +10,8 @@ import BVHFile from "@/components/icons/bvhfile"
 import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
 
-export default function UploadVideos({ codes, teams }) {
+// export default function UploadVideos({ codes, teams }) {
+export default function UploadVideos({ teams }) {
   const [team, setTeam] = useState(teams[0])
   const [teamID, setTeamID] = useState(teams[0].userId)
   const [files, setFiles] = useState([])
@@ -21,44 +22,41 @@ export default function UploadVideos({ codes, teams }) {
   const [progress, setProgress] = useState({})
   const [success, setSuccess] = useState("")
 
-  const [missingList, setMissingList] = useState([])
+  // const [missingList, setMissingList] = useState([])
 
-  const onDrop = useCallback(
-    async (acceptedFiles) => {
-      setErrorMsg("")
-      setUploading("")
-      setSuccess("")
+  const onDrop = useCallback(async (acceptedFiles) => {
+    setErrorMsg("")
+    setUploading("")
+    setSuccess("")
 
-      const missing = []
-      codes.map((code) => {
-        const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
-        if (!found) {
-          missing.push(`${code}.mp4`)
-        }
-      })
-      setMissingList(missing)
+    // const missing = []
+    // codes.map((code) => {
+    //   const found = acceptedFiles.find((file) => file.name === `${code}.mp4`)
+    //   if (!found) {
+    //     missing.push(`${code}.mp4`)
+    //   }
+    // })
+    // setMissingList(missing)
 
-      // Do something with the files, like upload to a server
-      // console.log("acceptedFiles", acceptedFiles)
-      setFiles(acceptedFiles)
-      setProgress({})
+    // Do something with the files, like upload to a server
+    // console.log("acceptedFiles", acceptedFiles)
+    setFiles(acceptedFiles)
+    setProgress({})
 
-      const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-        file,
-        url: URL.createObjectURL(file),
-      }))
-      setPreviews(selectedFiles)
+    const selectedFiles = Array.from(acceptedFiles).map((file) => ({
+      file,
+      url: URL.createObjectURL(file),
+    }))
+    setPreviews(selectedFiles)
 
-      try {
-        // handleUpload()
-        // console.log(response.data.message)
-      } catch (error) {
-        console.error("Error uploading files:", error)
-      }
-      setUploading("")
-    },
-    [codes]
-  )
+    try {
+      // handleUpload()
+      // console.log(response.data.message)
+    } catch (error) {
+      console.error("Error uploading files:", error)
+    }
+    setUploading("")
+  }, [])
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
@@ -288,7 +286,7 @@ export default function UploadVideos({ codes, teams }) {
         </div>
       )}
 
-      {missingList.length > 0 && (
+      {/* {missingList.length > 0 && (
         <Callout type="error">
           You upload missing following files:
           <div className="flex flex-wrap gap-2 text-sm">
@@ -299,7 +297,7 @@ export default function UploadVideos({ codes, teams }) {
             ))}
           </div>
         </Callout>
-      )}
+      )} */}
 
       <div className="flex flex-col items-center">
         <div className="pl-[20%] flex justify-start">

@@ -9,20 +9,20 @@ import axios from "axios"
 import { Loading } from "@/components"
 
 export default function Page() {
-  const [codes, setCodes] = useState([])
+  // const [codes, setCodes] = useState([])
   const [loading, setLoading] = useState(true)
   const [teams, setTeams] = useState([])
 
-  async function fetchInputCodes() {
-    setLoading(false)
-    const res = await axios.get("/api/inputcode")
-    if (res.data.success) {
-      setCodes(res.data.codes)
-      setLoading(true)
-    } else {
-      console.error(res.error)
-    }
-  }
+  // async function fetchInputCodes() {
+  //   setLoading(false)
+  //   const res = await axios.get("/api/inputcode")
+  //   if (res.data.success) {
+  //     setCodes(res.data.codes)
+  //     setLoading(true)
+  //   } else {
+  //     console.error(res.error)
+  //   }
+  // }
   async function fetchTeams() {
     const res = await axios.get("/api/submission")
     if (res.data.success) {
@@ -34,7 +34,7 @@ export default function Page() {
 
   useEffect(() => {
     fetchTeams()
-    fetchInputCodes()
+    // fetchInputCodes()
   }, [])
 
   return (
@@ -45,7 +45,8 @@ export default function Page() {
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
         {loading && teams.length > 0 ? (
-          <UploadVideos codes={codes} teams={teams} />
+          // <UploadVideos codes={codes} teams={teams} />
+          <UploadVideos teams={teams} />
         ) : (
           <div className="text-center">
             <Loading />
