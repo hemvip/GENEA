@@ -29,7 +29,7 @@ export async function handleStartUpload(request, env) {
 		})
 	}
 
-	const uniqueKey = `bvh/${userId}/${fileName}`
+	const uniqueKey = `motions/${userId}/${fileName}`
 	const command = new CreateMultipartUploadCommand({
 		Bucket: "gesture",
 		Key: uniqueKey,

@@ -34,7 +34,7 @@ export async function handleUploadChunk(request, env) {
 		})
 	}
 
-	const uniqueKey = `bvh/${userId}/${fileName}`
+	const uniqueKey = `motions/${userId}/${fileName}`
 	const command = new UploadPartCommand({
 		Bucket: "gesture",
 		Key: uniqueKey,
