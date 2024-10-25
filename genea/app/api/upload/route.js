@@ -70,6 +70,10 @@ export async function POST(req, res) {
           filename.pop()
         }
         const inputid = filename.join(".")
+        console.log(
+          "go here",
+          `https://genealeaderboard.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`
+        )
         videofiles.push({
           _id: new ObjectId(),
           inputid: inputid,

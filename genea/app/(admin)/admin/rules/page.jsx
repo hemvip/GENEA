@@ -34,9 +34,8 @@ export default function Page() {
         axios.get("/api/studies"),
       ])
 
-      setCodes(resInput.data.codes)
+      setCodes(resInput.data.codes.join(",\n"))
       setTotalCode(resInput.data.codes.length)
-      // resInput
       setSubmission(resSubmission.data.submissions)
       setNTeam(resSubmission.data.submissions.length)
       setStudies(resStudies.data.studies)
@@ -157,7 +156,7 @@ export default function Page() {
           id="codes"
           rows="7"
           name="codes"
-          value={codes.join(",\n")}
+          value={codes}
           onChange={(e) => setCodes(e.target.value)}
         />
       </div>
