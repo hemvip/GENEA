@@ -75,7 +75,7 @@ export async function POST(req, res) {
           inputid: inputid,
           videoid: uploadResult.ETag.replace(/\"/g, ""),
           teamid: userId,
-          url: `https://gesture.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+          url: `https://genealeaderboard.s3.${process.env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
         })
       }
     }

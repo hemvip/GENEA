@@ -71,13 +71,13 @@ export async function handleCompleteUpload(request, env) {
 			)
 		}
 
-		const insertResult = await db.collection("bvh").insertOne({
+		const insertResult = await db.collection("npy").insertOne({
 			_id: new MongoId(),
 			inputid: fileName,
 			time: new Date(),
 			bvhid: response.Location,
 			teamid: userId,
-			url: `https://gesture.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+			url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 		})
 
 		if (insertResult.insertedId) {

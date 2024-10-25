@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import UploadVideos from "./uploadvideos"
+import UploadCSV from "./uploadcsv"
 import { useEffect, useState } from "react"
 // import fetchInputCodes from "./actions"
 import InputCode from "./inputcode"
@@ -40,13 +40,12 @@ export default function Page() {
   return (
     <>
       <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
-        Upload Videos
+        Upload CSV Studies
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
         {loading && teams.length > 0 ? (
-          // <UploadVideos codes={codes} teams={teams} />
-          <UploadVideos teams={teams} />
+          <UploadCSV teams={teams} />
         ) : (
           <div className="text-center">
             <Loading />
