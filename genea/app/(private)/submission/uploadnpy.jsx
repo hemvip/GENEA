@@ -14,7 +14,7 @@ import {
 } from "@/config/constants"
 import { UploadStatus } from "./UploadStatus"
 
-export default function UploadNPY() {
+export default function UploadNPY({ codes }) {
   const { data: session, status } = useSession()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
@@ -43,13 +43,13 @@ export default function UploadNPY() {
       setSuccess("")
 
       const missing = []
-      // codes.map((code) => {
-      //   const found = acceptedFiles.find((file) => file.name === `${code}.bvh`)
-      //   if (!found) {
-      //     missing.push(`${code}.bvh`)
-      //   }
-      // })
-      // setMissingList(missing)
+      codes.map((code) => {
+        const found = acceptedFiles.find((file) => file.name === `${code}.npy`)
+        if (!found) {
+          missing.push(`${code}.npy`)
+        }
+      })
+      setMissingList(missing)
       setFiles(acceptedFiles)
       setProgress(
         Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
@@ -72,8 +72,7 @@ export default function UploadNPY() {
       }
       setUploading("")
     },
-    // [codes]
-    []
+    [codes]
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })

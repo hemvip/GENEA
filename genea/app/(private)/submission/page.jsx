@@ -22,6 +22,8 @@ export default function Page() {
     }
   }
 
+  // console.log("codes", codes)
+
   useEffect(() => {
     fetchInputCodes()
   }, [])
@@ -60,7 +62,7 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        {loading && <UploadNPY />}
+        {loading && <UploadNPY codes={codes} />}
       </div>
     </>
   )
