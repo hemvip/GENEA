@@ -40,8 +40,9 @@ export async function handleCompleteUpload(request, env) {
 
 	const uniqueKey = `motions/${userId}/${fileName}`
 	const multipartUpload = JSON.parse(parts)
+	console.log("Bucket: ", env.BUCKET_NAME)
 	const command = new CompleteMultipartUploadCommand({
-		Bucket: "gesture",
+		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
 		UploadId: uploadId,
 		MultipartUpload: { Parts: multipartUpload },
