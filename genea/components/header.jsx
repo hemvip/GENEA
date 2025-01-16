@@ -4,6 +4,7 @@ import Twitter from "./icons/twitter"
 import Navbar from "./navbar"
 import AuthButton from "@/components/auth/auth-button"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
     //     </div>
     //     <nav className="mx-auto flex h-[var(--nextra-navbar-height)] max-w-[90rem] items-center justify-end gap-4 pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)]">
     <Navbar>
-      <a
+      <Link
         className="flex items-center px-24 hovesr:opacity-75 ltr:mr-auto rtl:ml-auto"
         href="/"
       >
@@ -23,7 +24,7 @@ export default function Header() {
         >
           GENEA
         </span> */}
-      </a>
+      </Link>
       {/* <a className="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap font-medium subpixel-antialiased" aria-current="true" href="/docs/getting-started">Docs</a> */}
       {/* <div className="relative" data-headlessui-state="">
                 <button className="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 max-md:hidden items-center whitespace-nowrap rounded flex gap-1" id="headlessui-menu-button-:R5596:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">About<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-[18px] min-w-[18px] rounded-sm p-0.5">
@@ -43,7 +44,7 @@ export default function Header() {
                             <span className="text-xs">⌘</span>K</kbd>
                     </div>
                 </div> */}
-      <a
+      <Link
         href="https://genea-workshop.github.io/2024/"
         target="blank"
         rel="blank"
@@ -51,22 +52,22 @@ export default function Header() {
         aria-current="false"
       >
         GENEA 2024 ↗
-      </a>
-      <a
+      </Link>
+      <Link
         href="https://github.com/genea-workshop"
         target="blank"
         rel="noreferrer"
       >
         <Github />
         <span className="sr-only">GitHub</span>
-      </a>
-      <a
+      </Link>
+      <Link
         href="https://twitter.com/WorkshopGenea"
         target="blank"
         rel="noreferrer"
       >
         <Twitter />
-      </a>
+      </Link>
     </Navbar>
     //     </nav>
     // </div>

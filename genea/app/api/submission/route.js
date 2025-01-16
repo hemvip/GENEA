@@ -17,6 +17,7 @@ export async function POST(req, res) {
   const formData = await req.formData()
   const userId = formData.get("userId")
   const email = formData.get("email")
+  const teamid = formData.get("teamid")
   const teamname = formData.get("teamname")
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,6 +40,7 @@ export async function POST(req, res) {
       $set: {
         userId: userId,
         teamname: teamname,
+        teamid: teamid,
         email: email,
         submittedAt: new Date(),
       },

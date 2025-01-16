@@ -86,10 +86,11 @@ export default function UploadNPY({ codes }) {
     })
   }, [])
 
-  const uploadFile = async (file, index, userId) => {
+  const uploadFile = async (file, index, teamid) => {
     const chunkSize = 5 * 1024 * 1024 // 5MB chunks
     const totalChunks = Math.ceil(file.size / chunkSize)
     const fileName = file.name
+    console.log("uploadFile.userId", teamid)
 
     try {
       updateUploadProgress(fileName, 0, "uploading")
@@ -98,7 +99,7 @@ export default function UploadNPY({ codes }) {
       const startResp = await axios.post(
         START_UPLOAD_API_ENDPOINT,
         {
-          userId: userId,
+          userId: teamid,
           fileName: fileName,
         },
         { headers: { "Content-Type": "multipart/form-data" } }
@@ -114,7 +115,7 @@ export default function UploadNPY({ codes }) {
         const chunk = file.slice(start, end)
 
         const formData = new FormData()
-        formData.append("userId", userId)
+        formData.append("userId", teamid)
         formData.append("file", chunk, fileName)
         formData.append("partNumber", i.toString())
         formData.append("uploadId", uploadId)
@@ -149,7 +150,7 @@ export default function UploadNPY({ codes }) {
       const completeUploadResp = await axios.post(
         COMPLETE_UPLOAD_API_ENDPOINT,
         {
-          userId: userId,
+          userId: teamid,
           uploadId: uploadId,
           fileName: fileName,
           parts: JSON.stringify(parts),
@@ -199,11 +200,13 @@ export default function UploadNPY({ codes }) {
 
     try {
       setUploading("Uploading your submission, please waiting ...")
+      const teamid = String(session.username).toLowerCase()
 
       //~~~~~~~~  Update submission info to database ~~~~~~~~
       const formData = new FormData()
       formData.append("userId", session.userId)
       formData.append("email", email)
+      formData.append("teamid", teamid)
       formData.append("teamname", teamname)
       const res = await axios.post("/api/submission", formData)
       console.log("res", res)
@@ -223,7 +226,7 @@ export default function UploadNPY({ codes }) {
       console.log("files", files)
       const results = []
       for (let index = 0; index < files.length; index++) {
-        const result = await uploadFile(files[index], index, session.userId)
+        const result = await uploadFile(files[index], index, teamid)
         results.push(result)
       }
       console.log("results.uploadFile", results)

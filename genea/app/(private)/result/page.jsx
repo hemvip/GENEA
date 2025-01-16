@@ -1,6 +1,6 @@
-import HeatmapChart from "@/components/hightchart/HeatmapChart"
-import HighChart from "@/components/hightchart/HighChart"
-import PairwiseComparisonChart from "@/components/hightchart/PairwiseComparisonChart"
+// import HeatmapChart from "@/components/hightchart/HeatmapChart"
+// import HighChart from "@/components/hightchart/HighChart"
+// import PairwiseComparisonChart from "@/components/hightchart/PairwiseComparisonChart"
 import React from "react"
 
 export default function Page() {
@@ -74,7 +74,7 @@ export default function Page() {
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
         Evaluation Result (This page could be change)
       </h1>
-      <h3 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
+      {/* <h3 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
         Sample 1
       </h3>
       <p className="mt-6 leading-7 first:mt-0">
@@ -94,7 +94,7 @@ export default function Page() {
       <p className="mt-6 leading-7 first:mt-0">
         Sample data of Evaluation Result.
       </p>
-      <HeatmapChart data={heatmapData} />
+      <HeatmapChart data={heatmapData} /> */}
     </div>
   )
 }
