@@ -62,7 +62,7 @@ export default function Header() {
         <span className="sr-only">GitHub</span>
       </Link>
       <Link
-        href="https://twitter.com/WorkshopGenea"
+        href="https://twitter.com/genea_workshop"
         target="blank"
         rel="noreferrer"
       >

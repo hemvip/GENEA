@@ -18,7 +18,7 @@ export default function AuthButton() {
         // ("hmthanh" ? (
         <>
           <a
-            className="text-sm items-center contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+            className="text-sm items-center font-bold contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
             aria-current="false"
             href="/getting-started"
           >
