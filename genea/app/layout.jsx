@@ -9,7 +9,6 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import Twitter from "@/components/twitter"
 import AuthProvider from "@/components/auth/AuthProvider"
-import Script from "next/script"
 // import { useThemeConfig } from "@/contexts/theme";
 
 export const metadata = {
@@ -45,11 +44,6 @@ export default function RootLayout({ children }) {
           </AuthProvider>
         </ThemeProvider>
       </body>
-      <Script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></Script>
     </html>
   )
 }
