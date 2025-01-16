@@ -11,6 +11,7 @@ import Twitter from "@/components/twitter"
 import AuthProvider from "@/components/auth/AuthProvider"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { Suspense } from "react"
 // import { useThemeConfig } from "@/contexts/theme";
 
 export const metadata = {
@@ -45,9 +46,9 @@ export default function RootLayout({ children }) {
             </div>
           </AuthProvider>
         </ThemeProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
-      <SpeedInsights />
-      <Analytics />
     </html>
   )
 }

@@ -1,8 +1,17 @@
+"use client"
+
 import Link from "next/link"
 import Script from "next/script"
-import React from "react"
+import React, { useEffect } from "react"
 
 export default function Twitter() {
+  useEffect(() => {
+    // Automatically accept cookies and load Twitter widgets after the component mounts
+    if (window.twttr) {
+      window.twttr.widgets.load()
+    }
+  }, [])
+
   return (
     <>
       <Link
@@ -13,6 +22,13 @@ export default function Twitter() {
       </Link>
       <Script
         async
+        strategy="afterInteractive"
+        // onLoad={() => {
+        //   // Automatically accept cookies
+        //   if (window.twttr) {
+        //     window.twttr.widgets.load()
+        //   }
+        // }}
         src="https://platform.twitter.com/widgets.js"
         charset="utf-8"
       ></Script>
