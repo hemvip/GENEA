@@ -18,6 +18,8 @@
     "@popperjs/core": "^2.11.8",
     "@shikijs/twoslash": "^1.27.2",
     "@types/mdx": "^2.0.13",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "axios": "^1.7.9",
     "bson": "^6.10.1",
     "clsx": "^2.1.1",

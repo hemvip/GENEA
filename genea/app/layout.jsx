@@ -9,6 +9,8 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import Twitter from "@/components/twitter"
 import AuthProvider from "@/components/auth/AuthProvider"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 // import { useThemeConfig } from "@/contexts/theme";
 
 export const metadata = {
@@ -44,6 +46,8 @@ export default function RootLayout({ children }) {
           </AuthProvider>
         </ThemeProvider>
       </body>
+      <SpeedInsights />
+      <Analytics />
     </html>
   )
 }
