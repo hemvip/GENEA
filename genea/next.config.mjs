@@ -8,7 +8,7 @@ import remarkMath from "remark-math"
 // import rehypeRaw from 'rehype-raw'
 import rehypePrettyCode from "rehype-pretty-code"
 import { rendererRich, transformerTwoslash } from "@shikijs/twoslash"
-import { remarkMermaid } from "@theguild/remark-mermaid"
+// import { remarkMermaid } from "@theguild/remark-mermaid"
 import rehypeShiki from "@shikijs/rehype"
 import remarkMdxDisableExplicitJsx from "./plugins/remark-mdx-disable-explicit-jsx.mjs"
 import { remarkCustomHeadingId } from "./plugins/remark-custom-heading-id.mjs"
@@ -33,7 +33,7 @@ const withMDX = nextMDX({
   baseUrl: "./",
   options: {
     remarkPlugins: [
-      remarkMermaid,
+      // remarkMermaid,
       remarkGfm,
       remarkMdxFrontMatter,
       remarkParse,
