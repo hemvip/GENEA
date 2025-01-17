@@ -8,7 +8,6 @@ import BoardIcon from "../icons/board"
 export default function AuthButton() {
   const { data: session, status } = useSession()
   const [loading, setLoading] = useState(false)
-  console.log("session", session)
 
   if (status === "loading") {
     return <div className="flex justify-center ">{/* <Loading /> */}</div>

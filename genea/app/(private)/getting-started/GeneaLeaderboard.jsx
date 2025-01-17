@@ -2,6 +2,10 @@ export default function GeneaLeaderboard() {
   return (
     <svg style={{ width: "100%", height: "auto" }} viewBox="-0.5 -0.5 1783 948">
       <defs>
+        <path
+          id="three_dots"
+          d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+        />
         <g id="npy_icon">
           <path
             d="M901.850593 926.476283a48.761858 48.761858 0 0 1-48.761859 48.761859H170.422718a48.761858 48.761858 0 0 1-48.761858-48.761859V48.762834a48.761858 48.761858 0 0 1 48.761858-48.761859h418.864363a48.761858 48.761858 0 0 1 34.620919 14.140939l263.801654 263.801654a48.761858 48.761858 0 0 1 14.140939 34.620919V926.476283z"
@@ -42,1162 +46,1052 @@ export default function GeneaLeaderboard() {
         />
       </defs>
       <g>
-        <g>
+        <g data-cell-id="EP-75">
           <g>
-            <g data-cell-id="EP-75">
-              <g>
-                <path
-                  d="M 338 859.16 L 1121.53 859.63"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 1133.53 859.64 L 1117.52 867.63 L 1121.53 859.63 L 1117.53 851.63 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+            <path
+              d="M 338 859.16 L 1121.53 859.63"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 1133.53 859.64 L 1117.52 867.63 L 1121.53 859.63 L 1117.53 851.63 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-144">
+          <g>
+            <rect
+              x="418"
+              y="780"
+              width="640"
+              height="140"
+              rx="8.4"
+              ry="8.4"
+              fill="#e1d5e7"
+              stroke="#9673a6"
+              strokeWidth="2"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-74">
+          <g>
+            <path
+              d="M 338 679.64 L 1121.53 680.05"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 1133.53 680.06 L 1117.52 688.05 L 1121.53 680.05 L 1117.53 672.05 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-143">
+          <g>
+            <rect
+              x="418"
+              y="620"
+              width="640"
+              height="140"
+              rx="8.4"
+              ry="8.4"
+              fill="#d5e8d4"
+              stroke="#82b366"
+              strokeWidth="2"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-76">
+          <g>
+            <rect
+              x="1138"
+              y="120"
+              width="640"
+              height="820"
+              rx="38.4"
+              ry="38.4"
+              fill="#dae8fc"
+              stroke="#6c8ebf"
+              strokeWidth="2"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-42">
+          <g>
+            <rect
+              x="418"
+              y="120"
+              width="640"
+              height="480"
+              rx="28.8"
+              ry="28.8"
+              fill="#fff2cc"
+              stroke="#d6b656"
+              strokeWidth="2"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-2">
+          <svg
+            viewBox="0 0 1097 1024"
+            x="17.5"
+            y="139.5"
+            width="80"
+            height="80"
+          >
+            <use href="#users_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="28px">
+              <rect
+                fill="rgb(255, 255, 255)"
+                stroke="none"
+                x="14"
+                y="237"
+                width="92"
+                height="36"
+                strokeWidth="0"
+              />
+              <text x="57.5" y="259.5">
+                Team A
+              </text>
             </g>
-            <g data-cell-id="EP-144">
-              <g>
-                <rect
-                  x="418"
-                  y="780"
-                  width="640"
-                  height="140"
-                  rx="8.4"
-                  ry="8.4"
-                  fill="#e1d5e7"
-                  stroke="#9673a6"
-                  strokeWidth="2"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-3">
+          <svg
+            viewBox="0 0 1097 1024"
+            x="17.5"
+            y="279.5"
+            width="80"
+            height="80"
+          >
+            <use href="#users_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="28px">
+              <rect
+                fill="rgb(255, 255, 255)"
+                stroke="none"
+                x="15"
+                y="377"
+                width="90"
+                height="36"
+                strokeWidth="0"
+              />
+              <text x="57.5" y="399.5">
+                Team B
+              </text>
             </g>
-            <g data-cell-id="EP-74">
-              <g>
-                <path
-                  d="M 338 679.64 L 1121.53 680.05"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 1133.53 680.06 L 1117.52 688.05 L 1121.53 680.05 L 1117.53 672.05 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-4">
+          <svg
+            viewBox="0 0 1097 1024"
+            x="17.5"
+            y="459.5"
+            width="80"
+            height="80"
+          >
+            <use href="#users_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="28px">
+              <rect
+                fill="rgb(255, 255, 255)"
+                stroke="none"
+                x="15"
+                y="557"
+                width="90"
+                height="36"
+                strokeWidth="0"
+              />
+              <text x="57.5" y="579.5">
+                Team Z
+              </text>
             </g>
-            <g data-cell-id="EP-143">
-              <g>
-                <rect
-                  x="418"
-                  y="620"
-                  width="640"
-                  height="140"
-                  rx="8.4"
-                  ry="8.4"
-                  fill="#d5e8d4"
-                  stroke="#82b366"
-                  strokeWidth="2"
-                  pointerEvents="all"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-76">
-              <g>
-                <rect
-                  x="1138"
-                  y="120"
-                  width="640"
-                  height="820"
-                  rx="38.4"
-                  ry="38.4"
-                  fill="#dae8fc"
-                  stroke="#6c8ebf"
-                  strokeWidth="2"
-                  pointerEvents="all"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-42">
-              <g>
-                <rect
-                  x="418"
-                  y="120"
-                  width="640"
-                  height="480"
-                  rx="28.8"
-                  ry="28.8"
-                  fill="#fff2cc"
-                  stroke="#d6b656"
-                  strokeWidth="2"
-                  pointerEvents="all"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-2">
-              <svg
-                viewBox="0 0 1097 1024"
-                x="17.5"
-                y="139.5"
-                width="80"
-                height="80"
-              >
-                <use href="#users_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="28px"
+          </g>
+        </g>
+        <g data-cell-id="EP-5">
+          <g>
+            <rect
+              x="58"
+              y="40"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
                 >
-                  <rect
-                    fill="rgb(255, 255, 255)"
-                    stroke="none"
-                    x="14"
-                    y="237"
-                    width="92"
-                    height="36"
-                    strokeWidth="0"
-                  />
-                  <text x="57.5" y="259.5">
-                    Team A
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-3">
-              <svg
-                viewBox="0 0 1097 1024"
-                x="17.5"
-                y="279.5"
-                width="80"
-                height="80"
-              >
-                <use href="#users_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="28px"
-                >
-                  <rect
-                    fill="rgb(255, 255, 255)"
-                    stroke="none"
-                    x="15"
-                    y="377"
-                    width="90"
-                    height="36"
-                    strokeWidth="0"
-                  />
-                  <text x="57.5" y="399.5">
-                    Team B
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-4">
-              <svg
-                viewBox="0 0 1097 1024"
-                x="17.5"
-                y="459.5"
-                width="80"
-                height="80"
-              >
-                <use href="#users_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="28px"
-                >
-                  <rect
-                    fill="rgb(255, 255, 255)"
-                    stroke="none"
-                    x="15"
-                    y="557"
-                    width="90"
-                    height="36"
-                    strokeWidth="0"
-                  />
-                  <text x="57.5" y="579.5">
-                    Team Z
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-5">
-              <g>
-                <rect
-                  x="58"
-                  y="40"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "35px",
+                      marginLeft: "30px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "35px",
-                          marginLeft: "30px",
+                          display: "inline-block",
+                          fontSize: "14px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: "1.2",
+                          pointerEvents: "all",
+                          fontWeight: "bold",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "14px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: "1.2",
-                              pointerEvents: "all",
-                              fontWeight: "bold",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
-                          >
-                            Input 1
-                          </div>
-                        </div>
+                        Input 1
                       </div>
-                    </foreignObject>
-                    <text
-                      x="59"
-                      y="39"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="'Segoe UI'"
-                      fontSize="14px"
-                      textAnchor="middle"
-                      fontWeight="bold"
-                    >
-                      Input 1
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+                <text
+                  x="59"
+                  y="39"
+                  fill="rgb(0, 0, 0)"
+                  fontSize="14px"
+                  textAnchor="middle"
+                  fontWeight="bold"
+                >
+                  Input 1
+                </text>
+              </switch>
             </g>
-            <g data-cell-id="EP-6">
-              <g>
-                <rect
-                  x="158"
-                  y="0"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-6">
+          <g>
+            <rect
+              x="158"
+              y="0"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "15px",
+                      marginLeft: "80px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "15px",
-                          marginLeft: "80px",
+                          display: "inline-block",
+                          fontSize: "14px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: "1.2",
+                          pointerEvents: "all",
+                          fontWeight: "bold",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "14px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: "1.2",
-                              pointerEvents: "all",
-                              fontWeight: "bold",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
-                          >
-                            Input 2
-                          </div>
-                        </div>
+                        Input 2
                       </div>
-                    </foreignObject>
-                    <text
-                      x="109"
-                      y="19"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="'Segoe UI'"
-                      fontSize="14px"
-                      textAnchor="middle"
-                      fontWeight="bold"
-                    >
-                      Input 2
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+                <text
+                  x="109"
+                  y="19"
+                  fill="rgb(0, 0, 0)"
+                  fontSize="14px"
+                  textAnchor="middle"
+                  fontWeight="bold"
+                >
+                  Input 2
+                </text>
+              </switch>
             </g>
-            <g data-cell-id="EP-7">
-              <g>
-                <rect
-                  x="278"
-                  y="0"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-7">
+          <g>
+            <rect
+              x="278"
+              y="0"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "15px",
+                      marginLeft: "140px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "15px",
-                          marginLeft: "140px",
+                          display: "inline-block",
+                          fontSize: "14px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: "1.2",
+                          pointerEvents: "all",
+                          fontWeight: "bold",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "14px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: "1.2",
-                              pointerEvents: "all",
-                              fontWeight: "bold",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
-                          >
-                            Input 3
-                          </div>
-                        </div>
+                        Input 3
                       </div>
-                    </foreignObject>
-                    <text
-                      x="169"
-                      y="19"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="'Segoe UI'"
-                      fontSize="14px"
-                      textAnchor="middle"
-                      fontWeight="bold"
-                    >
-                      Input 3
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+                <text
+                  x="169"
+                  y="19"
+                  fill="rgb(0, 0, 0)"
+                  fontSize="14px"
+                  textAnchor="middle"
+                  fontWeight="bold"
+                >
+                  Input 3
+                </text>
+              </switch>
             </g>
-            <g data-cell-id="EP-9">
-              <g>
-                <rect
-                  x="398"
-                  y="40"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-9">
+          <g>
+            <rect
+              x="398"
+              y="40"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "35px",
+                      marginLeft: "200px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "35px",
-                          marginLeft: "200px",
+                          display: "inline-block",
+                          fontSize: "14px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: "1.2",
+                          pointerEvents: "all",
+                          fontWeight: "bold",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "14px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: "1.2",
-                              pointerEvents: "all",
-                              fontWeight: "bold",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
-                          >
-                            Input 4
-                          </div>
-                        </div>
+                        Input 4
                       </div>
-                    </foreignObject>
-                    <text
-                      x="229"
-                      y="39"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="'Segoe UI'"
-                      fontSize="14px"
-                      textAnchor="middle"
-                      fontWeight="bold"
-                    >
-                      Input 4
-                    </text>
-                  </switch>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-12">
-              <g>
-                <rect
-                  x="218"
-                  y="140"
-                  width="120"
-                  height="440"
-                  rx="18"
-                  ry="18"
-                  fill="rgb(255, 255, 255)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  pointerEvents="all"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-10">
-              <svg
-                viewBox="0 0 119.25 122.88"
-                x="237.5"
-                y="160.5"
-                width="80"
-                height="80"
-              >
-                <use href="#aimodel_icon" />
-              </svg>
-              <g>
-                <g
+                    </div>
+                  </div>
+                </foreignObject>
+                <text
+                  x="229"
+                  y="39"
                   fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
+                  fontSize="14px"
                   textAnchor="middle"
-                  fontSize="24px"
+                  fontWeight="bold"
                 >
-                  <text x="277.5" y="267.5">
-                    Model SA
-                  </text>
-                </g>
-              </g>
+                  Input 4
+                </text>
+              </switch>
             </g>
-            <g data-cell-id="EP-13">
-              <svg
-                viewBox="0 0 119.25 122.88"
-                x="237.5"
-                y="292.5"
-                width="80"
-                height="80"
-              >
-                <use href="#aimodel_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="277.5" y="399.5">
-                    Model SB
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-12">
+          <g>
+            <rect
+              x="218"
+              y="140"
+              width="120"
+              height="440"
+              rx="18"
+              ry="18"
+              fill="rgb(255, 255, 255)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-10">
+          <svg
+            viewBox="0 0 119.25 122.88"
+            x="237.5"
+            y="160.5"
+            width="80"
+            height="80"
+          >
+            <use href="#aimodel_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="277.5" y="267.5">
+                Model SA
+              </text>
             </g>
-            <g data-cell-id="EP-14">
-              <svg
-                viewBox="0 0 119.25 122.88"
-                x="237.5"
-                y="462.5"
-                width="80"
-                height="80"
-              >
-                <use href="#aimodel_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="277.5" y="569.5">
-                    Model SZ
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-13">
+          <svg
+            viewBox="0 0 119.25 122.88"
+            x="237.5"
+            y="292.5"
+            width="80"
+            height="80"
+          >
+            <use href="#aimodel_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="277.5" y="399.5">
+                Model SB
+              </text>
             </g>
-            <g data-cell-id="EP-15">
-              <g>
-                <path
-                  d="M 118 100 L 235.83 136.25"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 245.86 139.34 L 230.42 141.92 L 235.83 136.25 L 234.54 128.53 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-14">
+          <svg
+            viewBox="0 0 119.25 122.88"
+            x="237.5"
+            y="462.5"
+            width="80"
+            height="80"
+          >
+            <use href="#aimodel_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="277.5" y="569.5">
+                Model SZ
+              </text>
             </g>
-            <g data-cell-id="EP-16">
-              <g>
-                <path
-                  d="M 218 60 L 261.07 130.88"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 266.52 139.85 L 253.27 131.52 L 261.07 130.88 L 265.23 124.25 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-15">
+          <g>
+            <path
+              d="M 118 100 L 235.83 136.25"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 245.86 139.34 L 230.42 141.92 L 235.83 136.25 L 234.54 128.53 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-16">
+          <g>
+            <path
+              d="M 218 60 L 261.07 130.88"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 266.52 139.85 L 253.27 131.52 L 261.07 130.88 L 265.23 124.25 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-17">
+          <g>
+            <path
+              d="M 338 60 L 297.12 128.62"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 291.74 137.64 L 292.9 122.03 L 297.12 128.62 L 304.92 129.19 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-18">
+          <g>
+            <path
+              d="M 458 100 L 320.31 136.72"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 310.16 139.42 L 321.88 129.05 L 320.31 136.72 L 325.49 142.58 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-24">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="457.5"
+            y="145.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="497.5" y="253.5">
+                Motion SA_1
+              </text>
             </g>
-            <g data-cell-id="EP-17">
-              <g>
-                <path
-                  d="M 338 60 L 297.12 128.62"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 291.74 137.64 L 292.9 122.03 L 297.12 128.62 L 304.92 129.19 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-26">
+          <g>
+            <path
+              d="M 118 340 L 201.53 340"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 213.53 340 L 197.53 348 L 201.53 340 L 197.53 332 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-27">
+          <g>
+            <path
+              d="M 338 360 L 401.53 360"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 413.53 360 L 397.53 368 L 401.53 360 L 397.53 352 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-28">
+          <g>
+            <path
+              d="M 118 198 L 201.53 197.6"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 213.53 197.54 L 197.57 205.62 L 201.53 197.6 L 197.49 189.62 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-29">
+          <g>
+            <path
+              d="M 118 500 L 201.53 499.6"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 213.53 499.54 L 197.57 507.62 L 201.53 499.6 L 197.49 491.62 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-30">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="617.5"
+            y="145.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="657.5" y="253.5">
+                Motion SA_2
+              </text>
             </g>
-            <g data-cell-id="EP-18">
-              <g>
-                <path
-                  d="M 458 100 L 320.31 136.72"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 310.16 139.42 L 321.88 129.05 L 320.31 136.72 L 325.49 142.58 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-32">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="777.5"
+            y="145.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="817.5" y="253.5">
+                Motion SA_3
+              </text>
             </g>
-            <g data-cell-id="EP-24">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="457.5"
-                y="145.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="497.5" y="253.5">
-                    Motion SA_1
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-33">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="937.5"
+            y="145.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="977.5" y="253.5">
+                Motion SA_4
+              </text>
             </g>
-            <g data-cell-id="EP-26">
-              <g>
-                <path
-                  d="M 118 340 L 201.53 340"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 213.53 340 L 197.53 348 L 201.53 340 L 197.53 332 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-34">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="457.5"
+            y="279.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="497.5" y="387.5">
+                Motion SB_1
+              </text>
             </g>
-            <g data-cell-id="EP-27">
-              <g>
-                <path
-                  d="M 338 360 L 401.53 360"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 413.53 360 L 397.53 368 L 401.53 360 L 397.53 352 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-35">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="617.5"
+            y="279.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="657.5" y="387.5">
+                Motion SB_2
+              </text>
             </g>
-            <g data-cell-id="EP-28">
-              <g>
-                <path
-                  d="M 118 198 L 201.53 197.6"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 213.53 197.54 L 197.57 205.62 L 201.53 197.6 L 197.49 189.62 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-36">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="777.5"
+            y="279.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="817.5" y="387.5">
+                Motion SB_3
+              </text>
             </g>
-            <g data-cell-id="EP-29">
-              <g>
-                <path
-                  d="M 118 500 L 201.53 499.6"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 213.53 499.54 L 197.57 507.62 L 201.53 499.6 L 197.49 491.62 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-37">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="937.5"
+            y="279.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="977.5" y="387.5">
+                Motion SB_4
+              </text>
             </g>
-            <g data-cell-id="EP-30">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="617.5"
-                y="145.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="657.5" y="253.5">
-                    Motion SA_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-38">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="457.5"
+            y="465.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="497.5" y="573.5">
+                Motion SZ_1
+              </text>
             </g>
-            <g data-cell-id="EP-32">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="777.5"
-                y="145.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="817.5" y="253.5">
-                    Motion SA_3
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-39">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="617.5"
+            y="465.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="657.5" y="573.5">
+                Motion SZ_2
+              </text>
             </g>
-            <g data-cell-id="EP-33">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="937.5"
-                y="145.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="977.5" y="253.5">
-                    Motion SA_4
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-40">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="777.5"
+            y="465.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="817.5" y="573.5">
+                Motion SZ_3
+              </text>
             </g>
-            <g data-cell-id="EP-34">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="457.5"
-                y="279.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="497.5" y="387.5">
-                    Motion SB_1
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-41">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="937.5"
+            y="465.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="977.5" y="573.5">
+                Motion SZ_4
+              </text>
             </g>
-            <g data-cell-id="EP-35">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="617.5"
-                y="279.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="657.5" y="387.5">
-                    Motion SB_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-65">
+          <svg x="237.5" y="819.5" width="80" height="80" viewBox="0 0 512 512">
+            <g>
+              <path
+                d="m98.277 246.191 37.787-45.319M413.851 245.809l-38.17-45.32M190.752 162.241 256 141.667M322.106 163.298 256 141.667M174.617 434.617l15.319-61.277M345.426 433.596l-15.32-61.958M198.833 305 256 272.333 313.167 305M256 272.333V110"
+                fill="none"
+                stroke="#000000"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+              ></path>
+              <circle
+                cx="256"
+                cy="60"
+                r="49"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="158"
+                cy="174.333"
+                r="32.667"
+                transform="rotate(-5.883 158.037 174.37)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="354"
+                cy="174.333"
+                r="32.667"
+                transform="rotate(-6.085 353.885 174.284)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="76.333"
+                cy="272.333"
+                r="32.667"
+                transform="rotate(-49.767 76.34 272.35)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="435.667"
+                cy="272.333"
+                r="32.667"
+                transform="rotate(-59.37 435.663 272.327)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="166.167"
+                cy="468.333"
+                r="32.667"
+                transform="rotate(-78.188 166.173 468.348)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="354"
+                cy="468.333"
+                r="32.667"
+                transform="rotate(-6.085 353.88 468.191)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="198.833"
+                cy="337.667"
+                r="32.667"
+                transform="rotate(-77.067 198.84 337.678)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
+              <circle
+                cx="321.333"
+                cy="337.667"
+                r="32.667"
+                transform="rotate(-45.001 321.33 337.672)"
+                fill="none"
+                stroke="#33cccc"
+                strokeWidth="22"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                data-original="#33cccc"
+              ></circle>
             </g>
-            <g data-cell-id="EP-36">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="777.5"
-                y="279.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="817.5" y="387.5">
-                    Motion SB_3
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-37">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="937.5"
-                y="279.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="977.5" y="387.5">
-                    Motion SB_4
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-38">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="457.5"
-                y="465.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="497.5" y="573.5">
-                    Motion SZ_1
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-39">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="617.5"
-                y="465.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="657.5" y="573.5">
-                    Motion SZ_2
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-40">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="777.5"
-                y="465.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="817.5" y="573.5">
-                    Motion SZ_3
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-41">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="937.5"
-                y="465.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="977.5" y="573.5">
-                    Motion SZ_4
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-65">
-              <svg
-                x="237.5"
-                y="819.5"
-                width="80"
-                height="80"
-                viewBox="0 0 512 512"
-              >
-                <g>
-                  <path
-                    d="m98.277 246.191 37.787-45.319M413.851 245.809l-38.17-45.32M190.752 162.241 256 141.667M322.106 163.298 256 141.667M174.617 434.617l15.319-61.277M345.426 433.596l-15.32-61.958M198.833 305 256 272.333 313.167 305M256 272.333V110"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                  ></path>
-                  <circle
-                    cx="256"
-                    cy="60"
-                    r="49"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="158"
-                    cy="174.333"
-                    r="32.667"
-                    transform="rotate(-5.883 158.037 174.37)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="354"
-                    cy="174.333"
-                    r="32.667"
-                    transform="rotate(-6.085 353.885 174.284)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="76.333"
-                    cy="272.333"
-                    r="32.667"
-                    transform="rotate(-49.767 76.34 272.35)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="435.667"
-                    cy="272.333"
-                    r="32.667"
-                    transform="rotate(-59.37 435.663 272.327)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="166.167"
-                    cy="468.333"
-                    r="32.667"
-                    transform="rotate(-78.188 166.173 468.348)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="354"
-                    cy="468.333"
-                    r="32.667"
-                    transform="rotate(-6.085 353.88 468.191)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="198.833"
-                    cy="337.667"
-                    r="32.667"
-                    transform="rotate(-77.067 198.84 337.678)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                  <circle
-                    cx="321.333"
-                    cy="337.667"
-                    r="32.667"
-                    transform="rotate(-45.001 321.33 337.672)"
-                    fill="none"
-                    stroke="#33cccc"
-                    strokeWidth="22"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
-                    data-original="#33cccc"
-                  ></circle>
-                </g>
-              </svg>
-              {/* <g>
+          </svg>
+          {/* <g>
                 <image
                   x="237.5"
                   y="819.5"
@@ -1207,1949 +1101,1406 @@ export default function GeneaLeaderboard() {
                   alt="motion_capture"
                 />
               </g> */}
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="28px"
-                >
-                  <rect
-                    fill="rgb(255, 255, 255)"
-                    stroke="none"
-                    x="197"
-                    y="917"
-                    width="166"
-                    height="36"
-                    strokeWidth="0"
-                  />
-                  <text x="277.5" y="939.5">
-                    Ground Truth
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="28px">
+              <rect
+                fill="rgb(255, 255, 255)"
+                stroke="none"
+                x="197"
+                y="917"
+                width="166"
+                height="36"
+                strokeWidth="0"
+              />
+              <text x="277.5" y="939.5">
+                Ground Truth
+              </text>
             </g>
-            <g data-cell-id="EP-67">
-              <svg
-                viewBox="0 0 119.25 122.88"
-                x="237.5"
-                y="630.5"
-                width="80"
-                height="80"
-              >
-                <use href="#aimodel_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-67">
+          <svg
+            viewBox="0 0 119.25 122.88"
+            x="237.5"
+            y="630.5"
+            width="80"
+            height="80"
+          >
+            <use href="#aimodel_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="277.5" y="739.5">
+                Baseline BA
+              </text>
+            </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-79">
+          <g>
+            <path
+              d="M 1138 780 L 1778.64 780"
+              fill="none"
+              stroke="#6c8ebf"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-81">
+          <g>
+            <rect
+              x="218"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
                 >
-                  <text x="277.5" y="739.5">
-                    Baseline BA
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-79">
-              <g>
-                <path
-                  d="M 1138 780 L 1778.64 780"
-                  fill="none"
-                  stroke="#6c8ebf"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-81">
-              <g>
-                <rect
-                  x="218"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "110px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "110px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-11-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="139"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-82">
-              <g>
-                <rect
-                  x="18"
-                  y="400"
-                  width="80"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-82">
+          <g>
+            <rect
+              x="18"
+              y="400"
+              width="80"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "38px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "38px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "10px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-12-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="29"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdo...
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+                <text
+                  x="29"
+                  y="219"
+                  fill="rgb(0, 0, 0)"
+                  fontSize="12px"
+                  textAnchor="middle"
+                >
+                  $$\cdo...
+                </text>
+              </switch>
             </g>
-            <g data-cell-id="EP-84">
-              <g>
-                <rect
-                  x="438"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-84">
+          <g>
+            <rect
+              x="438"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "220px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "220px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <svg
-                              width="2.652ex"
-                              height="0.271ex"
-                              role="img"
-                              focusable="false"
-                              viewBox="0 -310 1172 120"
-                              style={{ verticalAlign: "0.43ex" }}
-                            >
-                              <defs>
-                                <path
-                                  id="MJX-13-TEX-N-22EF"
-                                  d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                />
-                              </defs>
-                              <g
-                                stroke="currentColor"
-                                fill="currentColor"
-                                strokeWidth="0"
-                                transform="scale(1,-1)"
-                              >
-                                <g data-mml-node="math">
-                                  <g data-mml-node="mo">
-                                    <path
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      id="MJX-14-TEX-N-22EF"
-                                      d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                    />
-                                  </g>
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="249"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-85">
-              <g>
-                <rect
-                  x="598"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-85">
+          <g>
+            <rect
+              x="598"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "300px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "300px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-14-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="329"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-86">
-              <g>
-                <rect
-                  x="758"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-86">
+          <g>
+            <rect
+              x="758"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "380px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "380px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-15-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="409"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-87">
-              <g>
-                <rect
-                  x="918"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-87">
+          <g>
+            <rect
+              x="918"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "460px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "460px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-16-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="489"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-89">
-              <g>
-                <rect
-                  x="1158"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-89">
+          <g>
+            <rect
+              x="1158"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "580px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "580px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-17-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="609"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-90">
-              <g>
-                <rect
-                  x="1318"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-90">
+          <g>
+            <rect
+              x="1318"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "660px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "660px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-18-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="689"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-91">
-              <g>
-                <rect
-                  x="1478"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-91">
+          <g>
+            <rect
+              x="1478"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "740px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "740px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-19-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="769"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-92">
-              <g>
-                <rect
-                  x="1638"
-                  y="400"
-                  width="120"
-                  height="60"
-                  fill="none"
-                  stroke="none"
-                  pointerEvents="all"
-                />
-              </g>
-              <g>
-                <g transform="translate(-0.5 -0.5)scale(2)">
-                  <switch>
-                    <foreignObject
-                      pointerEvents="none"
-                      width="100%"
-                      height="100%"
-                      style={{ overflow: "visible", textAlign: "left" }}
+          </g>
+        </g>
+        <g data-cell-id="EP-92">
+          <g>
+            <rect
+              x="1638"
+              y="400"
+              width="120"
+              height="60"
+              fill="none"
+              stroke="none"
+              pointerEvents="all"
+            />
+          </g>
+          <g>
+            <g transform="translate(-0.5 -0.5)scale(2)">
+              <switch>
+                <foreignObject
+                  pointerEvents="none"
+                  width="100%"
+                  height="100%"
+                  style={{ overflow: "visible", textAlign: "left" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "unsafe center",
+                      justifyContent: "unsafe center",
+                      width: "58px",
+                      height: "1px",
+                      paddingTop: "215px",
+                      marginLeft: "820px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        boxSizing: "border-box",
+                        fontSize: "0px",
+                        textAlign: "center",
+                      }}
                     >
                       <div
-                        xmlns="http://www.w3.org/1999/xhtml"
                         style={{
-                          display: "flex",
-                          alignItems: "unsafe center",
-                          justifyContent: "unsafe center",
-                          width: "58px",
-                          height: "1px",
-                          paddingTop: "215px",
-                          marginLeft: "820px",
+                          display: "inline-block",
+                          fontSize: "12px",
+
+                          color: "rgb(0, 0, 0)",
+                          lineHeight: 1.2,
+                          pointerEvents: "all",
+                          whiteSpace: "normal",
+                          overflowWrap: "normal",
                         }}
                       >
-                        <div
-                          data-drawio-colors="color: rgb(0, 0, 0)"
-                          style={{
-                            boxSizing: "border-box",
-                            fontSize: "0px",
-                            textAlign: "center",
-                          }}
+                        <svg
+                          width="2.652ex"
+                          height="0.271ex"
+                          role="img"
+                          focusable="false"
+                          viewBox="0 -310 1172 120"
+                          style={{ verticalAlign: "0.43ex" }}
                         >
-                          <div
-                            style={{
-                              display: "inline-block",
-                              fontSize: "12px",
-                              fontFamily: "Segoe UI",
-                              color: "rgb(0, 0, 0)",
-                              lineHeight: 1.2,
-                              pointerEvents: "all",
-                              whiteSpace: "normal",
-                              overflowWrap: "normal",
-                            }}
+                          <g
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            transform="scale(1,-1)"
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
-                            >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
-                              >
-                                <defs>
-                                  <path
-                                    id="MJX-20-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <path
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        id="MJX-14-TEX-N-22EF"
-                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                      />
-                                    </g>
-                                  </g>
-                                </g>
-                              </svg>
-                            </mjx-container>
-                          </div>
-                        </div>
+                            <use href="#three_dots" />
+                          </g>
+                        </svg>
                       </div>
-                    </foreignObject>
-                    <text
-                      x="849"
-                      y="219"
-                      fill="rgb(0, 0, 0)"
-                      fontFamily="''Segoe UI''"
-                      fontSize="12px"
-                      textAnchor="middle"
-                    >
-                      $$\cdots$$
-                    </text>
-                  </switch>
-                </g>
-              </g>
+                    </div>
+                  </div>
+                </foreignObject>
+              </switch>
             </g>
-            <g data-cell-id="EP-97">
-              <g>
-                <path
-                  d="M 1058 360 L 1121.53 360"
-                  fill="none"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-                <path
-                  d="M 1133.53 360 L 1117.53 368 L 1121.53 360 L 1117.53 352 Z"
-                  fill="rgb(0, 0, 0)"
-                  stroke="rgb(0, 0, 0)"
-                  strokeWidth="4"
-                  strokeMiterlimit="10"
-                  pointerEvents="all"
-                />
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-97">
+          <g>
+            <path
+              d="M 1058 360 L 1121.53 360"
+              fill="none"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+            <path
+              d="M 1133.53 360 L 1117.53 368 L 1121.53 360 L 1117.53 352 Z"
+              fill="rgb(0, 0, 0)"
+              stroke="rgb(0, 0, 0)"
+              strokeWidth="4"
+              strokeMiterlimit="10"
+              pointerEvents="all"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-98">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="126.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1217.5" y="247.5">
+                Video SA_1
+              </text>
             </g>
-            <g data-cell-id="EP-98">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="126.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1217.5" y="247.5">
-                    Video SA_1
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-99">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1322.9595036814835"
+            y="126.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1377.5" y="247.5">
+                Video SA_2
+              </text>
             </g>
-            <g data-cell-id="EP-99">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1322.9595036814835"
-                y="126.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1377.5" y="247.5">
-                    Video SA_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-100">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1482.9595036814835"
+            y="126.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1537.5" y="247.5">
+                Video SA_3
+              </text>
             </g>
-            <g data-cell-id="EP-100">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1482.9595036814835"
-                y="126.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1537.5" y="247.5">
-                    Video SA_3
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g data-cell-id="EP-101">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1642.9595036814835"
-                y="126.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-101">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1642.9595036814835"
+            y="126.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1697.5" y="247.5">
-                    Video SA_4
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1697.5" y="247.5">
+                Video SA_4
+              </text>
             </g>
-            <g data-cell-id="EP-103">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="266.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-103">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1217.5" y="387.5">
-                    Video SB_1
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1217.5" y="387.5">
+                Video SB_1
+              </text>
             </g>
-            <g data-cell-id="EP-104">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1322.9595036814835"
-                y="266.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-104">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1322.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1377.5" y="387.5">
-                    Video SB_2
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1377.5" y="387.5">
+                Video SB_2
+              </text>
             </g>
-            <g data-cell-id="EP-105">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1482.9595036814835"
-                y="266.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-105">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1482.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1537.5" y="387.5">
-                    Video SB_3
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1537.5" y="387.5">
+                Video SB_3
+              </text>
             </g>
-            <g data-cell-id="EP-106">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1642.9595036814835"
-                y="266.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-106">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1642.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1697.5" y="387.5">
-                    Video SB_4
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1697.5" y="387.5">
+                Video SB_4
+              </text>
             </g>
-            <g data-cell-id="EP-107">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="446.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-107">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="446.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1217.5" y="567.5">
-                    Video SZ_1
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1217.5" y="567.5">
+                Video SZ_1
+              </text>
             </g>
-            <g data-cell-id="EP-108">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1322.9595036814835"
-                y="446.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-108">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1322.9595036814835"
+            y="446.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1377.5" y="567.5">
-                    Video SZ_2
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1377.5" y="567.5">
+                Video SZ_2
+              </text>
             </g>
-            <g data-cell-id="EP-109">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1482.9595036814835"
-                y="446.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-109">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1482.9595036814835"
+            y="446.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1537.5" y="567.5">
-                    Video SZ_3
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1537.5" y="567.5">
+                Video SZ_3
+              </text>
             </g>
-            <g data-cell-id="EP-110">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1642.9595036814835"
-                y="446.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-110">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1642.9595036814835"
+            y="446.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1697.5" y="567.5">
-                    Video SZ_4
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1697.5" y="567.5">
+                Video SZ_4
+              </text>
             </g>
-            <g data-cell-id="EP-112">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="626.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-112">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="626.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1217.5" y="747.5">
-                    Video BA_1
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1217.5" y="747.5">
+                Video BA_1
+              </text>
             </g>
-            <g data-cell-id="EP-113">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1322.9595036814835"
-                y="626.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="126.40849584072004"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1377.5" y="747.5">
-                    Video BA_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-113">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1322.9595036814835"
+            y="626.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="126.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1377.5" y="747.5">
+                Video BA_2
+              </text>
             </g>
-            <g data-cell-id="EP-114">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1482.9595036814835"
-                y="626.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-114">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1482.9595036814835"
+            y="626.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1537.5" y="747.5">
-                    Video BA_3
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1537.5" y="747.5">
+                Video BA_3
+              </text>
             </g>
-            <g data-cell-id="EP-115">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1642.9595036814835"
-                y="626.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-115">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1642.9595036814835"
+            y="626.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1697.5" y="747.5">
-                    Video BA_4
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1697.5" y="747.5">
+                Video BA_4
+              </text>
             </g>
-            <g data-cell-id="EP-116">
-              <g>
-                <path
-                  d="M 1138 620 L 1778 620"
-                  fill="none"
-                  stroke="#6c8ebf"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  pointerEvents="stroke"
-                />
-              </g>
-            </g>
-            <g data-cell-id="EP-130">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1162.9595036814835"
-                y="786.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-116">
+          <g>
+            <path
+              d="M 1138 620 L 1778 620"
+              fill="none"
+              stroke="#6c8ebf"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              pointerEvents="stroke"
+            />
+          </g>
+        </g>
+        <g data-cell-id="EP-130">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1162.9595036814835"
+            y="786.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1217.5" y="907.5">
-                    Video NA_1
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1217.5" y="907.5">
+                Video NA_1
+              </text>
             </g>
-            <g data-cell-id="EP-131">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1322.9595036814835"
-                y="786.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-131">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1322.9595036814835"
+            y="786.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1377.5" y="907.5">
-                    Video NA_2
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1377.5" y="907.5">
+                Video NA_2
+              </text>
             </g>
-            <g data-cell-id="EP-132">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1482.9595036814835"
-                y="786.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-132">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1482.9595036814835"
+            y="786.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1537.5" y="907.5">
-                    Video NA_3
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1537.5" y="907.5">
+                Video NA_3
+              </text>
             </g>
-            <g data-cell-id="EP-133">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="1642.9595036814835"
-                y="786.40849584072"
-                width="109.08099263703299"
-                height="109.09586799399972"
-                alt="video"
-              >
-                <use href="#video_icon" />
-              </svg>
+          </g>
+        </g>
+        <g data-cell-id="EP-133">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="1642.9595036814835"
+            y="786.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+            alt="video"
+          >
+            <use href="#video_icon" />
+          </svg>
 
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="1697.5" y="907.5">
-                    Video NA_4
-                  </text>
-                </g>
-              </g>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="1697.5" y="907.5">
+                Video NA_4
+              </text>
             </g>
-            <g data-cell-id="EP-135">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="457.5"
-                y="631.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="497.5" y="739.5">
-                    Motion BA_1
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-135">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="457.5"
+            y="631.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="497.5" y="739.5">
+                Motion BA_1
+              </text>
             </g>
-            <g data-cell-id="EP-136">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="617.5"
-                y="631.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="657.5" y="739.5">
-                    Motion BA_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-136">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="617.5"
+            y="631.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="657.5" y="739.5">
+                Motion BA_2
+              </text>
             </g>
-            <g data-cell-id="EP-137">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="777.5"
-                y="631.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="817.5" y="739.5">
-                    Motion BA_3
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-137">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="777.5"
+            y="631.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="817.5" y="739.5">
+                Motion BA_3
+              </text>
             </g>
-            <g data-cell-id="EP-138">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="937.5"
-                y="631.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="977.5" y="739.5">
-                    Motion BA_4
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-138">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="937.5"
+            y="631.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="977.5" y="739.5">
+                Motion BA_4
+              </text>
             </g>
-            <g data-cell-id="EP-139">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="457.5"
-                y="793.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="497.5" y="901.5">
-                    Motion NA_1
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-139">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="457.5"
+            y="793.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="497.5" y="901.5">
+                Motion NA_1
+              </text>
             </g>
-            <g data-cell-id="EP-140">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="617.5"
-                y="793.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="657.5" y="901.5">
-                    Motion NA_2
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-140">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="617.5"
+            y="793.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="657.5" y="901.5">
+                Motion NA_2
+              </text>
             </g>
-            <g data-cell-id="EP-141">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="777.5"
-                y="793.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="817.5" y="901.5">
-                    Motion NA_3
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-141">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="777.5"
+            y="793.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="817.5" y="901.5">
+                Motion NA_3
+              </text>
             </g>
-            <g data-cell-id="EP-142">
-              <svg
-                viewBox="0 0 1024 1024"
-                x="937.5"
-                y="793.5"
-                width="80"
-                height="80"
-              >
-                <use href="#npy_icon" />
-              </svg>
-              <g>
-                <g
-                  fill="rgb(0, 0, 0)"
-                  fontFamily="'Segoe UI'"
-                  textAnchor="middle"
-                  fontSize="24px"
-                >
-                  <text x="977.5" y="901.5">
-                    Motion NA_4
-                  </text>
-                </g>
-              </g>
+          </g>
+        </g>
+        <g data-cell-id="EP-142">
+          <svg
+            viewBox="0 0 1024 1024"
+            x="937.5"
+            y="793.5"
+            width="80"
+            height="80"
+          >
+            <use href="#npy_icon" />
+          </svg>
+          <g>
+            <g fill="rgb(0, 0, 0)" textAnchor="middle" fontSize="24px">
+              <text x="977.5" y="901.5">
+                Motion NA_4
+              </text>
             </g>
           </g>
         </g>
       </g>
     </svg>
   )
-}
-
-{
-  /* <style xmlns="http://www.w3.org/1999/xhtml" id="MJX-SVG-styles"
-  // > mjx-container[jax="SVG"] {
-  direction: ltr;
-} mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-min-height: "1px"
-min-width: "1px"
-} mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-stroke: blue;
-} mjx-container[jax="SVG"][display="true"] {
-  display: block;
-text-align: center;
-margin: 1em 0;
-} mjx-container[jax="SVG"][display="true"][width="full"] {
-  display: flex;
-} mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-} mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-} g[data-mml-node="merror"] > g {
-  fill: red;
-stroke: red;
-} g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-stroke: none;
-} g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
-  strokeWidth: "70px"
-fill: none;
-} g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
-  strokeWidth: "70px"
-fill: none;
-} g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
-  stroke-dasharray: 140;
-} g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
-  strokeLinecap: round;
-stroke-dasharray: 0,140;
-} g[data-mml-node="mtable"] > g > svg {
-  overflow: visible;
-} [jax="SVG"] mjx-tool {
-  display: "inline-block";
-position: relative;
-width: 0;
-height: 0;
-} [jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-top: 0;
-left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: "inline-block";
-padding: .2em;
-border: 1px solid #888;
-fontSize: 70%;
-background-color: #F8F8F8;
-color: black;
-box-shadow: 2px 2px 5px #AAAAAA;
-} g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-position: fixed;
-left: 1em;
-bottom: 1em;
-min-width: 25%;
-padding: .2em .4em;
-border: 1px solid #888;
-fontSize: 90%;
-background-color: #F8F8F8;
-color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  fontFamily: initial;
-lineHeight: normal;
-overflow: visible;
-} mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
-  strokeWidth: 3;
-}
-</style>  */
 }
