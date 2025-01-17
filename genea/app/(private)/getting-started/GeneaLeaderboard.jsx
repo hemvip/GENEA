@@ -226,7 +226,7 @@ export default function GeneaLeaderboard() {
       <g>
         <g>
           <g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-75">
+            <g>
               <g>
                 <path
                   d="M 338 859.16 L 1121.53 859.63"
@@ -246,7 +246,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-144">
+            <g>
               <g>
                 <rect
                   x="418"
@@ -262,7 +262,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-74">
+            <g>
               <g>
                 <path
                   d="M 338 679.64 L 1121.53 680.05"
@@ -282,7 +282,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-143">
+            <g>
               <g>
                 <rect
                   x="418"
@@ -298,7 +298,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-76">
+            <g>
               <g>
                 <rect
                   x="1138"
@@ -314,7 +314,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-42">
+            <g>
               <g>
                 <rect
                   x="418"
@@ -330,7 +330,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-2">
+            <g>
               <g>
                 <image
                   x="17.5"
@@ -364,7 +364,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-3">
+            <g>
               <g>
                 <image
                   x="17.5"
@@ -398,7 +398,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-4">
+            <g>
               <g>
                 <image
                   x="17.5"
@@ -432,7 +432,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-5">
+            <g>
               <g>
                 <rect
                   x="58"
@@ -506,7 +506,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-6">
+            <g>
               <g>
                 <rect
                   x="158"
@@ -580,7 +580,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-7">
+            <g>
               <g>
                 <rect
                   x="278"
@@ -654,7 +654,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-9">
+            <g>
               <g>
                 <rect
                   x="398"
@@ -728,7 +728,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-12">
+            <g>
               <g>
                 <rect
                   x="218"
@@ -744,7 +744,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-10">
+            <g>
               <g>
                 <image
                   x="227.5"
@@ -769,7 +769,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-13">
+            <g>
               <g>
                 <image
                   x="227.5"
@@ -794,7 +794,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-14">
+            <g>
               <g>
                 <image
                   x="227.5"
@@ -819,7 +819,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-15">
+            <g>
               <g>
                 <path
                   d="M 118 100 L 235.83 136.25"
@@ -839,7 +839,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-16">
+            <g>
               <g>
                 <path
                   d="M 218 60 L 261.07 130.88"
@@ -859,7 +859,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-17">
+            <g>
               <g>
                 <path
                   d="M 338 60 L 297.12 128.62"
@@ -879,7 +879,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-18">
+            <g>
               <g>
                 <path
                   d="M 458 100 L 320.31 136.72"
@@ -899,7 +899,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-24">
+            <g>
               <g>
                 <image
                   x="457.5"
@@ -924,7 +924,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-26">
+            <g>
               <g>
                 <path
                   d="M 118 340 L 201.53 340"
@@ -944,7 +944,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-27">
+            <g>
               <g>
                 <path
                   d="M 338 360 L 401.53 360"
@@ -964,7 +964,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-28">
+            <g>
               <g>
                 <path
                   d="M 118 198 L 201.53 197.6"
@@ -984,7 +984,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-29">
+            <g>
               <g>
                 <path
                   d="M 118 500 L 201.53 499.6"
@@ -1004,7 +1004,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-30">
+            <g>
               <g>
                 <image
                   x="617.5"
@@ -1029,7 +1029,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-32">
+            <g>
               <g>
                 <image
                   x="777.5"
@@ -1054,7 +1054,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-33">
+            <g>
               <g>
                 <image
                   x="937.5"
@@ -1079,7 +1079,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-34">
+            <g>
               <g>
                 <image
                   x="457.5"
@@ -1104,7 +1104,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-35">
+            <g>
               <g>
                 <image
                   x="617.5"
@@ -1129,7 +1129,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-36">
+            <g>
               <g>
                 <image
                   x="777.5"
@@ -1154,7 +1154,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-37">
+            <g>
               <g>
                 <image
                   x="937.5"
@@ -1179,7 +1179,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-38">
+            <g>
               <g>
                 <image
                   x="457.5"
@@ -1204,7 +1204,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-39">
+            <g>
               <g>
                 <image
                   x="617.5"
@@ -1229,7 +1229,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-40">
+            <g>
               <g>
                 <image
                   x="777.5"
@@ -1254,7 +1254,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-41">
+            <g>
               <g>
                 <image
                   x="937.5"
@@ -1279,7 +1279,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-65">
+            <g>
               <g>
                 <image
                   x="237.5"
@@ -1313,7 +1313,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-67">
+            <g>
               <g>
                 <image
                   x="227.5"
@@ -1338,7 +1338,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-79">
+            <g>
               <g>
                 <path
                   d="M 1138 780 L 1778.64 780"
@@ -1350,7 +1350,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-81">
+            <g>
               <g>
                 <rect
                   x="218"
@@ -1458,7 +1458,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-82">
+            <g>
               <g>
                 <rect
                   x="18"
@@ -1566,7 +1566,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-84">
+            <g>
               <g>
                 <rect
                   x="438"
@@ -1668,7 +1668,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-85">
+            <g>
               <g>
                 <rect
                   x="598"
@@ -1776,7 +1776,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-86">
+            <g>
               <g>
                 <rect
                   x="758"
@@ -1884,7 +1884,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-87">
+            <g>
               <g>
                 <rect
                   x="918"
@@ -1992,7 +1992,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-89">
+            <g>
               <g>
                 <rect
                   x="1158"
@@ -2100,7 +2100,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-90">
+            <g>
               <g>
                 <rect
                   x="1318"
@@ -2208,7 +2208,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-91">
+            <g>
               <g>
                 <rect
                   x="1478"
@@ -2316,7 +2316,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-92">
+            <g>
               <g>
                 <rect
                   x="1638"
@@ -2424,7 +2424,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-97">
+            <g>
               <g>
                 <path
                   d="M 1058 360 L 1121.53 360"
@@ -2444,7 +2444,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-98">
+            <g>
               <g>
                 <image
                   x="1162.9595036814835"
@@ -2470,7 +2470,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-99">
+            <g>
               <g>
                 <image
                   x="1322.9595036814835"
@@ -2496,7 +2496,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-100">
+            <g>
               <g>
                 <image
                   x="1482.9595036814835"
@@ -2522,7 +2522,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-101">
+            <g>
               <g>
                 <image
                   x="1642.9595036814835"
@@ -2548,7 +2548,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-103">
+            <g>
               <g>
                 <image
                   x="1162.9595036814835"
@@ -2574,7 +2574,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-104">
+            <g>
               <g>
                 <image
                   x="1322.9595036814835"
@@ -2600,7 +2600,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-105">
+            <g>
               <g>
                 <image
                   x="1482.9595036814835"
@@ -2626,7 +2626,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-106">
+            <g>
               <g>
                 <image
                   x="1642.9595036814835"
@@ -2652,7 +2652,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-107">
+            <g>
               <g>
                 <image
                   x="1162.9595036814835"
@@ -2678,7 +2678,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-108">
+            <g>
               <g>
                 <image
                   x="1322.9595036814835"
@@ -2704,7 +2704,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-109">
+            <g>
               <g>
                 <image
                   x="1482.9595036814835"
@@ -2730,7 +2730,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-110">
+            <g>
               <g>
                 <image
                   x="1642.9595036814835"
@@ -2756,7 +2756,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-112">
+            <g>
               <g>
                 <image
                   x="1162.9595036814835"
@@ -2782,7 +2782,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-113">
+            <g>
               <g>
                 <image
                   x="1322.9595036814835"
@@ -2808,7 +2808,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-114">
+            <g>
               <g>
                 <image
                   x="1482.9595036814835"
@@ -2834,7 +2834,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-115">
+            <g>
               <g>
                 <image
                   x="1642.9595036814835"
@@ -2860,7 +2860,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-116">
+            <g>
               <g>
                 <path
                   d="M 1138 620 L 1778 620"
@@ -2872,7 +2872,7 @@ export default function GeneaLeaderboard() {
                 />
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-130">
+            <g>
               <g>
                 <image
                   x="1162.9595036814835"
@@ -2898,7 +2898,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-131">
+            <g>
               <g>
                 <image
                   x="1322.9595036814835"
@@ -2924,7 +2924,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-132">
+            <g>
               <g>
                 <image
                   x="1482.9595036814835"
@@ -2950,7 +2950,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-133">
+            <g>
               <g>
                 <image
                   x="1642.9595036814835"
@@ -2976,7 +2976,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-135">
+            <g>
               <g>
                 <image
                   x="457.5"
@@ -3001,7 +3001,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-136">
+            <g>
               <g>
                 <image
                   x="617.5"
@@ -3026,7 +3026,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-137">
+            <g>
               <g>
                 <image
                   x="777.5"
@@ -3051,7 +3051,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-138">
+            <g>
               <g>
                 <image
                   x="937.5"
@@ -3076,7 +3076,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-139">
+            <g>
               <g>
                 <image
                   x="457.5"
@@ -3101,7 +3101,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-140">
+            <g>
               <g>
                 <image
                   x="617.5"
@@ -3126,7 +3126,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-141">
+            <g>
               <g>
                 <image
                   x="777.5"
@@ -3151,7 +3151,7 @@ export default function GeneaLeaderboard() {
                 </g>
               </g>
             </g>
-            <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-142">
+            <g>
               <g>
                 <image
                   x="937.5"
