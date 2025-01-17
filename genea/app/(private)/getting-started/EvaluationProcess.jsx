@@ -1,6 +1,9 @@
 export default function EvaluationProcess() {
   return (
-    <svg viewBox="-0.5 -0.5 1801 1238">
+    <svg
+      style={{ width: "110%", height: "auto" }}
+      viewBox="-0.5 -0.5 1801 1238"
+    >
       <defs>
         <path
           id="three_dots"
@@ -627,17 +630,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-98">
-          <svg>
-            <image
-              x="24.959503681483504"
-              y="266.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="24.959503681483504"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="79.5" y="387.5">
                 Video SA_1
               </text>
@@ -645,17 +648,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-99">
-          <svg>
-            <image
-              x="184.9595036814835"
-              y="266.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="184.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="239.5" y="387.5">
                 Video SA_2
               </text>
@@ -663,17 +666,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-100">
-          <svg>
-            <image
-              x="344.9595036814835"
-              y="266.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="344.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="399.5" y="387.5">
                 Video SA_3
               </text>
@@ -681,17 +684,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-101">
-          <svg>
-            <image
-              x="504.9595036814835"
-              y="266.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="504.9595036814835"
+            y="266.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="559.5" y="387.5">
                 Video SA_4
               </text>
@@ -699,17 +702,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-103">
-          <svg>
-            <image
-              x="24.959503681483504"
-              y="406.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="24.959503681483504"
+            y="406.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="79.5" y="527.5">
                 Video SB_1
               </text>
@@ -717,17 +720,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-104">
-          <svg>
-            <image
-              x="184.9595036814835"
-              y="406.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="184.9595036814835"
+            y="406.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="239.5" y="527.5">
                 Video SB_2
               </text>
@@ -735,17 +738,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-105">
-          <svg>
-            <image
-              x="344.9595036814835"
-              y="406.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="344.9595036814835"
+            y="406.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="399.5" y="527.5">
                 Video SB_3
               </text>
@@ -753,17 +756,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-106">
-          <svg>
-            <image
-              x="504.9595036814835"
-              y="406.40849584072004"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="504.9595036814835"
+            y="406.40849584072004"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="559.5" y="527.5">
                 Video SB_4
               </text>
@@ -771,17 +774,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-107">
-          <svg>
-            <image
-              x="24.959503681483504"
-              y="586.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="24.959503681483504"
+            y="586.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="79.5" y="707.5">
                 Video SZ_1
               </text>
@@ -789,17 +792,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-108">
-          <svg>
-            <image
-              x="184.9595036814835"
-              y="586.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="184.9595036814835"
+            y="586.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="239.5" y="707.5">
                 Video SZ_2
               </text>
@@ -807,17 +810,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-109">
-          <svg>
-            <image
-              x="344.9595036814835"
-              y="586.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="344.9595036814835"
+            y="586.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="399.5" y="707.5">
                 Video SZ_3
               </text>
@@ -825,17 +828,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-110">
-          <svg>
-            <image
-              x="504.9595036814835"
-              y="586.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="504.9595036814835"
+            y="586.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="559.5" y="707.5">
                 Video SZ_4
               </text>
@@ -843,17 +846,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-112">
-          <svg>
-            <image
-              x="24.959503681483504"
-              y="766.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="24.959503681483504"
+            y="766.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="79.5" y="887.5">
                 Video BA_1
               </text>
@@ -861,17 +864,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-113">
-          <svg>
-            <image
-              x="184.9595036814835"
-              y="766.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="184.9595036814835"
+            y="766.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="239.5" y="887.5">
                 Video BA_2
               </text>
@@ -879,17 +882,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-114">
-          <svg>
-            <image
-              x="344.9595036814835"
-              y="766.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="344.9595036814835"
+            y="766.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="399.5" y="887.5">
                 Video BA_3
               </text>
@@ -897,17 +900,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-115">
-          <svg>
-            <image
-              x="504.9595036814835"
-              y="766.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="504.9595036814835"
+            y="766.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="559.5" y="887.5">
                 Video BA_4
               </text>
@@ -927,17 +930,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-130">
-          <svg>
-            <image
-              x="24.959503681483504"
-              y="926.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="24.959503681483504"
+            y="926.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="79.5" y="1047.5">
                 Video NA_1
               </text>
@@ -945,17 +948,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-131">
-          <svg>
-            <image
-              x="184.9595036814835"
-              y="926.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="184.9595036814835"
+            y="926.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="239.5" y="1047.5">
                 Video NA_2
               </text>
@@ -963,17 +966,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-132">
-          <svg>
-            <image
-              x="344.9595036814835"
-              y="926.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="344.9595036814835"
+            y="926.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="399.5" y="1047.5">
                 Video NA_3
               </text>
@@ -981,17 +984,17 @@ export default function EvaluationProcess() {
           </g>
         </g>
         <g data-cell-id="EP-133">
-          <svg>
-            <image
-              x="504.9595036814835"
-              y="926.40849584072"
-              width="109.08099263703299"
-              height="109.09586799399972"
-              href="https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png"
-            />
+          <svg
+            viewBox="0 0 1024 1024"
+            x="504.9595036814835"
+            y="926.40849584072"
+            width="109.08099263703299"
+            height="109.09586799399972"
+          >
+            <use href="#video_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="559.5" y="1047.5">
                 Video NA_4
               </text>
@@ -1009,7 +1012,7 @@ export default function EvaluationProcess() {
             />
           </g>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="779.5" y="195.5">
                 Participant 1
               </text>
@@ -1038,7 +1041,7 @@ export default function EvaluationProcess() {
             />
           </g>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="939.5" y="195.5">
                 Participant 2
               </text>
@@ -1056,7 +1059,7 @@ export default function EvaluationProcess() {
             />
           </g>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1099.5" y="195.5">
                 Participant 3
               </text>
@@ -1074,7 +1077,7 @@ export default function EvaluationProcess() {
             />
           </g>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1259.5" y="195.5">
                 Participant 4
               </text>
@@ -1092,7 +1095,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="879.5" y="371.5">
                 Screen
               </text>
@@ -1125,7 +1128,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1039.5" y="371.5">
                 Screen
               </text>
@@ -1146,7 +1149,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1279.5" y="371.5">
                 Screen
               </text>
@@ -1405,13 +1408,7 @@ export default function EvaluationProcess() {
                     </div>
                   </div>
                 </foreignObject>
-                <text
-                  x="540"
-                  y="224"
-                  fontFamily="'Segoe UI'"
-                  fontSize="12px"
-                  textAnchor="middle"
-                >
+                <text x="540" y="224" fontSize="12px" textAnchor="middle">
                   emotion mismatching studies
                 </text>
               </switch>
@@ -1445,7 +1442,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="879.5" y="613.5">
                 Screen
               </text>
@@ -1478,7 +1475,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1039.5" y="611.5">
                 Screen
               </text>
@@ -1499,7 +1496,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1279.5" y="611.5">
                 Screen
               </text>
@@ -1665,13 +1662,7 @@ export default function EvaluationProcess() {
                     </div>
                   </div>
                 </foreignObject>
-                <text
-                  x="540"
-                  y="344"
-                  fontFamily="'Segoe UI'"
-                  fontSize="12px"
-                  textAnchor="middle"
-                >
+                <text x="540" y="344" fontSize="12px" textAnchor="middle">
                   speech appropriateness studies
                 </text>
               </switch>
@@ -1705,7 +1696,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="879.5" y="851.5">
                 Screen
               </text>
@@ -1738,7 +1729,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1039.5" y="851.5">
                 Screen
               </text>
@@ -1759,7 +1750,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1279.5" y="851.5">
                 Screen
               </text>
@@ -1925,13 +1916,7 @@ export default function EvaluationProcess() {
                     </div>
                   </div>
                 </foreignObject>
-                <text
-                  x="540"
-                  y="464"
-                  fontFamily="'Segoe UI'"
-                  fontSize="12px"
-                  textAnchor="middle"
-                >
+                <text x="540" y="464" fontSize="12px" textAnchor="middle">
                   pairwise emotion studies
                 </text>
               </switch>
@@ -1965,7 +1950,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="879.5" y="1091.5">
                 Screen
               </text>
@@ -1998,7 +1983,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1039.5" y="1091.5">
                 Screen
               </text>
@@ -2019,7 +2004,7 @@ export default function EvaluationProcess() {
             <use href="#screen_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <text x="1279.5" y="1091.5">
                 Screen
               </text>
@@ -2185,13 +2170,7 @@ export default function EvaluationProcess() {
                     </div>
                   </div>
                 </foreignObject>
-                <text
-                  x="540"
-                  y="584"
-                  fontFamily="'Segoe UI'"
-                  fontSize="12px"
-                  textAnchor="middle"
-                >
+                <text x="540" y="584" fontSize="12px" textAnchor="middle">
                   pairwise human-likeness studies
                 </text>
               </switch>
@@ -2209,7 +2188,7 @@ export default function EvaluationProcess() {
             <use href="#report_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2236,7 +2215,7 @@ export default function EvaluationProcess() {
             <use href="#report_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2263,7 +2242,7 @@ export default function EvaluationProcess() {
             <use href="#report_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2290,7 +2269,7 @@ export default function EvaluationProcess() {
             <use href="#report_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2486,7 +2465,7 @@ export default function EvaluationProcess() {
             <use href="#scoreranking_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2513,7 +2492,7 @@ export default function EvaluationProcess() {
             <use href="#scoreranking_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
@@ -2540,7 +2519,7 @@ export default function EvaluationProcess() {
             <use href="#scoreranking_icon" />
           </svg>
           <g>
-            <g fontFamily="'Segoe UI'" textAnchor="middle" fontSize="24px">
+            <g textAnchor="middle" fontSize="24px">
               <rect
                 fill="rgb(255, 255, 255)"
                 stroke="none"
