@@ -1,0 +1,385 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="1012" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="sD8-MN1jSHvhcHJAprdu-17" target="sD8-MN1jSHvhcHJAprdu-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="140" />
+              <mxPoint x="420" y="140" />
+              <mxPoint x="420" y="195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="sD8-MN1jSHvhcHJAprdu-1" target="sD8-MN1jSHvhcHJAprdu-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="140" />
+              <mxPoint x="420" y="140" />
+              <mxPoint x="420" y="195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="sD8-MN1jSHvhcHJAprdu-8" target="sD8-MN1jSHvhcHJAprdu-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="140" />
+              <mxPoint x="420" y="140" />
+              <mxPoint x="420" y="315" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="sD8-MN1jSHvhcHJAprdu-9" target="sD8-MN1jSHvhcHJAprdu-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="140" />
+              <mxPoint x="420" y="140" />
+              <mxPoint x="420" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="sD8-MN1jSHvhcHJAprdu-10" target="sD8-MN1jSHvhcHJAprdu-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="140" />
+              <mxPoint x="420" y="140" />
+              <mxPoint x="420" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-66" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#f5f5f5;strokeColor=#666666;fontFamily=Segoe UI;labelBackgroundColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="50" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-18" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="150" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-76" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Segoe UI;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="150" width="320" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-79" value="" style="endArrow=none;html=1;rounded=0;entryX=1.004;entryY=0.579;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Segoe UI;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="480" as="sourcePoint" />
+            <mxPoint x="360.32000000000016" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-89" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="50" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-90" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="130" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-91" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="210" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-92" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="290" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-98" value="Video SA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="60" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-99" value="Video SA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-100" value="Video SA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="220" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-101" value="Video SA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="300" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-103" value="Video SB_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="60" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-104" value="Video SB_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-105" value="Video SB_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="220" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-106" value="Video SB_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="300" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-107" value="Video SZ_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="60" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-108" value="Video SZ_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-109" value="Video SZ_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="220" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-110" value="Video SZ_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="300" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-112" value="Video BA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="60" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-113" value="Video BA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-114" value="Video BA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="220" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-115" value="Video BA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="300" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-116" value="" style="endArrow=none;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Segoe UI;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="400" as="sourcePoint" />
+            <mxPoint x="360" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-130" value="Video NA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="60" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-131" value="Video NA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-132" value="Video NA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="220" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-133" value="Video NA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="300" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-1" value="Participant 1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11249384/pasted-from-clipboard.png;fontFamily=Segoe UI;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.insightplatforms.com/wp-content/uploads/2024/07/Prolific-Logo-Square-Insight-Platforms.png;clipPath=inset(33.33% 3% 33.33% 2.67%);fontFamily=Segoe UI;fillColor=none;imageBackground=none;" vertex="1" parent="1">
+          <mxGeometry x="537.55" y="20" width="84.9" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-8" value="Participant 2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11249384/pasted-from-clipboard.png;fontFamily=Segoe UI;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="490" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-9" value="Participant 3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11249384/pasted-from-clipboard.png;fontFamily=Segoe UI;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="570" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-10" value="Participant 4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11249384/pasted-from-clipboard.png;fontFamily=Segoe UI;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-4" value="Screen&#xa;SA_3 - SB_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="460" y="160" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-6" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1" target="sD8-MN1jSHvhcHJAprdu-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="185" as="sourcePoint" />
+            <mxPoint x="480" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-11" value="Screen&#xa;NA_2 - SZ_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="540" y="160" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-12" value="Screen&#xa;SA_4 - BA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="660" y="160" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-13" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=2;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="364" y="339.63" as="sourcePoint" />
+            <mxPoint x="400" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-14" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-15" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="559.88" y="185" as="sourcePoint" />
+            <mxPoint x="559.88" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="679.88" y="185" as="sourcePoint" />
+            <mxPoint x="679.88" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-17" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-19" value="emotion mismatching studies" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Segoe UI;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="490" y="230" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-29" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-30" value="Screen&#xa;SZ_3 - BA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="460" y="281" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-31" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1" target="sD8-MN1jSHvhcHJAprdu-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="305" as="sourcePoint" />
+            <mxPoint x="480" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-32" value="Screen&#xa;SA_4 - SZ_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-33" value="Screen&#xa;SA_2 - NA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="660" y="280" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-34" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-35" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="559.88" y="305" as="sourcePoint" />
+            <mxPoint x="559.88" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-36" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="679.88" y="305" as="sourcePoint" />
+            <mxPoint x="679.88" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-37" value="speech appropriateness studies" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Segoe UI;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="490" y="350" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-39" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#e1d5e7;strokeColor=#9673a6;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="390" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-40" value="Screen&#xa;SA_1 - BA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="460" y="400" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-41" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1" target="sD8-MN1jSHvhcHJAprdu-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="425" as="sourcePoint" />
+            <mxPoint x="480" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-42" value="Screen&#xa;SA_2 - SB_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="540" y="400" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-43" value="Screen&#xa;SC_3 - NA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="660" y="400" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-44" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-45" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="559.88" y="425" as="sourcePoint" />
+            <mxPoint x="559.88" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-46" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="679.88" y="425" as="sourcePoint" />
+            <mxPoint x="679.88" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-47" value="pairwise emotion studies" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Segoe UI;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="470" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-48" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="510" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-49" value="Screen&#xa;BA_4 - SB_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="460" y="520" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-50" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1" target="sD8-MN1jSHvhcHJAprdu-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="545" as="sourcePoint" />
+            <mxPoint x="480" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-51" value="Screen&#xa;BA_2 - SZ_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="540" y="520" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-52" value="Screen&#xa;NA_1 - BA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365169/pasted-from-clipboard.png;fontFamily=Segoe UI;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="660" y="520" width="40" height="28.19" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-53" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="520" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-54" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="559.88" y="545" as="sourcePoint" />
+            <mxPoint x="559.88" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-55" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="679.88" y="545" as="sourcePoint" />
+            <mxPoint x="679.88" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-56" value="pairwise human-likeness studies" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Segoe UI;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="490" y="590" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-65" value="Result Study 1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365783/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="760" y="175" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-68" value="Result Study 2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365783/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="760" y="280" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-69" value="Result Study 3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365783/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="760" y="400" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-70" value="Result Study n" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365783/pasted-from-clipboard.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="760" y="530" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-71" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="750" y="490" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-72" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=1;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="724" y="199.63" as="sourcePoint" />
+            <mxPoint x="760" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-73" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=1;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="724" y="309.63" as="sourcePoint" />
+            <mxPoint x="760" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-74" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=1;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="724" y="429.63" as="sourcePoint" />
+            <mxPoint x="760" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-75" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=1;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="724" y="550" as="sourcePoint" />
+            <mxPoint x="760" y="550.37" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-77" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;strokeWidth=2;fontFamily=Segoe UI;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="834" y="339.64" as="sourcePoint" />
+            <mxPoint x="870" y="340.01" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-78" value="Score SA" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/747/747274.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="880" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-81" value="Score SB" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/747/747274.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="880" y="290" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-82" value="Score SZ" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/747/747274.png;fontFamily=Segoe UI;" vertex="1" parent="1">
+          <mxGeometry x="880" y="430" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-83" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="880" y="388.19" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-84" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="537.55" y="245" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-85" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="550" y="363" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-89" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="537.55" y="484" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sD8-MN1jSHvhcHJAprdu-90" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="610" width="60" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

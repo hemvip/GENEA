@@ -1,0 +1,296 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="1012" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-75" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.902;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="5VzwvR6IlPoUBpg0wjEP-76" edge="1">
+          <mxGeometry x="-0.1429" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="519.58" as="sourcePoint" />
+            <mxPoint x="590" y="520" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-144" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#e1d5e7;strokeColor=#9673a6;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="240" y="480" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-74" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.683;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="5VzwvR6IlPoUBpg0wjEP-76" edge="1">
+          <mxGeometry x="-0.1429" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="429.82" as="sourcePoint" />
+            <mxPoint x="580" y="430" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-143" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="240" y="400" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-76" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Segoe UI;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="600" y="150" width="320" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-42" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="240" y="150" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-2" value="Team A" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365151/pasted-from-clipboard.png;fontFamily=Segoe UI;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="40" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-3" value="Team B" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365151/pasted-from-clipboard.png;fontFamily=Segoe UI;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="40" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-4" value="Team Z" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365151/pasted-from-clipboard.png;fontFamily=Segoe UI;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="40" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-5" value="Input 1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="60" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-6" value="Input 2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="110" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-7" value="Input 3" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="170" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-9" value="Input 4" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="230" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-12" value="" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="140" y="160" width="60" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-10" value="Model SA" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365160/pasted-from-clipboard.png;spacingTop=-8;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="145" y="164" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-13" value="Model SB" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365160/pasted-from-clipboard.png;spacingTop=-8;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="145" y="230" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-14" value="Model SZ" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365160/pasted-from-clipboard.png;fontColor=default;spacingTop=-8;fontFamily=Segoe UI;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="145" y="315" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Segoe UI;" parent="1" source="5VzwvR6IlPoUBpg0wjEP-5" target="5VzwvR6IlPoUBpg0wjEP-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="130" as="sourcePoint" />
+            <mxPoint x="170" y="159" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.414;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Segoe UI;" parent="1" source="5VzwvR6IlPoUBpg0wjEP-6" target="5VzwvR6IlPoUBpg0wjEP-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="140" as="sourcePoint" />
+            <mxPoint x="170" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.605;entryY=-0.001;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;fontFamily=Segoe UI;" parent="1" source="5VzwvR6IlPoUBpg0wjEP-7" target="5VzwvR6IlPoUBpg0wjEP-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="140" as="sourcePoint" />
+            <mxPoint x="180" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Segoe UI;" parent="1" source="5VzwvR6IlPoUBpg0wjEP-9" target="5VzwvR6IlPoUBpg0wjEP-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="140" as="sourcePoint" />
+            <mxPoint x="180" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-24" value="Motion SA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="163" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-26" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" edge="1">
+          <mxGeometry x="-0.1429" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="260" as="sourcePoint" />
+            <mxPoint x="140" y="260" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-27" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;spacingLeft=-10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;fontSize=14;fontStyle=1" parent="1" source="5VzwvR6IlPoUBpg0wjEP-12" target="5VzwvR6IlPoUBpg0wjEP-42" edge="1">
+          <mxGeometry y="10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="269.58" as="sourcePoint" />
+            <mxPoint x="250" y="270" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-28" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" edge="1">
+          <mxGeometry x="-0.1429" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="189" as="sourcePoint" />
+            <mxPoint x="140" y="188.76" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-29" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" edge="1">
+          <mxGeometry x="-0.1429" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="340" as="sourcePoint" />
+            <mxPoint x="140" y="339.76" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-30" value="Motion SA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="340" y="163" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-32" value="Motion SA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="420" y="163" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-33" value="Motion SA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="163" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-34" value="Motion SB_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-35" value="Motion SB_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="340" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-36" value="Motion SB_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="420" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-37" value="Motion SB_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-38" value="Motion SZ_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="323" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-39" value="Motion SZ_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="340" y="323" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-40" value="Motion SZ_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="420" y="323" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-41" value="Motion SZ_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="323" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-65" value="Ground Truth" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/10468/10468958.png;fontFamily=Segoe UI;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="150" y="500" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-67" value="Baseline BA" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://s3.amazonaws.com/media-p.slid.es/uploads/2448908/images/11365160/pasted-from-clipboard.png;fontColor=default;spacingTop=-8;fontFamily=Segoe UI;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="145" y="400" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-79" value="" style="endArrow=none;html=1;rounded=0;entryX=1.004;entryY=0.579;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="480" as="sourcePoint" />
+            <mxPoint x="920.3200000000002" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-81" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="140" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-82" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="290" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-84" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="250" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-85" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="330" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-86" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="410" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-87" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-89" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="610" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-90" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="690" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-91" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="770" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-92" value="$$\cdots$$" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="850" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-97" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;spacingLeft=-10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Segoe UI;fontSize=16;fontStyle=1;labelBackgroundColor=none;" parent="1" source="5VzwvR6IlPoUBpg0wjEP-42" edge="1">
+          <mxGeometry y="20" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="579" y="270" as="sourcePoint" />
+            <mxPoint x="600" y="270" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-98" value="Video SA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="620" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-99" value="Video SA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="700" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-100" value="Video SA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="780" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-101" value="Video SA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="860" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-103" value="Video SB_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="620" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-104" value="Video SB_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="700" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-105" value="Video SB_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="780" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-106" value="Video SB_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="860" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-107" value="Video SZ_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="620" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-108" value="Video SZ_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="700" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-109" value="Video SZ_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="780" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-110" value="Video SZ_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="860" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-112" value="Video BA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="620" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-113" value="Video BA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="700" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-114" value="Video BA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="780" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-115" value="Video BA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="860" y="410" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-116" value="" style="endArrow=none;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="400" as="sourcePoint" />
+            <mxPoint x="920" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-130" value="Video NA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="620" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-131" value="Video NA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="700" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-132" value="Video NA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="780" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-133" value="Video NA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://icons.veryicon.com/png/o/miscellaneous/icon-library-of-grey-sun-1/video-129.png;clipPath=inset(12% 13.33% 14.67% 13.33%);spacingTop=-4;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="860" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-135" value="Motion BA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="406" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-136" value="Motion BA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="340" y="406" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-137" value="Motion BA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="420" y="406" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-138" value="Motion BA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="406" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-139" value="Motion NA_1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="487" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-140" value="Motion NA_2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="340" y="487" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-141" value="Motion NA_3" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="420" y="487" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5VzwvR6IlPoUBpg0wjEP-142" value="Motion NA_4" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.file-extension.info/images/resource/formats/npy.png;fontFamily=Segoe UI;spacingTop=-4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="487" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
