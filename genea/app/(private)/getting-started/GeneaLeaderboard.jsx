@@ -274,7 +274,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "14px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: "1.2",
                           pointerEvents: "all",
@@ -345,7 +344,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "14px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: "1.2",
                           pointerEvents: "all",
@@ -416,7 +414,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "14px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: "1.2",
                           pointerEvents: "all",
@@ -487,7 +484,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "14px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: "1.2",
                           pointerEvents: "all",
@@ -1192,7 +1188,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1203,8 +1198,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1268,7 +1261,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1279,8 +1271,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1353,7 +1343,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1364,8 +1353,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1429,7 +1416,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1440,8 +1426,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1505,7 +1489,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1516,8 +1499,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1581,7 +1562,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1592,8 +1572,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1657,7 +1635,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1668,8 +1645,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1733,7 +1708,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1744,8 +1718,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1809,7 +1781,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1820,8 +1791,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
@@ -1885,7 +1854,6 @@ export default function GeneaLeaderboard() {
                         style={{
                           display: "inline-block",
                           fontSize: "12px",
-
                           color: "rgb(0, 0, 0)",
                           lineHeight: 1.2,
                           pointerEvents: "all",
@@ -1896,8 +1864,6 @@ export default function GeneaLeaderboard() {
                         <svg
                           width="2.652ex"
                           height="0.271ex"
-                          role="img"
-                          focusable="false"
                           viewBox="0 -310 1172 120"
                           style={{ verticalAlign: "0.43ex" }}
                         >
