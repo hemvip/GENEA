@@ -224,8 +224,8 @@ export default function GeneaLeaderboard() {
         </clipPath>
       </defs>
       <g>
-        <g data-cell-id="0">
-          <g data-cell-id="1">
+        <g>
+          <g>
             <g data-cell-id="5VzwvR6IlPoUBpg0wjEP-75">
               <g>
                 <path
@@ -1430,7 +1430,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -1534,7 +1538,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -1611,39 +1619,37 @@ export default function GeneaLeaderboard() {
                               overflowWrap: "normal",
                             }}
                           >
-                            <mjx-container
-                              class="MathJax"
-                              jax="SVG"
-                              display="true"
+                            <svg
+                              width="2.652ex"
+                              height="0.271ex"
+                              role="img"
+                              focusable="false"
+                              viewBox="0 -310 1172 120"
+                              style={{ verticalAlign: "0.43ex" }}
                             >
-                              <svg
-                                width="2.652ex"
-                                height="0.271ex"
-                                role="img"
-                                focusable="false"
-                                viewBox="0 -310 1172 120"
-                                style={{ verticalAlign: "0.43ex" }}
+                              <defs>
+                                <path
+                                  id="MJX-13-TEX-N-22EF"
+                                  d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                />
+                              </defs>
+                              <g
+                                stroke="currentColor"
+                                fill="currentColor"
+                                strokeWidth="0"
+                                transform="scale(1,-1)"
                               >
-                                <defs>
-                                  <path
-                                    id="MJX-13-TEX-N-22EF"
-                                    d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
-                                  />
-                                </defs>
-                                <g
-                                  stroke="currentColor"
-                                  fill="currentColor"
-                                  strokeWidth="0"
-                                  transform="scale(1,-1)"
-                                >
-                                  <g data-mml-node="math">
-                                    <g data-mml-node="mo">
-                                      <use data-c="22EF" />
-                                    </g>
+                                <g data-mml-node="math">
+                                  <g data-mml-node="mo">
+                                    <path
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      id="MJX-14-TEX-N-22EF"
+                                      d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                    />
                                   </g>
                                 </g>
-                              </svg>
-                            </mjx-container>
+                              </g>
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -1742,7 +1748,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -1846,7 +1856,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -1950,7 +1964,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -2054,7 +2072,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -2158,7 +2180,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -2262,7 +2288,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
@@ -2366,7 +2396,11 @@ export default function GeneaLeaderboard() {
                                 >
                                   <g data-mml-node="math">
                                     <g data-mml-node="mo">
-                                      <use data-c="22EF" />
+                                      <path
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        id="MJX-14-TEX-N-22EF"
+                                        d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"
+                                      />
                                     </g>
                                   </g>
                                 </g>
