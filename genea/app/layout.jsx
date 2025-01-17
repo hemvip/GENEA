@@ -32,9 +32,13 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"></link>
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>GENEA 2024</title>
+        <meta
+          name="description"
+          content="GENEA (Generation and Evaluation of Non-verbal Behaviour for Embodied Agents) Leaderboard is a leaderboard for benchmarking gesture generation models with human evaluation.
+The GENEA Leaderboard is the evolution of the GENEA challenge, which was held at the GENEA Workshop at ICMI 2020, 2021, 2022, 2023, and 2024. We standardize the input, output and evaluation process of gesture generation models with human evaluation."
+        />
+        <meta name="author" content="GENEA Leaderboard" />
+        <title>GENEA Leaderboard Submission Page</title>
       </head>
       <body className="nextra-banner-hidden">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>

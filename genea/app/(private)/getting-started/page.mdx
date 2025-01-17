@@ -1,7 +1,8 @@
 import { Steps } from "@/nextra"
 import Image from "next/image"
-import GeneaLeaderboard from "./GeneaLeaderboard"
-import EvaluationProcess from "./EvaluationProcess"
+import GeneaLeaderboard from "@/components/GeneaLeaderboard"
+import EvaluationProcess from "@/components/EvaluationProcess"
+import AllStage from "@/components/AllStage"
 
 # Getting started
 
@@ -13,7 +14,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-<GeneaLeaderboard />
+<GeneaLeaderboard style={{ width: "110%", height: "auto" }} />
 {/* <Image
   src="/GeneaLeaderboard.svg"
   alt="GeneaLeaderboard"
@@ -26,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-<EvaluationProcess />
+<EvaluationProcess style={{ width: "110%", height: "auto" }} />
 {/* <Image
   src="/EvaluationProcess.svg"
   alt="EvaluationProcess"
@@ -38,6 +39,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {/* ![prolific_result](/prolific_result.png) */}
 
 ## Evaluation Process
+
+<AllStage style={{ width: "100%", height: "auto" }} />
 
 <Steps>
 ### Download `submission_inputs.csv` file
@@ -59,9 +62,13 @@ Run your model inference to get all video file output.
 443646423423.mp4
 ```
 
-### Upload your video model
+### Submission your model `.npy` output
 
 Go to `/submission` and upload all video of your model
+
+### Convert & Split to Video
+
+We will convert all `.npy` file to `.mp4` video and split to mutiple segment video.
 
 ### Generate all study pairwise compare screen
 
@@ -98,7 +105,7 @@ Each Prolific partipation will be study for
 
 selection_result
 
-### When partipation study, we record all action and final result
+**When partipation study, we record all action and final result**
 
 **Selection Result**
 
@@ -108,7 +115,7 @@ selection_result
   width={0}
   height={0}
   sizes="100vw"
-  style={{ width: "100%", height: "auto" }}
+  style={{ width: "80%", height: "auto" }}
 />
 {/* ![selection_result](/selection_result.png) */}
 
@@ -120,7 +127,7 @@ selection_result
   width={0}
   height={0}
   sizes="100vw"
-  style={{ width: "100%", height: "auto" }}
+  style={{ width: "80%", height: "auto" }}
 />
 {/* ![actions_record](/actions_record.png) */}
 
@@ -134,8 +141,9 @@ Sample evalution result
   width={0}
   height={0}
   sizes="100vw"
-  style={{ width: "100%", height: "auto" }}
+  style={{ width: "80%", height: "auto" }}
 />
 {/* ![eval_result](/eval_result.png) */}
 
 </Steps>
+```../../../components/AllStage../../../components/EvaluationProcess../../../components/GeneaLeaderboard

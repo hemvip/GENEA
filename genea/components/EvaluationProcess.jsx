@@ -1,9 +1,6 @@
-export default function EvaluationProcess() {
+export default function EvaluationProcess(props) {
   return (
-    <svg
-      style={{ width: "110%", height: "auto" }}
-      viewBox="-0.5 -0.5 1801 1238"
-    >
+    <svg {...props} viewBox="-0.5 -0.5 1801 1238">
       <defs>
         <path
           id="user_icon"

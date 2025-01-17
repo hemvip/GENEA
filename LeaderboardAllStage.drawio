@@ -1,0 +1,59 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="1012" dy="1874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-17" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="350" y="-810" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" source="bYiJOcJkwjqc4DmRca5C-2" target="bYiJOcJkwjqc4DmRca5C-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-2" value="1. Download Inputs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="-800" width="79.8" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Segoe UI;" parent="1" source="bYiJOcJkwjqc4DmRca5C-4" target="bYiJOcJkwjqc4DmRca5C-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-4" value="2. Inference Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="140" y="-800" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Segoe UI;" parent="1" source="bYiJOcJkwjqc4DmRca5C-6" target="bYiJOcJkwjqc4DmRca5C-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-6" value="&lt;b&gt;3. Submission&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="250.00000000000003" y="-800" width="89.9" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" source="bYiJOcJkwjqc4DmRca5C-8" target="bYiJOcJkwjqc4DmRca5C-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-8" value="5. Generate Studies for Pairwise Screen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Segoe UI;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="470" y="-800" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="bYiJOcJkwjqc4DmRca5C-10" target="bYiJOcJkwjqc4DmRca5C-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="-780" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-10" value="&lt;b&gt;4. Convert &amp;amp; Split to Video&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="360" y="-800" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" parent="1" source="bYiJOcJkwjqc4DmRca5C-12" target="bYiJOcJkwjqc4DmRca5C-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="-780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-12" value="&lt;b&gt;6. Start User Study Prolific&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="610" y="-800" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-15" value="&lt;b&gt;7. Evalution Final Result&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="720" y="-800" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bYiJOcJkwjqc4DmRca5C-16" value="&lt;b&gt;GENEA Team&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" parent="1" vertex="1">
+          <mxGeometry x="350" y="-830" width="460" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

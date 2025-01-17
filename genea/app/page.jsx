@@ -9,7 +9,7 @@ export default function Page() {
     <Body>
       <main className="w-full min-w-0  px-2 pt-4">
         <div className="grid grid-cols-3 mt-4">
-          <div className="col-span-2 w-full  pl-28 pr-4">
+          <div className="col-span-2 w-full  pl-20 pr-8">
             <HomePage />
           </div>
 

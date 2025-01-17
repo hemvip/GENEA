@@ -1,6 +1,6 @@
-export default function GeneaLeaderboard() {
+export default function GeneaLeaderboard(props) {
   return (
-    <svg style={{ width: "110%", height: "auto" }} viewBox="-0.5 -0.5 1783 948">
+    <svg {...props} viewBox="-0.5 -0.5 1783 948">
       <defs>
         <path
           id="three_dots"

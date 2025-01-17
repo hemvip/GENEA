@@ -353,7 +353,7 @@ export default function UploadNPY({ codes }) {
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="username" className="w-[20%] flex justify-end">
-          Github username
+          Username
         </label>
         <input
           disabled={true}
