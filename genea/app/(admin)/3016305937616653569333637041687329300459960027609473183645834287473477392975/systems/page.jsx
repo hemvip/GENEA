@@ -16,6 +16,13 @@ export default function Page() {
   const [systemname, setSystemName] = useState("")
   const [loading, setLoading] = useState(false)
   const [submission, setSubmission] = useState([])
+  const types = ["Baseline", "Ground Truth", "System"]
+  // setSystemTypes([
+  //   { name: "Baseline" },
+  //   { name: "Ground Truth" },
+  //   { name: "System" },
+  // ])
+  const [systemTypes, setSystemTypes] = useState([])
 
   async function fetchData() {
     try {
@@ -158,13 +165,55 @@ export default function Page() {
       </div>
       <div className="">
         <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
-          {submission.length > 0 ? (
-            <SubmissionList teams={submission} />
-          ) : (
-            <div className="text-center">
-              <Loading />
+          <div className="flex flex-row items-center gap-4">
+            <label htmlFor="name" className="w-[20%] flex justify-end">
+              Submission
+            </label>
+            <div className="relative items-center align-middle flex-grow">
+              {submission.length > 0 ? (
+                <SubmissionList teams={submission} />
+              ) : (
+                <div className="text-center">
+                  <Loading />
+                </div>
+              )}
             </div>
-          )}
+          </div>
+
+          <div className="flex flex-row items-center gap-4">
+            <label htmlFor="systemname" className="w-[20%] flex justify-end">
+              System Type
+            </label>
+            <div className="relative items-center align-middle flex-grow">
+              <Select
+                name="status"
+                onChange={(e) => setSystemTypes(e.target.value)}
+                className={cn(
+                  "block w-full bg-black/5 appearance-none py-1.5 px-3 text-sm/6  items-center rounded border border-black",
+                  "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
+                  "text-black"
+                )}
+              >
+                {({ focus, hover }) => (
+                  <Fragment>
+                    {types.map((sysType, index) => (
+                      <option
+                        key={index}
+                        className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
+                        value={sysType}
+                      >
+                        {sysType}
+                      </option>
+                    ))}
+                  </Fragment>
+                )}
+              </Select>
+              <ArrowLeftIcon
+                className="pointer-events-none absolute top-2.5 right-2.5 size-5  ltr:rotate-90"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
 
           <div className="flex flex-row items-center gap-4">
             <label htmlFor="systemname" className="w-[20%] flex justify-end">
@@ -179,23 +228,22 @@ export default function Page() {
               onChange={onChangeSystemName}
             />
           </div>
+
           <div className="flex flex-row items-center gap-4">
             <label htmlFor="upload" className="w-[20%] flex justify-end">
               Videos Upload
             </label>
-            <div
-              role="presentation"
+
+            <textarea
               tabIndex="0"
               className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark: dark:focus:border-white sm:text-sm"
               // style="border: 2px dashed rgb(102, 102, 102);"
-            >
-              <p>Drag and drop some files here, or click to select files</p>
-            </div>
+            ></textarea>
           </div>
           <div className="flex flex-col items-center">
             <div className="pl-[20%] flex justify-start">
               <button className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium  focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all ">
-                Upload CSV
+                Upload
               </button>
             </div>
           </div>
