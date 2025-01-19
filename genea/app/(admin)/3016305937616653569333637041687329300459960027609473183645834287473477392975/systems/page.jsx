@@ -85,6 +85,26 @@ export default function Page() {
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
         Systems model
       </h1>
+      <div className="w-full max-w-md px-4">
+        {/* <div className="relative items-center align-middle">
+          <Select
+            className={cn(
+              "block w-full appearance-none py-1.5 px-3 text-sm/6  items-center rounded border border-black",
+              "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
+              "text-black"
+            )}
+          >
+            <option value="active">Active</option>
+            <option value="paused">Paused</option>
+            <option value="delayed">Delayed</option>
+            <option value="canceled">Canceled</option>
+          </Select>
+          <ArrowLeftIcon
+            className="pointer-events-none absolute top-2.5 right-2.5 size-5  ltr:rotate-90"
+            aria-hidden="true"
+          />
+        </div> */}
+      </div>
 
       <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
         System List
