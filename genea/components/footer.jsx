@@ -34,13 +34,13 @@ export default function Footer() {
           rel="noreferrer"
           target="blank"
           className="flex items-center gap-2 font-semibold"
-          href="https://pithagon.com/?utmsource=swr"
+          href="/"
         >
           <Image
             src="/logo.png"
             width={200}
-            height="0"
-            className="h-auto"
+            height={0}
+            className="h-auto w-[200px]"
             alt="logo"
           />
         </a>

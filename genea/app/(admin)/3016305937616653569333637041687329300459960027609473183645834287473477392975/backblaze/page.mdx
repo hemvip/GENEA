@@ -18,19 +18,14 @@ Example
 
 ### Video
 
+#### Video for systems
+
 ```directory
 /videos
 
-/video/systems
-/video/baselines
+/videos/systems
 
-
-/videos/<study_type>/<system_name>/<video_segment_name>.mp4
-
-/video/mismatched/speech
-/video/mismatched/emotion
-
-/videos/mismatched/<study_type>/<system_name>/<video_segment_name>.mp4
+/videos/systems/<system_name>/<video_segment_name>.mp4
 ```
 
 Example
@@ -42,12 +37,22 @@ Example
 /videos/systems/SB/<video_segment_2>.mp4
 /videos/systems/SC/<video_segment_1>.mp4
 /videos/systems/SC/<video_segment_2>.mp4
+/videos/systems/BA/<video_segment_1>.mp4
+/videos/systems/BB/<video_segment_1>.mp4
 ```
 
+#### Video for mismatched
+
 ```directory
-/videos/baselines/BA/<video_segment_1>.mp4
-/videos/baselines/BA/<video_segment_2>.mp4
+/videos/mismatched
+
+/videos/mismatched/speech
+/videos/mismatched/emotion
+
+/videos/mismatched/<study_type>/<system_name>/<video_segment_name>.mp4
 ```
+
+Example
 
 ```directory
 /videos/mismatched/speech/NA/<video_segment_1>.mp4

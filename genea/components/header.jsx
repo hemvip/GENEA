@@ -20,8 +20,8 @@ export default function Header() {
         <Image
           src="/logo.png"
           width={200}
-          height="0"
-          className="h-auto"
+          height={0}
+          className="h-auto w-[200px]"
           alt="logo"
         />
         {/* <span
