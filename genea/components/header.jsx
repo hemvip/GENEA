@@ -17,7 +17,13 @@ export default function Header() {
         className="flex items-center px-24 hovesr:opacity-75 ltr:mr-auto rtl:ml-auto"
         href="/"
       >
-        <Image src="/logo.png" width={225} height={30} alt="logo" />
+        <Image
+          src="/logo.png"
+          width={200}
+          height="0"
+          className="h-auto"
+          alt="logo"
+        />
         {/* <span
           className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2"
           title="GENEA: Gesture Generation Research Community"

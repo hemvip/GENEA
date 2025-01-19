@@ -23,12 +23,12 @@ export default function Twitter() {
       <Script
         async
         strategy="afterInteractive"
-        // onLoad={() => {
-        //   // Automatically accept cookies
-        //   if (window.twttr) {
-        //     window.twttr.widgets.load()
-        //   }
-        // }}
+        onLoad={() => {
+          // Automatically accept cookies
+          if (window.twttr) {
+            window.twttr.widgets.load()
+          }
+        }}
         src="https://platform.twitter.com/widgets.js"
         charset="utf-8"
       ></Script>

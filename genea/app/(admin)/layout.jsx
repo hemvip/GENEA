@@ -1,3 +1,5 @@
+"use client"
+
 import { Callout } from "@/nextra"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
 import { File } from "@/nextra/sidebar"
@@ -5,8 +7,18 @@ import { useSession } from "next-auth/react"
 // import { Sidebar } from "@/nextra/sidebar"
 import React from "react"
 import AdminSidebar from "./AdminSidebar"
+import { Loading } from "@/components"
 
 export default function Layout({ children }) {
+  const { data: session, status } = useSession()
+
+  // if (status === "loading") {
+  //   return (
+  //     <div className="flex justify-center w-screen h-screen">
+  //       <Loading />
+  //     </div>
+  //   )
+  // }
   return (
     <div className="mx-auto flex max-w-[90rem]">
       <AdminSidebar />

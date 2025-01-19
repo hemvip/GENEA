@@ -36,7 +36,13 @@ export default function Footer() {
           className="flex items-center gap-2 font-semibold"
           href="https://pithagon.com/?utmsource=swr"
         >
-          <Image src="/logo.png" width={225} height={30} alt="logo" />
+          <Image
+            src="/logo.png"
+            width={200}
+            height="0"
+            className="h-auto"
+            alt="logo"
+          />
         </a>
       </div>
     </footer>
