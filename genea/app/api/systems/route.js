@@ -26,11 +26,11 @@ export async function GET(req, res) {
 }
 
 export async function POST(req, res) {
-  const formData = await req.formData()
-  const name = formData.get("name")
-  const type = formData.get("type")
-  const description = formData.get("description")
-  const userId = formData.get("userId")
+  const { name, type, description, userId } = await req.json()
+  // const  = formData.get("name")
+  // const type = formData.get("type")
+  // const description = formData.get("description")
+  // const userId = formData.get("userId")
 
   const client = await clientPromise
   const db = client.db("hemvip")
@@ -47,31 +47,20 @@ export async function POST(req, res) {
 
   try {
     const update = {
-      $set: {
-        user_id: userId,
-        name: name,
-        description: description,
-        type: type,
-      },
+      user_id: userId,
+      name: name,
+      description: description,
+      type: type,
     }
 
     const result = await db.collection("systems").insertOne(update)
     console.log("result", result)
 
-    if (result.modifiedCount >= 0) {
+    if (result.insertedId) {
       return Response.json(
         {
           success: true,
           msg: "Your submission are update successfully.",
-          error: null,
-        },
-        { status: 200 }
-      )
-    } else if (result.upsertedId) {
-      return Response.json(
-        {
-          success: true,
-          msg: "Your submission are created successfully.",
           error: null,
         },
         { status: 200 }

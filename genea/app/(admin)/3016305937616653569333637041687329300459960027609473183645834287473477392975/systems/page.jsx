@@ -49,6 +49,7 @@ export default function Page() {
   }
 
   function updateSystemType(type) {
+    setSystemType(type)
     switch (type) {
       case "groundtruth":
         setSystemName("NA")
@@ -61,7 +62,7 @@ export default function Page() {
       case "system":
         setSystemName("SA")
         setDescription("System")
-        if (submissionList.length === 0) {
+        if (submissionList.length <= 0) {
           fetchSubmission()
         }
         break
@@ -77,19 +78,11 @@ export default function Page() {
   useEffect(() => {
     setLoading(true)
     fetchData()
+    setSystemType("system")
     setLoading(false)
   }, [])
 
-  async function onCreateSystem(e) {
-    e.preventDefault()
-    const data = {
-      name: systemname,
-      type: systemType,
-      description: description,
-      userId: teamID,
-    }
-    console.log("data", data)
-
+  async function createSystem(data) {
     try {
       const res = await axios.post("/api/systems", data)
       if (res.data.success) {
@@ -100,6 +93,18 @@ export default function Page() {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  function onCreateSystem(e) {
+    e.preventDefault()
+    const data = {
+      name: systemname,
+      type: systemType,
+      description: description,
+      userId: teamID,
+    }
+    console.log("data", data)
+    createSystem(data)
   }
 
   // if (status === "loading") {
@@ -171,6 +176,7 @@ export default function Page() {
             <div className="relative items-center align-middle flex-grow">
               <Select
                 name="status"
+                value={systemType}
                 onChange={(e) => {
                   setSystemType(e.target.value)
                 }}
@@ -212,11 +218,6 @@ export default function Page() {
                   teamID={teamID}
                   setTeamID={setTeamID}
                 />
-                {/* {submissionList.length > 0 ? (
-                  <SubmissionList teams={submissionList} />
-                ) : (
-                  
-                )} */}
               </div>
             </div>
           ) : (
