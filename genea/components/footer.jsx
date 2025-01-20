@@ -1,5 +1,6 @@
 import { ThemeSwitch } from "@/nextra"
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 
 export default function Footer() {
@@ -30,7 +31,7 @@ export default function Footer() {
       </div>
       <hr className="dark:border-neutral-800" />
       <div className="mx-auto flex max-w-[90rem] justify-center py-12 text-gray-600 dark:text-gray-400 md:justify-end pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)]">
-        <a
+        <Link
           rel="noreferrer"
           target="blank"
           className="flex items-center gap-2 font-semibold"
@@ -43,7 +44,7 @@ export default function Footer() {
             className="h-auto w-[200px]"
             alt="logo"
           />
-        </a>
+        </Link>
       </div>
     </footer>
   )

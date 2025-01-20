@@ -4,13 +4,18 @@ import { useState } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Loading } from "@/components/loading/loading"
 import BoardIcon from "../icons/board"
+import Image from "next/image"
 
 export default function AuthButton() {
   const { data: session, status } = useSession()
   const [loading, setLoading] = useState(false)
 
   if (status === "loading") {
-    return <div className="flex justify-center ">{/* <Loading /> */}</div>
+    return (
+      <div className="flex justify-center ">
+        <Loading />
+      </div>
+    )
   }
 
   return (
@@ -35,9 +40,10 @@ export default function AuthButton() {
               {/* Hi,  */}
               {session.user.name || "User"}
               {session?.user ? (
-                <img
+                <Image
                   src={session.user.image}
                   width={35}
+                  height={35}
                   className="rounded-full border"
                   alt="User avatar"
                 />
