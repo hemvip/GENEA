@@ -3,16 +3,14 @@ import { Fragment, useState } from "react"
 import { clsx as cn } from "clsx"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
 
-export default function SubmissionList({ teams }) {
-  const [teamID, setTeamID] = useState(teams[0].userId)
-
+export default function SubmissionList({ teams, teamID, setTeamID }) {
   return (
     <>
       <Select
         name="status"
         onChange={(e) => setTeamID(e.target.value)}
         className={cn(
-          "block w-full appearance-none py-1.5 px-3 text-sm/6  items-center rounded border  border-black",
+          "block w-full bg-black/5 appearance-none py-1.5 px-3 text-sm/6  items-center rounded border  border-black",
           "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
           "text-black"
         )}
