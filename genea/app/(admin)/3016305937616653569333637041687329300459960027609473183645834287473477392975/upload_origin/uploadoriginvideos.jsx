@@ -9,11 +9,14 @@ import clsx from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
 import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
+import SubmissionList from "../systems/submissionlist"
+import SystemList from "./systemlist"
 
 // export default function UploadVideos({ codes, teams }) {
-export default function UploadVideos({ teams }) {
-  const [team, setTeam] = useState(teams[0])
-  const [teamID, setTeamID] = useState(teams[0].userId)
+export default function UploadOriginVideos({ systemList }) {
+  // const [team, setTeam] = useState(teams[0])
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  // const [systemID, setSystemID] = useState("")
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
@@ -21,7 +24,8 @@ export default function UploadVideos({ teams }) {
   // const [uploadProgress, setUploadProgress] = useState({})
   const [progress, setProgress] = useState({})
   const [success, setSuccess] = useState("")
-
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  const [description, setDescription] = useState("")
   // const [missingList, setMissingList] = useState([])
 
   const onDrop = useCallback(async (acceptedFiles) => {
@@ -60,9 +64,18 @@ export default function UploadVideos({ teams }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
+  useEffect(() => {
+    console.log("systemID", selectedIndex, systemList)
+    setDescription(systemList[selectedIndex].description)
+  }, [selectedIndex])
+
+  useEffect(() => {
+    setSelectedIndex(0)
+  }, [systemList])
+
   const uploadPromise = (file, onProgress) => {
     const formData = new FormData()
-    formData.append("userId", teamID)
+    formData.append("userId", systemID)
     formData.append("video", file)
 
     return axios
@@ -139,7 +152,7 @@ export default function UploadVideos({ teams }) {
     }
   }
 
-  if (teams.length <= 0) {
+  if (systemList.length <= 0) {
     return <></>
   }
 
@@ -200,37 +213,39 @@ export default function UploadVideos({ teams }) {
 
   return (
     <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="name" className="w-[20%] flex justify-end">
-          Team
+          System
         </label>
-        <Select name="status" as={Fragment}>
-          {({ focus, hover }) => (
-            <select
-              className={clsx(
-                "border",
-                focus && "bg-blue-100",
-                hover && "shadow",
-                "flex-grow min-w-0 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-              )}
-              onChange={(e) => setTeamID(e.target.value)}
-              aria-label="Project status"
-            >
-              {teams.map((team, index) => (
-                <option
-                  key={index}
-                  className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                  value={team.userId}
-                >
-                  {team.teamname}
-                </option>
-              ))}
-            </select>
-          )}
-        </Select>
+        <div className="relative items-center align-middle flex-grow">
+          <SystemList
+            systemList={systemList}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
+        </div>
       </div>
 
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
+        <label htmlFor="name" className="w-[20%] flex justify-end">
+          Team Name
+        </label>
+        <div className="w-[80%] items-center align-middle flex-grow ">
+          <input
+            disabled={true}
+            className="w-full min-w-0 disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            id="description"
+            type="text"
+            name="description"
+            value={description}
+          />
+        </div>
+      </div>
+
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
+      {/* <div className="flex flex-row items-center gap-4">
         <label htmlFor="userId" className="w-[20%] flex justify-end">
           Team ID
         </label>
@@ -242,8 +257,9 @@ export default function UploadVideos({ teams }) {
           name="userId"
           value={teamID}
         />
-      </div>
+      </div> */}
 
+      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="upload" className="w-[20%] flex justify-end">
           Videos Upload
