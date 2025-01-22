@@ -39,3 +39,4 @@ node_modules
 *.toml
 
 *.bkp
+.env.local.backup
