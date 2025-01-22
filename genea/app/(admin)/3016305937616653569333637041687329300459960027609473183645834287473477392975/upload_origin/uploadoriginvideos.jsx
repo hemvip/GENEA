@@ -99,7 +99,7 @@ export default function UploadOriginVideos({ systemList }) {
         return response.data
       })
       .catch((error) => {
-        console.error("error", error.response.data)
+        console.error("error", error.response)
         return error.response.data
       })
   }
@@ -216,10 +216,10 @@ export default function UploadOriginVideos({ systemList }) {
   }
 
   return (
-    <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
+    <form className="mt-6 flex flex-col px-10 gap-4">
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="name" className="w-[20%] flex justify-end">
+        <label htmlFor="name" className="w-[20%] text-right">
           System Name
         </label>
         <div className="relative items-center align-middle flex-grow">
@@ -233,7 +233,7 @@ export default function UploadOriginVideos({ systemList }) {
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="name" className="w-[20%] flex justify-end">
+        <label htmlFor="name" className="w-[20%] text-right">
           Team Name
         </label>
         <div className="w-[80%] items-center align-middle flex-grow ">
@@ -250,7 +250,7 @@ export default function UploadOriginVideos({ systemList }) {
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       {/* <div className="flex flex-row items-center gap-4">
-        <label htmlFor="userId" className="w-[20%] flex justify-end">
+        <label htmlFor="userId" className="w-[20%] text-right">
           Team ID
         </label>
         <input
@@ -265,7 +265,7 @@ export default function UploadOriginVideos({ systemList }) {
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="upload" className="w-[20%] flex justify-end">
+        <label htmlFor="upload" className="w-[20%] text-right">
           Videos Upload
         </label>
         <div

@@ -7,8 +7,11 @@ export async function GET(req, res) {
   const systems = await db.collection("systems").find({}).toArray()
   const submissions = await db.collection("submissions").find({}).toArray()
 
-  const teamMap = submissions.reduce((acc, team) => {
-    acc[team._id] = team.teamname // Assuming 'teamname' is the field you want to add
+  const teamMap = submissions.reduce((acc, submit) => {
+    const submittedDate = new Date(submit.submittedAt)
+      .toISOString()
+      .split("T")[0] // Extract date part only
+    acc[submit._id] = `${submit.teamname} (${submittedDate})` // Combine teamname and date
     return acc
   }, {})
 
@@ -18,7 +21,7 @@ export async function GET(req, res) {
   }))
 
   // const { systems } = systems
-  // console.log(systemsWithTeamname)
+  // console.log("systemsWithTeamname", systemsWithTeamname)
   return Response.json(
     { systems: systemsWithTeamname, success: true, error: null },
     { status: 200 }

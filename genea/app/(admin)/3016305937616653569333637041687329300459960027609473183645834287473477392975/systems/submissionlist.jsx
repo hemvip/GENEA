@@ -4,6 +4,7 @@ import { clsx as cn } from "clsx"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
 
 export default function SubmissionList({ teams, teamID, setTeamID }) {
+  console.log("teams", teams)
   return (
     <>
       <Select
@@ -17,15 +18,20 @@ export default function SubmissionList({ teams, teamID, setTeamID }) {
       >
         {({ focus, hover }) => (
           <>
-            {teams.map((team, index) => (
-              <option
-                key={index}
-                className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-                value={team.userId}
-              >
-                {team.teamname}
-              </option>
-            ))}
+            {teams.map((team, index) => {
+              const submittedDate = new Date(team.submittedAt)
+                .toISOString()
+                .split("T")[0]
+              return (
+                <option
+                  key={index}
+                  className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
+                  value={team.userId}
+                >
+                  {`${team.teamname} (${submittedDate})`}
+                </option>
+              )
+            })}
           </>
         )}
       </Select>
