@@ -6,10 +6,13 @@ import {
 import clientPromise from "@/server/mongodb"
 import { ObjectId } from "bson"
 
+const BUCKET_NAME = "genealeaderboard"
+
 export async function POST(req, res) {
   const formData = await req.formData()
   const inputcode = formData.get("inputcode")
   const systemid = formData.get("systemid")
+  console.log("formData", formData)
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const s3 = new S3Client({
@@ -45,26 +48,45 @@ export async function POST(req, res) {
     )
   }
 
+  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // ******* Create System Folder *******
+  try {
+    // Create a PutObjectCommand to create the folder
+    const createSystemFolderCMD = new PutObjectCommand({
+      Bucket: BUCKET_NAME,
+      Key: `videos/systems/${systemid}`, // The folder name is the key ending with '/'
+    })
+
+    // Send the command
+    const response = await s3.send(createSystemFolderCMD)
+    console.log("Folder created successfully:", response)
+  } catch (error) {
+    console.error("Error creating folder:", error)
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // ******* Upload videos *******
   const videofiles = []
 
   try {
     for (let [key, value] of formData.entries()) {
       if (key === "video") {
         const arrayBuffer = await value.arrayBuffer()
-        const uniqueKey = `genea/${systemid}/${value.name}`
+        const uniqueKey = `videos/systems/${systemid}/${value.name}`
         console.log("Uploading uniqueKey: ", uniqueKey)
 
         // Create the parameters for the PutObjectCommand
         const params = {
-          Bucket: "gesture",
+          Bucket: BUCKET_NAME,
           Key: uniqueKey,
           Body: new Uint8Array(arrayBuffer),
           ContentType: value.type,
         }
+        console.log("params", params)
         // Upload the video file to B2 storage
         const uploadResult = await s3.send(new PutObjectCommand(params))
         // const uploadResult = await parallelUploads3.done()
-        // console.log("Upload complete:", uploadResult)
+        console.log("Upload complete:", uploadResult)
 
         const filename = value.name.split(".")
         if (filename.length > 1) {
