@@ -11,7 +11,7 @@ import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
 
 // export default function UploadVideos({ codes, teams }) {
-export default function UploadVideos({ teams }) {
+export default function UploadMismatchVideos({ teams }) {
   const [team, setTeam] = useState(teams[0])
   const [teamID, setTeamID] = useState(teams[0].userId)
   const [files, setFiles] = useState([])

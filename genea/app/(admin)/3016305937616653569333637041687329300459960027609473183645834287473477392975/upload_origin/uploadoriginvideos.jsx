@@ -24,9 +24,10 @@ export default function UploadOriginVideos({ systemList }) {
   // const [uploadProgress, setUploadProgress] = useState({})
   const [progress, setProgress] = useState({})
   const [success, setSuccess] = useState("")
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const [description, setDescription] = useState("")
   // const [missingList, setMissingList] = useState([])
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const onDrop = useCallback(async (acceptedFiles) => {
     setErrorMsg("")
@@ -75,11 +76,14 @@ export default function UploadOriginVideos({ systemList }) {
 
   const uploadPromise = (file, onProgress) => {
     const formData = new FormData()
-    formData.append("userId", systemID)
+    const inputcode = file.name
+    const systemid = systemList[selectedIndex].name
+    formData.append("inputcode", inputcode)
+    formData.append("systemid", systemid)
     formData.append("video", file)
 
     return axios
-      .post("/api/upload", formData, {
+      .post("/api/upload_origin", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -216,7 +220,7 @@ export default function UploadOriginVideos({ systemList }) {
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="name" className="w-[20%] flex justify-end">
-          System
+          System Name
         </label>
         <div className="relative items-center align-middle flex-grow">
           <SystemList
@@ -274,14 +278,20 @@ export default function UploadOriginVideos({ systemList }) {
             <ul className="w-full flex flex-wrap gap-2 justify-center">
               {previews.map(({ file, url }, index) => (
                 <li
+                  title={file.name}
                   key={index}
-                  className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
+                  className="min-w-24 max-w-40  flex flex-col justify-center items-center gap-1 p-2 border rounded-md border-black"
                 >
-                  <video width="160" height="120" controls>
+                  <video title={file.name} width={200} height={80} controls>
                     <source src={url} type={file.type} />
                     Your browser does not support the video tag.
                   </video>
-                  <p>{file.name}</p>
+                  <p
+                    title={file.name}
+                    className="w-32 overflow-hidden text-ellipsis whitespace-nowrap"
+                  >
+                    {file.name}
+                  </p>
                 </li>
               ))}
             </ul>

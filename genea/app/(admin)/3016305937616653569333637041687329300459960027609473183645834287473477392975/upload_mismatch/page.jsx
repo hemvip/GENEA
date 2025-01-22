@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import UploadVideos from "./uploadvideos"
+import UploadMismatchVideos from "./uploadmismatchvideos"
 import { useEffect, useState } from "react"
 // import fetchInputCodes from "./actions"
 import InputCode from "./inputcode"
@@ -46,7 +46,7 @@ export default function Page() {
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
         {loading && teams.length > 0 ? (
           // <UploadVideos codes={codes} teams={teams} />
-          <UploadVideos teams={teams} />
+          <UploadMismatchVideos teams={teams} />
         ) : (
           <div className="text-center">
             <Loading />
