@@ -1,7 +1,7 @@
 import { corsHeaders } from "./cors"
-import { handleStartUpload } from "./submission/upload-start"
-import { handleUploadChunk } from "./submission/upload-chunk"
-import { handleCompleteUpload } from "./submission/upload-complete"
+import { handleVideoStartUpload } from "./video/upload-start"
+import { handleVideoUploadChunk } from "./video/upload-chunk"
+import { handleVideoCompleteUpload } from "./video/upload-complete"
 
 export default {
 	async fetch(request, env, ctx) {
@@ -19,11 +19,11 @@ export default {
 
 			// Npy upload
 			if (url.pathname === "/api/start-upload") {
-				return handleStartUpload(request, env)
+				return handleVideoStartUpload(request, env)
 			} else if (url.pathname === "/api/upload-part") {
-				return handleUploadChunk(request, env)
+				return handleVideoUploadChunk(request, env)
 			} else if (url.pathname === "/api/complete-upload") {
-				return handleCompleteUpload(request, env)
+				return handleVideoCompleteUpload(request, env)
 			}
 			return new Response("API not found", { status: 404, headers: corsHeaders })
 		}

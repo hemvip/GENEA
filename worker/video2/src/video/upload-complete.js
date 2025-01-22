@@ -85,7 +85,7 @@ export async function handleVideoCompleteUpload(request, env) {
 			return new Response(
 				JSON.stringify({
 					success: true,
-					msg: "Your submission are successfully.",
+					msg: "Your video are successfully.",
 					error: null,
 				}),
 				{
