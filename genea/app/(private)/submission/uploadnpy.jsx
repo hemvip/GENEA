@@ -89,11 +89,15 @@ export default function UploadNPY({ codes }) {
   const uploadFile = async (file, index, teamid) => {
     const chunkSize = 5 * 1024 * 1024 // 5MB chunks
     const totalChunks = Math.ceil(file.size / chunkSize)
+    console.log("totalChunks", totalChunks)
     const fileName = file.name
+    const fileSize = file.size
     console.log("uploadFile.userId", teamid)
 
     try {
       updateUploadProgress(fileName, 0, "uploading")
+
+      console.log("START_UPLOAD_API_ENDPOINT", START_UPLOAD_API_ENDPOINT)
 
       // Start multipart upload
       const startResp = await axios.post(
@@ -101,6 +105,7 @@ export default function UploadNPY({ codes }) {
         {
           userId: teamid,
           fileName: fileName,
+          fileSize: fileSize,
         },
         { headers: { "Content-Type": "multipart/form-data" } }
       )
@@ -120,12 +125,17 @@ export default function UploadNPY({ codes }) {
         formData.append("partNumber", i.toString())
         formData.append("uploadId", uploadId)
         formData.append("fileName", fileName)
+        formData.append("fileSize", fileSize)
+        formData.append("chunkSize", chunk.size)
 
         const uploadChunkResp = await axios.post(
           UPLOAD_PART_API_ENDPOINT,
           formData,
           {
-            headers: { "Content-Type": "multipart/form-data" },
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "Content-Length": chunk.size,
+            },
             onUploadProgress: (progressEvent) => {
               const percentCompleted = Math.round(
                 (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
@@ -153,6 +163,7 @@ export default function UploadNPY({ codes }) {
           userId: teamid,
           uploadId: uploadId,
           fileName: fileName,
+          fileSize: fileSize,
           parts: JSON.stringify(parts),
         },
         { headers: { "Content-Type": "multipart/form-data" } }
@@ -322,9 +333,9 @@ export default function UploadNPY({ codes }) {
   }
 
   return (
-    <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
+    <form className="mt-6 flex flex-col px-4 gap-4">
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="name" className="w-[20%] flex justify-end">
+        <label htmlFor="name" className="w-[20%] text-right">
           Team Name
         </label>
         <input
@@ -338,7 +349,7 @@ export default function UploadNPY({ codes }) {
       </div>
 
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="email-address" className="w-[20%] flex justify-end">
+        <label htmlFor="email-address" className="w-[20%] text-right">
           Email address
         </label>
         <input
@@ -352,7 +363,7 @@ export default function UploadNPY({ codes }) {
       </div>
 
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="username" className="w-[20%] flex justify-end">
+        <label htmlFor="username" className="w-[20%] text-right">
           Username
         </label>
         <input
@@ -366,7 +377,7 @@ export default function UploadNPY({ codes }) {
       </div>
 
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="userId" className="w-[20%] flex justify-end">
+        <label htmlFor="userId" className="w-[20%] text-right">
           Your ID
         </label>
         <input
@@ -380,7 +391,7 @@ export default function UploadNPY({ codes }) {
       </div>
 
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="upload" className="w-[20%] flex justify-end">
+        <label htmlFor="upload" className="w-[20%] text-right">
           NPY Files Upload
         </label>
         <div
@@ -393,10 +404,14 @@ export default function UploadNPY({ codes }) {
             <ul className="w-full flex flex-wrap gap-2 justify-center">
               {previews.map(({ file, url }, index) => (
                 <li
+                  title={file.name}
                   key={index}
-                  className="min-w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
+                  className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
                 >
-                  <p className="text-wrap text-clip overflow-hidden min-w-32">
+                  <p
+                    title={file.name}
+                    className="overflow-hidden text-ellipsis whitespace-nowrap w-28"
+                  >
                     {file.name}
                   </p>
                 </li>
