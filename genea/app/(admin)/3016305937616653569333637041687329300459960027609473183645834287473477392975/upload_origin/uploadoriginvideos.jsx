@@ -150,7 +150,6 @@ export default function UploadOriginVideos({ systemList }) {
           {
             headers: {
               "Content-Type": "multipart/form-data",
-              "Content-Length": chunk.size,
             },
             onUploadProgress: (progressEvent) => {
               const percentCompleted = Math.round(

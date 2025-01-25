@@ -1,20 +1,20 @@
 "use client"
 
 import React, { Fragment, useCallback, useEffect, useState } from "react"
+import axios from "axios"
+import { Select } from "@headlessui/react"
 import { useDropzone } from "react-dropzone"
 import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
-import axios from "axios"
 import { clsx as cn } from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
-import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
 import { ArrowLeftIcon } from "@/nextra/icons"
 
 // export default function UploadVideos({ codes, teams }) {
 export default function UploadCSV({ teams }) {
-  const [team, setTeam] = useState(teams[0])
-  const [teamID, setTeamID] = useState(teams[0].userId)
+  // const [team, setTeam] = useState(teams[0])
+  // const [teamID, setTeamID] = useState(teams[0].userId)
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
@@ -33,11 +33,12 @@ export default function UploadCSV({ teams }) {
     setFiles(acceptedFiles)
     setProgress({})
 
-    const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-      file,
-      url: URL.createObjectURL(file),
-    }))
-    setPreviews(selectedFiles)
+    // const selectedFiles = Array.from(acceptedFiles).map((file) => ({
+    //   file,
+    //   url: URL.createObjectURL(file),
+    // }))
+    console.log("selectedFiles", acceptedFiles)
+    setPreviews(acceptedFiles)
 
     try {
       // handleUpload()
@@ -48,34 +49,36 @@ export default function UploadCSV({ teams }) {
     setUploading("")
   }, [])
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+  })
 
-  const uploadPromise = (file, onProgress) => {
-    const formData = new FormData()
-    formData.append("userId", teamID)
-    formData.append("video", file)
+  // const uploadPromise = (file, onProgress) => {
+  //   const formData = new FormData()
+  //   formData.append("userId", teamID)
+  //   formData.append("video", file)
 
-    return axios
-      .post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          )
-          onProgress(file.name, percentCompleted)
-        },
-      })
-      .then((response) => {
-        console.log("response", response)
-        return response.data
-      })
-      .catch((error) => {
-        console.error("error", error.response.data)
-        return error.response.data
-      })
-  }
+  //   return axios
+  //     .post("/api/upload", formData, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //       onUploadProgress: (progressEvent) => {
+  //         const percentCompleted = Math.round(
+  //           (progressEvent.loaded * 100) / progressEvent.total
+  //         )
+  //         onProgress(file.name, percentCompleted)
+  //       },
+  //     })
+  //     .then((response) => {
+  //       console.log("response", response)
+  //       return response.data
+  //     })
+  //     .catch((error) => {
+  //       console.error("error", error.response.data)
+  //       return error.response.data
+  //     })
+  // }
 
   const handleUpload = async (e) => {
     e.preventDefault()
@@ -122,10 +125,6 @@ export default function UploadCSV({ teams }) {
     } finally {
       setUploading("")
     }
-  }
-
-  if (teams.length <= 0) {
-    return <></>
   }
 
   if (success) {
@@ -183,7 +182,7 @@ export default function UploadCSV({ teams }) {
 
   return (
     <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
-      <div className="flex flex-row items-center gap-4">
+      {/* <div className="flex flex-row items-center gap-4">
         <label htmlFor="name" className="w-[20%] flex justify-end">
           Team
         </label>
@@ -227,9 +226,9 @@ export default function UploadCSV({ teams }) {
             aria-hidden="true"
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex flex-row items-center gap-4">
+      {/* <div className="flex flex-row items-center gap-4">
         <label htmlFor="userId" className="w-[20%] flex justify-end">
           Team ID
         </label>
@@ -241,38 +240,45 @@ export default function UploadCSV({ teams }) {
           name="userId"
           value={teamID}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="upload" className="w-[20%] flex justify-end">
-          Videos Upload
+          CSV Upload
         </label>
         <div
           {...getRootProps()}
           style={{ border: "2px dashed #666666" }}
           className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
-          <input id="upload" {...getInputProps()} accept="video/*" />
-          {previews.length > 0 && (
+          <input
+            id="upload"
+            {...getInputProps()}
+            type="file"
+            accept=".csv"
+            multiple={true}
+          />
+          {previews && previews.length > 0 && (
             <ul className="w-full flex flex-wrap gap-2 justify-center">
-              {previews.map(({ file, url }, index) => (
-                <li
-                  key={index}
-                  className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
-                >
-                  <video width="160" height="120" controls>
-                    <source src={url} type={file.type} />
-                    Your browser does not support the video tag.
-                  </video>
-                  <p>{file.name}</p>
-                </li>
-              ))}
+              {previews.map((previewFile, index) => {
+                console.log("object", previewFile)
+                return (
+                  <li
+                    key={index}
+                    title={previewFile.name}
+                    className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
+                  >
+                    {/* <div width="160" height="120" controls></div> */}
+                    <p className="">{previewFile.name}</p>
+                  </li>
+                )
+              })}
             </ul>
           )}
           {isDragActive ? (
-            <p>Drop the files here...</p>
+            <p>Drop csv files here...</p>
           ) : (
-            <p>Drag and drop some files here, or click to select files</p>
+            <p>Drag and drop csv files here, or click to select csv</p>
           )}
         </div>
       </div>
@@ -291,7 +297,7 @@ export default function UploadCSV({ teams }) {
             className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
             onClick={handleUpload}
           >
-            Upload CSV
+            Generate Study
           </button>
         </div>
       </div>

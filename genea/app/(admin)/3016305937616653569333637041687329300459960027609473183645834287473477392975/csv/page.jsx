@@ -10,8 +10,8 @@ import { Loading } from "@/components"
 
 export default function Page() {
   // const [codes, setCodes] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [teams, setTeams] = useState([])
+  const [loading, setLoading] = useState(false)
+  // const [teams, setTeams] = useState([])
 
   // async function fetchInputCodes() {
   //   setLoading(false)
@@ -23,19 +23,28 @@ export default function Page() {
   //     console.error(res.error)
   //   }
   // }
-  async function fetchTeams() {
-    const res = await axios.get("/api/submission")
-    if (res.data.success) {
-      setTeams(res.data.submissions)
-    } else {
-      console.error(res.error)
-    }
-  }
 
-  useEffect(() => {
-    fetchTeams()
-    // fetchInputCodes()
-  }, [])
+  // async function fetchTeams() {
+  //   const res = await axios.get("/api/submission")
+  //   if (res.data.success) {
+  //     setTeams(res.data.submissions)
+  //   } else {
+  //     console.error(res.error)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   fetchTeams()
+  //   // fetchInputCodes()
+  // }, [])
+
+  if (loading) {
+    return (
+      <div className="text-center">
+        <Loading />
+      </div>
+    )
+  }
 
   return (
     <>
@@ -44,13 +53,7 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        {loading && teams.length > 0 ? (
-          <UploadCSV teams={teams} />
-        ) : (
-          <div className="text-center">
-            <Loading />
-          </div>
-        )}
+        <UploadCSV />
       </div>
     </>
   )

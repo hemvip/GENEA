@@ -6,19 +6,18 @@ import UploadNPY from "./uploadnpy"
 import { useEffect, useState } from "react"
 import InputCode from "./inputcode"
 import axios from "axios"
+import { Loading } from "@/components"
 // import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
 export default function Page() {
   const [codes, setCodes] = useState([])
   const [loading, setLoading] = useState(false)
+
   async function fetchInputCodes() {
-    setLoading(false)
     const res = await axios.get("/api/inputcode")
-    console.log(res)
+    console.log("res", res.data.codes)
     if (res.data.success) {
       setCodes(res.data.codes)
-
-      setLoading(true)
     } else {
       console.error(res.error)
     }
@@ -27,8 +26,19 @@ export default function Page() {
   // console.log("codes", codes)
 
   useEffect(() => {
+    setLoading(true)
     fetchInputCodes()
+    setLoading(false)
   }, [])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center ">
+        <Loading />
+      </div>
+    )
+  }
+
   return (
     <>
       <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -64,7 +74,7 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        {loading && <UploadNPY codes={codes} />}
+        <UploadNPY codes={codes} />
       </div>
     </>
   )

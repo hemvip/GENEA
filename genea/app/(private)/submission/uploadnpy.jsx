@@ -15,7 +15,14 @@ import { UploadStatus } from "@/components/UploadStatus"
 import { useAuth } from "@/contexts/auth"
 
 export default function UploadNPY({ codes }) {
-  const { email, name: teamname, username, userId, isSignedIn } = useAuth()
+  const {
+    email,
+    name: teamname,
+    username,
+    userId,
+    isSignedIn,
+    isLoading,
+  } = useAuth()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
@@ -261,7 +268,7 @@ export default function UploadNPY({ codes }) {
     }
   }
 
-  if (status === "loading") {
+  if (isLoading) {
     return (
       <div className="flex w-full p-32 justify-center ">
         <Loading />
@@ -407,7 +414,13 @@ export default function UploadNPY({ codes }) {
           style={{ border: "2px dashed #666666" }}
           className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
-          <input id="upload" {...getInputProps()} accept=".npy" />
+          <input
+            id="upload"
+            {...getInputProps()}
+            type="file"
+            accept=".npy"
+            multiple={true}
+          />
           {previews.length > 0 && (
             <ul className="w-full flex flex-wrap gap-2 justify-center">
               {previews.map(({ file, url }, index) => (
