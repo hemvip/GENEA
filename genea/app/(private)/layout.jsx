@@ -1,7 +1,6 @@
 import Sidebar from "@/components/sidebar"
 import { Callout } from "@/nextra"
 import { File } from "@/nextra/sidebar"
-import { useSession } from "next-auth/react"
 // import { Sidebar } from "@/nextra/sidebar"
 import React from "react"
 

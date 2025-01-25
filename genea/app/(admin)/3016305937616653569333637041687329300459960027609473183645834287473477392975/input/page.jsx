@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react"
 import { generateUUID } from "@/utils/generateUUID"
 import { updateInputCode } from "./actions"
 import { calculateCombinations } from "./utils"
-import { useSession } from "next-auth/react"
 import { Loading } from "@/components"
 // import { Loading } from "@/components/loading/loading"
 
