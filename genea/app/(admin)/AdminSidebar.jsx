@@ -3,6 +3,7 @@ import { ActiveAnchorProvider } from "@/contexts/active-anchor"
 import { useMenu } from "@/contexts/menu"
 import { ArrowRightIcon } from "@/nextra/icons"
 import { useMounted } from "@/utils/hooks/use-mounted"
+import Link from "next/link"
 import React, { createContext, useEffect, useRef, useState } from "react"
 
 // Advanced
@@ -81,83 +82,83 @@ export default function AdminSidebar() {
             <div className="transition-opacity duration-500 ease-in-out motion-reduce:transition-none opacity-100">
               <ul className="flex flex-col gap-1 nextra-menu-desktop max-md:hidden">
                 <li className="flex gap-1 justify-start px-2 py-1 items-center cursor-pointer text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors  [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border"
                     href="/getting-started"
                   >
                     <ArrowRightIcon className="inline h-5 shrink-0 ltr:rotate-180"></ArrowRightIcon>
                     Back
-                  </a>
+                  </Link>
                 </li>
 
                 {/* <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/rules"
                   >
                     Rules
-                  </a>
+                  </Link>
                 </li> */}
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/home"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/backblaze"
                   >
                     Backblaze
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/input"
                   >
                     Input Codes
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/systems"
                   >
                     Systems
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/upload_origin"
                   >
                     Upload Origin Videos
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/upload_mismatch"
                   >
                     Upload Mismatched Videos
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/csv"
                   >
                     Upload CSV Studies
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
