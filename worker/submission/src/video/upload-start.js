@@ -2,13 +2,14 @@ import { S3Client, CreateMultipartUploadCommand } from "@aws-sdk/client-s3"
 import { corsHeaders } from "../cors.js"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INIT MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export async function handleVideoStartUpload(request, env) {
+export async function handleStartUpload(request, env) {
 	const formData = await request.formData()
-	const userId = formData.get("userId")
-	const fileName = formData.get("fileName")
-	console.log("handleStartUpload.userId", userId)
+	const systemname = formData.get("systemname")
+	const filename = formData.get("filename")
+	// const videopath = formData.get("videopath")
+	console.log("handleStartUpload.userId", systemname)
 
-	if (!fileName) {
+	if (!filename) {
 		return new Response(JSON.stringify({ msg: "File name not found", error: null, success: false }), {
 			headers: { ...corsHeaders, "Content-Type": "application/json" },
 		})
@@ -30,12 +31,12 @@ export async function handleVideoStartUpload(request, env) {
 		})
 	}
 
-	const uniqueKey = `motions/${userId}/${fileName}`
+	const uniqueKey = `videos/origin/${systemname}/${filename}`
 	console.log("Bucket: ", env.BUCKET_NAME)
 	const command = new CreateMultipartUploadCommand({
 		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
-		ContentType: "application/octet-stream",
+		ContentType: "application/mp4",
 	})
 
 	try {

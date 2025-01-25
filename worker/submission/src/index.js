@@ -1,7 +1,7 @@
 import { corsHeaders } from "./cors"
-import { handleStartUpload } from "./submission/upload-start"
-import { handleUploadChunk } from "./submission/upload-chunk"
-import { handleCompleteUpload } from "./submission/upload-complete"
+import { handleStartUpload } from "./video/upload-start"
+import { handleUploadChunk } from "./video/upload-chunk"
+import { handleCompleteUpload } from "./video/upload-complete"
 
 export default {
 	async fetch(request, env, ctx) {
