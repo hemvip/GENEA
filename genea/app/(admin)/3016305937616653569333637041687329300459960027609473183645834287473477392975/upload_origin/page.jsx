@@ -49,14 +49,14 @@ export default function Page() {
               <span></span>
             </span>
             <span>
-              <span>/videos/systems</span>
+              <span>/videos/original</span>
             </span>
             <span>
               <span></span>
             </span>
             <span>
               <span>
-                /videos/systems/&lt;system_name&gt;/&lt;video_segment_name&gt;.mp4
+                /videos/original/&lt;system_name&gt;/&lt;video_segment_name&gt;.mp4
               </span>
             </span>
           </code>

@@ -22,7 +22,7 @@ export default function UploadNPY({ codes }) {
   const [uploading, setUploading] = useState("")
   // const [uploadProgress, setUploadProgress] = useState({})
   const [progress, setProgress] = useState({})
-  const [success, setSuccess] = useState("")
+  const [successMsg, setSuccessMsg] = useState("")
 
   const [email, setEmail] = useState("")
   const [teamname, setTeamName] = useState("")
@@ -40,7 +40,7 @@ export default function UploadNPY({ codes }) {
     async (acceptedFiles) => {
       setErrorMsg("")
       setUploading("")
-      setSuccess("")
+      setSuccessMsg("")
 
       const missing = []
       codes.map((code) => {
@@ -244,7 +244,7 @@ export default function UploadNPY({ codes }) {
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
         const { success, msg, error } = results.at(-1)
-        setSuccess(msg)
+        setSuccessMsg(msg)
         console.log("Success", success, "msg", msg, "error", error)
       } else {
         const failedResult = results.filter((result) => !result.success)[0]
@@ -273,6 +273,16 @@ export default function UploadNPY({ codes }) {
 
   if (!session) {
     return <Callout type="error">Please login with github</Callout>
+  }
+
+  if (successMsg) {
+    return (
+      <div className="w-full p-12 justify-center ">
+        <Callout type="info" className="mt-0">
+          {successMsg}
+        </Callout>
+      </div>
+    )
   }
 
   if (uploading) {
@@ -317,10 +327,10 @@ export default function UploadNPY({ codes }) {
             )
           })}
         </div>
-        {success ? (
+        {successMsg ? (
           <div className="w-full p-12 justify-center ">
             <Callout type="info" className="mt-0">
-              {success}
+              {successMsg}
             </Callout>
           </div>
         ) : (
