@@ -35,7 +35,7 @@ export async function handleStartUpload(request, env) {
 	const command = new CreateMultipartUploadCommand({
 		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
-		ContentType: "application/octet-stream",
+		ContentType: "binary/octet-stream",
 	})
 
 	try {
