@@ -9,6 +9,7 @@ import clsx from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
 import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
+import { VIDEO_START_UPLOAD_API_ENDPOINT } from "@/config/constants"
 
 // export default function UploadVideos({ codes, teams }) {
 export default function UploadMismatchVideos({ teams }) {
@@ -66,7 +67,7 @@ export default function UploadMismatchVideos({ teams }) {
     formData.append("video", file)
 
     return axios
-      .post("/api/upload", formData, {
+      .post(VIDEO_START_UPLOAD_API_ENDPOINT, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
