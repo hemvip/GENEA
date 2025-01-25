@@ -12,7 +12,7 @@ import {
   START_UPLOAD_API_ENDPOINT,
   UPLOAD_PART_API_ENDPOINT,
 } from "@/config/constants"
-import { UploadStatus } from "./UploadStatus"
+import { UploadStatus } from "@/components/UploadStatus"
 
 export default function UploadNPY({ codes }) {
   const { data: session, status } = useSession()
@@ -364,7 +364,7 @@ export default function UploadNPY({ codes }) {
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="username" className="w-[20%] text-right">
-          Username
+          Username <span>*</span>
         </label>
         <input
           disabled={true}
@@ -378,7 +378,7 @@ export default function UploadNPY({ codes }) {
 
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="userId" className="w-[20%] text-right">
-          Your ID
+          Your ID <span>*</span>
         </label>
         <input
           disabled={true}

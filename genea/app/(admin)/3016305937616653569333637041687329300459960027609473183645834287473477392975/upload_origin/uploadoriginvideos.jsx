@@ -16,6 +16,7 @@ import {
   VIDEO_UPLOAD_PART_API_ENDPOINT,
   VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
 } from "@/config/constants"
+import { UploadStatus } from "@/components/UploadStatus"
 
 // export default function UploadVideos({ codes, teams }) {
 export default function UploadOriginVideos({ systemList }) {
@@ -51,7 +52,13 @@ export default function UploadOriginVideos({ systemList }) {
     // Do something with the files, like upload to a server
     // console.log("acceptedFiles", acceptedFiles)
     setFiles(acceptedFiles)
-    setProgress({})
+    // setProgress({})
+    setProgress(
+      Array.from(acceptedFiles).reduce((progressItems, fileItem) => {
+        progressItems[fileItem.name] = { percent: 0, status: "pending" }
+        return progressItems
+      }, {})
+    )
 
     const selectedFiles = Array.from(acceptedFiles).map((file) => ({
       file,
@@ -88,43 +95,43 @@ export default function UploadOriginVideos({ systemList }) {
     })
   }, [])
 
-  const uploadPromise = (file, onProgress) => {
-    const formData = new FormData()
-    const inputcode = file.name
-    const systemid = systemList[selectedIndex].name
-    formData.append("inputcode", inputcode)
-    formData.append("systemid", systemid)
-    formData.append("video", file)
+  // const uploadPromise = (file, onProgress) => {
+  //   const formData = new FormData()
+  //   const inputcode = file.name
+  //   const systemid = systemList[selectedIndex].name
+  //   formData.append("inputcode", inputcode)
+  //   formData.append("systemid", systemid)
+  //   formData.append("video", file)
 
-    return axios
-      .post(VIDEO_START_UPLOAD_API_ENDPOINT, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          )
-          onProgress(file.name, percentCompleted)
-        },
-      })
-      .then((response) => {
-        console.log("response", response)
-        return response.data
-      })
-      .catch((error) => {
-        console.error("error", error.response)
-        return error.response.data
-      })
-  }
+  //   return axios
+  //     .post(VIDEO_START_UPLOAD_API_ENDPOINT, formData, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //       onUploadProgress: (progressEvent) => {
+  //         const percentCompleted = Math.round(
+  //           (progressEvent.loaded * 100) / progressEvent.total
+  //         )
+  //         onProgress(file.name, percentCompleted)
+  //       },
+  //     })
+  //     .then((response) => {
+  //       console.log("response", response)
+  //       return response.data
+  //     })
+  //     .catch((error) => {
+  //       console.error("error", error.response)
+  //       return error.response.data
+  //     })
+  // }
 
-  const uploadFile = async (file, index, teamid) => {
+  const uploadFile = async (file, index, systemid) => {
     const chunkSize = 5 * 1024 * 1024 // 5MB chunks
     const totalChunks = Math.ceil(file.size / chunkSize)
     console.log("totalChunks", totalChunks)
     const fileName = file.name
     const fileSize = file.size
-    console.log("uploadFile.userId", teamid)
+    console.log("uploadFile.systemid", systemid)
 
     try {
       updateUploadProgress(fileName, 0, "uploading")
@@ -138,13 +145,14 @@ export default function UploadOriginVideos({ systemList }) {
       const startResp = await axios.post(
         VIDEO_START_UPLOAD_API_ENDPOINT,
         {
-          userId: teamid,
+          systemid: systemid,
           fileName: fileName,
           fileSize: fileSize,
         },
         { headers: { "Content-Type": "multipart/form-data" } }
       )
       const { uploadId } = startResp.data
+      console.log("uploadId", uploadId)
 
       // Upload all parts
       // const uploadChunkResp = await Promise.all(uploadPromises)
@@ -155,7 +163,7 @@ export default function UploadOriginVideos({ systemList }) {
         const chunk = file.slice(start, end)
 
         const formData = new FormData()
-        formData.append("userId", teamid)
+        formData.append("userId", systemid)
         formData.append("file", chunk, fileName)
         formData.append("partNumber", i.toString())
         formData.append("uploadId", uploadId)
@@ -195,7 +203,7 @@ export default function UploadOriginVideos({ systemList }) {
       const completeUploadResp = await axios.post(
         VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
         {
-          userId: teamid,
+          userId: systemid,
           uploadId: uploadId,
           fileName: fileName,
           fileSize: fileSize,
@@ -224,6 +232,13 @@ export default function UploadOriginVideos({ systemList }) {
       return
     }
 
+    const systemid = systemList[selectedIndex]._id
+
+    if (!systemid) {
+      setErrorMsg("System selected not found")
+      return
+    }
+
     // if (missingList.length > 0) {
     //   setErrorMsg("Please upload missing files")
     //   return
@@ -243,10 +258,13 @@ export default function UploadOriginVideos({ systemList }) {
       //     })
       //   })
       // })
+
+      console.log("systemid", systemid)
+
       const results = []
       // const results = await Promise.all(uploadPromises)
       for (let index = 0; index < files.length; index++) {
-        const result = await uploadFile(files[index], index, teamid)
+        const result = await uploadFile(files[index], index, systemid)
         results.push(result)
       }
       // console.log("results", results)
@@ -304,10 +322,10 @@ export default function UploadOriginVideos({ systemList }) {
                 </div>
                 <span className="text-sm">{file.name}</span>
                 <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
-                    {progress[file.name] ? (
+                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
+                    {progress[file.name] && progress[file.name].percent ? (
                       <div
-                        style={{ width: `${progress[file.name]}%` }}
+                        style={{ width: `${progress[file.name].percent}%` }}
                         className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
                       >
                         <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
@@ -318,8 +336,12 @@ export default function UploadOriginVideos({ systemList }) {
                   </div>
                 </div>
                 <span className="text-xs bg-gray-200 px-2 rounded-xl">
-                  {`${progress[file.name] || 0}%`}
+                  {`${progress[file.name].percent || 0}%`}
                 </span>
+
+                {progress[file.name] && progress[file.name].status && (
+                  <UploadStatus type={progress[file.name].status} />
+                )}
               </div>
             )
           })}
