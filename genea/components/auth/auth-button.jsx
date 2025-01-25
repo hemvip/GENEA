@@ -1,10 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Loading } from "@/components/loading/loading"
 import BoardIcon from "../icons/board"
 import Image from "next/image"
+import { clsx as cn } from "clsx"
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
+import { ArrowRightIcon } from "@/nextra/icons"
 
 export default function AuthButton() {
   const { data: session, status } = useSession()
@@ -22,7 +25,7 @@ export default function AuthButton() {
     <>
       {session?.user ? (
         // ("hmthanh" ? (
-        <>
+        <div className="flex items-center gap-4">
           <a
             className="text-sm items-center font-bold contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap flex gap-1 border p-1 rounded-md border-gray-950  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
             aria-current="false"
@@ -31,13 +34,86 @@ export default function AuthButton() {
             <BoardIcon />
             Dashboard
           </a>
-          <div className="flex items-center gap-4">
+          <Menu>
+            <MenuButton className="flex py-1 px-2 hover:bg-gray-200 rounded-md items-center gap-1">
+              <span
+                className="text-sm flex items-center gap-2  font-medium subpixel-antialiased contrast-more:text-gray-700 contrast-more:dark:text-gray-100"
+                aria-current="true"
+              >
+                {session.user.name || "User"}
+                {session?.user ? (
+                  <Image
+                    src={session.user.image}
+                    width={26}
+                    height={26}
+                    className="rounded-full border"
+                    alt="User avatar"
+                  />
+                ) : (
+                  ""
+                )}
+              </span>
+              <ArrowRightIcon className="*:origin-center *:transition-transform *:rotate-90 h-4" />
+            </MenuButton>
+            <MenuItems
+              as="div"
+              anchor="bottom"
+              transition="true"
+              className={cn(
+                "focus-visible:nextra-focus",
+                "w-48 px-2 py-1",
+                "nextra-scrollbar transition-opacity motion-reduce:transition-none",
+                "border border-black/5 dark:border-white/20",
+                "backdrop-blur-md bg-nextra-bg/70",
+                "z-20 rounded-md py-1 text-sm shadow-lg",
+                "max-h-[min(calc(100vh-5rem),256px)]!"
+              )}
+            >
+              <MenuItem
+                as="div"
+                className={cn(
+                  "block py-1.5 transition-colors ps-3 pe-9",
+                  "text-gray-600 dark:text-gray-400"
+                )}
+              >
+                <form action={signOut}>
+                  <button
+                    className="text-sm py-1 px-2 underline data-[focus]:bg-blue-100 contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap subpixel-antialiased hover:underline rounded-md transition-all"
+                    aria-current="true"
+                  >
+                    Logout
+                  </button>
+                </form>
+              </MenuItem>
+              {/* <MenuItem
+                as="div"
+                className={cn(
+                  "block py-1.5 transition-colors ps-3 pe-9",
+                  "text-gray-600 dark:text-gray-400"
+                )}
+              >
+                <a className="block data-[focus]:bg-blue-100" href="/support">
+                  Support
+                </a>
+              </MenuItem>
+              <MenuItem
+                as="div"
+                className={cn(
+                  "block py-1.5 transition-colors ps-3 pe-9",
+                  "text-gray-600 dark:text-gray-400"
+                )}
+              >
+                <a className="block data-[focus]:bg-blue-100" href="/license">
+                  License
+                </a>
+              </MenuItem> */}
+            </MenuItems>
+          </Menu>
+          {/* <div className="flex items-center gap-4">
             <span
               className="text-sm flex items-center gap-2  font-medium subpixel-antialiased contrast-more:text-gray-700 contrast-more:dark:text-gray-100"
               aria-current="true"
             >
-              {/* Hi, {"hmthanh" || "User"} */}
-              {/* Hi,  */}
               {session.user.name || "User"}
               {session?.user ? (
                 <Image
@@ -59,8 +135,8 @@ export default function AuthButton() {
                 Logout
               </button>
             </form>
-          </div>
-        </>
+          </div> */}
+        </div>
       ) : (
         <button
           disabled={loading}
