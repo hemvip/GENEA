@@ -11,6 +11,11 @@ import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
 import SubmissionList from "../systems/submissionlist"
 import SystemList from "./systemlist"
+import {
+  VIDEO_START_UPLOAD_API_ENDPOINT,
+  VIDEO_UPLOAD_PART_API_ENDPOINT,
+  VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
+} from "@/config/constants"
 
 // export default function UploadVideos({ codes, teams }) {
 export default function UploadOriginVideos({ systemList }) {
@@ -74,6 +79,15 @@ export default function UploadOriginVideos({ systemList }) {
     setSelectedIndex(0)
   }, [systemList])
 
+  const updateUploadProgress = useCallback((fileName, percent, status) => {
+    setProgress((prevProgress) => {
+      return {
+        ...prevProgress,
+        [fileName]: { percent: percent, status: status },
+      }
+    })
+  }, [])
+
   const uploadPromise = (file, onProgress) => {
     const formData = new FormData()
     const inputcode = file.name
@@ -83,7 +97,7 @@ export default function UploadOriginVideos({ systemList }) {
     formData.append("video", file)
 
     return axios
-      .post("/api/upload_origin", formData, {
+      .post(VIDEO_START_UPLOAD_API_ENDPOINT, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -104,6 +118,104 @@ export default function UploadOriginVideos({ systemList }) {
       })
   }
 
+  const uploadFile = async (file, index, teamid) => {
+    const chunkSize = 5 * 1024 * 1024 // 5MB chunks
+    const totalChunks = Math.ceil(file.size / chunkSize)
+    console.log("totalChunks", totalChunks)
+    const fileName = file.name
+    const fileSize = file.size
+    console.log("uploadFile.userId", teamid)
+
+    try {
+      updateUploadProgress(fileName, 0, "uploading")
+
+      console.log(
+        "VIDEO_START_UPLOAD_API_ENDPOINT",
+        VIDEO_START_UPLOAD_API_ENDPOINT
+      )
+
+      // Start multipart upload
+      const startResp = await axios.post(
+        VIDEO_START_UPLOAD_API_ENDPOINT,
+        {
+          userId: teamid,
+          fileName: fileName,
+          fileSize: fileSize,
+        },
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+      const { uploadId } = startResp.data
+
+      // Upload all parts
+      // const uploadChunkResp = await Promise.all(uploadPromises)
+      const parts = []
+      for (let i = 1; i <= totalChunks; i++) {
+        const start = (i - 1) * chunkSize
+        const end = Math.min(start + chunkSize, file.size)
+        const chunk = file.slice(start, end)
+
+        const formData = new FormData()
+        formData.append("userId", teamid)
+        formData.append("file", chunk, fileName)
+        formData.append("partNumber", i.toString())
+        formData.append("uploadId", uploadId)
+        formData.append("fileName", fileName)
+        formData.append("fileSize", fileSize)
+        formData.append("chunkSize", chunk.size)
+
+        const uploadChunkResp = await axios.post(
+          VIDEO_UPLOAD_PART_API_ENDPOINT,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "Content-Length": chunk.size,
+            },
+            onUploadProgress: (progressEvent) => {
+              const percentCompleted = Math.round(
+                (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
+              )
+              const overallProgress = Math.round(
+                ((i - 1 + percentCompleted / 100) * 100) / totalChunks
+              )
+
+              updateUploadProgress(fileName, overallProgress, "uploading")
+            },
+          }
+        )
+        // uploadChunkResp.push(result)
+        parts.push({
+          PartNumber: parts.length + 1,
+          ETag: uploadChunkResp.data.ETag.replace(/\"/g, ""),
+        })
+      }
+
+      // Complete multipart upload
+      console.log("parts", parts)
+      const completeUploadResp = await axios.post(
+        VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
+        {
+          userId: teamid,
+          uploadId: uploadId,
+          fileName: fileName,
+          fileSize: fileSize,
+          parts: JSON.stringify(parts),
+        },
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+      updateUploadProgress(fileName, 100, "completed")
+
+      return completeUploadResp.data
+      // return partUploadResponse.data
+    } catch (err) {
+      console.error("Error uploading file:", err)
+      // setErrorMsg("Error uploading file")
+      updateUploadProgress(fileName, 0, "error")
+      const { success, msg, error } = err.response.data
+      return { success, msg, error }
+    }
+  }
+
   const handleUpload = async (e) => {
     e.preventDefault()
 
@@ -120,19 +232,23 @@ export default function UploadOriginVideos({ systemList }) {
     try {
       setUploading("Uploading your videos, please waiting ...")
 
-      const uploadPromises = Array.from(files).map((file) => {
-        return uploadPromise(file, (fileName, percent) => {
-          setProgress((prevProgress) => {
-            // console.log("prevProgress", prevProgress)
-            return {
-              ...prevProgress,
-              [fileName]: percent,
-            }
-          })
-        })
-      })
-
-      const results = await Promise.all(uploadPromises)
+      // const uploadPromises = Array.from(files).map((file) => {
+      //   return uploadPromise(file, (fileName, percent) => {
+      //     setProgress((prevProgress) => {
+      //       // console.log("prevProgress", prevProgress)
+      //       return {
+      //         ...prevProgress,
+      //         [fileName]: percent,
+      //       }
+      //     })
+      //   })
+      // })
+      const results = []
+      // const results = await Promise.all(uploadPromises)
+      for (let index = 0; index < files.length; index++) {
+        const result = await uploadFile(files[index], index, teamid)
+        results.push(result)
+      }
       // console.log("results", results)
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
@@ -222,7 +338,7 @@ export default function UploadOriginVideos({ systemList }) {
         <label htmlFor="name" className="w-[20%] text-right">
           System Name
         </label>
-        <div className="relative items-center align-middle flex-grow">
+        <div className="w-[80%] items-center align-middle flex-grow">
           <SystemList
             systemList={systemList}
             selectedIndex={selectedIndex}
@@ -239,7 +355,7 @@ export default function UploadOriginVideos({ systemList }) {
         <div className="w-[80%] items-center align-middle flex-grow ">
           <input
             disabled={true}
-            className="w-full min-w-0 disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+            className="w-full disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
             id="description"
             type="text"
             name="description"

@@ -9,7 +9,11 @@ import clsx from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
 import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
-import { VIDEO_START_UPLOAD_API_ENDPOINT } from "@/config/constants"
+import {
+  VIDEO_START_UPLOAD_API_ENDPOINT,
+  VIDEO_UPLOAD_PART_API_ENDPOINT,
+  VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
+} from "@/config/constants"
 
 // export default function UploadVideos({ codes, teams }) {
 export default function UploadMismatchVideos({ teams }) {

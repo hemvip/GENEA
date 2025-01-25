@@ -11,9 +11,7 @@ export default function SubmissionList({ teams, teamID, setTeamID }) {
         name="status"
         onChange={(e) => setTeamID(e.target.value)}
         className={cn(
-          "block w-full bg-black/5 appearance-none py-1.5 px-3 text-sm/6  items-center rounded border  border-black",
-          "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
-          "text-black"
+          "bg-gray-200 w-full appearance-none rounded-md border border-[#666666]  px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         )}
       >
         {({ focus, hover }) => (
