@@ -7,7 +7,7 @@ let App
 const ObjectId = Realm.BSON.ObjectID
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ COMPLETE MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export async function handleVideoCompleteUpload(request, env) {
+export async function handleCompleteUpload(request, env) {
 	const formData = await request.formData()
 	const userId = formData.get("userId")
 	const fileName = formData.get("fileName")
@@ -85,7 +85,7 @@ export async function handleVideoCompleteUpload(request, env) {
 			return new Response(
 				JSON.stringify({
 					success: true,
-					msg: "Your video are successfully.",
+					msg: "Your submission are successfully.",
 					error: null,
 				}),
 				{
