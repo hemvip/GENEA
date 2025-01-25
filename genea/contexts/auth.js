@@ -27,7 +27,6 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }) {
   const { data: session, status } = useSession()
-  console.log("session", session)
 
   const userData = useMemo(() => {
     if (status === "authenticated") {
