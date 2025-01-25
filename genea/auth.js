@@ -13,6 +13,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     databaseName: "hemvip",
   }),
+  session: {
+    strategy: "database",
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 10 * 24 * 60 * 60,
+  },
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
@@ -36,6 +41,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       session.username = user.username
       session.email = user.email
       session.name = user.name
+
       return session
     },
   },

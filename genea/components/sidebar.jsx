@@ -2,6 +2,7 @@
 import { ActiveAnchorProvider } from "@/contexts/active-anchor"
 import { useMenu } from "@/contexts/menu"
 import { useMounted } from "@/utils/hooks/use-mounted"
+import Link from "next/link"
 import React, { createContext, useEffect, useRef, useState } from "react"
 
 // Advanced
@@ -88,71 +89,71 @@ export default function Sidebar() {
                   </a>
                 </li> */}
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/getting-started"
                   >
                     Getting&nbsp;Started
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/submission"
                   >
                     Submission
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/team"
                   >
                     Team
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/study"
                   >
                     Study
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/participants"
                   >
                     Prolific Participants
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/result"
                   >
                     Evaluation Result
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/question"
                   >
                     Question
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
-                  <a
+                  <Link
                     target="blank"
                     rel="blank"
                     className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="https://genea-workshop.github.io/leaderboard/organisers/"
                   >
                     About us ↗
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,19 +1,47 @@
 "use client"
 
-import { Fragment, useState } from "react"
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useEffect, useState, memo } from "react"
 import { Loading } from "@/components/loading/loading"
 import BoardIcon from "../icons/board"
 import Image from "next/image"
 import { clsx as cn } from "clsx"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { ArrowRightIcon } from "@/nextra/icons"
+import { useAuth } from "@/contexts/auth"
+import Link from "next/link"
 
-export default function AuthButton() {
-  const { data: session, status } = useSession()
-  const [loading, setLoading] = useState(false)
+const AuthButton = memo(function AuthButton() {
+  const {
+    isLoading,
+    sessionToken,
+    expires,
+    email,
+    avatar,
+    name: githubName,
+    isSignedIn,
+    handleSignIn,
+    handleSignOut,
+  } = useAuth()
+  // const { data: session, status } = useSession()
+  // const [sessionStorage, setSessionStorage] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [avatar, setAvatar] = useState("")
+  // const [githubName, setGithubName] = useState("")
+  // const [userid, setUserID] = useState(localStorage.getItem("userid"))
 
-  if (status === "loading") {
+  // const [loading, setLoading] = useState(true)
+
+  // useEffect(() => {
+  //   if (sessionStorage) {
+  //     // const session = JSON.parse(sessionStorage)
+  //     setSessionStorage(localStorage.getItem("github-auth-session"))
+  //     setGithubName(localStorage.getItem("name"))
+  //     setAvatar(localStorage.getItem("avatar"))
+  //     setEmail(localStorage.getItem("email"))
+  //   }
+  // }, [])
+
+  if (isLoading) {
     return (
       <div className="flex justify-center ">
         <Loading />
@@ -21,25 +49,27 @@ export default function AuthButton() {
     )
   }
 
-  if (session?.user) {
+  // if (session?.user) {
+  if (isSignedIn) {
     return (
       <div className="flex items-center gap-2">
-        <a
+        <Link
           className="text-sm items-center font-bold contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap flex gap-1 p-1 rounded-md  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
           aria-current="false"
           href="/getting-started"
         >
           <BoardIcon />
           Dashboard
-        </a>
+        </Link>
         <Menu>
           <MenuButton className="flex py-1 px-2 hover:bg-gray-200 rounded-md items-center gap-1">
             <span
               className="text-sm flex items-center gap-2  font-medium subpixel-antialiased contrast-more:text-gray-700 contrast-more:dark:text-gray-100"
               aria-current="true"
             >
-              {session.user.name || "User"}
-              {session?.user ? (
+              {/* {session.user.name || "User"} */}
+              {githubName || "User"}
+              {/* {session?.user ? (
                 <Image
                   src={session.user.image}
                   width={26}
@@ -49,7 +79,14 @@ export default function AuthButton() {
                 />
               ) : (
                 ""
-              )}
+              )} */}
+              <Image
+                src={avatar}
+                width={26}
+                height={26}
+                className="rounded-full border"
+                alt="User avatar"
+              />
             </span>
             <ArrowRightIcon className="*:origin-center *:transition-transform *:rotate-90 h-4" />
           </MenuButton>
@@ -74,14 +111,16 @@ export default function AuthButton() {
                 "text-gray-600 dark:text-gray-400"
               )}
             >
-              <form action={signOut}>
-                <button
-                  className="text-sm py-1 px-2 underline data-[focus]:bg-blue-100 contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap subpixel-antialiased hover:underline rounded-md transition-all"
-                  aria-current="true"
-                >
-                  Logout
-                </button>
-              </form>
+              <button
+                onClick={handleSignOut}
+                className="text-sm  py-1 px-2 underline data-[focus]:bg-blue-100
+                contrast-more:text-gray-700 contrast-more:dark:text-gray-100
+                max-md:hidden whitespace-nowrap subpixel-antialiased
+                hover:underline rounded-md transition-all"
+                aria-current="true"
+              >
+                Logout
+              </button>
             </MenuItem>
             {/* <MenuItem
           as="div"
@@ -140,18 +179,21 @@ export default function AuthButton() {
 
   return (
     <button
-      disabled={loading}
-      onClick={() => {
-        setLoading(true)
-        signIn("github", { callbackUrl: `/getting-started` })
-      }}
-      className={`${
-        loading
-          ? "bg-gray-200 border-gray-300"
-          : "bg-black hover:bg-white border-black"
-      } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+      onClick={handleSignIn}
+      // disabled={loading}
+      // onClick={() => {
+      //   setLoading(true)
+      //   signIn("github", { callbackUrl: `/auth` })
+      // }}
+      // className={`${
+      //   loading ? "bg-gray-200 border-gray-300" : ""
+      // } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+      className="bg-black text-center hover:bg-white border-black w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all"
     >
-      {loading ? <Loading color="gray" /> : "Log in with GitHub"}
+      Log in with GitHub
+      {/* {loading ? <Loading color="gray" /> : } */}
     </button>
   )
-}
+})
+
+export default AuthButton

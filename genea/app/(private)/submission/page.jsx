@@ -1,10 +1,12 @@
 "use client"
 
+// import { getServerSession } from "next-auth"
 import Image from "next/image"
 import UploadNPY from "./uploadnpy"
 import { useEffect, useState } from "react"
 import InputCode from "./inputcode"
 import axios from "axios"
+// import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
 export default function Page() {
   const [codes, setCodes] = useState([])

@@ -1,6 +1,5 @@
 "use client"
 
-import { useSession } from "next-auth/react"
 import React, { useCallback, useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import { Callout } from "@/nextra"
@@ -13,9 +12,10 @@ import {
   UPLOAD_PART_API_ENDPOINT,
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
+import { useAuth } from "@/contexts/auth"
 
 export default function UploadNPY({ codes }) {
-  const { data: session, status } = useSession()
+  const { email, name: teamname, username, userId, isSignedIn } = useAuth()
   const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
@@ -24,17 +24,15 @@ export default function UploadNPY({ codes }) {
   const [progress, setProgress] = useState({})
   const [successMsg, setSuccessMsg] = useState("")
 
-  const [email, setEmail] = useState("")
-  const [teamname, setTeamName] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [teamname, setTeamName] = useState("")
 
   const [missingList, setMissingList] = useState([])
 
-  useEffect(() => {
-    if (session) {
-      setEmail(session.email)
-      setTeamName(session.name)
-    }
-  }, [session])
+  // useEffect(() => {
+  //   setEmail(email)
+  //   setTeamName(name)
+  // }, [])
 
   const onDrop = useCallback(
     async (acceptedFiles) => {
@@ -184,7 +182,7 @@ export default function UploadNPY({ codes }) {
   const handleUpload = async (e) => {
     e.preventDefault()
 
-    if (!session) {
+    if (isSignedIn === false) {
       setErrorMsg("Please login with github")
       return
     }
@@ -211,11 +209,11 @@ export default function UploadNPY({ codes }) {
 
     try {
       setUploading("Uploading your submission, please waiting ...")
-      const teamid = String(session.username).toLowerCase()
+      const teamid = String(username).toLowerCase()
 
       //~~~~~~~~  Update submission info to database ~~~~~~~~
       const formData = new FormData()
-      formData.append("userId", session.userId)
+      formData.append("userId", userId)
       formData.append("email", email)
       formData.append("teamid", teamid)
       formData.append("teamname", teamname)
@@ -271,7 +269,7 @@ export default function UploadNPY({ codes }) {
     )
   }
 
-  if (!session) {
+  if (!isSignedIn) {
     return <Callout type="error">Please login with github</Callout>
   }
 
@@ -382,7 +380,7 @@ export default function UploadNPY({ codes }) {
           id="username"
           type="username"
           name="username"
-          value={session.username}
+          value={username}
         />
       </div>
 
@@ -396,7 +394,7 @@ export default function UploadNPY({ codes }) {
           id="userId"
           type="userId"
           name="userId"
-          value={session.userId}
+          value={userId}
         />
       </div>
 
