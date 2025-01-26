@@ -17,7 +17,6 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
   // const [team, setTeam] = useState(teams[0])
   // const [teamID, setTeamID] = useState(teams[0].userId)
   // const [files, setFiles] = useState([])
-  const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
   // const [uploadProgress, setUploadProgress] = useState({})
@@ -94,48 +93,62 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
     )
   }
 
-  if (uploading) {
+  if (errorMsg) {
     return (
-      <div className="w-full px-12  justify-center ">
-        <p className="text-center p-4">Uploading...</p>
-        <div className="flex flex-col gap-2">
-          {/* {files.map((file, idx) => {
-            return (
-              <div
-                className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
-                key={idx}
-              >
-                <div className="p-1 bg-gray-200 rounded-lg">
-                  <VideoFile />
-                </div>
-                <span className="text-sm">{file.name}</span>
-                <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
-                    {progress[file.name] ? (
-                      <div
-                        style={{ width: `${progress[file.name]}%` }}
-                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-                      >
-                        <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
-                      </div>
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </div>
-                <span className="text-xs bg-gray-200 px-2 rounded-xl">
-                  {`${progress[file.name] || 0}%`}
-                </span>
-              </div>
-            )
-          })} */}
-        </div>
-        <Callout type="warning" className="mt-0">
-          {uploading}
+      <div className="w-full pl-[20%]">
+        <Callout type="error" className="mt-0">
+          {errorMsg}
         </Callout>
       </div>
     )
   }
+
+  if (loadedCSV) {
+    return <></>
+  }
+
+  // if (uploading) {
+  //   return (
+  //     <div className="w-full px-12  justify-center ">
+  //       <p className="text-center p-4">Uploading...</p>
+  //       <div className="flex flex-col gap-2">
+  //         {/* {files.map((file, idx) => {
+  //           return (
+  //             <div
+  //               className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
+  //               key={idx}
+  //             >
+  //               <div className="p-1 bg-gray-200 rounded-lg">
+  //                 <VideoFile />
+  //               </div>
+  //               <span className="text-sm">{file.name}</span>
+  //               <div className="flex-grow">
+  //                 <div className="overflow-hidden mx-auto max-w-96 h-2 text-xs flex rounded-3xl bg-blue-200">
+  //                   {progress[file.name] ? (
+  //                     <div
+  //                       style={{ width: `${progress[file.name]}%` }}
+  //                       className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
+  //                     >
+  //                       <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
+  //                     </div>
+  //                   ) : (
+  //                     <></>
+  //                   )}
+  //                 </div>
+  //               </div>
+  //               <span className="text-xs bg-gray-200 px-2 rounded-xl">
+  //                 {`${progress[file.name] || 0}%`}
+  //               </span>
+  //             </div>
+  //           )
+  //         })} */}
+  //       </div>
+  //       <Callout type="warning" className="mt-0">
+  //         {uploading}
+  //       </Callout>
+  //     </div>
+  //   )
+  // }
 
   return (
     <>
@@ -184,25 +197,7 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
           />
         </div>
       </div> */}
-
-      {/* <div className="flex flex-row items-center gap-4">
-        <label htmlFor="userId" className="w-[20%] flex justify-end">
-          Team ID
-        </label>
-        <input
-          disabled={true}
-          className="flex-grow min-w-0 disabled:bg-gray-200 appearance-none rounded-md border border-[#666666] bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
-          id="userId"
-          type="userId"
-          name="userId"
-          value={teamID}
-        />
-      </div> */}
-
       <div className="flex flex-row items-center gap-4">
-        {/* <label htmlFor="upload" className="w-[20%] flex justify-end">
-          CSV Upload
-        </label> */}
         <div
           {...getRootProps()}
           style={{ border: "2px dashed #666666" }}
@@ -215,23 +210,6 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
             accept=".csv"
             multiple={true}
           />
-          {previews && previews.length > 0 && (
-            <ul className="w-full flex flex-wrap gap-2 justify-center">
-              {previews.map((previewFile, index) => {
-                console.log("object", previewFile)
-                return (
-                  <li
-                    key={index}
-                    title={previewFile.name}
-                    className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
-                  >
-                    {/* <div width="160" height="120" controls></div> */}
-                    <p className="">{previewFile.name}</p>
-                  </li>
-                )
-              })}
-            </ul>
-          )}
           {isDragActive ? (
             <p>Drop csv files here...</p>
           ) : (
@@ -239,14 +217,6 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
           )}
         </div>
       </div>
-
-      {errorMsg && (
-        <div className="w-full pl-[20%]">
-          <Callout type="error" className="mt-0">
-            {errorMsg}
-          </Callout>
-        </div>
-      )}
     </>
   )
 }

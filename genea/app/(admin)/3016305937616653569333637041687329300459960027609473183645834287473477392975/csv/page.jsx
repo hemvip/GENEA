@@ -79,7 +79,11 @@ export default function Page() {
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
         <form className="mt-6 flex flex-col w-[80%] gap-4">
-          <UploadCSV setCsvList={setCsvList} setLoadedCSV={setLoadedCSV} />
+          <UploadCSV
+            setCsvList={setCsvList}
+            loadedCSV={loadedCSV}
+            setLoadedCSV={setLoadedCSV}
+          />
 
           <div className="flex flex-col py-4 gap-4">
             {csvList.map(({ data: csvData, filename }, index) => {

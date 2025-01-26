@@ -1,0 +1,173 @@
+{
+  "type": "finish",
+  "name": "Thank you",
+  "content": "Thank you for your participation! <br> *required fields<br><br>",
+  "showResults": false,
+  "writeResults": true,
+  "questionnaire": [
+    {
+      "type": "number",
+      "label": "*What's your age in years?",
+      "name": "age",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "options",
+      "name": "gender",
+      "label": "*How would you identify yourself (gender)?",
+      "response": [
+        {
+          "value": "female",
+          "label": "Female"
+        },
+        {
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        },
+        {
+          "value": "other",
+          "label": "Prefer not to say"
+        }
+      ]
+    },
+    {
+      "type": "options",
+      "label": "*In what country do you currently reside?",
+      "name": "residence",
+      "response": [
+        {
+          "value": "aus",
+          "label": "Australia"
+        },
+        {
+          "value": "can",
+          "label": "Canada"
+        },
+        {
+          "value": "ire",
+          "label": "Ireland"
+        },
+        {
+          "value": "newz",
+          "label": "New Zealand"
+        },
+        {
+          "value": "uk",
+          "label": "United Kingdom"
+        },
+        {
+          "value": "usa",
+          "label": "United States of America"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "type": "options",
+      "label": "*Which language(s) do you speak natively?",
+      "name": "language",
+      "response": [
+        {
+          "value": "en0",
+          "label": "English only"
+        },
+        {
+          "value": "en1",
+          "label": "English and at least one other language"
+        },
+        {
+          "value": "oth",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "type": "options",
+      "name": "education",
+      "label": "*What is your highest completed level of education?",
+      "response": [
+        {
+          "value": "some_highschool",
+          "label": "Primary School"
+        },
+        {
+          "value": "highschool",
+          "label": "High School"
+        },
+        {
+          "value": "bachelors",
+          "label": "Bachelor"
+        },
+        {
+          "value": "masters",
+          "label": "Master"
+        },
+        {
+          "value": "doctorate",
+          "label": "PhD"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "type": "options",
+      "name": "task_difficulty",
+      "label": "*Please indicate to what extent you agree or disagree with this statement: <br>\"This task was really easy\"",
+      "response": [
+        {
+          "value": "disagree",
+          "label": "Disagree"
+        },
+        {
+          "value": "slightly_disagree",
+          "label": "Slightly disagree"
+        },
+        {
+          "value": "neutral",
+          "label": "Neither agree nor disagree"
+        },
+        {
+          "value": "slightly_agree",
+          "label": "Slightly agree"
+        },
+        {
+          "value": "agree",
+          "label": "Agree"
+        }
+      ]
+    },
+    {
+      "type": "long_text",
+      "label": "*What did you like the most about doing this study?",
+      "name": "liked_most"
+    },
+    {
+      "type": "long_text",
+      "label": "*What did you like the least about doing this study?",
+      "name": "liked_least"
+    },
+    {
+      "type": "long_text",
+      "label": "*Was the compensation given for your participation in this study adequate? If not, state what would be appropriate and why.",
+      "name": "compensation"
+    },
+    {
+      "type": "long_text",
+      "label": "Any other comments, for example things you would like us to change about this evaluation?",
+      "name": "other",
+      "optional": true
+    }
+  ]
+}
