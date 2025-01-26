@@ -54,11 +54,11 @@ const AuthButton = memo(function AuthButton() {
     return (
       <div className="flex items-center gap-2">
         <Link
-          className="text-sm items-center font-bold contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap flex gap-1 p-1 rounded-md  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+          className="text-sm items-center font-bold contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap flex gap-2 p-1 rounded-md  hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
           aria-current="false"
           href="/getting-started"
         >
-          <BoardIcon />
+          <BoardIcon className="w-5 h-5" />
           Dashboard
         </Link>
         <Menu>
