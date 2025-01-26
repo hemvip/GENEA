@@ -31,12 +31,16 @@ export default function Footer() {
       </div>
       <hr className="dark:border-neutral-800" />
       <div className="mx-auto flex max-w-[90rem] justify-center py-12 text-gray-600 dark:text-gray-400 md:justify-end pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)]">
-        <Link
+        <a
+          className="focus-visible:nextra-focus flex flex-col  items-start gap-2"
+          target="_blank"
           rel="noreferrer"
-          target="blank"
-          className="flex items-center gap-2 font-semibold"
-          href="/"
+          title="genea leaderboard"
         >
+          <div className="flex w-full justify-between">
+            <span className="font-semibold">Powered by</span>
+            <span>© 2025</span>
+          </div>
           <Image
             src="/logo.png"
             width={192}
@@ -44,7 +48,7 @@ export default function Footer() {
             className="h-7 w-48"
             alt="logo"
           />
-        </Link>
+        </a>
       </div>
     </footer>
   )
