@@ -6,7 +6,7 @@ export default function CSVPreviewer({ csvData, headers }) {
   return (
     <>
       {csvData.length > 0 && (
-        <table className=" text-sm rounded-md">
+        <table className="w-full text-sm rounded-md">
           <thead>
             <tr className="border-b text-left dark:border-neutral-700 ">
               {headers.map((header, index) => (

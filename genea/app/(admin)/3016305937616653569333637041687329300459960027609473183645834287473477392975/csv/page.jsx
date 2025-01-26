@@ -117,7 +117,7 @@ export default function Page() {
                         </svg>
                       </button>
                     </div>
-                    <div className="nextra-code" dir="ltr">
+                    <div className="nextra-code px-4" dir="ltr">
                       <CSVPreviewer
                         key={index}
                         csvData={csvData.slice(1)}

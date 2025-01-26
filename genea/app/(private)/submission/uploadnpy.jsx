@@ -13,6 +13,7 @@ import {
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
 import { useAuth } from "@/contexts/auth"
+import NPYIcon from "@/components/icons/npy"
 
 export default function UploadNPY({ codes }) {
   const {
@@ -63,10 +64,12 @@ export default function UploadNPY({ codes }) {
         }, {})
       )
 
-      const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-        file,
-        url: URL.createObjectURL(file),
-      }))
+      const selectedFiles = Array.from(acceptedFiles)
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((file) => ({
+          file,
+          url: URL.createObjectURL(file),
+        }))
       setPreviews(selectedFiles)
 
       try {
@@ -300,15 +303,15 @@ export default function UploadNPY({ codes }) {
 
             return (
               <div
-                className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
+                className="mx-20 flex gap-2 rounded-md border items-center border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50 py-2 px-6 shadow"
                 key={idx}
               >
-                <div className="p-1 bg-gray-200 rounded-lg">
-                  <BVHFile />
+                <div className="">
+                  <NPYIcon className="h-5 w-5" />
                 </div>
-                <span className="text-sm">{file.name}</span>
-                <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
+                <span className="flex-grow text-sm">{file.name}</span>
+                <div className="w-48">
+                  <div className="overflow-hidden mx-auto max-w-72 h-[0.375rem] text-xs flex rounded-3xl min-w-20 bg-blue-200">
                     {progress[file.name] && progress[file.name].percent ? (
                       <div
                         style={{ width: `${progress[file.name].percent}%` }}
@@ -321,7 +324,7 @@ export default function UploadNPY({ codes }) {
                     )}
                   </div>
                 </div>
-                <span className="text-xs bg-gray-200 px-2 rounded-xl">
+                <span className="text-xs w-12 text-center bg-gray-200 px-2 rounded-xl">
                   {`${progress[file.name].percent || 0}%`}
                 </span>
 
@@ -422,22 +425,21 @@ export default function UploadNPY({ codes }) {
             multiple={true}
           />
           {previews.length > 0 && (
-            <ul className="w-full flex flex-wrap gap-2 justify-center">
-              {previews.map(({ file, url }, index) => (
-                <li
-                  title={file.name}
-                  key={index}
-                  className="w-32 flex flex-col justify-center items-center gap-1 p-2  border rounded-md border-black"
-                >
-                  <p
-                    title={file.name}
-                    className="overflow-hidden text-ellipsis whitespace-nowrap w-28"
-                  >
-                    {file.name}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <>
+              <ul className="w-full flex flex-wrap gap-2 justify-center">
+                {previews.map(({ file, url }, index) => (
+                  <li title={file.name} key={index} className="w-44">
+                    <div
+                      title={file.name}
+                      className="px-4 overflow-hidden text-ellipsis whitespace-nowrap text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50"
+                    >
+                      <NPYIcon className="w-5 h-5" />
+                      <span className="truncate">{file.name}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
           {isDragActive ? (
             <p>Drop the files here...</p>

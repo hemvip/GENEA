@@ -29,7 +29,7 @@ export function UploadStatus({ type }) {
   return (
     <div
       className={cn(
-        "flex text-xs items-center justify-between p-2 py-1 border leading-normal rounded-lg",
+        "text-xs w-20 text-center p-1 border leading-normal rounded-lg",
         color
       )}
     >

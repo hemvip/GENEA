@@ -204,7 +204,7 @@ export default function UploadMismatchVideos({ teams }) {
   }
 
   return (
-    <form className="mt-6 flex flex-col px-10 gap-4">
+    <form className="mt-6 flex flex-col px-4 gap-4">
       <div className="flex flex-row items-center gap-4">
         <label htmlFor="name" className="w-[20%] flex justify-end">
           Team
