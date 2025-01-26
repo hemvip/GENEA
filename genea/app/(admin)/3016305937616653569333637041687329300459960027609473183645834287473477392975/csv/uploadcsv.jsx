@@ -10,12 +10,13 @@ import { clsx as cn } from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
 import VideoFile from "@/components/icons/videofile"
 import { ArrowLeftIcon } from "@/nextra/icons"
+import Papa from "papaparse"
 
 // export default function UploadVideos({ codes, teams }) {
-export default function UploadCSV({ teams }) {
+export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
   // const [team, setTeam] = useState(teams[0])
   // const [teamID, setTeamID] = useState(teams[0].userId)
-  const [files, setFiles] = useState([])
+  // const [files, setFiles] = useState([])
   const [previews, setPreviews] = useState([])
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
@@ -23,30 +24,33 @@ export default function UploadCSV({ teams }) {
   const [progress, setProgress] = useState({})
   const [success, setSuccess] = useState("")
 
-  // const [missingList, setMissingList] = useState([])
+  const parseFile = (file) => {
+    return new Promise((resolve, reject) => {
+      Papa.parse(file, {
+        complete: (result) => {
+          // Add the filename to the parsed result
+          const dataWithFilename = {
+            filename: file.name,
+            data: result.data,
+          }
+          resolve(dataWithFilename)
+        },
+        error: (error) => {
+          reject(error)
+        },
+        header: false,
+      })
+    })
+  }
 
-  const onDrop = useCallback(async (acceptedFiles) => {
-    setErrorMsg("")
-    setUploading("")
-    setSuccess("")
-
-    setFiles(acceptedFiles)
-    setProgress({})
-
-    // const selectedFiles = Array.from(acceptedFiles).map((file) => ({
-    //   file,
-    //   url: URL.createObjectURL(file),
-    // }))
-    console.log("selectedFiles", acceptedFiles)
-    setPreviews(acceptedFiles)
-
-    try {
-      // handleUpload()
-      // console.log(response.data.message)
-    } catch (error) {
-      console.error("Error uploading files:", error)
-    }
-    setUploading("")
+  const onDrop = useCallback(async (files) => {
+    const csvListData = await Promise.all(
+      Array.from(files)
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((file) => parseFile(file))
+    )
+    setCsvList(csvListData)
+    setLoadedCSV(true)
   }, [])
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -80,53 +84,6 @@ export default function UploadCSV({ teams }) {
   //     })
   // }
 
-  const handleUpload = async (e) => {
-    e.preventDefault()
-
-    if (files.length <= 0) {
-      setErrorMsg("Please upload video")
-      return
-    }
-
-    try {
-      setUploading("Uploading your videos, please waiting ...")
-
-      const uploadPromises = Array.from(files).map((file) => {
-        return uploadPromise(file, (fileName, percent) => {
-          setProgress((prevProgress) => {
-            // console.log("prevProgress", prevProgress)
-            return {
-              ...prevProgress,
-              [fileName]: percent,
-            }
-          })
-        })
-      })
-
-      const results = await Promise.all(uploadPromises)
-      // console.log("results", results)
-      const allSuccessful = results.every((result) => result.success)
-      if (allSuccessful) {
-        const { success, msg, error } = results.at(-1)
-        setSuccess(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      } else {
-        const failedResult = results.filter((result) => !result.success)[0]
-        const { success, msg, error } = failedResult
-        setErrorMsg(msg)
-        console.log("Success", success, "msg", msg, "error", error)
-      }
-    } catch (error) {
-      console.log("EXCEPTION ", error)
-      setErrorMsg(
-        "EXCEPTION: Error with uploading your videos, please contact support"
-      )
-      console.log("Exception", error)
-    } finally {
-      setUploading("")
-    }
-  }
-
   if (success) {
     return (
       <div className="w-full p-12 justify-center ">
@@ -142,7 +99,7 @@ export default function UploadCSV({ teams }) {
       <div className="w-full px-12  justify-center ">
         <p className="text-center p-4">Uploading...</p>
         <div className="flex flex-col gap-2">
-          {files.map((file, idx) => {
+          {/* {files.map((file, idx) => {
             return (
               <div
                 className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
@@ -171,7 +128,7 @@ export default function UploadCSV({ teams }) {
                 </span>
               </div>
             )
-          })}
+          })} */}
         </div>
         <Callout type="warning" className="mt-0">
           {uploading}
@@ -181,7 +138,7 @@ export default function UploadCSV({ teams }) {
   }
 
   return (
-    <form className="mt-6 flex flex-col w-[80%] px-10 gap-4">
+    <>
       {/* <div className="flex flex-row items-center gap-4">
         <label htmlFor="name" className="w-[20%] flex justify-end">
           Team
@@ -243,13 +200,13 @@ export default function UploadCSV({ teams }) {
       </div> */}
 
       <div className="flex flex-row items-center gap-4">
-        <label htmlFor="upload" className="w-[20%] flex justify-end">
+        {/* <label htmlFor="upload" className="w-[20%] flex justify-end">
           CSV Upload
-        </label>
+        </label> */}
         <div
           {...getRootProps()}
           style={{ border: "2px dashed #666666" }}
-          className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+          className="w-full p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
           <input
             id="upload"
@@ -290,17 +247,6 @@ export default function UploadCSV({ teams }) {
           </Callout>
         </div>
       )}
-
-      <div className="flex flex-col items-center">
-        <div className="pl-[20%] flex justify-start">
-          <button
-            className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
-            onClick={handleUpload}
-          >
-            Generate Study
-          </button>
-        </div>
-      </div>
-    </form>
+    </>
   )
 }
