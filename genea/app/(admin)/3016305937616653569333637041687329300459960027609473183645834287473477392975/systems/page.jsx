@@ -164,7 +164,7 @@ export default function Page() {
           Create System
         </h2>
         <form
-          className="mt-6 flex flex-col w-[80%] px-10 gap-4"
+          className="mt-6 flex flex-col px-10 gap-4"
           onSubmit={onCreateSystem}
         >
           {/* ********************************************************************************** */}

@@ -78,7 +78,7 @@ export default function Page() {
       </h2>
       <div className="mt-6 mb-32">
         {/* <p className="mt-3 leading-7 first:mt-0">Github information</p> */}
-        <form className="mt-6 flex flex-col w-[80%] gap-4">
+        <form className="mt-6 flex flex-col gap-4">
           <UploadCSV
             setCsvList={setCsvList}
             loadedCSV={loadedCSV}

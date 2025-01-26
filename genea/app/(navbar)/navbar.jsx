@@ -97,7 +97,7 @@ export default function Navbar() {
           <li className="my-2 scroll-my-6 scroll-py-6">
             <a
               href="#evaluation-tasks"
-              className="focus-visible:nextra-focus ms-3 block transition-colors subpixel-antialiased text-primary-600 contrast-more:text-primary-600! contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 break-words"
+              className="focus-visible:nextra-focus ms-3 block transition-colors subpixel-antialiased text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 break-words"
             >
               Evaluation tasks
             </a>
