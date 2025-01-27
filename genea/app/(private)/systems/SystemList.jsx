@@ -1,6 +1,6 @@
 import { memo } from "react"
 
-const SystemList = memo(({ systems }) => {
+const SystemList = memo(function SystemList({ systems }) {
   return (
     <table className="w-full border-collapse text-sm">
       <thead>
@@ -10,6 +10,7 @@ const SystemList = memo(({ systems }) => {
           <th className="py-2 pl-6 font-semibold">System name</th>
           <th className="py-2 pl-6 font-semibold">Team</th>
           <th className="py-2 pl-6 font-semibold">Description</th>
+          {/* <th className="py-2 pl-6 font-semibold">Submited at</th> */}
         </tr>
       </thead>
       <tbody className="align-baseline text-gray-900 dark:text-gray-100">
@@ -26,6 +27,7 @@ const SystemList = memo(({ systems }) => {
                 {system.teamname == null ? "GENEA" : system.teamname}
               </td>
               <td className="py-2 pl-6">{system.description}</td>
+              {/* <td className="py-2 pl-6">{system.submittedAt}</td> */}
             </tr>
           ))}
       </tbody>

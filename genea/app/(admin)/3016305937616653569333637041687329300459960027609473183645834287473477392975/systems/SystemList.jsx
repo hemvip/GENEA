@@ -1,6 +1,6 @@
 import { memo } from "react"
 
-const SystemList = memo(({ systems }) => {
+const SystemList = memo(function SystemList({ systems }) {
   return (
     <table className="w-full border-collapse text-sm">
       <thead>

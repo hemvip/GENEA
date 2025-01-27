@@ -73,7 +73,7 @@ export default function Page() {
 
   useEffect(() => {
     updateSystemType(systemType)
-  }, [systemType])
+  }, [systemType, updateSystemType])
 
   useEffect(() => {
     setLoading(true)

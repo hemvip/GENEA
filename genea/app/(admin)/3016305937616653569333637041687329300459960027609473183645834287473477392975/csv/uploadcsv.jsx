@@ -42,15 +42,18 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
     })
   }
 
-  const onDrop = useCallback(async (files) => {
-    const csvListData = await Promise.all(
-      Array.from(files)
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((file) => parseFile(file))
-    )
-    setCsvList(csvListData)
-    setLoadedCSV(true)
-  }, [])
+  const onDrop = useCallback(
+    async (files) => {
+      const csvListData = await Promise.all(
+        Array.from(files)
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((file) => parseFile(file))
+      )
+      setCsvList(csvListData)
+      setLoadedCSV(true)
+    },
+    [setLoadedCSV, setCsvList]
+  )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
