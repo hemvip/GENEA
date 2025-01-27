@@ -9,20 +9,20 @@ import BVHInfo from "./BVHInfo"
 import axios from "axios"
 
 export default function Page() {
-  const [teams, setTeams] = useState([])
+  const [systems, setSystems] = useState([])
   const [loading, setLoading] = useState(true)
 
-  async function fetchTeams() {
-    const res = await axios.get("/api/submission")
+  async function fetchSystems() {
+    const res = await axios.get("/api/systems")
     if (res.data.success) {
-      setTeams(res.data.submissions)
+      setSystems(res.data.systems)
     } else {
       console.error(res.error)
     }
   }
 
   useEffect(() => {
-    fetchTeams()
+    fetchSystems()
   }, [])
 
   return (
@@ -89,7 +89,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody className="align-baseline text-gray-900 dark:text-gray-100">
-            {teams.map((team, index) => (
+            {systems.map((team, index) => (
               <tr
                 key={index}
                 className="border-b border-gray-100 dark:border-neutral-700/50 align-middle"

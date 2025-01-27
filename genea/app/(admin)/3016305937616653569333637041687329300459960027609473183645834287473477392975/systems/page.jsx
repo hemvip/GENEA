@@ -133,10 +133,10 @@ export default function Page() {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b py-4 text-left dark:border-neutral-700 ">
-              <th className="py-2 font-semibold">#ID</th>
+              <th className="py-2 pl-6 font-semibold">#ID</th>
               <th className="py-2 pl-6 font-semibold">Type</th>
-              <th className="py-2 font-semibold">System name</th>
-              <th className="py-2 pl-6 font-semibold"></th>
+              <th className="py-2 pl-6 font-semibold">System name</th>
+              <th className="py-2 pl-6 font-semibold">Team</th>
               <th className="py-2 pl-6 font-semibold">Description</th>
             </tr>
           </thead>
@@ -164,7 +164,7 @@ export default function Page() {
           Create System
         </h2>
         <form
-          className="mt-6 flex flex-col px-4 gap-4"
+          className="mt-2 mb-6 flex flex-col px-4 gap-4"
           onSubmit={onCreateSystem}
         >
           {/* ********************************************************************************** */}
