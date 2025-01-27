@@ -3,7 +3,7 @@ import { Fragment, useState } from "react"
 import { clsx as cn } from "clsx"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
 
-export default function SubmissionList({ teams, teamID, setTeamID }) {
+export default function SubmissionList({ teams, setTeamID }) {
   console.log("teams", teams)
   return (
     <>

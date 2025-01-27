@@ -2,7 +2,13 @@
 
 import { clsx as cn } from "clsx"
 import axios from "axios"
-import React, { Fragment, useCallback, useEffect, useState } from "react"
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
 import { generateUUID } from "@/utils/generateUUID"
 import { calculateCombinations } from "./utils"
 import { Loading } from "@/components"
@@ -18,7 +24,7 @@ export default function Page() {
   const [systemList, setSystemList] = useState([])
   const [loading, setLoading] = useState(false)
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const [systemType, setSystemType] = useState()
+  const [systemType, setSystemType] = useState("system")
   const [systemname, setSystemName] = useState("")
   const [description, setDescription] = useState("")
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,6 +53,8 @@ export default function Page() {
       console.error(res.error)
     }
   }
+
+  const submission = useMemo(() => submissionList, [submissionList])
 
   function updateSystemType(type) {
     setSystemType(type)
@@ -184,11 +192,7 @@ export default function Page() {
                 Submission
               </label>
               <div className="relative items-center align-middle flex-grow">
-                <SubmissionList
-                  teams={submissionList}
-                  teamID={teamID}
-                  setTeamID={setTeamID}
-                />
+                <SubmissionList teams={submission} setTeamID={setTeamID} />
               </div>
             </div>
           ) : (

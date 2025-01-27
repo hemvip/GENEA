@@ -9,7 +9,6 @@ import clsx from "clsx"
 import BVHFile from "@/components/icons/bvhfile"
 import { Select } from "@headlessui/react"
 import VideoFile from "@/components/icons/videofile"
-import SubmissionList from "../systems/submissionlist"
 import SystemList from "./systemlist"
 import {
   VIDEO_START_UPLOAD_API_ENDPOINT,

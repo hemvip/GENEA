@@ -4,16 +4,19 @@ import React, { useEffect, useState, useMemo } from "react"
 import cn from "clsx"
 import axios from "axios"
 import SystemList from "./SystemList"
+import { Loading } from "@/components"
 
 export default function Page() {
   const [systems, setSystems] = useState([])
-  // const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchSystems() {
+      setLoading(true)
       const res = await axios.get("/api/systems")
       if (res.data.success) {
         setSystems(res.data.systems)
+        setLoading(false)
       } else {
         console.error(res.error)
       }
@@ -78,7 +81,13 @@ export default function Page() {
           "mask-gradient"
         )}
       >
-        <SystemList systems={systemList} />
+        {loading ? (
+          <div className="flex w-full p-32 justify-center">
+            <Loading />
+          </div>
+        ) : (
+          <SystemList systems={systemList} />
+        )}
       </div>
     </div>
   )
