@@ -298,9 +298,7 @@ export default function UploadNPY({ codes }) {
       <div className="w-full px-12  justify-center ">
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
-            // console.log("file", file)
             // console.log("progress", progress)
-
             return (
               <div
                 className="mx-20 flex gap-2 rounded-md border items-center border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50 py-2 px-6 shadow"

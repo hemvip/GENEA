@@ -13,36 +13,36 @@ export default function ScreenInfo({ info }) {
       className={cn("flex flex-col border p-2 rounded-lg", colors[info.type])}
     >
       <div className="">
-        pageid: <code className="nextra-code">{info.pageid}</code>
+        PageID: <code className="nextra-code">{info.pageid}</code>
       </div>
       <div className="">
-        type: <code className="nextra-code">{info.type}</code>
+        Type: <code className="nextra-code">{info.type}</code>
+      </div>
+      <div className="text-wrap w-72">
+        Name: <code className="nextra-code text-wrap">{info.name}</code>
       </div>
       <div className="">
-        name: <code className="nextra-code">{info.name}</code>
-      </div>
-      <div className="">
-        video:
+        Video:
         {info.videos && (
           <div className="flex flex-col gap-2">
             <div className="border border-gray-300 bg-gray-200 p-2 rounded-lg ">
               <div className="">
-                teamid :{" "}
+                TeamID :{" "}
                 <code className="nextra-code">{info.videos[0].teamid}</code>
               </div>
               <div className="">
-                inputid :{" "}
+                InputID :{" "}
                 <code className="nextra-code">{info.videos[0].inputid}</code>
               </div>
               <div className="">
-                value :{" "}
+                Value :{" "}
                 <code className="nextra-code">{info.videos[0].value}</code>
               </div>
-              <div className="">
-                url :{" "}
+              <div className="flex gap-2">
+                <span>URL: </span>
                 <a
                   href={info.videos[0].url}
-                  className="text-primary-600 underline decoration-from-font [text-underline-position:from-font]"
+                  className="w-72 overflow-hidden text-ellipsis whitespace-nowrap text-primary-600 underline decoration-from-font [text-underline-position:from-font]"
                 >
                   {info.videos[0].url}
                 </a>
@@ -50,22 +50,22 @@ export default function ScreenInfo({ info }) {
             </div>
             <div className="border border-gray-300 bg-gray-200 p-2 rounded-lg ">
               <div className="">
-                teamid:{" "}
+                TeamID:{" "}
                 <code className="nextra-code">{info.videos[1].teamid}</code>
               </div>
               <div className="">
-                inputid:{" "}
+                InputID:{" "}
                 <code className="nextra-code">{info.videos[1].inputid}</code>
               </div>
               <div className="">
-                value:{" "}
+                Value:{" "}
                 <code className="nextra-code">{info.videos[1].value}</code>
               </div>
-              <div className="">
-                url:{" "}
+              <div className="flex gap-2 w-full">
+                <span>URL: </span>
                 <a
                   href={info.videos[1].url}
-                  className="text-primary-600 underline decoration-from-font [text-underline-position:from-font]"
+                  className="w-72 overflow-hidden text-ellipsis whitespace-nowrap text-primary-600 underline decoration-from-font [text-underline-position:from-font]"
                 >
                   {info.videos[1].url}
                 </a>
@@ -75,7 +75,7 @@ export default function ScreenInfo({ info }) {
         )}
       </div>
       <div className="">
-        actions :
+        Local actions :
         <ActionList actions={info.actions} />
       </div>
     </div>

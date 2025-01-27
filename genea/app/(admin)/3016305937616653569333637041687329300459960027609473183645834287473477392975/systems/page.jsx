@@ -136,7 +136,7 @@ export default function Page() {
               <th className="py-2 font-semibold">#ID</th>
               <th className="py-2 pl-6 font-semibold">Type</th>
               <th className="py-2 font-semibold">System name</th>
-              <th className="py-2 pl-6 font-semibold">Team name</th>
+              <th className="py-2 pl-6 font-semibold"></th>
               <th className="py-2 pl-6 font-semibold">Description</th>
             </tr>
           </thead>

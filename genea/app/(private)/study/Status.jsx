@@ -29,7 +29,7 @@ export function Status({ type }) {
   return (
     <div
       className={cn(
-        "flex text-xs items-center justify-between p-2 py-1 border leading-normal rounded-lg",
+        "text-xs text-center px-2 py-1 border leading-normal rounded-lg",
         color
       )}
     >
