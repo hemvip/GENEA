@@ -1,29 +1,28 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
-import Study from "./VideoInfo"
-import { Code, Pre, Table, Th, Tr } from "@/nextra"
+import React, { useEffect, useState, useMemo } from "react"
 import cn from "clsx"
-import VideoInfo from "./VideoInfo"
-import BVHInfo from "./BVHInfo"
 import axios from "axios"
+import SystemList from "./SystemList"
 
 export default function Page() {
   const [systems, setSystems] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  async function fetchSystems() {
-    const res = await axios.get("/api/systems")
-    if (res.data.success) {
-      setSystems(res.data.systems)
-    } else {
-      console.error(res.error)
-    }
-  }
+  // const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    async function fetchSystems() {
+      const res = await axios.get("/api/systems")
+      if (res.data.success) {
+        setSystems(res.data.systems)
+      } else {
+        console.error(res.error)
+      }
+    }
+
     fetchSystems()
   }, [])
+
+  const systemList = useMemo(() => systems, [systems])
 
   return (
     <div>
@@ -79,43 +78,7 @@ export default function Page() {
           "mask-gradient"
         )}
       >
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b text-left dark:border-neutral-700">
-              <th className="pl-6 font-semibold">ID</th>
-              <th className="pl-6 font-semibold">Submission name</th>
-              <th className="pl-6 font-semibold">Systems name</th>
-              <th className="pl-6 font-semibold">Videos</th>
-            </tr>
-          </thead>
-          <tbody className="align-baseline text-gray-900 dark:text-gray-100">
-            {systems.map((team, index) => (
-              <tr
-                key={index}
-                className="border-b border-gray-100 dark:border-neutral-700/50 align-middle"
-              >
-                <td className="py-2 pl-6">{index + 1}</td>
-                <td className="py-2 pl-6">{team.teamname}</td>
-                <td className="py-2 pl-6">
-                  <div className="overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96 max-w-96">
-                    {team.bvh &&
-                      team.bvh.map((bvh, index) => {
-                        return <BVHInfo submission={bvh} key={index} />
-                      })}
-                  </div>
-                </td>
-                <td className="py-2 pl-6 h-16">
-                  <div className="overflow-y-auto relative first:mt-0 flex flex-col gap-2 max-h-96 max-w-96">
-                    {team.videos &&
-                      team.videos.map((info, index) => {
-                        return <VideoInfo submission={info} key={index} />
-                      })}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <SystemList systems={systemList} />
       </div>
     </div>
   )

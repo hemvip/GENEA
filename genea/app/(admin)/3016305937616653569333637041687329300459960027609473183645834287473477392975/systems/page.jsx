@@ -1,14 +1,15 @@
 "use client"
+
 import { clsx as cn } from "clsx"
 import axios from "axios"
 import React, { Fragment, useCallback, useEffect, useState } from "react"
 import { generateUUID } from "@/utils/generateUUID"
-import { updateInputCode } from "./actions"
 import { calculateCombinations } from "./utils"
 import { Loading } from "@/components"
 import SubmissionList from "./submissionlist"
 import { Description, Field, Label, Select } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@/nextra/icons"
+import SystemList from "./SystemList"
 // import { Loading } from "@/components/loading/loading"
 
 const SYSTEM_TYPES = ["groundtruth", "system", "baseline"]
@@ -130,34 +131,7 @@ export default function Page() {
           "mask-gradient"
         )}
       >
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b py-4 text-left dark:border-neutral-700 ">
-              <th className="py-2 pl-6 font-semibold">#ID</th>
-              <th className="py-2 pl-6 font-semibold">Type</th>
-              <th className="py-2 pl-6 font-semibold">System name</th>
-              <th className="py-2 pl-6 font-semibold">Team</th>
-              <th className="py-2 pl-6 font-semibold">Description</th>
-            </tr>
-          </thead>
-          <tbody className="align-baseline text-gray-900 dark:text-gray-100">
-            {systemList &&
-              systemList.map((system, index) => (
-                <tr
-                  key={index}
-                  className="border-b border-gray-100 dark:border-neutral-700/50 align-middle"
-                >
-                  <td className="py-2 pl-6">{index + 1}</td>
-                  <td className="py-2 pl-6">{system.type}</td>
-                  <td className="py-2 pl-6 font-bold">{system.name}</td>
-                  <td className="py-2 pl-6 h-14">
-                    {system.teamname == null ? "GENEA" : system.teamname}
-                  </td>
-                  <td className="py-2 pl-6">{system.description}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+        <SystemList systems={systemList} />
       </div>
       <div className="">
         <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
