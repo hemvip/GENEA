@@ -5,9 +5,9 @@ import HighchartsReact from "highcharts-react-official"
 import HighchartsHeatmap from "highcharts/modules/heatmap"
 import { useEffect, useState } from "react"
 
-if (typeof Highcharts === "object") {
-  HighchartsHeatmap(Highcharts)
-}
+// if (typeof Highcharts === "object") {
+//   HighchartsHeatmap(Highcharts)
+// }
 
 const HeatmapChart = ({ data }) => {
   const [options, setOptions] = useState({})

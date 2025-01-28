@@ -5,9 +5,9 @@ import Highcharts from "highcharts"
 import HighchartsReact from "highcharts-react-official"
 import heatmap from "highcharts/modules/heatmap"
 
-if (typeof Highcharts === "object") {
-  heatmap(Highcharts)
-}
+// if (typeof Highcharts === "object") {
+//   heatmap(Highcharts)
+// }
 
 const PairwiseComparisonChart = ({ data }) => {
   const options = {

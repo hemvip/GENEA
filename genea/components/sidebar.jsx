@@ -13,6 +13,7 @@ import Evaluation from "./icons/evaluation"
 import Question from "./icons/question"
 import AboutUs from "./icons/about"
 import AISystem from "./icons/aisystem"
+import Leaderboard from "./icons/leaderboard"
 
 // Advanced
 export const OnFocusItemContext = createContext(null)
@@ -140,6 +141,15 @@ export default function Sidebar() {
                   >
                     <Participation className="w-5" />
                     Prolific Participants
+                  </Link>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <Link
+                    className="flex rounded gap-2 items-center px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    href="/leaderboard"
+                  >
+                    <Leaderboard className="w-5" />
+                    Leaderboard
                   </Link>
                 </li>
                 <li className="flex flex-col gap-1">

@@ -273,7 +273,7 @@ export default function UploadNPY({ codes }) {
 
   if (isLoading) {
     return (
-      <div className="flex w-full p-32 justify-center ">
+      <div className="flex w-full p-32 justify-center">
         <Loading />
       </div>
     )

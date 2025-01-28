@@ -10,18 +10,18 @@ export default function Page() {
   const [systems, setSystems] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    async function fetchSystems() {
-      setLoading(true)
-      const res = await axios.get("/api/systems")
-      if (res.data.success) {
-        setSystems(res.data.systems)
-        setLoading(false)
-      } else {
-        console.error(res.error)
-      }
+  async function fetchSystems() {
+    setLoading(true)
+    const res = await axios.get("/api/systems")
+    if (res.data.success) {
+      setSystems(res.data.systems)
+      setLoading(false)
+    } else {
+      console.error(res.error)
     }
+  }
 
+  useEffect(() => {
     fetchSystems()
   }, [])
 
