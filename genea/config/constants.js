@@ -26,3 +26,10 @@ export const VIDEO_UPLOAD_PART_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_
 
 // https://video.hemvip.workers.dev/api/video-complete-upload
 export const VIDEO_COMPLETE_UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_VIDEO_API_ENDPOINT}/api/complete-upload`
+
+export const SYSTEM_TYPES = [
+  "pairwise human-likeness studies",
+  "pairwise emotion studies",
+  "mismatch speech studies",
+  "emotion speech studies",
+]

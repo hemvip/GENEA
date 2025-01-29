@@ -1,19 +1,23 @@
 "use client"
 
+import { Fragment, useEffect, useState } from "react"
 import Image from "next/image"
-import UploadCSV from "./uploadcsv"
-import { useEffect, useState } from "react"
-// import fetchInputCodes from "./actions"
-import InputCode from "./inputcode"
+import { clsx as cn } from "clsx"
 import axios from "axios"
+
+import UploadCSV from "./uploadcsv"
 import { Loading } from "@/components"
 import CSVPreviewer from "./CSVPreviewer"
 import JSON from "@/components/icons/json"
 import CSV from "@/components/icons/csv"
+import { Select } from "@headlessui/react"
+import { ArrowLeftIcon } from "@/nextra/icons"
+import { SYSTEM_TYPES } from "@/config/constants"
 
 export default function Page() {
   const [csvList, setCsvList] = useState([])
   const [loadedCSV, setLoadedCSV] = useState(false)
+  const [systemType, setSystemType] = useState(SYSTEM_TYPES[0])
 
   // if (loading) {
   //   return (
@@ -25,7 +29,32 @@ export default function Page() {
 
   const handleUpload = async (e) => {
     e.preventDefault()
+
+    console.log("systemType", systemType)
     console.log("csvList", csvList)
+    const url = ""
+
+    switch (systemType) {
+      case SYSTEM_TYPES[0]:
+        url = "/api/study"
+        break
+      case SYSTEM_TYPES[1]:
+        break
+      case SYSTEM_TYPES[2]:
+        break
+      case SYSTEM_TYPES[3]:
+        break
+
+      default:
+        break
+    }
+    try {
+      const res = axios.post(url, { systemType, csvList }).then((res) => {
+        console.log("res", res)
+      })
+    } catch (error) {
+      console.log("error", error)
+    }
 
     // if (files.length <= 0) {
     //   setErrorMsg("Please upload video")
@@ -130,14 +159,55 @@ export default function Page() {
             })}
           </div>
           {loadedCSV && (
-            <div className="flex flex-col items-center">
-              <div className=" flex justify-start">
-                <button
-                  className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
-                  onClick={handleUpload}
-                >
-                  Generate Study
-                </button>
+            <div className="flex flex-col gap-4">
+              {/* ********************************************************************************** */}
+              <div className="flex flex-row items-center gap-4">
+                <label htmlFor="studytype" className="w-[20%] flex justify-end">
+                  Study Type
+                </label>
+                <div className="relative items-center align-middle flex-grow">
+                  <Select
+                    name="status"
+                    id="studytype"
+                    value={systemType}
+                    onChange={(e) => {
+                      setSystemType(e.target.value)
+                    }}
+                    className={cn(
+                      "bg-gray-200 w-full appearance-none rounded-md border border-[#666666] px-4 py-2 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+                    )}
+                  >
+                    {({ focus, hover }) => (
+                      <Fragment>
+                        {SYSTEM_TYPES.map((sysType, index) => (
+                          <option
+                            key={index}
+                            className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
+                            value={sysType}
+                          >
+                            {sysType}
+                          </option>
+                        ))}
+                      </Fragment>
+                    )}
+                  </Select>
+                  <ArrowLeftIcon
+                    className="pointer-events-none absolute top-2.5 right-2.5 size-5  ltr:rotate-90"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              {/* ********************************************************************************** */}
+
+              <div className="flex flex-col items-center">
+                <div className=" flex justify-start">
+                  <button
+                    className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
+                    onClick={handleUpload}
+                  >
+                    Generate Study
+                  </button>
+                </div>
               </div>
             </div>
           )}
