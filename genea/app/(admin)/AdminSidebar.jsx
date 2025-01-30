@@ -1,10 +1,16 @@
 "use client"
+import React, { createContext, useEffect, useRef, useState } from "react"
+import AISystem from "@/components/icons/aisystem"
+import ComputerSetting from "@/components/icons/computersetting"
+import HomeIcon from "@/components/icons/home"
+import StorageIcon from "@/components/icons/storage"
+import VideoUploadIcon from "@/components/icons/videoupload"
 import { ActiveAnchorProvider } from "@/contexts/active-anchor"
 import { useMenu } from "@/contexts/menu"
 import { ArrowRightIcon } from "@/nextra/icons"
 import { useMounted } from "@/utils/hooks/use-mounted"
 import Link from "next/link"
-import React, { createContext, useEffect, useRef, useState } from "react"
+import CSVUploadIcon from "@/components/icons/csvupload"
 
 // Advanced
 export const OnFocusItemContext = createContext(null)
@@ -83,7 +89,7 @@ export default function AdminSidebar() {
               <ul className="flex flex-col gap-1 nextra-menu-desktop max-md:hidden">
                 <li className="flex gap-1 justify-start px-2 py-1 items-center cursor-pointer text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors  [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors  [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border"
                     href="/getting-started"
                   >
                     <ArrowRightIcon className="inline h-5 shrink-0 ltr:rotate-180"></ArrowRightIcon>
@@ -93,7 +99,7 @@ export default function AdminSidebar() {
 
                 {/* <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/rules"
                   >
                     Rules
@@ -101,62 +107,69 @@ export default function AdminSidebar() {
                 </li> */}
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="flex rounded gap-2 items-center px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/home"
                   >
-                    Home
+                    <HomeIcon className="w-5" />
+                    <span>Home</span>
                   </Link>
                 </li>
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/backblaze"
                   >
+                    <StorageIcon className="w-5" />
                     Backblaze
                   </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/input"
                   >
+                    <ComputerSetting className="w-5" />
                     Input Codes
                   </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/systems"
                   >
+                    <AISystem className="w-5" />
                     Systems
                   </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/upload_origin"
                   >
+                    <VideoUploadIcon className="w-5" />
                     Upload Origin Videos
                   </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/upload_mismatch"
                   >
-                    Upload Mismatched Videos
+                    <VideoUploadIcon className="w-5" />
+                    Upload Mismatched
                   </Link>
                 </li>
 
                 <li className="flex flex-col gap-1">
                   <Link
-                    className="flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/csv"
                   >
+                    <CSVUploadIcon className="w-5" />
                     Upload CSV Studies
                   </Link>
                 </li>
