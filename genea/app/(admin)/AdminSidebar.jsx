@@ -11,6 +11,7 @@ import { ArrowRightIcon } from "@/nextra/icons"
 import { useMounted } from "@/utils/hooks/use-mounted"
 import Link from "next/link"
 import CSVUploadIcon from "@/components/icons/csvupload"
+import UserStudy from "@/components/icons/userstudy"
 
 // Advanced
 export const OnFocusItemContext = createContext(null)
@@ -143,7 +144,15 @@ export default function AdminSidebar() {
                     Systems
                   </Link>
                 </li>
-
+                <li className="flex flex-col gap-1">
+                  <Link
+                    className="flex rounded gap-2 items-center px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
+                    href="/study"
+                  >
+                    <UserStudy className="w-5" />
+                    Study
+                  </Link>
+                </li>
                 <li className="flex flex-col gap-1">
                   <Link
                     className="gap-2 flex rounded px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
