@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react"
 import Study from "./Study"
 import { Code, Pre, Table, Th, Tr } from "@/nextra"
 import cn from "clsx"
-
 import axios from "axios"
 
 export default function Page() {
