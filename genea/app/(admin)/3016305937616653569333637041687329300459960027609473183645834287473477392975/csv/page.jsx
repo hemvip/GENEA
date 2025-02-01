@@ -17,7 +17,7 @@ import { SYSTEM_TYPES } from "@/config/constants"
 export default function Page() {
   const [csvList, setCsvList] = useState([])
   const [loadedCSV, setLoadedCSV] = useState(false)
-  const [systemType, setSystemType] = useState(SYSTEM_TYPES[0])
+  const [systemType, setSystemType] = useState(Object.keys(SYSTEM_TYPES)[0])
 
   // if (loading) {
   //   return (
@@ -32,26 +32,15 @@ export default function Page() {
 
     console.log("systemType", systemType)
     console.log("csvList", csvList)
-    const url = ""
+    const url = `/api/${systemType}`
+    console.log(url, "systemType, csvList", systemType, csvList)
 
-    switch (systemType) {
-      case SYSTEM_TYPES[0]:
-        url = "/api/study"
-        break
-      case SYSTEM_TYPES[1]:
-        break
-      case SYSTEM_TYPES[2]:
-        break
-      case SYSTEM_TYPES[3]:
-        break
-
-      default:
-        break
-    }
     try {
-      const res = axios.post(url, { systemType, csvList }).then((res) => {
-        console.log("res", res)
-      })
+      const res = axios
+        .post(url, { systemType: systemType, csvList: csvList })
+        .then((res) => {
+          console.log("res", res)
+        })
     } catch (error) {
       console.log("error", error)
     }
@@ -179,9 +168,9 @@ export default function Page() {
                   >
                     {({ focus, hover }) => (
                       <Fragment>
-                        {SYSTEM_TYPES.map((sysType, index) => (
+                        {Object.entries(SYSTEM_TYPES).map(([key, sysType]) => (
                           <option
-                            key={index}
+                            key={key}
                             className="text-gray-800 dark:text-gray-100 relative cursor-pointer whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
                             value={sysType}
                           >

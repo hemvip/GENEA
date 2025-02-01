@@ -1,5 +1,4 @@
 import clientPromise from "@/server/mongodb"
-import { ObjectId } from "bson"
 
 export async function GET(req, res) {
   const client = await clientPromise
@@ -30,34 +29,17 @@ export async function POST(req, res) {
   }
 
   try {
-    const studiesData = Array.from(csvList).map((csv) => csv.data)
-
-    studiesData.forEach((item) => {})
-
-    console.log("items", item)
-    const pages = []
-
-    const studyValue = {
-      status: "new",
-      name: "Pairwise Comparison of Gesture Generation AI Model Studies",
-      description: "description",
-      prolific_userid: null,
-      prolific_studyid: null,
-      prolific_sessionid: null,
-      completion_code: null,
-      fail_code: null,
-      global_actions: [],
-      pages: [],
-      time_start: null,
-      type: systemType,
+    const update = {
+      user_id: userId,
+      name: name,
+      description: description,
+      type: type,
     }
 
-    // const result = await db.collection("studies").insertMany(studiesData)
-    studyValue.insertedCount = new ObjectId(1111)
-    let result = studyValue
-    // console.log("result", result)
+    const result = await db.collection("studies").insertOne(update)
+    console.log("result", result)
 
-    if (result.insertedCount) {
+    if (result.insertedId) {
       return Response.json(
         {
           success: true,
