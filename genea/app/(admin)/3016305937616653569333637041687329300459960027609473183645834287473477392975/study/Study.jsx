@@ -42,7 +42,9 @@ export default function Study({ loading, studies }) {
             </td>
             <td className="p-2 h-24">
               <div className="min-w-72 max-h-96 overflow-x-auto">
-                <ActionList actions={study.total_actions} />
+                {study.global_actions && study.global_actions.length > 0 && (
+                  <ActionList actions={study.global_actions} />
+                )}
               </div>
             </td>
           </tr>

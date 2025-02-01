@@ -14,6 +14,7 @@ export async function GET(req, res) {
 }
 
 export async function POST(req, res) {
+  // ~~~~~~~~~~~~~ Parse Input ~~~~~~~~~~~~~
   const { csvList, systemType } = await req.json()
 
   const client = await clientPromise
@@ -29,15 +30,30 @@ export async function POST(req, res) {
     )
   }
 
+  // ~~~~~~~~~~~~~ System name ~~~~~~~~~~~~~
   try {
-    const studiesData = Array.from(csvList).map((csv) => csv.data)
+    const systems = await db
+      .collection("systems")
+      .find({}, { projection: { _id: 0, name: 1 } })
+      .toArray()
+    const systemNames = systems.map((doc) => doc.name)
+    console.log("systemNames", systemNames)
+  } catch (error) {
+    console.log("Exception: ", error)
+    return Response.json(
+      {
+        success: false,
+        msg: "Your request is failed, please contact for support.",
+        error: error,
+      },
+      { status: 500 }
+    )
+  }
 
-    studiesData.forEach((item) => {})
-
-    console.log("items", item)
-    const pages = []
-
-    const studyValue = {
+  // ~~~~~~~~~~~~~ Insert many studies ~~~~~~~~~~~~~
+  try {
+    const studiesData = Array.from(csvList).map((csv) => csv.data.slice(1))
+    const studyDefaultConfig = {
       status: "new",
       name: "Pairwise Comparison of Gesture Generation AI Model Studies",
       description: "description",
@@ -52,10 +68,23 @@ export async function POST(req, res) {
       type: systemType,
     }
 
+    studiesData.forEach((item) => {
+      const pages = Array.from(item).map((row) => {
+        const inputName = row[0]
+        const sysA = String(row[1]).replace(/\s+/g, "")
+        const sysB = String(row[2]).replace(/\s+/g, "")
+        console.log("row[0]", inputName, sysA, sysB)
+        return row
+      })
+      console.log("pages", pages)
+      return
+    })
+
+    const pages = []
+
     // const result = await db.collection("studies").insertMany(studiesData)
     studyValue.insertedCount = new ObjectId(1111)
     let result = studyValue
-    // console.log("result", result)
 
     if (result.insertedCount) {
       return Response.json(
@@ -71,7 +100,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Upload success but failed insert submissions, please contact for support.",
+        msg: "Upload success but failed insert request, please contact for support.",
         error: null,
       },
       { status: 500 }
@@ -81,7 +110,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Your submissions is failed, please contact for support.",
+        msg: "Your request is failed, please contact for support.",
         error: error,
       },
       { status: 500 }
