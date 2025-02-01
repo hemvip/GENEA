@@ -79,7 +79,7 @@ export default function UploadOriginVideos({ systemList }) {
   useEffect(() => {
     console.log("selectedIndex", selectedIndex, systemList)
     setDescription(systemList[selectedIndex].description)
-  }, [selectedIndex])
+  }, [selectedIndex, systemList])
 
   useEffect(() => {
     setSelectedIndex(0)

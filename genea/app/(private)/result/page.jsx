@@ -83,21 +83,21 @@ export default function Page() {
       <p className="mt-6 leading-7 first:mt-0">
         Sample data of Evaluation Result.
       </p>
-      <HighChart data={evaluationData} />
+      {/* <HighChart data={evaluationData} /> */}
       <h3 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
         Sample 2
       </h3>
       <p className="mt-6 leading-7 first:mt-0">
         Sample data of Evaluation Result.
       </p>
-      <PairwiseComparisonChart data={data} />
+      {/* <PairwiseComparisonChart data={data} /> */}
       <h3 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
         Sample 3
       </h3>
       <p className="mt-6 leading-7 first:mt-0">
         Sample data of Evaluation Result.
       </p>
-      <HeatmapChart data={heatmapData} />
+      {/* <HeatmapChart data={heatmapData} /> */}
     </div>
   )
 }

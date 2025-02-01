@@ -56,28 +56,31 @@ export default function Page() {
 
   const submission = useMemo(() => submissionList, [submissionList])
 
-  function updateSystemType(type) {
-    setSystemType(type)
-    switch (type) {
-      case "groundtruth":
-        setSystemName("NA")
-        setDescription("Ground truth system")
-        break
-      case "baseline":
-        setSystemName("BA")
-        setDescription("Baseline System")
-        break
-      case "system":
-        setSystemName("SA")
-        setDescription("System")
-        if (submissionList.length <= 0) {
-          fetchSubmission()
-        }
-        break
-      default:
-        break
-    }
-  }
+  const updateSystemType = useCallback(
+    function updateSystemType(type) {
+      setSystemType(type)
+      switch (type) {
+        case "groundtruth":
+          setSystemName("NA")
+          setDescription("Ground truth system")
+          break
+        case "baseline":
+          setSystemName("BA")
+          setDescription("Baseline System")
+          break
+        case "system":
+          setSystemName("SA")
+          setDescription("System")
+          if (submissionList.length <= 0) {
+            fetchSubmission()
+          }
+          break
+        default:
+          break
+      }
+    },
+    [submissionList.length]
+  )
 
   useEffect(() => {
     updateSystemType(systemType)
