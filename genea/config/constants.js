@@ -31,5 +31,5 @@ export const SYSTEM_TYPES = {
   "pairwise-human-likeness": "pairwise human-likeness studies",
   "pairwise-emotion-studies": "pairwise emotion studies",
   "mismatch-speech-studies": "mismatch speech studies",
-  "emotion-speech-studies": "emotion speech studies",
+  "mismatch-emotion-studies": "mismatch emotion studies",
 }

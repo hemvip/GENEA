@@ -30,7 +30,7 @@ export async function POST(req, res) {
     )
   }
 
-  // ~~~~~~~~~~~~~ System name ~~~~~~~~~~~~~
+  // ~~~~~~~~~~~~~ systems ~~~~~~~~~~~~~
   try {
     const systems = await db
       .collection("systems")
@@ -38,6 +38,24 @@ export async function POST(req, res) {
       .toArray()
     const systemNames = systems.map((doc) => doc.name)
     console.log("systemNames", systemNames)
+  } catch (error) {
+    console.log("Exception: ", error)
+    return Response.json(
+      {
+        success: false,
+        msg: "Your request is failed, please contact for support.",
+        error: error,
+      },
+      { status: 500 }
+    )
+  }
+
+  // ~~~~~~~~~~~~~ study_config ~~~~~~~~~~~~~
+  try {
+    const studyConfig = await db
+      .collection("study_config")
+      .findOne({ type: "pairwise-emotion-studies" })
+    console.log("studyConfig", studyConfig)
   } catch (error) {
     console.log("Exception: ", error)
     return Response.json(
@@ -68,16 +86,49 @@ export async function POST(req, res) {
       type: systemType,
     }
 
-    studiesData.forEach((item) => {
-      const pages = Array.from(item).map((row) => {
+    const studies = studiesData.forEach((item) => {
+      const pairwises = Array.from(item).map((row) => {
         const inputName = row[0]
         const sysA = String(row[1]).replace(/\s+/g, "")
         const sysB = String(row[2]).replace(/\s+/g, "")
         console.log("row[0]", inputName, sysA, sysB)
-        return row
+
+        return {
+          pageid: new ObjectId(),
+          type: "video",
+          question:
+            "Pairwise Comparison of Gesture Generation AI Model Studies",
+          selected: {},
+          actions: [],
+          videos: [
+            {
+              teamid: "6684003c3b7dd703e06fc914",
+              inputid: inputName,
+              videoid: `videos/${sysA}`,
+              url: "https://hemvip.s3.amazonaws.com/videos/6684003c3b7dd703e06fc914/6684003c3b7dd703e06fc914.mp4",
+            },
+            {
+              teamid: "6684003c3b7dd703e06fc914",
+              inputid: inputName,
+              videoid: `videos/${sysB}`,
+              url: "https://hemvip.s3.amazonaws.com/videos/6684003c3b7dd703e06fc914/6684003c3b7dd703e06fc914.mp4",
+            },
+          ],
+        }
       })
-      console.log("pages", pages)
-      return
+      console.log("pairwises", pairwises)
+      const pages = pairwises.map((pairwise) => {
+        const page = {}
+
+        return pairwise
+      })
+      return {
+        ...studyConfig,
+        pages: pages,
+        type: systemType,
+        time_start: new Date(),
+        status: "new",
+      }
     })
 
     const pages = []
