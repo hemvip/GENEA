@@ -6,9 +6,9 @@ import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
 import clsx from "clsx"
-import BVHFile from "@/components/icons/bvhfile"
+import BVHFile from "@/icons/bvhfile"
 import { Select } from "@headlessui/react"
-import VideoFile from "@/components/icons/videofile"
+import VideoFile from "@/icons/videofile"
 import {
   VIDEO_START_UPLOAD_API_ENDPOINT,
   VIDEO_UPLOAD_PART_API_ENDPOINT,

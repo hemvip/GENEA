@@ -2,7 +2,7 @@
 
 import { useEffect, useState, memo } from "react"
 import { Loading } from "@/components/loading/loading"
-import BoardIcon from "../icons/board"
+import BoardIcon from "../../icons/board"
 import Image from "next/image"
 import { clsx as cn } from "clsx"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"

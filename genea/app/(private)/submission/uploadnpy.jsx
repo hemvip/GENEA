@@ -5,7 +5,7 @@ import { useDropzone } from "react-dropzone"
 import { Callout } from "@/nextra"
 import { Loading } from "@/components/loading/loading"
 import axios from "axios"
-import BVHFile from "@/components/icons/bvhfile"
+import BVHFile from "@/icons/bvhfile"
 import {
   COMPLETE_UPLOAD_API_ENDPOINT,
   START_UPLOAD_API_ENDPOINT,
@@ -13,7 +13,7 @@ import {
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
 import { useAuth } from "@/contexts/auth"
-import NPYIcon from "@/components/icons/npy"
+import NPYIcon from "@/icons/npy"
 
 export default function UploadNPY({ codes }) {
   const {
