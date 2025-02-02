@@ -21,10 +21,14 @@ const VideoList = memo(function VideoList({ videos }) {
               className="border-b border-gray-100 dark:border-neutral-700/50 align-middle"
             >
               <td className="py-2 pl-4">{index + 1}</td>
-              <td className="py-2 pl-4">{video.inputcode}</td>
               <td className="py-2 pl-4">
-                <div className="overflow-x-visible overflow-y-visible w-20 p-2">
-                  <p className="w-20 truncate">{video.path}</p>
+                <div className="max-w-28">
+                <code>{video.inputcode}</code>
+                </div>
+              </td>
+              <td className="py-2 pl-4">
+                <div className="overflow-x-auto overflow-y-hidden max-w-60 py-4">
+                  <code className="w-96 h-4">{video.path}</code>
                 </div>
               </td>
               <td className="py-2 pl-4 font-bold">
