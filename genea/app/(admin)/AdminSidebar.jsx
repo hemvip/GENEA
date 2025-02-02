@@ -12,6 +12,7 @@ import { useMounted } from "@/utils/hooks/use-mounted"
 import Link from "next/link"
 import CSVUploadIcon from "@/icons/csvupload"
 import UserStudy from "@/icons/userstudy"
+import VideoFile from "@/icons/videofile"
 
 // Advanced
 export const OnFocusItemContext = createContext(null)

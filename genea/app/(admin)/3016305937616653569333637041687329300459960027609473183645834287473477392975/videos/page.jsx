@@ -3,8 +3,8 @@
 import React, { useEffect, useState, useMemo } from "react"
 import cn from "clsx"
 import axios from "axios"
-import SystemList from "./VideoList"
 import { Loading } from "@/components"
+import VideoList from "./VideoList"
 
 export default function Page() {
   const [videos, setVideos] = useState([])
@@ -25,16 +25,13 @@ export default function Page() {
     fetchVideos()
   }, [])
 
-  const systemList = useMemo(() => videos, [videos])
+  const videoList = useMemo(() => videos, [videos])
 
   return (
     <div>
       <h2 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400">
         Videos
       </h2>
-      <h4 className="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-xl">
-        System submission
-      </h4>
       <div
         className={cn(
           "-mx-6 mb-4 mt-6 overflow-x-auto overscroll-x-contain px-6 pb-4 ",
@@ -46,7 +43,7 @@ export default function Page() {
             <Loading />
           </div>
         ) : (
-          <VideoList systems={systemList} />
+          <VideoList videos={videoList} />
         )}
       </div>
     </div>
