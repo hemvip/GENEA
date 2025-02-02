@@ -12,7 +12,7 @@ import { useMounted } from "@/utils/hooks/use-mounted"
 import Link from "next/link"
 import CSVUploadIcon from "@/icons/csvupload"
 import UserStudy from "@/icons/userstudy"
-import VideoFile from "@/icons/videofile"
+import VideoIcon from "@/icons/video"
 
 // Advanced
 export const OnFocusItemContext = createContext(null)
@@ -151,7 +151,7 @@ export default function AdminSidebar() {
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/studies"
                   >
                     <UserStudy className="w-5" />
-                    Study
+                    Studies
                   </Link>
                 </li>
                 <li className="flex flex-col gap-1">
@@ -159,7 +159,7 @@ export default function AdminSidebar() {
                     className="flex rounded gap-2 items-center px-2 py-1.5 text-sm transition-colors cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50 contrast-more:text-gray-900 contrast-more:dark:text-gray-50 contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50"
                     href="/3016305937616653569333637041687329300459960027609473183645834287473477392975/videos"
                   >
-                     <VideoFile className="w-5"/>
+                     <VideoIcon className="w-5"/>
                     Videos
                   </Link>
                 </li>
