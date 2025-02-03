@@ -50,9 +50,8 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
           .map((file) => parseFile(file))
       )
       const dataList = csvListData.map(({ data, filename }) => {
-        return { data: data, filename: filename, state: "loading" }
+        return { data: data, filename: filename, state: "failed", errorMsg:"" }
       })
-      // console.log("dataList", dataList)
       setCsvList(dataList)
       setLoadedCSV(true)
     },
