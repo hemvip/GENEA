@@ -123,7 +123,6 @@ export default function Page() {
                       <span className="truncate">{filename}</span>
                       <button
                         className="transition cursor-pointer ms-auto"
-                        title="Copy code"
                         type="button"
                         title="Validate failed"
                         data-headlessui-state=""

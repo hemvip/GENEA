@@ -5,10 +5,13 @@
 
 code:not([class*="twoslash-"]) {
   box-decoration-break: slice;
-  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1,
+    "ss01" 1;
 
   :not(pre) > & {
-    @apply border-black border-opacity-[0.04] bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em];
+    @apply border-black border-opacity-5 bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em];
     @apply dark:border-white/10 dark:bg-white/10;
   }
 }

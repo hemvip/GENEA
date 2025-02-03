@@ -1,27 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@layer theme, base, components, utilities;
+/* @import "../styles/code-block.css";
+@import "../styles/subheading-anchor.css";
+@import "../styles/scrollbar.css";
+@import "../styles/steps.css";
+@import "../styles/cards.css";
+@import "../styles/hamburger.css";
+@import "../styles/typesetting-article.css";
+@import "../styles/utilities.css"; */
 
-:root {
-  --nextra-primary-hue: 212deg;
-  --nextra-primary-saturation: 100%;
-  --nextra-navbar-height: 3.5rem;
-  --nextra-menu-height: 3.75rem;
-  --nextra-banner-height: 2.5rem;
-  --nextra-bg: 255, 255, 255;
-}
+@layer base {
+  :root {
+    --nextra-primary-hue: 212deg;
+    --nextra-primary-saturation: 100%;
+    --nextra-navbar-height: 3.5rem;
+    --nextra-menu-height: 3.75rem;
+    --nextra-banner-height: 2.5rem;
+    --nextra-bg: 255, 255, 255;
+  }
 
-.dark {
-  --nextra-primary-hue: 204deg;
-  --nextra-primary-saturation: 100%;
-  --nextra-bg: 1, 1, 1;
-}
+  .dark {
+    --nextra-primary-hue: 204deg;
+    --nextra-primary-saturation: 100%;
+    --nextra-bg: 1, 1, 1;
+  }
 
-*,
-:after,
-:before {
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+  }
+
+  html {
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1,
+      "ss01" 1,
+      "ss06" 1 !important;
+    font-family:
+      Segoe UI,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      Roboto,
+      Noto Sans,
+      Ubuntu,
+      Cantarell,
+      Helvetica Neue,
+      Arial,
+      sans-serif,
+      Apple Color Emoji,
+      Segoe UI Emoji,
+      Segoe UI Symbol,
+      Noto Color Emoji;
+  }
+
+  html {
+    scroll-padding-top: 4rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1,
+      "ss01" 1;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1rem;
+  }
+
+  html {
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    line-height: 1.5;
+  }
 }
 
 @layer utilities {
@@ -30,83 +83,42 @@
   }
 }
 
-html {
-  font-feature-settings:
-    "rlig" 1,
-    "calt" 1,
-    "ss01" 1,
-    "ss06" 1 !important;
-  font-family:
-    Segoe UI,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    Roboto,
-    Noto Sans,
-    Ubuntu,
-    Cantarell,
-    Helvetica Neue,
-    Arial,
-    sans-serif,
-    Apple Color Emoji,
-    Segoe UI Emoji,
-    Segoe UI Symbol,
-    Noto Color Emoji;
-}
+@layer components {
+  @keyframes progress-ring-indeterminate {
+    0% {
+      stroke-dasharray: 0.01px 43.97px;
+      transform: rotate(0);
+    }
 
-html {
-  scroll-padding-top: 4rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings:
-    "rlig" 1,
-    "calt" 1,
-    "ss01" 1;
-  -webkit-tap-highlight-color: transparent;
-  font-size: 1rem;
-}
-
-html {
-  tab-size: 4;
-  font-feature-settings: normal;
-  font-variation-settings: normal;
-  line-height: 1.5;
-}
-
-@keyframes progress-ring-indeterminate {
-  0% {
-    stroke-dasharray: 0.01px 43.97px;
-    transform: rotate(0);
+    50% {
+      stroke-dasharray: 21.99px 21.99px;
+      transform: rotate(450deg);
+    }
+    100% {
+      stroke-dasharray: 0.01px 43.97px;
+      transform: rotate(3turn);
+    }
   }
 
-  50% {
-    stroke-dasharray: 21.99px 21.99px;
-    transform: rotate(450deg);
+  .ring-progress-rotate {
+    min-block-size: 16px;
+    min-inline-size: 16px;
+    outline: none;
   }
-  100% {
-    stroke-dasharray: 0.01px 43.97px;
-    transform: rotate(3turn);
+
+  .progress-ring.indeterminate.ring-progress-rotate
+    circle.ring-progress-rotate {
+    animation: progress-ring-indeterminate 2s linear infinite;
   }
-}
 
-.ring-progress-rotate {
-  min-block-size: 16px;
-  min-inline-size: 16px;
-  outline: none;
-}
-
-.progress-ring.indeterminate.ring-progress-rotate circle.ring-progress-rotate {
-  animation: progress-ring-indeterminate 2s linear infinite;
-}
-
-.progress-ring.ring-progress-rotate circle.ring-progress-rotate {
-  fill: none;
-  stroke: hsl(209, 100%, 36%);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-dasharray: 43.97;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition: all .25s linear;
+  .progress-ring.ring-progress-rotate circle.ring-progress-rotate {
+    fill: none;
+    stroke: hsl(209, 100%, 36%);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 43.97;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: all 0.25s linear;
+  }
 }

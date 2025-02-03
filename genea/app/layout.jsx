@@ -1,6 +1,6 @@
 import "./globals.css"
-import "./index.css"
-import "../styles/custom.css"
+// import "./index.css"
+// import "../styles/custom.css"
 import "katex/dist/katex.min.css"
 
 import { ThemeProvider } from "next-themes"
