@@ -13,6 +13,10 @@ import CSV from "@/icons/csv"
 import { Select } from "@headlessui/react"
 import { ArrowLeftIcon } from "@/nextra/icons"
 import { SYSTEM_TYPES } from "@/config/constants"
+import CopyIcon from "@/icons/copy"
+import CheckmarkIcon from "@/icons/checkmark"
+import DismissIcon from "@/icons/dismiss"
+import CircleLoading from "@/icons/circleloading"
 
 export default function Page() {
   const [csvList, setCsvList] = useState([])
@@ -26,12 +30,13 @@ export default function Page() {
   //     </div>
   //   )
   // }
+  console.log("csvList", csvList)
 
   const handleUpload = async (e) => {
     e.preventDefault()
 
-    console.log("systemType", systemType)
-    console.log("csvList", csvList)
+    // console.log("systemType", systemType)
+    // console.log("csvList", csvList)
     const url = `/api/${systemType}`
     console.log(url, "systemType, csvList", systemType, csvList)
 
@@ -104,7 +109,7 @@ export default function Page() {
           />
 
           <div className="flex flex-col py-4 gap-4">
-            {csvList.map(({ data: csvData, filename }, index) => {
+            {csvList.map(({ data: csvData, filename, state }, index) => {
               return (
                 <div
                   key={index}
@@ -114,6 +119,26 @@ export default function Page() {
                   <div className="px-4 text-xs text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-t-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50 border-b-0">
                     <CSV className="w-4 h-4" />
                     <span className="truncate">{filename}</span>
+                    <button
+                      className="transition cursor-pointer ms-auto"
+                      title="Copy code"
+                      type="button"
+                      title="Validate failed"
+                      data-headlessui-state=""
+                    >
+                      {/* <CheckmarkIcon className="nextra-copy-icon w-6 h-6  stroke-green-500" /> */}
+                      {state === "loading" ? (
+                        <CircleLoading />
+                      ) : state === "success" ? (
+                        () => (
+                          <CheckmarkIcon className="nextra-copy-icon w-6 h-6  stroke-green-500" />
+                        )
+                      ) : (
+                        <DismissIcon className="nextra-copy-icon w-6 h-6  stroke-red-500" />
+                      )}
+
+                      {/* <DismissIcon className="nextra-copy-icon w-6 h-6  stroke-red-500" /> */}
+                    </button>
                   </div>
                   <pre
                     className="group focus-visible:nextra-focus overflow-x-auto subpixel-antialiased text-[.9em] bg-white dark:bg-black py-4 ring-1 ring-inset ring-gray-300 dark:ring-neutral-700 contrast-more:ring-gray-900 contrast-more:dark:ring-gray-50 contrast-more:contrast-150 rounded-b-md not-prose"

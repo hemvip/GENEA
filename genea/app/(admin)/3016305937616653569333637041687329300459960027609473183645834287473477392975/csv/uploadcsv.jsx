@@ -49,7 +49,11 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((file) => parseFile(file))
       )
-      setCsvList(csvListData)
+      const dataList = csvListData.map(({ data, filename }) => {
+        return { data: data, filename: filename, state: "loading" }
+      })
+      // console.log("dataList", dataList)
+      setCsvList(dataList)
       setLoadedCSV(true)
     },
     [setLoadedCSV, setCsvList]

@@ -173,3 +173,46 @@ export async function POST(req, res) {
     )
   }
 }
+
+export async function PATCH(req, res) {
+  const client = await clientPromise
+  const db = client.db("hemvip")
+
+  // Parse the request body
+  const { csv } = await req.json()
+
+  if (!id) {
+    return res.status(400).json({ success: false, message: "ID is required" })
+  }
+
+  try {
+    // Update the video document with the given ID
+    const updatedVideo = await db.collection("videos").findOneAndUpdate(
+      { _id: new ObjectId(id) }, // Using ObjectId if the id is MongoDB ObjectId type
+      {
+        $set: {
+          name: name || undefined,
+          description: description || undefined,
+        },
+      },
+      { returnDocument: "after" } // Returns the document after the update
+    )
+
+    if (!updatedVideo.value) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Video not found" })
+    }
+
+    return res.status(200).json({
+      success: true,
+      video: updatedVideo.value,
+      message: "Video updated successfully",
+    })
+  } catch (error) {
+    console.error("Error updating video:", error)
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal Server Error" })
+  }
+}

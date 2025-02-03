@@ -71,20 +71,20 @@ export async function POST(req, res) {
   // ~~~~~~~~~~~~~ Insert many studies ~~~~~~~~~~~~~
   try {
     const studiesData = Array.from(csvList).map((csv) => csv.data.slice(1))
-    const studyDefaultConfig = {
-      status: "new",
-      name: "Pairwise Comparison of Gesture Generation AI Model Studies",
-      description: "description",
-      prolific_userid: null,
-      prolific_studyid: null,
-      prolific_sessionid: null,
-      completion_code: null,
-      fail_code: null,
-      global_actions: [],
-      pages: [],
-      time_start: null,
-      type: systemType,
-    }
+    // const studyDefaultConfig = {
+    //   status: "new",
+    //   name: "Pairwise Comparison of Gesture Generation AI Model Studies",
+    //   description: "description",
+    //   prolific_userid: null,
+    //   prolific_studyid: null,
+    //   prolific_sessionid: null,
+    //   completion_code: null,
+    //   fail_code: null,
+    //   global_actions: [],
+    //   pages: [],
+    //   time_start: null,
+    //   type: systemType,
+    // }
 
     const studies = studiesData.forEach((item) => {
       const pairwises = Array.from(item).map((row) => {
