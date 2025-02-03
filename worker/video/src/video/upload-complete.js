@@ -12,6 +12,7 @@ export async function handleCompleteUpload(request, env) {
 	const fileName = formData.get("fileName")
 	const parts = formData.get("parts")
 	const uploadId = formData.get("uploadId")
+	console.log("handleCompleteUpload.formData", formData)
 
 	// console.log("handleCompleteUpload", "fileName", fileName, "uploadId", uploadId, "parts", parts)
 
@@ -49,7 +50,7 @@ export async function handleCompleteUpload(request, env) {
 
 	try {
 		const response = await s3Client.send(command)
-		console.log("response", response)
+		console.log("handleCompleteUpload.response", response)
 
 		// App = App || new Realm.App(env.ATLAS_APPID)
 		// const credentials = Realm.Credentials.apiKey(env.ATLAS_APP_API_KEY)
@@ -99,7 +100,6 @@ export async function handleCompleteUpload(request, env) {
 		return new Response(
 			JSON.stringify({
 				success: true,
-				data: response,
 				path: uniqueKey,
 				url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 				msg: "Your video upload are successfully.",

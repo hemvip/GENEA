@@ -126,15 +126,18 @@ export default function UploadOriginVideos({ systemList }) {
       // const uploadChunkResp = await Promise.all(uploadPromises)
 
       // *************** PARTS UPLOAD ***************
+
       const parts = []
       for (let i = 1; i <= totalChunks; i++) {
         const start = (i - 1) * chunkSize
         const end = Math.min(start + chunkSize, file.size)
-        const chunk = file.slice(start, end)
+        const chunk = file
+        // .slice(start, end)
 
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         const formData = new FormData()
         formData.append("systemname", systemname)
-        formData.append("file", chunk, fileName)
+        formData.append("file", chunk)
         formData.append("partNumber", i.toString())
         formData.append("uploadId", uploadId)
         formData.append("fileName", fileName)
@@ -160,11 +163,42 @@ export default function UploadOriginVideos({ systemList }) {
             },
           }
         )
-        // uploadChunkResp.push(result)
+
         parts.push({
           PartNumber: parts.length + 1,
           ETag: uploadChunkResp.data.ETag.replace(/\"/g, ""),
         })
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // const formData = new FormData()
+        // formData.append("systemname", systemname)
+        // formData.append("file", chunk, fileName)
+        // formData.append("partNumber", i.toString())
+        // formData.append("uploadId", uploadId)
+        // formData.append("fileName", fileName)
+        // formData.append("totalSize", totalSize)
+        // formData.append("chunkSize", chunk.size)
+
+        // const uploadChunkResp = await axios.post(
+        //   VIDEO_UPLOAD_PART_API_ENDPOINT,
+        //   formData,
+        //   {
+        //     headers: {
+        //       "Content-Type": "multipart/form-data",
+        //     },
+        //     onUploadProgress: (progressEvent) => {
+        //       const percentCompleted = Math.round(
+        //         (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
+        //       )
+        //       const overallProgress = Math.round(
+        //         ((i - 1 + percentCompleted / 100) * 100) / totalChunks
+        //       )
+
+        //       updateUploadProgress(fileName, overallProgress, "uploading")
+        //     },
+        //   }
+        // )
+        // uploadChunkResp.push(result)
       }
 
       // *************** COMPLETE UPLOAD ***************
@@ -306,7 +340,7 @@ export default function UploadOriginVideos({ systemList }) {
                 <div className="p-1 bg-gray-200 rounded-lg">
                   <VideoFile />
                 </div>
-                <span className="text-sm">{file.name}</span>
+                <span className="text-sm w-40 truncate">{file.name}</span>
                 <div className="flex-grow">
                   <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
                     {progress[file.name] && progress[file.name].percent ? (

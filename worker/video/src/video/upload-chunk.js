@@ -6,32 +6,34 @@ export async function handleUploadChunk(request, env) {
 	const formData = await request.formData()
 	const systemname = formData.get("systemname")
 	const file = formData.get("file")
-	const fileStream = file.stream()
+	const fileChunk = await file.arrayBuffer()
+	console.log(typeof fileChunk, "fileChunk", fileChunk)
 	const partNumber = parseInt(formData.get("partNumber"))
 	const uploadId = formData.get("uploadId")
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
 	const chunkSize = formData.get("chunkSize")
+	console.log("handleUploadChunk.formData", formData)
 
-	const reader = fileStream.getReader()
+	// const reader = fileStream.getReader()
 	const chunks = []
 
-	// Read the file in chunks
-	while (true) {
-		const { done, value } = await reader.read()
-		if (done) break
-		chunks.push(value)
-	}
+	// // Read the file in chunks
+	// while (true) {
+	// 	const { done, value } = await reader.read()
+	// 	if (done) break
+	// 	chunks.push(value)
+	// }
 
-	const fileBytes = new Uint8Array(chunks.flat())
+	// const fileBytes = new Uint8Array(chunks.flat())
 
-	console.log("totalSize", totalSize, "chunkSize", chunkSize)
+	// console.log("totalSize", totalSize, "chunkSize", chunkSize)
 
-	if (!fileStream) {
-		return new Response(JSON.stringify({ msg: "File not found", error: null, success: false }), {
-			headers: { ...corsHeaders, "Content-Type": "application/json" },
-		})
-	}
+	// if (!fileStream) {
+	// 	return new Response(JSON.stringify({ msg: "File not found", error: null, success: false }), {
+	// 		headers: { ...corsHeaders, "Content-Type": "application/json" },
+	// 	})
+	// }
 
 	const removeHeaderMiddleware = (next) => async (args) => {
 		// Remove the header from the request
@@ -73,7 +75,7 @@ export async function handleUploadChunk(request, env) {
 	const command = new UploadPartCommand({
 		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
-		Body: fileBytes,
+		Body: fileChunk,
 		PartNumber: partNumber,
 		UploadId: uploadId,
 	})
