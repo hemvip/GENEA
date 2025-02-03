@@ -97,10 +97,12 @@ export async function handleCompleteUpload(request, env) {
 		// 		headers: { ...corsHeaders, "Content-Type": "application/json" },
 		// 	})
 		// }
+		const inputcode = fileName.replace(/\.[^.]+$/, "")
 		return new Response(
 			JSON.stringify({
 				success: true,
 				path: uniqueKey,
+				inputcode: inputcode,
 				url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 				msg: "Your video upload are successfully.",
 				error: null,

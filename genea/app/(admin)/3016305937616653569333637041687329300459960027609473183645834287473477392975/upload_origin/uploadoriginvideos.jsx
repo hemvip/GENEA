@@ -131,8 +131,7 @@ export default function UploadOriginVideos({ systemList }) {
       for (let i = 1; i <= totalChunks; i++) {
         const start = (i - 1) * chunkSize
         const end = Math.min(start + chunkSize, file.size)
-        const chunk = file
-        // .slice(start, end)
+        const chunk = file.slice(start, end)
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         const formData = new FormData()
@@ -163,42 +162,12 @@ export default function UploadOriginVideos({ systemList }) {
             },
           }
         )
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         parts.push({
           PartNumber: parts.length + 1,
           ETag: uploadChunkResp.data.ETag.replace(/\"/g, ""),
         })
-        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        // const formData = new FormData()
-        // formData.append("systemname", systemname)
-        // formData.append("file", chunk, fileName)
-        // formData.append("partNumber", i.toString())
-        // formData.append("uploadId", uploadId)
-        // formData.append("fileName", fileName)
-        // formData.append("totalSize", totalSize)
-        // formData.append("chunkSize", chunk.size)
-
-        // const uploadChunkResp = await axios.post(
-        //   VIDEO_UPLOAD_PART_API_ENDPOINT,
-        //   formData,
-        //   {
-        //     headers: {
-        //       "Content-Type": "multipart/form-data",
-        //     },
-        //     onUploadProgress: (progressEvent) => {
-        //       const percentCompleted = Math.round(
-        //         (progressEvent.loaded * 100) / (progressEvent.total ?? 1)
-        //       )
-        //       const overallProgress = Math.round(
-        //         ((i - 1 + percentCompleted / 100) * 100) / totalChunks
-        //       )
-
-        //       updateUploadProgress(fileName, overallProgress, "uploading")
-        //     },
-        //   }
-        // )
-        // uploadChunkResp.push(result)
       }
 
       // *************** COMPLETE UPLOAD ***************
@@ -272,14 +241,15 @@ export default function UploadOriginVideos({ systemList }) {
         results.push(result)
       }
 
-      const videoInfos = results.map((result) => {
-        console.log("videoInfos.result", result)
+      const videoInfos = results.map((rs) => {
+        console.log("videoInfos.result", rs)
         return {
-          url: result.url,
+          url: rs.url,
           systemid: systemList[selectedIndex]._id,
           systemname: systemList[selectedIndex].name,
-          path: result.path,
-          inputcode: result.inputcode,
+          inputcode: rs.inputcode,
+          path: rs.path,
+          submitat: new Date(),
         }
       })
       console.log("videoInfos", videoInfos)
