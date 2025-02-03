@@ -7,13 +7,12 @@ export async function handleUploadChunk(request, env) {
 	const systemname = formData.get("systemname")
 	const file = formData.get("file")
 	const fileChunk = await file.arrayBuffer()
-	console.log(typeof fileChunk, "fileChunk", fileChunk)
 	const partNumber = parseInt(formData.get("partNumber"))
 	const uploadId = formData.get("uploadId")
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
 	const chunkSize = formData.get("chunkSize")
-	console.log("handleUploadChunk.formData", formData)
+	// console.log("handleUploadChunk.formData", formData)
 
 	// const reader = fileStream.getReader()
 	const chunks = []

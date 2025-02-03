@@ -12,7 +12,7 @@ export async function handleCompleteUpload(request, env) {
 	const fileName = formData.get("fileName")
 	const parts = formData.get("parts")
 	const uploadId = formData.get("uploadId")
-	console.log("handleCompleteUpload.formData", formData)
+	// console.log("handleCompleteUpload.formData", formData)
 
 	// console.log("handleCompleteUpload", "fileName", fileName, "uploadId", uploadId, "parts", parts)
 
@@ -52,51 +52,6 @@ export async function handleCompleteUpload(request, env) {
 		const response = await s3Client.send(command)
 		console.log("handleCompleteUpload.response", response)
 
-		// App = App || new Realm.App(env.ATLAS_APPID)
-		// const credentials = Realm.Credentials.apiKey(env.ATLAS_APP_API_KEY)
-
-		// Attempt to authenticate
-		// const user = await App.logIn(credentials)
-		// const client = user.mongoClient("mongodb-atlas")
-
-		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		// const db = client.db("hemvip")
-		// if (!db) {
-		// 	return new Response(
-		// 		JSON.stringify({
-		// 			success: false,
-		// 			msg: "Cannot connect to MongoDB storage.",
-		// 			error: null,
-		// 		}),
-		// 		{ status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-		// 	)
-		// }
-
-		// const insertResult = await db.collection("videos").insertOne({
-		// 	_id: new MongoId(),
-		// 	inputid: fileName,
-		// 	time: new Date(),
-		// 	bvhid: response.Location,
-		// 	teamid: systemname,
-		// 	url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
-		// })
-
-		// if (insertResult.insertedId) {
-		// 	return new Response(
-		// 		JSON.stringify({
-		// 			success: true,
-		// 			msg: "Your submission are successfully.",
-		// 			error: null,
-		// 		}),
-		// 		{
-		// 			headers: { ...corsHeaders, "Content-Type": "application/json" },
-		// 		}
-		// 	)
-		// } else {
-		// 	return new Response(JSON.stringify({ success: false, msg: "Upload file successful but unable to update database.", error: null }), {
-		// 		headers: { ...corsHeaders, "Content-Type": "application/json" },
-		// 	})
-		// }
 		const inputcode = fileName.replace(/\.[^.]+$/, "")
 		return new Response(
 			JSON.stringify({

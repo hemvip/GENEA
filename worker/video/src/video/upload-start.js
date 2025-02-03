@@ -7,7 +7,7 @@ export async function handleStartUpload(request, env) {
 	const systemname = formData.get("systemname")
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
-	console.log("handleStartUpload.userId", formData)
+	// console.log("handleStartUpload.userId", formData)
 
 	if (!fileName) {
 		return new Response(JSON.stringify({ msg: "File name not found", error: null, success: false }), {
