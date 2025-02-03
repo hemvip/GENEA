@@ -1,5 +1,4 @@
 import { S3Client, CompleteMultipartUploadCommand } from "@aws-sdk/client-s3"
-import { ObjectId as MongoId } from "bson"
 import { corsHeaders } from "../cors.js"
 import * as Realm from "realm-web"
 
@@ -100,6 +99,9 @@ export async function handleCompleteUpload(request, env) {
 		return new Response(
 			JSON.stringify({
 				success: true,
+				data: response,
+				path: uniqueKey,
+				url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 				msg: "Your video upload are successfully.",
 				error: null,
 			}),

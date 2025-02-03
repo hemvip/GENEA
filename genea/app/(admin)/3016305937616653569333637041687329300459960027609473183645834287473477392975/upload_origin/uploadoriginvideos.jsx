@@ -17,9 +17,7 @@ import {
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
 
-// export default function UploadVideos({ codes, teams }) {
 export default function UploadOriginVideos({ systemList }) {
-  // const [team, setTeam] = useState(teams[0])
   const [selectedIndex, setSelectedIndex] = useState(0)
   // const [systemID, setSystemID] = useState("")
   const [files, setFiles] = useState([])
@@ -239,7 +237,23 @@ export default function UploadOriginVideos({ systemList }) {
         const result = await uploadFile(files[index], index, systemname)
         results.push(result)
       }
-      // console.log("results", results)
+
+      const videoInfos = results.map((result) => {
+        console.log("videoInfos.result", result)
+        return {
+          url: result.url,
+          systemid: systemList[selectedIndex]._id,
+          systemname: systemList[selectedIndex].name,
+          path: result.path,
+          inputcode: result.inputcode,
+        }
+      })
+      console.log("videoInfos", videoInfos)
+
+      const updateVideoUploadInfo = await axios.post("/api/videos", {
+        videos: videoInfos,
+      })
+      console.log("updateVideoUploadInfo", updateVideoUploadInfo)
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
         const { success, msg, error } = results.at(-1)
