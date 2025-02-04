@@ -13,7 +13,7 @@ export default function ScreenInfo({ info }) {
       className={cn("flex flex-col border p-2 rounded-lg", colors[info.type])}
     >
       <div className="">
-        PageID: <code className="nextra-code">{info.pageid}</code>
+        PageID: <code className="nextra-code">{info._id}</code>
       </div>
       <div className="">
         Type: <code className="nextra-code">{info.type}</code>
@@ -21,22 +21,25 @@ export default function ScreenInfo({ info }) {
       <div className="text-wrap w-72">
         Name: <code className="nextra-code text-wrap">{info.name}</code>
       </div>
+      <div className="text-wrap w-72">
+        Question: <code className="nextra-code text-wrap">{info.question}</code>
+      </div>
       <div className="">
         Video:
-        {info.videos && (
+        {info.videos && info.videos.length === 2 && (
           <div className="flex flex-col gap-2">
-            <div className="border border-gray-300 bg-gray-200 p-2 rounded-lg ">
+            <div className="border border-gray-300 bg-gray-200 p-2 rounded-lg flex gap-2 flex-col">
               <div className="">
-                TeamID :{" "}
-                <code className="nextra-code">{info.videos[0].teamid}</code>
+                System :{" "}
+                <code className="nextra-code">{info.videos[0].systemid}</code>
               </div>
               <div className="">
                 InputID :{" "}
-                <code className="nextra-code">{info.videos[0].inputid}</code>
+                <code className="nextra-code">{info.videos[0].inputcode}</code>
               </div>
               <div className="">
-                Value :{" "}
-                <code className="nextra-code">{info.videos[0].value}</code>
+                Path :{" "}
+                <code className="nextra-code">{info.videos[0].path}</code>
               </div>
               <div className="flex gap-2">
                 <span>URL: </span>
@@ -50,16 +53,15 @@ export default function ScreenInfo({ info }) {
             </div>
             <div className="border border-gray-300 bg-gray-200 p-2 rounded-lg ">
               <div className="">
-                TeamID:{" "}
-                <code className="nextra-code">{info.videos[1].teamid}</code>
+                System:{" "}
+                <code className="nextra-code">{info.videos[1].systemid}</code>
               </div>
               <div className="">
                 InputID:{" "}
-                <code className="nextra-code">{info.videos[1].inputid}</code>
+                <code className="nextra-code">{info.videos[1].inputcode}</code>
               </div>
               <div className="">
-                Value:{" "}
-                <code className="nextra-code">{info.videos[1].value}</code>
+                Path: <code className="nextra-code">{info.videos[1].path}</code>
               </div>
               <div className="flex gap-2 w-full">
                 <span>URL: </span>
