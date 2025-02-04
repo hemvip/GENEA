@@ -32,33 +32,21 @@ export async function POST(req, res) {
   }
 
   try {
-    // const videos = [
-    //   {
-    //     url: "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
-    //     systemid: new ObjectId("6794c08c3febc50fe3c557eb"),
-    //     systemname: "BA",
-    //     inputcode: "1_wayne_0_1_1",
-    //     path: "videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
-    //     submitat: new Date(),
-    //   },
-    //   {
-    //     url: "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
-    //     systemid: new ObjectId("6794c08c3febc50fe3c557eb"),
-    //     systemname: "BA",
-    //     inputcode: "1_wayne_0_1_1",
-    //     path: "videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
-    //     submitat: new Date(),
-    //   },
-    // ]
-
-    const result = await db.collection("videos").insertMany(videos)
+    const operations = videos.map((video) => ({
+      updateOne: {
+        filter: { systemname: video.systemname, inputcode: video.inputcode },
+        update: { $set: video },
+        upsert: true,
+      },
+    }))
+    const result = await db.collection("videos").bulkWrite(operations)
     console.log("result", result)
 
-    if (result.insertedCount >= videos.length) {
+    if (result.upsertedCount + result.modifiedCount >= videos.length) {
       return Response.json(
         {
           success: true,
-          msg: "Your submission are update successfully.",
+          msg: "Your submissions were updated successfully.",
           error: null,
         },
         { status: 200 }
@@ -85,3 +73,22 @@ export async function POST(req, res) {
     )
   }
 }
+
+// const videos = [
+//   {
+//     url: "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
+//     systemid: new ObjectId("6794c08c3febc50fe3c557eb"),
+//     systemname: "BA",
+//     inputcode: "1_wayne_0_1_1",
+//     path: "videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
+//     submitat: new Date(),
+//   },
+//   {
+//     url: "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
+//     systemid: new ObjectId("6794c08c3febc50fe3c557eb"),
+//     systemname: "BA",
+//     inputcode: "1_wayne_0_1_1",
+//     path: "videos/original/SD/12_zhao_2_2_2_segment_3.mp4",
+//     submitat: new Date(),
+//   },
+// ]
