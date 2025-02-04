@@ -8,7 +8,6 @@ import axios from "axios"
 import clsx from "clsx"
 import BVHFile from "@/icons/bvhfile"
 import { Select } from "@headlessui/react"
-import VideoFile from "@/icons/videofile"
 import SystemList from "./systemlist"
 import {
   VIDEO_START_UPLOAD_API_ENDPOINT,
@@ -16,6 +15,8 @@ import {
   VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
+import CircleLoading from "@/icons/circleloading"
+import Mp4Icon from "@/icons/mp4"
 
 export default function UploadOriginVideos({ systemList }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -297,20 +298,20 @@ export default function UploadOriginVideos({ systemList }) {
   if (uploading) {
     return (
       <div className="w-full px-12  justify-center ">
-        <p className="text-center p-4">Uploading...</p>
+        <p className="text-center p-4 gap-2">
+          <CircleLoading />
+          Uploading...</p>
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
             // console.log("progress", progress)
 
             return (
               <div
-                className=" mx-32 flex gap-2 items-center border-gray-200 py-2 px-8 shadow"
+                className="px-4 text-xs text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50"
                 key={idx}
               >
-                <div className="p-1 bg-gray-200 rounded-lg">
-                  <VideoFile />
-                </div>
-                <span className="text-sm w-40 truncate">{file.name}</span>
+                  <Mp4Icon className="w-4 h-4" />
+                <span className="text-sm min-w-50 truncate">{file.name}</span>
                 <div className="flex-grow">
                   <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
                     {progress[file.name] && progress[file.name].percent ? (
@@ -325,7 +326,7 @@ export default function UploadOriginVideos({ systemList }) {
                     )}
                   </div>
                 </div>
-                <span className="text-xs bg-gray-200 px-2 rounded-xl">
+                <span className="text-xs bg-gray-200 w-12 px-2 rounded-xl text-center">
                   {`${progress[file.name].percent || 0}%`}
                 </span>
 
