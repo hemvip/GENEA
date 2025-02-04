@@ -23,7 +23,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Cannot connect to MongoDB storage.",
+        message: "Cannot connect to MongoDB storage.",
         error: null,
       },
       { status: 500 }
@@ -43,7 +43,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Your request is failed, please contact for support.",
+        message: "Your request is failed, please contact for support.",
         error: error,
       },
       { status: 500 }
@@ -61,7 +61,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Your request is failed, please contact for support.",
+        message: "Your request is failed, please contact for support.",
         error: error,
       },
       { status: 500 }
@@ -141,7 +141,7 @@ export async function POST(req, res) {
       return Response.json(
         {
           success: true,
-          msg: "Your submission are update successfully.",
+          message: "Your submission are update successfully.",
           error: null,
         },
         { status: 200 }
@@ -151,7 +151,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Upload success but failed insert request, please contact for support.",
+        message: "Upload success but failed insert request, please contact for support.",
         error: null,
       },
       { status: 500 }
@@ -161,7 +161,7 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        msg: "Your request is failed, please contact for support.",
+        message: "Your request is failed, please contact for support.",
         error: error,
       },
       { status: 500 }
@@ -180,7 +180,7 @@ export async function PATCH(req, res) {
       return Response.json(
         {
           success: false,
-          msg: "CSV data is required",
+          message: "CSV data is required",
           studies: "",
           error: "CSV data is required",
         },
@@ -206,39 +206,49 @@ export async function PATCH(req, res) {
 
         console.log("rs", rsA, rsB)
 
-        return { rsA, rsB }
+        return {
+          inputcode: inputcode,
+          name1: sysA,
+          name2: sysB,
+          result1: rsA,
+          result2: rsB,
+        }
       })
     )
 
-    const allSuccessful = resultQueries.every(({ rsA, rsB }) => rsA && rsB)
+    for (const { inputcode, name1, name2, result1, result2 } of resultQueries) {
+      if (!result1 || !result2) {
+        let missingNames = []
+        if (!result1) missingNames.push(name1)
+        if (!result2) missingNames.push(name2)
 
-    if (allSuccessful) {
-      return Response.json(
-        {
-          success: true,
-          msg: "Video updated successfully",
-          studies: "",
-          error: null,
-        },
-        { status: 200 }
-      )
+        return Response.json(
+          {
+            success: false,
+            message: `Video(s) not found for: ${missingNames.join(", ")}`,
+            studies: "",
+            error: null,
+          },
+          { status: 404 }
+        )
+      }
     }
 
     return Response.json(
       {
-        success: false,
-        msg: "Valid failed, please contact for support.",
+        success: true,
+        message: "Video updated successfully",
         studies: "",
         error: null,
       },
-      { status: 502 }
+      { status: 200 }
     )
   } catch (error) {
     console.log("Error updating video:", error)
     return Response.json(
       {
         success: false,
-        msg: "Internal Server Error",
+        message: "Internal Server Error",
         studies: "",
         error,
       },
