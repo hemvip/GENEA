@@ -88,10 +88,10 @@ export async function POST(req, res) {
 
     const studies = studiesData.forEach((item) => {
       const pairwises = Array.from(item).map((row) => {
-        const inputName = row[0]
+        const inputcode = row[0]
         const sysA = String(row[1]).replace(/\s+/g, "")
         const sysB = String(row[2]).replace(/\s+/g, "")
-        console.log("row[0]", inputName, sysA, sysB)
+        console.log("row[0]", inputcode, sysA, sysB)
 
         return {
           pageid: new ObjectId(),
@@ -103,13 +103,13 @@ export async function POST(req, res) {
           videos: [
             {
               teamid: "6684003c3b7dd703e06fc914",
-              inputid: inputName,
+              inputid: inputcode,
               videoid: `videos/${sysA}`,
               url: "https://hemvip.s3.amazonaws.com/videos/6684003c3b7dd703e06fc914/6684003c3b7dd703e06fc914.mp4",
             },
             {
               teamid: "6684003c3b7dd703e06fc914",
-              inputid: inputName,
+              inputid: inputcode,
               videoid: `videos/${sysB}`,
               url: "https://hemvip.s3.amazonaws.com/videos/6684003c3b7dd703e06fc914/6684003c3b7dd703e06fc914.mp4",
             },
@@ -163,6 +163,84 @@ export async function POST(req, res) {
         success: false,
         msg: "Your request is failed, please contact for support.",
         error: error,
+      },
+      { status: 500 }
+    )
+  }
+}
+
+export async function PATCH(req, res) {
+  const client = await clientPromise
+  const db = client.db("hemvip")
+
+  try {
+    const { csv } = await req.json()
+
+    if (!csv) {
+      return Response.json(
+        {
+          success: false,
+          msg: "CSV data is required",
+          studies: "",
+          error: "CSV data is required",
+        },
+        { status: 400 }
+      )
+    }
+
+    console.log("csv", csv)
+
+    const resultQueries = await Promise.all(
+      Array.from(csv).map(async (row) => {
+        const inputcode = row[0]
+        const sysA = String(row[1]).replace(/\s+/g, "")
+        const sysB = String(row[2]).replace(/\s+/g, "")
+
+        const queryA = { inputcode, systemname: sysA }
+        const queryB = { inputcode, systemname: sysB }
+
+        const [rsA, rsB] = await Promise.all([
+          db.collection("videos").findOne(queryA),
+          db.collection("videos").findOne(queryB),
+        ])
+
+        console.log("rs", rsA, rsB)
+
+        return { rsA, rsB }
+      })
+    )
+
+    const allSuccessful = resultQueries.every(({ rsA, rsB }) => rsA && rsB)
+
+    if (allSuccessful) {
+      return Response.json(
+        {
+          success: true,
+          msg: "Video updated successfully",
+          studies: "",
+          error: null,
+        },
+        { status: 200 }
+      )
+    }
+
+    return Response.json(
+      {
+        success: false,
+        msg: "Valid failed, please contact for support.",
+        studies: "",
+        error: null,
+      },
+      { status: 502 }
+    )
+  } catch (error) {
+    console.log("Error updating video:", error)
+    return Response.json(
+      {
+        success: false,
+        msg: "Internal Server Error",
+        studies: "",
+        error,
       },
       { status: 500 }
     )

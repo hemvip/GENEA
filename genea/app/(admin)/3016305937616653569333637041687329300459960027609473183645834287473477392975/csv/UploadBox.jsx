@@ -12,11 +12,7 @@ import VideoFile from "@/icons/videofile"
 import { ArrowLeftIcon } from "@/nextra/icons"
 import Papa from "papaparse"
 
-// export default function UploadVideos({ codes, teams }) {
-export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
-  // const [team, setTeam] = useState(teams[0])
-  // const [teamID, setTeamID] = useState(teams[0].userId)
-  // const [files, setFiles] = useState([])
+export default function UploadBox({ setCsvList, loadedCSV, setLoadedCSV }) {
   const [errorMsg, setErrorMsg] = useState("")
   const [uploading, setUploading] = useState("")
   // const [uploadProgress, setUploadProgress] = useState({})
@@ -50,7 +46,12 @@ export default function UploadCSV({ setCsvList, loadedCSV, setLoadedCSV }) {
           .map((file) => parseFile(file))
       )
       const dataList = csvListData.map(({ data, filename }) => {
-        return { data: data, filename: filename, state: "failed", errorMsg:"" }
+        return {
+          data: data,
+          filename: filename,
+          state: "error",
+          errorMsg: "",
+        }
       })
       setCsvList(dataList)
       setLoadedCSV(true)

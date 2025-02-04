@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function CSV(props) {
+export default function CSVIcon(props) {
   return (
     <svg viewBox="0 0 548.29 548.291" {...props}>
       <g>
