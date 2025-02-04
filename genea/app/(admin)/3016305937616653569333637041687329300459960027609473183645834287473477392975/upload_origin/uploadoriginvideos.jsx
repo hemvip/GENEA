@@ -17,6 +17,7 @@ import {
 import { UploadStatus } from "@/components/UploadStatus"
 import CircleLoading from "@/icons/circleloading"
 import Mp4Icon from "@/icons/mp4"
+import UploadPreviewer from "./UploadPreviewer"
 
 export default function UploadOriginVideos({ systemList }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -304,43 +305,13 @@ export default function UploadOriginVideos({ systemList }) {
         </p>
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
-            // console.log("progress", progress)
-
             return (
-              <div
-                className="px-4 text-xs text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50"
-                key={idx}
-              >
-                <Mp4Icon className="w-4 h-4" />
-                <span className="text-sm min-w-50 truncate">{file.name}</span>
-                <div className="flex-grow">
-                  <div
-                    className="overflow-hidden mx-auto max-w-72 text-xs flex rounded-full min-w-20 bg-blue-200"
-                    style={{ height: "2px" }}
-                  >
-                    {progress[file.name] && progress[file.name].percent ? (
-                      // <div
-                      //   style={{ width: `${progress[file.name].percent}%` }}
-                      //   className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-                      // >
-                      //   <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
-                      // </div>
-                      <div className="w-full h-1 bg-gray-200 rounded-full overflow-x-hidden">
-                        <div style={{ width: `${progress[file.name].percent}%` }} className="relative indicator h-full rounded-full bg-gradient-to-r from-gray-200 via-blue-500 to-gray-200 filter backdrop-blur-xs animate-gradient"></div>
-                      </div>
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </div>
-                <span className="text-xs bg-gray-200 w-12 px-2 rounded-xl text-center">
-                  {`${progress[file.name].percent || 0}%`}
-                </span>
-
-                {progress[file.name] && progress[file.name].status && (
-                  <UploadStatus type={progress[file.name].status} />
-                )}
-              </div>
+              <UploadPreviewer
+                file={file}
+                progress={progress}
+                index={index}
+                key={index}
+              />
             )
           })}
         </div>
