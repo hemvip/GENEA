@@ -5,21 +5,19 @@ import Image from "next/image"
 import { clsx as cn } from "clsx"
 import axios from "axios"
 
-import UploadBox from "./UploadBox"
+import { Callout } from "@/nextra"
 import { Loading } from "@/components"
-import CSVTable from "./CSVTable"
-import JSON from "@/icons/json"
-import CSVIcon from "@/icons/csv"
 import { Select } from "@headlessui/react"
 import { ArrowLeftIcon } from "@/nextra/icons"
 import { SYSTEM_TYPES } from "@/config/constants"
-import { Callout } from "@/nextra"
 import CSVPreviewer from "./CSVPreviewer"
+import UploadBox from "./UploadBox"
 
 export default function Page() {
   const [csvList, setCsvList] = useState([])
   const [loadedCSV, setLoadedCSV] = useState(false)
   const [systemType, setSystemType] = useState(Object.keys(SYSTEM_TYPES)[0])
+  const [isValid, setIsValid] = useState(false)
 
   // if (loading) {
   //   return (
@@ -28,49 +26,10 @@ export default function Page() {
   //     </div>
   //   )
   // }
-  console.log("csvList", csvList)
 
-  // const handleValidate = async (e) => {
-  //   e.preventDefault()
-
-  //   const newCsv = await Promise.all(
-  //     csvList.map(async ({ data, filename, state, errorMsg }) => {
-  //       try {
-  //         const res = await axios.patch(`/api/${systemType}`, {
-  //           csv: data.slice(1),
-  //         })
-
-  //         if (res.data.success) {
-  //           return {
-  //             data,
-  //             filename,
-  //             state: "success",
-  //             errorMsg: "",
-  //           }
-  //         } else {
-  //           return {
-  //             data,
-  //             filename,
-  //             state: "error",
-  //             errorMsg: res.data.message,
-  //           }
-  //         }
-  //       } catch (error) {
-  //         console.error("Validation error:", error)
-  //         return {
-  //           data,
-  //           filename,
-  //           state: "error",
-  //           errorMsg: error.response?.data?.message || "Unknown error occurred",
-  //         }
-  //       }
-  //     })
-  //   )
-
-  //   setCsvList(newCsv)
-  // }
   const handleValidate = async (e) => {
     e.preventDefault()
+    window.scrollTo({ top: 0 })
 
     for (let i = 0; i < csvList.length; i++) {
       const { data, filename } = csvList[i]
@@ -113,6 +72,8 @@ export default function Page() {
           )
         )
       }
+
+      document.getElementById(`csv-previewer-${i}`).scrollIntoView()
     }
   }
 
@@ -197,6 +158,7 @@ export default function Page() {
               return (
                 <CSVPreviewer
                   key={index}
+                  index={index}
                   data={data}
                   filename={filename}
                   state={state}
@@ -249,6 +211,7 @@ export default function Page() {
               <div className="flex flex-col gap-8 mt-4 items-center">
                 <div className="flex justify-start">
                   <button
+                    id="validate"
                     className="flex cursor-pointer h-10 items-center gap-2 w-44 betterhover:hover:bg-green-600 dark:betterhover:hover:bg-green-300 justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm transition-all"
                     onClick={handleValidate}
                   >

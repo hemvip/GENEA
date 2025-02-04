@@ -162,7 +162,7 @@ export default function UploadBox({ setCsvList, loadedCSV, setLoadedCSV }) {
       <div
         {...getRootProps()}
         style={{ border: "2px dashed #666666" }}
-        className="w-full p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+        className="w-full p-4 cursor-pointer rounded-lg min-h-64 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
       >
         <input
           id="upload"
