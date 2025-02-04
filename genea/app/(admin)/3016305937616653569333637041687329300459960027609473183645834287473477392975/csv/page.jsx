@@ -92,7 +92,6 @@ export default function Page() {
     setGenState("loading")
 
     const url = `/api/${systemType}`
-    console.log(url, "systemType, csvList", systemType, csvList)
     const studiesCSV = Array.from(csvList).map((csv) => csv.data.slice(1))
 
     try {

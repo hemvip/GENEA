@@ -235,7 +235,7 @@ export async function PATCH(req, res) {
           db.collection("videos").findOne(queryB),
         ])
 
-        console.log("rsA", rsA, "rsB", rsB)
+        // console.log("rsA", rsA, "rsB", rsB)
 
         return {
           inputcode: inputcode,
