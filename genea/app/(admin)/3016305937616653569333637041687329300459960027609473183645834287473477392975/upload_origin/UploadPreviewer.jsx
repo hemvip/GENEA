@@ -5,7 +5,7 @@ export default function UploadPreviewer({ file, progress, index }) {
   return (
     <div className="px-4 text-xs text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50">
       <Mp4Icon className="w-4 h-4" />
-      <span className="text-sm min-w-50 truncate">{file.name}</span>
+      <span className="text-sm w-56 truncate">{file.name}</span>
       <div className="flex-grow">
         <div className="overflow-x-hidden mx-auto max-w-72 text-xs flex rounded-full min-w-20">
           {progress[file.name] && progress[file.name].percent ? (

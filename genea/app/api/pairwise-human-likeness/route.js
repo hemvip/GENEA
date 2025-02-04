@@ -238,7 +238,7 @@ export async function PATCH(req, res) {
             studies: "",
             error: null,
           },
-          { status: 404 }
+          { status: 200 }
         )
       }
     }
