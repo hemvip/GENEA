@@ -1,13 +1,31 @@
 @import "tailwindcss";
 @layer theme, base, components, utilities;
-/* @import "../styles/code-block.css";
 @import "../styles/subheading-anchor.css";
 @import "../styles/scrollbar.css";
 @import "../styles/steps.css";
-@import "../styles/cards.css";
-@import "../styles/hamburger.css";
-@import "../styles/typesetting-article.css";
-@import "../styles/utilities.css"; */
+/* @import "../styles/cards.css"; */
+/* @import "../styles/hamburger.css"; */
+/* @import "../styles/typesetting-article.css"; */
+
+@import "../styles/code-block.css";
+
+@import "../styles/utilities.css";
+
+@theme {
+  --color-primary-50: hsl(212deg 100% calc(45% + 52%));
+  --color-primary-100: hsl(212deg 100% calc(45% + 49%));
+  --color-primary-200: hsl(212deg 100% calc(45% + 41%));
+  --color-primary-300: hsl(212deg 100% calc(45% + 32%));
+  --color-primary-400: hsl(212deg 100% calc(45% + 21%));
+  --color-primary-500: hsl(212deg 100% calc(45% + 5%));
+  --color-primary-600: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation)
+      var(--nextra-primary-lightness)
+  );
+  --color-primary-700: hsl(212deg 100% calc(45% - 6%));
+  --color-primary-800: hsl(212deg 100% calc(45% - 13%));
+  --color-primary-900: hsl(212deg 100% calc(45% - 21%));
+}
 
 @layer base {
   :root {
@@ -17,6 +35,7 @@
     --nextra-menu-height: 3.75rem;
     --nextra-banner-height: 2.5rem;
     --nextra-bg: 255, 255, 255;
+    --nextra-primary-lightness: 45%;
   }
 
   .dark {

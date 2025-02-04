@@ -1047,7 +1047,7 @@ export default function EvaluationProcess(props) {
               y="-60.48200359928012"
               width="180.00636064878617"
               height="179.96400719856024"
-              href="./genea/prolific.png"
+              href="/genea/prolific.png"
             />
           </g>
         </g>
