@@ -377,14 +377,17 @@ export default function UploadOriginVideos({ systemList }) {
       </div>
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-      <div className="flex flex-row items-center gap-4">
-        <label htmlFor="upload" className="w-[20%] text-right">
+      <div className="flex flex-row items-center gap-4 mt-4">
+        <label htmlFor="name" className="w-[20%] text-left font-semibold">
           Videos Upload
         </label>
+        <div className="w-[80%] flex-grow "></div>
+      </div>
+      <div className="items-center">
         <div
           {...getRootProps()}
           style={{ border: "2px dashed #666666" }}
-          className="w-[80%] p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
+          className="w-full p-4 cursor-pointer rounded-lg min-h-36 flex flex-col items-center justify-center text-center appearance-none border border-[#666666] bg-white text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 dark:border-[#888888] dark:bg-transparent dark:text-white dark:focus:border-white sm:text-sm"
         >
           <input id="upload" {...getInputProps()} accept="video/*" />
           {previews.length > 0 && (
