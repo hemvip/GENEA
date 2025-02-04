@@ -298,9 +298,10 @@ export default function UploadOriginVideos({ systemList }) {
   if (uploading) {
     return (
       <div className="w-full px-12  justify-center ">
-        <p className="text-center p-4 gap-2">
+        <p className="flex justify-center p-4 gap-2">
           <CircleLoading />
-          Uploading...</p>
+          Uploading...
+        </p>
         <div className="flex flex-col gap-2">
           {files.map((file, idx) => {
             // console.log("progress", progress)
@@ -310,10 +311,13 @@ export default function UploadOriginVideos({ systemList }) {
                 className="px-4 text-xs text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-neutral-900 flex items-center h-10 gap-2 rounded-md border border-gray-300 dark:border-neutral-700 contrast-more:border-gray-900 contrast-more:dark:border-gray-50"
                 key={idx}
               >
-                  <Mp4Icon className="w-4 h-4" />
+                <Mp4Icon className="w-4 h-4" />
                 <span className="text-sm min-w-50 truncate">{file.name}</span>
                 <div className="flex-grow">
-                  <div className="overflow-hidden mx-auto max-w-72 h-2 text-xs flex rounded-3xl min-w-20 bg-blue-200">
+                  <div
+                    className="overflow-hidden mx-auto max-w-72 text-xs flex rounded-full min-w-20 bg-blue-200"
+                    style={{ height: "2px" }}
+                  >
                     {progress[file.name] && progress[file.name].percent ? (
                       <div
                         style={{ width: `${progress[file.name].percent}%` }}
@@ -445,7 +449,7 @@ export default function UploadOriginVideos({ systemList }) {
       <div className="flex flex-col items-center">
         <div className="pl-[20%] flex justify-start">
           <button
-            className=" flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
+            className="cursor-pointer flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
             onClick={handleUpload}
           >
             Upload Video
