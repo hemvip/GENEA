@@ -1,3 +1,9 @@
+:root {
+  --shiki-dark-bg: #2e3440ff;
+  --shiki-dark:#D8DEE9
+  --shiki-light:#2E3440
+}
+
 .nextra-code span {
   @apply bg-[--shiki-light-bg] text-[--shiki-light];
   @apply dark:bg-[--shiki-dark-bg] dark:text-[--shiki-dark];

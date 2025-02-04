@@ -3,6 +3,13 @@ import { visit } from "unist-util-visit"
 
 const CODE_BLOCK_FILENAME_REGEX = /filename="([^"]+)"/
 
+async function createCustomHighlighter(opts) {
+  return createHighlighter({
+    ...opts,
+    langs: Object.keys(bundledLanguages), // Load all bundled languages
+  })
+}
+
 export const DEFAULT_REHYPE_PRETTY_CODE_OPTIONS = {
   keepBackground: false,
   grid: false,
@@ -18,13 +25,7 @@ export const DEFAULT_REHYPE_PRETTY_CODE_OPTIONS = {
     light: "github-light",
     dark: "github-dark",
   },
-  createHighlighter(opts) {
-    return createHighlighter({
-      ...opts,
-      // Without `getHighlighter` option ```mdx lang is not highlighted...
-      langs: Object.keys(bundledLanguages),
-    })
-  },
+  getHighlighter: (opts) => createCustomHighlighter(opts),
   filterMetaString: (meta) => meta.replace(CODE_BLOCK_FILENAME_REGEX, ""),
 }
 
