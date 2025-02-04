@@ -9,6 +9,9 @@ export const ERROR_ROUTES = new Set(["/404", "/500"])
 
 // ************************ NPY ************************
 // https://submission.hemvip.workers.dev/api/start-upload
+export const UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_API_ENDPOINT}/upload`
+
+// https://submission.hemvip.workers.dev/api/start-upload
 export const START_UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_API_ENDPOINT}/api/start-upload`
 
 // https://submission.hemvip.workers.dev/api/upload-part

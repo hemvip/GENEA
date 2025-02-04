@@ -2,9 +2,10 @@ import { corsHeaders } from "./cors"
 import { handleStartUpload } from "./submission/upload-start"
 import { handleUploadChunk } from "./submission/upload-chunk"
 import { handleCompleteUpload } from "./submission/upload-complete"
+import { handleUpload } from "./simpleupload"
 
 export default {
-	async fetch(request, env, ctx) {
+	async fetch(request, env) {
 		if (request.method === "OPTIONS") {
 			// Handle CORS preflight requests
 			return new Response(null, { headers: corsHeaders })
@@ -16,6 +17,10 @@ export default {
 
 		if (request.method === "POST") {
 			const url = new URL(request.url)
+
+			if (url.pathname === "/upload") {
+				return handleUpload(request, env)
+			}
 
 			// Npy upload
 			if (url.pathname === "/api/start-upload") {

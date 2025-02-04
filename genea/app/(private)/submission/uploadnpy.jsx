@@ -9,6 +9,7 @@ import BVHFile from "@/icons/bvhfile"
 import {
   COMPLETE_UPLOAD_API_ENDPOINT,
   START_UPLOAD_API_ENDPOINT,
+  UPLOAD_API_ENDPOINT,
   UPLOAD_PART_API_ENDPOINT,
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
@@ -189,6 +190,39 @@ export default function UploadNPY({ codes }) {
     }
   }
 
+  const simpleUploadFile = async (file, index, teamid) => {
+    const fileName = file.name
+    const fileSize = file.size
+
+    try {
+      updateUploadProgress(fileName, 0, "uploading")
+
+      console.log("UPLOAD_API_ENDPOINT", UPLOAD_API_ENDPOINT)
+
+      // Start multipart upload
+      const resp = await axios.post(
+        UPLOAD_API_ENDPOINT,
+        {
+          userId: teamid,
+          fileName: fileName,
+          fileSize: fileSize,
+          file: file,
+        },
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+
+      updateUploadProgress(fileName, 100, "completed")
+
+      return resp.data
+    } catch (err) {
+      console.error("Error uploading file:", err)
+      // setErrorMsg("Error uploading file")
+      updateUploadProgress(fileName, 0, "error")
+      const { success, msg, error } = err.response.data
+      return { success, msg, error }
+    }
+  }
+
   const handleUpload = async (e) => {
     e.preventDefault()
 
@@ -221,22 +255,6 @@ export default function UploadNPY({ codes }) {
       setUploading("Uploading your submission, please waiting ...")
       const teamid = String(username).toLowerCase()
 
-      //~~~~~~~~  Update submission info to database ~~~~~~~~
-      const formData = new FormData()
-      formData.append("userId", userId)
-      formData.append("email", email)
-      formData.append("teamid", teamid)
-      formData.append("teamname", teamname)
-      const res = await axios.post("/api/submission", formData)
-      console.log("res", res)
-
-      if (!res.data.success) {
-        console.log(res.data)
-        setErrorMsg(
-          "Duplicated submission, only submit once, please contact support"
-        )
-      }
-
       //~~~~~~~~  Upload all bvh files ~~~~~~~~
       // Upload all files concurrently
       // const results = await Promise.all(
@@ -245,15 +263,30 @@ export default function UploadNPY({ codes }) {
       console.log("files", files)
       const results = []
       for (let index = 0; index < files.length; index++) {
-        const result = await uploadFile(files[index], index, teamid)
+        const result = await simpleUploadFile(files[index], index, teamid)
         results.push(result)
       }
+
       console.log("results.uploadFile", results)
       const allSuccessful = results.every((result) => result.success)
       if (allSuccessful) {
-        const { success, msg, error } = results.at(-1)
-        setSuccessMsg(msg)
-        console.log("Success", success, "msg", msg, "error", error)
+        //~~~~~~~~  Update submission info to database ~~~~~~~~
+        const formData = new FormData()
+        formData.append("userId", userId)
+        formData.append("email", email)
+        formData.append("teamid", teamid)
+        formData.append("teamname", teamname)
+        const res = await axios.post("/api/submission", formData)
+        console.log("res", res)
+
+        if (!res.data.success) {
+          console.log(res.data)
+          setErrorMsg(
+            "Duplicated submission, only submit once, please contact support"
+          )
+        }
+
+        setSuccessMsg("Your submission are successfully.")
       } else {
         const failedResult = results.filter((result) => !result.success)[0]
         const { success, msg, error } = failedResult
