@@ -209,23 +209,21 @@ export default function Page() {
               {/* ********************************************************************************** */}
 
               <div className="flex flex-col gap-8 mt-4 items-center">
-                <div className="flex justify-start">
-                  <button
-                    id="validate"
-                    className="flex cursor-pointer h-10 items-center gap-2 w-44 betterhover:hover:bg-green-600 dark:betterhover:hover:bg-green-300 justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm transition-all"
-                    onClick={handleValidate}
-                  >
-                    Validate CSV
-                  </button>
-                </div>
-                <div className="flex justify-start">
+                {isValid ? (
                   <button
                     className="cursor-pointer flex h-10 items-center gap-2 w-44 betterhover:hover:bg-gray-600 dark:betterhover:hover:bg-gray-300 justify-center rounded-md border border-transparent bg-black px-4 py-2 text-lg font-bold text-white focus:outline-none focus:ring-2 focus:ring-gray-800 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm  transition-all "
                     onClick={handleUpload}
                   >
                     Generate Study
                   </button>
-                </div>
+                ) : (
+                  <button
+                    className="flex cursor-pointer h-10 items-center gap-2 w-44 betterhover:hover:bg-green-600 dark:betterhover:hover:bg-green-300 justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-white dark:text-black dark:focus:ring-white sm:text-sm transition-all"
+                    onClick={handleValidate}
+                  >
+                    Validate CSV
+                  </button>
+                )}
               </div>
             </div>
           )}

@@ -38,26 +38,23 @@ export default function UploadBox({ setCsvList, loadedCSV, setLoadedCSV }) {
     })
   }
 
-  const onDrop = useCallback(
-    async (files) => {
-      const csvListData = await Promise.all(
-        Array.from(files)
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((file) => parseFile(file))
-      )
-      const dataList = csvListData.map(({ data, filename }) => {
-        return {
-          data: data,
-          filename: filename,
-          state: "new",
-          errorMsg: "",
-        }
-      })
-      setCsvList(dataList)
-      setLoadedCSV(true)
-    },
-    [setLoadedCSV, setCsvList]
-  )
+  const onDrop = async (files) => {
+    const csvListData = await Promise.all(
+      Array.from(files)
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((file) => parseFile(file))
+    )
+    const dataList = csvListData.map(({ data, filename }) => {
+      return {
+        data: data,
+        filename: filename,
+        state: "new",
+        errorMsg: "",
+      }
+    })
+    setCsvList(dataList)
+    setLoadedCSV(true)
+  }
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
