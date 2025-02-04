@@ -41,3 +41,6 @@ node_modules
 *.bkp
 .env.local.backup
 genea/.env.test
+
+# Local Netlify folder
+.netlify

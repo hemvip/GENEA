@@ -32,10 +32,11 @@ export async function POST(req, res) {
   }
 
   try {
+    // createdat: new Date(),
     const operations = videos.map((video) => ({
       updateOne: {
         filter: { systemname: video.systemname, inputcode: video.inputcode },
-        update: { $set: video },
+        update: { $set: { ...video, createdat: new Date() } },
         upsert: true,
       },
     }))

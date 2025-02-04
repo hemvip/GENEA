@@ -148,7 +148,8 @@ export async function POST(req, res) {
             ...studyConfig,
             pages,
             type: systemType,
-            time_start: new Date(),
+            createdat: new Date(),
+            time_start: null,
             status: "new",
           }
         })

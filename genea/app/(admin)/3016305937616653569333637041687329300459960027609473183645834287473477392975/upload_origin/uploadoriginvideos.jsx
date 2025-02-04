@@ -251,7 +251,6 @@ export default function UploadOriginVideos({ systemList }) {
           systemname: systemList[selectedIndex].name,
           inputcode: rs.inputcode,
           path: rs.path,
-          submitat: new Date(),
         }
       })
       console.log("videoInfos", videoInfos)
@@ -430,7 +429,6 @@ export default function UploadOriginVideos({ systemList }) {
           </button>
         </div>
       </div>
-      
     </form>
   )
 }
