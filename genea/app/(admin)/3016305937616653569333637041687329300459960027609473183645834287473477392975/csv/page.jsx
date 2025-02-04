@@ -12,12 +12,14 @@ import { ArrowLeftIcon } from "@/nextra/icons"
 import { SYSTEM_TYPES } from "@/config/constants"
 import CSVPreviewer from "./CSVPreviewer"
 import UploadBox from "./UploadBox"
+import CircleLoading from "@/icons/circleloading"
 
 export default function Page() {
   const [csvList, setCsvList] = useState([])
   const [loadedCSV, setLoadedCSV] = useState(false)
   const [systemType, setSystemType] = useState(Object.keys(SYSTEM_TYPES)[0])
   const [isValid, setIsValid] = useState(false)
+  const [genState, setGenState] = useState("")
 
   // if (loading) {
   //   return (
@@ -30,6 +32,7 @@ export default function Page() {
   const handleValidate = async (e) => {
     e.preventDefault()
     window.scrollTo({ top: 0 })
+    let isAllValid = true
 
     for (let i = 0; i < csvList.length; i++) {
       const { data, filename } = csvList[i]
@@ -45,6 +48,10 @@ export default function Page() {
         const res = await axios.patch(`/api/${systemType}`, {
           csv: data.slice(1),
         })
+
+        if (!res.data.success) {
+          isAllValid = false
+        }
 
         setCsvList((prevList) =>
           prevList.map((item, index) =>
@@ -75,24 +82,35 @@ export default function Page() {
 
       document.getElementById(`csv-previewer-${i}`).scrollIntoView()
     }
+
+    setIsValid(isAllValid)
   }
 
   const handleUpload = async (e) => {
     e.preventDefault()
 
-    // console.log("systemType", systemType)
-    // console.log("csvList", csvList)
+    setGenState("loading")
+
     const url = `/api/${systemType}`
     console.log(url, "systemType, csvList", systemType, csvList)
+    const studiesCSV = Array.from(csvList).map((csv) => csv.data.slice(1))
 
     try {
-      const res = axios
-        .post(url, { systemType: systemType, csvList: csvList })
-        .then((res) => {
-          console.log("res", res)
-        })
+      const result = await axios.post(url, {
+        systemType: systemType,
+        studiesCSV: studiesCSV,
+      })
+      console.log("result", result)
+      const { success, message, error } = result.data
+
+      if (success) {
+        setGenState("success")
+      } else {
+        setGenState("Please contact support")
+      }
     } catch (error) {
       console.log("error", error)
+      setGenState("Please contact support")
     }
 
     // if (files.length <= 0) {
@@ -137,6 +155,34 @@ export default function Page() {
     // } finally {
     //   setUploading("")
     // }
+  }
+  if (genState) {
+    if (genState === "loading") {
+      return (
+        <div className="w-full px-12  justify-center">
+          <p className="flex justify-center p-4 gap-2">
+            <CircleLoading />
+            Generating...
+          </p>
+        </div>
+      )
+    } else if (genState === "success") {
+      return (
+        <div className="w-full p-12 justify-center ">
+          <Callout type="info" className="mt-0">
+            Your studies are generated successfully.
+          </Callout>
+        </div>
+      )
+    } else {
+      return (
+        <div className="w-full p-12 justify-center ">
+          <Callout type="error" className="mt-0">
+            {genState}
+          </Callout>
+        </div>
+      )
+    }
   }
 
   return (

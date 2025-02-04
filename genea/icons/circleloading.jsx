@@ -3,6 +3,8 @@ import React from "react"
 export default function CircleLoading(props) {
   return (
     <svg
+      width="24"
+      height="24"
       className="progress-ring indeterminate ring-progress-rotate"
       viewBox="0 0 16 16"
     >
