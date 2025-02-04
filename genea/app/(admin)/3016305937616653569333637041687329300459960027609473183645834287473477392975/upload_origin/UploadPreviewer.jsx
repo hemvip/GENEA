@@ -22,7 +22,9 @@ export default function UploadPreviewer({ file, progress, index }) {
               ></div>
             </div>
           ) : (
-            <></>
+            <div className="w-full h-1 bg-gray-200 rounded-full overflow-x-hidden">
+              <div className="relative w-1/3 indicator h-full rounded-full bg-gradient-to-r from-gray-200 via-blue-500 to-gray-200 filter backdrop-blur-xs animate-gradient"></div>
+            </div>
           )}
         </div>
       </div>
