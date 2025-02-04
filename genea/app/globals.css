@@ -142,3 +142,19 @@
     transition: all 0.25s linear;
   }
 }
+
+@keyframes indeterminate {
+  0% {
+    inset-inline-start: -33%;
+  }
+  100% {
+    inset-inline-start: 100%;
+  }
+}
+
+.animate-gradient {
+  animation-name: indeterminate;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

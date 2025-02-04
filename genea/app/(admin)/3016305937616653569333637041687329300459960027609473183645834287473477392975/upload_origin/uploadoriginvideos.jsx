@@ -319,11 +319,14 @@ export default function UploadOriginVideos({ systemList }) {
                     style={{ height: "2px" }}
                   >
                     {progress[file.name] && progress[file.name].percent ? (
-                      <div
-                        style={{ width: `${progress[file.name].percent}%` }}
-                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-                      >
-                        <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
+                      // <div
+                      //   style={{ width: `${progress[file.name].percent}%` }}
+                      //   className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
+                      // >
+                      //   <span className="relative left-0 right-0 w-full text-center text-blue-800"></span>
+                      // </div>
+                      <div className="w-full h-1 bg-gray-200 rounded-full overflow-x-hidden">
+                        <div style={{ width: `${progress[file.name].percent}%` }} className="relative indicator h-full rounded-full bg-gradient-to-r from-gray-200 via-blue-500 to-gray-200 filter backdrop-blur-xs animate-gradient"></div>
                       </div>
                     ) : (
                       <></>

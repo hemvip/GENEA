@@ -151,7 +151,8 @@ export async function POST(req, res) {
     return Response.json(
       {
         success: false,
-        message: "Upload success but failed insert request, please contact for support.",
+        message:
+          "Upload success but failed insert request, please contact for support.",
         error: null,
       },
       { status: 500 }
@@ -191,7 +192,7 @@ export async function PATCH(req, res) {
     console.log("csv", csv)
 
     const resultQueries = await Promise.all(
-      Array.from(csv).map(async (row) => {
+      Array.from(csv).map(async (row, index) => {
         const inputcode = row[0]
         const sysA = String(row[1]).replace(/\s+/g, "")
         const sysB = String(row[2]).replace(/\s+/g, "")
@@ -212,11 +213,19 @@ export async function PATCH(req, res) {
           name2: sysB,
           result1: rsA,
           result2: rsB,
+          index: String(index + 1),
         }
       })
     )
 
-    for (const { inputcode, name1, name2, result1, result2 } of resultQueries) {
+    for (const {
+      inputcode,
+      name1,
+      name2,
+      result1,
+      result2,
+      index,
+    } of resultQueries) {
       if (!result1 || !result2) {
         let missingNames = []
         if (!result1) missingNames.push(name1)
@@ -225,7 +234,7 @@ export async function PATCH(req, res) {
         return Response.json(
           {
             success: false,
-            message: `Video(s) not found for: ${missingNames.join(", ")}`,
+            message: `Video in line ${index} not found for: ${missingNames.join(", ")}`,
             studies: "",
             error: null,
           },
