@@ -49,7 +49,7 @@ export default function UploadBox({ setCsvList, loadedCSV, setLoadedCSV }) {
         return {
           data: data,
           filename: filename,
-          state: "error",
+          state: "new",
           errorMsg: "",
         }
       })

@@ -29,7 +29,8 @@ export default function CSVPreviewer({
             <CircleLoading />
           ) : state === "success" ? (
             <CheckmarkIcon className="nextra-copy-icon w-6 h-6  stroke-green-500" />
-          ) : (
+          ) : state === "new" ?
+          null : (
             <DismissIcon className="nextra-copy-icon w-6 h-6  stroke-red-500" />
           )}
         </button>
