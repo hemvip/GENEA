@@ -55,7 +55,7 @@ export async function handleUpload(request, env) {
 				success: true,
 				path: uniqueKey,
 				inputcode: inputcode,
-				url: `https://e62de0d5e5e9873cf19207d31ed0c65e.r2.cloudflarestorage.com/${env.R2_BUCKET_NAME}/${uniqueKey}`,
+				url: `https://pub-${env.R2_BUCKET_URL_ID}.r2.dev/${uniqueKey}`,
 				msg: "Your video upload are successfully.",
 				error: null,
 			}),

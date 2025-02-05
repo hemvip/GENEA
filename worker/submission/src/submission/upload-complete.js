@@ -78,7 +78,7 @@ export async function handleCompleteUpload(request, env) {
 			time: new Date(),
 			bvhid: response.Location,
 			teamid: userId,
-			url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
+			url: `https://${env.BUCKET_NAME}.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 		})
 
 		if (insertResult.insertedId) {
