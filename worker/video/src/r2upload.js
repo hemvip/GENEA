@@ -8,6 +8,7 @@ export async function handleR2Upload(request, env) {
 	const systemname = formData.get("systemname")
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
+	console.log("formData", formData)
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	const file = formData.get("file")
