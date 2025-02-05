@@ -138,23 +138,23 @@ const withMDX = nextMDX({
 })
 
 export default withMDX({
-  // output: 'export',
-  // images: { unoptimized: true },
+  output: "export",
+  images: { unoptimized: true },
   reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*.githubusercontent.com",
-        port: "",
-        pathname: "**",
-      },
-    ],
-  },
-  i18n: {
-    locales: ["en-US"],
-    defaultLocale: "en-US",
-    localeDetection: false,
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "*.githubusercontent.com",
+  //       port: "",
+  //       pathname: "**",
+  //     },
+  //   ],
+  // },
+  // i18n: {
+  //   locales: ["en-US"],
+  //   defaultLocale: "en-US",
+  //   localeDetection: false,
+  // },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 })

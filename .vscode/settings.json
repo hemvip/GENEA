@@ -18,5 +18,8 @@
     },
     "[xml]": {
         "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
