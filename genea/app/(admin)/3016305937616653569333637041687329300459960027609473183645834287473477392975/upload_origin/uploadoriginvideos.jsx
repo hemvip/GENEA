@@ -13,7 +13,6 @@ import {
   VIDEO_START_UPLOAD_API_ENDPOINT,
   VIDEO_UPLOAD_PART_API_ENDPOINT,
   VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
-  VIDEO_UPLOAD_API_ENDPOINT,
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
 import CircleLoading from "@/icons/circleloading"
@@ -200,38 +199,38 @@ export default function UploadOriginVideos({ systemList }) {
     }
   }
 
-  const simpleUploadFile = async (file, index, systemname) => {
-    const fileName = file.name
-    const fileSize = file.size
+  // const simpleUploadFile = async (file, index, systemname) => {
+  //   const fileName = file.name
+  //   const fileSize = file.size
 
-    try {
-      updateUploadProgress(fileName, 0, "uploading")
+  //   try {
+  //     updateUploadProgress(fileName, 0, "uploading")
 
-      console.log("VIDEO_UPLOAD_API_ENDPOINT", VIDEO_UPLOAD_API_ENDPOINT)
+  //     console.log("VIDEO_UPLOAD_API_ENDPOINT", VIDEO_UPLOAD_API_ENDPOINT)
 
-      // Start multipart upload
-      const resp = await axios.post(
-        VIDEO_UPLOAD_API_ENDPOINT,
-        {
-          systemname: systemname,
-          fileName: fileName,
-          fileSize: fileSize,
-          file: file,
-        },
-        { headers: { "Content-Type": "multipart/form-data" } }
-      )
+  //     // Start multipart upload
+  //     const resp = await axios.post(
+  //       VIDEO_UPLOAD_API_ENDPOINT,
+  //       {
+  //         systemname: systemname,
+  //         fileName: fileName,
+  //         fileSize: fileSize,
+  //         file: file,
+  //       },
+  //       { headers: { "Content-Type": "multipart/form-data" } }
+  //     )
 
-      updateUploadProgress(fileName, 100, "completed")
+  //     updateUploadProgress(fileName, 100, "completed")
 
-      return resp.data
-    } catch (err) {
-      console.error("Error uploading file:", err)
-      // setErrorMsg("Error uploading file")
-      updateUploadProgress(fileName, 0, "error")
-      const { success, msg, error } = err.response.data
-      return { success, msg, error }
-    }
-  }
+  //     return resp.data
+  //   } catch (err) {
+  //     console.error("Error uploading file:", err)
+  //     // setErrorMsg("Error uploading file")
+  //     updateUploadProgress(fileName, 0, "error")
+  //     const { success, msg, error } = err.response.data
+  //     return { success, msg, error }
+  //   }
+  // }
 
   const handleUpload = async (e) => {
     e.preventDefault()
