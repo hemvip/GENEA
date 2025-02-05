@@ -44,7 +44,7 @@ export async function handleCompleteUpload(request, env) {
 
 	try {
 		const response = await s3Client.send(command)
-		console.log("handleCompleteUpload.response", response)
+		const url = response.Location
 
 		const inputcode = fileName.replace(/\.[^.]+$/, "")
 		return new Response(
@@ -52,7 +52,7 @@ export async function handleCompleteUpload(request, env) {
 				success: true,
 				path: uniqueKey,
 				inputcode: inputcode,
-				url: `https://pub-${env.R2_BUCKET_URL_ID}.r2.dev/${uniqueKey}`,
+				url: url,
 				msg: "Your video upload are successfully.",
 				error: null,
 			}),
