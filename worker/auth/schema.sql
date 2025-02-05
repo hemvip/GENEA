@@ -1,0 +1,28 @@
+CREATE TABLE users (
+  id CHAR(24) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  username VARCHAR(100) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  image TEXT,
+  followers INT DEFAULT 0,
+  verified BOOLEAN DEFAULT FALSE,
+  emailVerified TIMESTAMP NULL
+);
+CREATE TABLE accounts (
+  id CHAR(24) PRIMARY KEY,
+  access_token TEXT NOT NULL,
+  scope TEXT NOT NULL,
+  token_type VARCHAR(20) NOT NULL,
+  providerAccountId VARCHAR(50) NOT NULL,
+  provider VARCHAR(50) NOT NULL,
+  type VARCHAR(20) NOT NULL,
+  userId CHAR(24) NOT NULL,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
+);
+CREATE TABLE sessions (
+  id CHAR(24) PRIMARY KEY,
+  sessionToken CHAR(36) UNIQUE NOT NULL,
+  userId CHAR(24) NOT NULL,
+  expires TIMESTAMP NOT NULL,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
+);
