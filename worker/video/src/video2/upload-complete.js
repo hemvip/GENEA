@@ -1,7 +1,6 @@
 import { S3Client, CompleteMultipartUploadCommand } from "@aws-sdk/client-s3"
 import { corsHeaders } from "../cors.js"
 import * as Realm from "realm-web"
-import { getClient } from "../s3client.js"
 
 let App
 const ObjectId = Realm.BSON.ObjectID
@@ -24,7 +23,14 @@ export async function handleCompleteUpload(request, env) {
 	}
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	const s3Client = getClient(env)
+	const s3Client = new S3Client({
+		endpoint: env.B2_ENDPOINT,
+		region: env.B2_REGION,
+		credentials: {
+			accessKeyId: env.B2_KEYID,
+			secretAccessKey: env.B2_APPLICATIONKEY,
+		},
+	})
 
 	if (!s3Client) {
 		return new Response(JSON.stringify({ success: false, msg: "Cannot connect to blackblaze storage.", error: null }), {
@@ -34,9 +40,9 @@ export async function handleCompleteUpload(request, env) {
 
 	const uniqueKey = `videos/original/${systemname}/${fileName}`
 	const multipartUpload = JSON.parse(parts)
-	console.log("Bucket: ", env.R2_BUCKET_NAME)
+	console.log("Bucket: ", env.BUCKET_NAME)
 	const command = new CompleteMultipartUploadCommand({
-		Bucket: env.R2_BUCKET_NAME,
+		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
 		UploadId: uploadId,
 		MultipartUpload: { Parts: multipartUpload },
@@ -52,7 +58,7 @@ export async function handleCompleteUpload(request, env) {
 				success: true,
 				path: uniqueKey,
 				inputcode: inputcode,
-				url: `https://pub-${env.R2_BUCKET_URL_ID}.r2.dev/${uniqueKey}`,
+				url: `https://genealeaderboard.s3.${env.B2_REGION}.backblazeb2.com/${uniqueKey}`,
 				msg: "Your video upload are successfully.",
 				error: null,
 			}),

@@ -1,6 +1,5 @@
 import { S3Client, UploadPartCommand } from "@aws-sdk/client-s3"
 import { corsHeaders } from "../cors.js"
-import { getClient } from "../s3client.js"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPLOAD CHUNK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export async function handleUploadChunk(request, env) {
@@ -13,6 +12,27 @@ export async function handleUploadChunk(request, env) {
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
 	const chunkSize = formData.get("chunkSize")
+	// console.log("handleUploadChunk.formData", formData)
+
+	// const reader = fileStream.getReader()
+	const chunks = []
+
+	// // Read the file in chunks
+	// while (true) {
+	// 	const { done, value } = await reader.read()
+	// 	if (done) break
+	// 	chunks.push(value)
+	// }
+
+	// const fileBytes = new Uint8Array(chunks.flat())
+
+	// console.log("totalSize", totalSize, "chunkSize", chunkSize)
+
+	// if (!fileStream) {
+	// 	return new Response(JSON.stringify({ msg: "File not found", error: null, success: false }), {
+	// 		headers: { ...corsHeaders, "Content-Type": "application/json" },
+	// 	})
+	// }
 
 	const removeHeaderMiddleware = (next) => async (args) => {
 		// Remove the header from the request
@@ -25,7 +45,17 @@ export async function handleUploadChunk(request, env) {
 		return next(args)
 	}
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	const s3Client = getClient(env)
+	const s3Client = new S3Client({
+		endpoint: env.B2_ENDPOINT,
+		region: env.B2_REGION,
+		credentials: {
+			accessKeyId: env.B2_KEYID,
+			secretAccessKey: env.B2_APPLICATIONKEY,
+		},
+		useArnRegion: false,
+		requestChecksumCalculation: "WHEN_REQUIRED",
+		forcePathStyle: true,
+	})
 
 	s3Client.middlewareStack.add(removeHeaderMiddleware, {
 		step: "build",
@@ -39,10 +69,10 @@ export async function handleUploadChunk(request, env) {
 	}
 
 	const uniqueKey = `videos/original/${systemname}/${fileName}`
-	console.log("Bucket: ", env.R2_BUCKET_NAME)
+	console.log("Bucket: ", env.BUCKET_NAME)
 
 	const command = new UploadPartCommand({
-		Bucket: env.R2_BUCKET_NAME,
+		Bucket: env.BUCKET_NAME,
 		Key: uniqueKey,
 		Body: fileChunk,
 		PartNumber: partNumber,

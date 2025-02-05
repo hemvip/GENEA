@@ -1,6 +1,6 @@
-import { S3Client } from "@aws-sdk/client-s3"
 import { Upload } from "@aws-sdk/lib-storage"
 import { corsHeaders } from "./cors.js"
+import { getClient } from "./s3client.js"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INIT MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export async function handleUpload(request, env) {
@@ -8,23 +8,17 @@ export async function handleUpload(request, env) {
 	const systemname = formData.get("systemname")
 	const fileName = formData.get("fileName")
 	const totalSize = formData.get("totalSize")
-	const file = formData.get("file")
 
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	const file = formData.get("file")
 	if (!fileName) {
 		return new Response(JSON.stringify({ msg: "File name not found", error: null, success: false }), {
 			headers: { ...corsHeaders, "Content-Type": "application/json" },
 		})
 	}
 
-	const s3Client = new S3Client({
-		endpoint: env.R2_ENDPOINT,
-		region: "auto",
-		credentials: {
-			accessKeyId: env.R2_ACCESS_KEY_ID,
-			secretAccessKey: env.R2_SECRET_ACCESS_KEY,
-		},
-	})
-
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	const s3Client = getClient(env)
 	if (!s3Client) {
 		return new Response(JSON.stringify({ success: false, msg: "Cannot connect to blackblaze storage.", error: null }), {
 			headers: { ...corsHeaders, "Content-Type": "application/json" },

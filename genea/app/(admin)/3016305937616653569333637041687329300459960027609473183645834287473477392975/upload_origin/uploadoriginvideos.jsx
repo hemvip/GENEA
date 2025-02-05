@@ -259,7 +259,7 @@ export default function UploadOriginVideos({ systemList }) {
 
       const results = []
       for (let index = 0; index < files.length; index++) {
-        const result = await simpleUploadFile(files[index], index, systemname)
+        const result = await uploadFile(files[index], index, systemname)
         results.push(result)
       }
 
