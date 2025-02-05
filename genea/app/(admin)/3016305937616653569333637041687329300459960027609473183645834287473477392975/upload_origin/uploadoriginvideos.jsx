@@ -13,6 +13,7 @@ import {
   VIDEO_START_UPLOAD_API_ENDPOINT,
   VIDEO_UPLOAD_PART_API_ENDPOINT,
   VIDEO_COMPLETE_UPLOAD_API_ENDPOINT,
+  VIDEO_UPLOAD_API_ENDPOINT,
 } from "@/config/constants"
 import { UploadStatus } from "@/components/UploadStatus"
 import CircleLoading from "@/icons/circleloading"
@@ -199,6 +200,39 @@ export default function UploadOriginVideos({ systemList }) {
     }
   }
 
+  const simpleUploadFile = async (file, index, systemname) => {
+    const fileName = file.name
+    const fileSize = file.size
+
+    try {
+      updateUploadProgress(fileName, 0, "uploading")
+
+      console.log("VIDEO_UPLOAD_API_ENDPOINT", VIDEO_UPLOAD_API_ENDPOINT)
+
+      // Start multipart upload
+      const resp = await axios.post(
+        VIDEO_UPLOAD_API_ENDPOINT,
+        {
+          systemname: systemname,
+          fileName: fileName,
+          fileSize: fileSize,
+          file: file,
+        },
+        { headers: { "Content-Type": "multipart/form-data" } }
+      )
+
+      updateUploadProgress(fileName, 100, "completed")
+
+      return resp.data
+    } catch (err) {
+      console.error("Error uploading file:", err)
+      // setErrorMsg("Error uploading file")
+      updateUploadProgress(fileName, 0, "error")
+      const { success, msg, error } = err.response.data
+      return { success, msg, error }
+    }
+  }
+
   const handleUpload = async (e) => {
     e.preventDefault()
 
@@ -221,25 +255,11 @@ export default function UploadOriginVideos({ systemList }) {
 
     try {
       setUploading("Uploading your videos, please waiting ...")
-
-      // const uploadPromises = Array.from(files).map((file) => {
-      //   return uploadPromise(file, (fileName, percent) => {
-      //     setProgress((prevProgress) => {
-      //       // console.log("prevProgress", prevProgress)
-      //       return {
-      //         ...prevProgress,
-      //         [fileName]: percent,
-      //       }
-      //     })
-      //   })
-      // })
-
       console.log("systemname", systemname)
 
       const results = []
-      // const results = await Promise.all(uploadPromises)
       for (let index = 0; index < files.length; index++) {
-        const result = await uploadFile(files[index], index, systemname)
+        const result = await simpleUploadFile(files[index], index, systemname)
         results.push(result)
       }
 

@@ -21,6 +21,9 @@ export const UPLOAD_PART_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_API_EN
 export const COMPLETE_UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_API_ENDPOINT}/api/complete-upload`
 
 // ************************ VIDEO ************************
+// https://video.hemvip.workers.dev/api/upload
+export const VIDEO_UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_VIDEO_API_ENDPOINT}/upload`
+
 // https://video.hemvip.workers.dev/api/video-start-upload
 export const VIDEO_START_UPLOAD_API_ENDPOINT = `${process.env.NEXT_PUBLIC_UPLOAD_VIDEO_API_ENDPOINT}/api/start-upload`
 

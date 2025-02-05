@@ -1,0 +1,987 @@
+{
+  "_id": {
+    "$oid": "67a1fe01d07c47fe7b272f55"
+  },
+  "status": "new",
+  "name": "Pairwise Emotion of Gesture Generation AI Model Studies",
+  "prolific_userid": "662b614c61935111d01484bf",
+  "prolific_studyid": "665971ec91884faf5b5284d7",
+  "prolific_sessionid": "029ehzyhcpkp",
+  "completion_code": "CMTN9LUK",
+  "fail_code": "C70GVE95",
+  "pages": [
+    {
+      "type": "generic",
+      "name": "Startup guide to participate gesture generation study",
+      "question": "",
+      "selected": {},
+      "systems": [],
+      "actions": [],
+      "videos": []
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f3b"
+      },
+      "type": "video",
+      "name": "Page 1 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "NA",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0a5"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/1_wayne_0_1_1-segment_1.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "1_wayne_0_1_1-segment_1",
+          "path": "videos/original/NA/1_wayne_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f6855567c"
+          },
+          "systemname": "SA",
+          "inputcode": "1_wayne_0_1_1-segment_1",
+          "path": "videos/original/SA/1_wayne_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/1_wayne_0_1_1-segment_1.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f3c"
+      },
+      "type": "video",
+      "name": "Page 2 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1af"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/1_wayne_0_2_2-segment_2.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "1_wayne_0_2_2-segment_2",
+          "path": "videos/original/SZ/1_wayne_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f6855567d"
+          },
+          "inputcode": "1_wayne_0_2_2-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/1_wayne_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/1_wayne_0_2_2-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f3d"
+      },
+      "type": "video",
+      "name": "Page 3 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "NA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b0"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/1_wayne_0_3_3-segment_3.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "1_wayne_0_3_3-segment_3",
+          "path": "videos/original/SZ/1_wayne_0_3_3-segment_3.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0a7"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/1_wayne_0_3_3-segment_3.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "1_wayne_0_3_3-segment_3",
+          "path": "videos/original/NA/1_wayne_0_3_3-segment_3.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f3e"
+      },
+      "type": "video",
+      "name": "Page 4 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "NA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b1"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/1_wayne_0_4_4-segment_1.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "1_wayne_0_4_4-segment_1",
+          "path": "videos/original/SZ/1_wayne_0_4_4-segment_1.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0a8"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/1_wayne_0_4_4-segment_1.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "1_wayne_0_4_4-segment_1",
+          "path": "videos/original/NA/1_wayne_0_4_4-segment_1.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f3f"
+      },
+      "type": "video",
+      "name": "Page 5 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "SB"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555680"
+          },
+          "inputcode": "1_wayne_0_5_5-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/1_wayne_0_5_5-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/1_wayne_0_5_5-segment_2.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f68"
+          },
+          "inputcode": "1_wayne_0_5_5-segment_2",
+          "systemname": "SB",
+          "path": "videos/original/SB/1_wayne_0_5_5-segment_2.mp4",
+          "submitat": "2025-02-04T07:14:02.693Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/1_wayne_0_5_5-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f40"
+      },
+      "type": "video",
+      "name": "Page 6 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "BA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b3"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/2_scott_0_1_1-segment_4.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "2_scott_0_1_1-segment_4",
+          "path": "videos/original/SZ/2_scott_0_1_1-segment_4.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1bbb07066df0f68554e8d"
+          },
+          "systemname": "BA",
+          "inputcode": "2_scott_0_1_1-segment_4",
+          "path": "videos/original/BA/2_scott_0_1_1-segment_4.mp4",
+          "submitat": "2025-02-04T07:03:12.396Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/2_scott_0_1_1-segment_4.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f41"
+      },
+      "type": "video",
+      "name": "Page 7 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "NA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555682"
+          },
+          "inputcode": "2_scott_0_2_2-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/2_scott_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/2_scott_0_2_2-segment_2.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0ab"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/2_scott_0_2_2-segment_2.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "2_scott_0_2_2-segment_2",
+          "path": "videos/original/NA/2_scott_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f42"
+      },
+      "type": "video",
+      "name": "Page 8 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "BA",
+        "BA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1bbb07066df0f68554e8f"
+          },
+          "systemname": "BA",
+          "inputcode": "2_scott_0_3_3-segment_1",
+          "path": "videos/original/BA/2_scott_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T07:03:12.396Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/2_scott_0_3_3-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1bbb07066df0f68554e8f"
+          },
+          "systemname": "BA",
+          "inputcode": "2_scott_0_3_3-segment_1",
+          "path": "videos/original/BA/2_scott_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T07:03:12.396Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/2_scott_0_3_3-segment_1.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f43"
+      },
+      "type": "video",
+      "name": "Page 9 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "NA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b6"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/2_scott_0_4_4-segment_2.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "2_scott_0_4_4-segment_2",
+          "path": "videos/original/SZ/2_scott_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0ad"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/2_scott_0_4_4-segment_2.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "2_scott_0_4_4-segment_2",
+          "path": "videos/original/NA/2_scott_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f44"
+      },
+      "type": "video",
+      "name": "Page 10 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "SZ"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b7"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/2_scott_0_5_5-segment_4.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "2_scott_0_5_5-segment_4",
+          "path": "videos/original/SZ/2_scott_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b7"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/2_scott_0_5_5-segment_4.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "2_scott_0_5_5-segment_4",
+          "path": "videos/original/SZ/2_scott_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f45"
+      },
+      "type": "video",
+      "name": "Page 11 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SB",
+        "SZ"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f6e"
+          },
+          "inputcode": "3_solomon_0_1_1-segment_1",
+          "systemname": "SB",
+          "path": "videos/original/SB/3_solomon_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T07:14:02.693Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/3_solomon_0_1_1-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1b8"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/3_solomon_0_1_1-segment_1.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "3_solomon_0_1_1-segment_1",
+          "path": "videos/original/SZ/3_solomon_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f46"
+      },
+      "type": "video",
+      "name": "Page 12 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "SB"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555687"
+          },
+          "inputcode": "3_solomon_0_2_2-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/3_solomon_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/3_solomon_0_2_2-segment_2.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f6f"
+          },
+          "inputcode": "3_solomon_0_2_2-segment_2",
+          "systemname": "SB",
+          "path": "videos/original/SB/3_solomon_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T07:14:02.693Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/3_solomon_0_2_2-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f47"
+      },
+      "type": "video",
+      "name": "Page 13 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1ba"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/3_solomon_0_3_3-segment_1.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "3_solomon_0_3_3-segment_1",
+          "path": "videos/original/SZ/3_solomon_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555688"
+          },
+          "inputcode": "3_solomon_0_3_3-segment_1",
+          "systemname": "SA",
+          "path": "videos/original/SA/3_solomon_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/3_solomon_0_3_3-segment_1.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f48"
+      },
+      "type": "video",
+      "name": "Page 14 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SB",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f71"
+          },
+          "inputcode": "3_solomon_0_4_4-segment_2",
+          "systemname": "SB",
+          "path": "videos/original/SB/3_solomon_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T07:14:02.693Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/3_solomon_0_4_4-segment_2.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555689"
+          },
+          "inputcode": "3_solomon_0_4_4-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/3_solomon_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/3_solomon_0_4_4-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f49"
+      },
+      "type": "video",
+      "name": "Page 15 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "NA",
+        "BA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0b3"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/3_solomon_0_5_5-segment_4.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "3_solomon_0_5_5-segment_4",
+          "path": "videos/original/NA/3_solomon_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1bbb17066df0f68554e96"
+          },
+          "systemname": "BA",
+          "inputcode": "3_solomon_0_5_5-segment_4",
+          "path": "videos/original/BA/3_solomon_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T07:03:12.396Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/3_solomon_0_5_5-segment_4.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4a"
+      },
+      "type": "video",
+      "name": "Page 16 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SB",
+        "SB"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f73"
+          },
+          "inputcode": "4_lawrence_0_1_1-segment_1",
+          "systemname": "SB",
+          "path": "videos/original/SB/4_lawrence_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T07:14:02.694Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/4_lawrence_0_1_1-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f73"
+          },
+          "inputcode": "4_lawrence_0_1_1-segment_1",
+          "systemname": "SB",
+          "path": "videos/original/SB/4_lawrence_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T07:14:02.694Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/4_lawrence_0_1_1-segment_1.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4b"
+      },
+      "type": "video",
+      "name": "Page 17 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "SZ"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1be"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/4_lawrence_0_2_2-segment_2.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "4_lawrence_0_2_2-segment_2",
+          "path": "videos/original/SZ/4_lawrence_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1be"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/4_lawrence_0_2_2-segment_2.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "4_lawrence_0_2_2-segment_2",
+          "path": "videos/original/SZ/4_lawrence_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4c"
+      },
+      "type": "video",
+      "name": "Page 18 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "SZ"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f6855568d"
+          },
+          "inputcode": "4_lawrence_0_3_3-segment_1",
+          "systemname": "SA",
+          "path": "videos/original/SA/4_lawrence_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/4_lawrence_0_3_3-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1bf"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/4_lawrence_0_3_3-segment_1.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "4_lawrence_0_3_3-segment_1",
+          "path": "videos/original/SZ/4_lawrence_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4d"
+      },
+      "type": "video",
+      "name": "Page 19 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SZ",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1acd7328402f9a877a1c0"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SZ/4_lawrence_0_4_4-segment_2.mp4",
+          "systemid": "678e45ca7c34b9bb36fd206d",
+          "systemname": "SZ",
+          "inputcode": "4_lawrence_0_4_4-segment_2",
+          "path": "videos/original/SZ/4_lawrence_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T05:59:49.817Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f6855568e"
+          },
+          "inputcode": "4_lawrence_0_4_4-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/4_lawrence_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/4_lawrence_0_4_4-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4e"
+      },
+      "type": "video",
+      "name": "Page 20 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "BA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f6855568f"
+          },
+          "inputcode": "4_lawrence_0_5_5-segment_4",
+          "systemname": "SA",
+          "path": "videos/original/SA/4_lawrence_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/4_lawrence_0_5_5-segment_4.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1bbb17066df0f68554e9b"
+          },
+          "systemname": "BA",
+          "inputcode": "4_lawrence_0_5_5-segment_4",
+          "path": "videos/original/BA/4_lawrence_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T07:03:12.397Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/4_lawrence_0_5_5-segment_4.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f4f"
+      },
+      "type": "video",
+      "name": "Page 21 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SB",
+        "BA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f78"
+          },
+          "systemname": "SB",
+          "inputcode": "5_stewart_0_1_1-segment_1",
+          "path": "videos/original/SB/5_stewart_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T07:14:02.694Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/5_stewart_0_1_1-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1bbb17066df0f68554e9c"
+          },
+          "systemname": "BA",
+          "inputcode": "5_stewart_0_1_1-segment_1",
+          "path": "videos/original/BA/5_stewart_0_1_1-segment_1.mp4",
+          "submitat": "2025-02-04T07:03:12.397Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/5_stewart_0_1_1-segment_1.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f50"
+      },
+      "type": "video",
+      "name": "Page 22 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "NA",
+        "SB"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0ba"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/5_stewart_0_2_2-segment_2.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "5_stewart_0_2_2-segment_2",
+          "path": "videos/original/NA/5_stewart_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        },
+        {
+          "_id": {
+            "$oid": "67a1be3b7066df0f68554f79"
+          },
+          "systemname": "SB",
+          "inputcode": "5_stewart_0_2_2-segment_2",
+          "path": "videos/original/SB/5_stewart_0_2_2-segment_2.mp4",
+          "submitat": "2025-02-04T07:14:02.694Z",
+          "systemid": "678d0dc13febc50fe3c557c6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SB/5_stewart_0_2_2-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f51"
+      },
+      "type": "video",
+      "name": "Page 23 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "BA",
+        "NA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1bbb17066df0f68554e9e"
+          },
+          "systemname": "BA",
+          "inputcode": "5_stewart_0_3_3-segment_1",
+          "path": "videos/original/BA/5_stewart_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T07:03:12.397Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/5_stewart_0_3_3-segment_1.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a17cdb5b4338b7f62fa0bb"
+          },
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/NA/5_stewart_0_3_3-segment_1.mp4",
+          "systemid": "678a25223febc50fe3c557ae",
+          "systemname": "NA",
+          "inputcode": "5_stewart_0_3_3-segment_1",
+          "path": "videos/original/NA/5_stewart_0_3_3-segment_1.mp4",
+          "submitat": "2025-02-04T02:35:06.080Z"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f52"
+      },
+      "type": "video",
+      "name": "Page 24 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "SA",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555693"
+          },
+          "inputcode": "5_stewart_0_4_4-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/5_stewart_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/5_stewart_0_4_4-segment_2.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555693"
+          },
+          "inputcode": "5_stewart_0_4_4-segment_2",
+          "systemname": "SA",
+          "path": "videos/original/SA/5_stewart_0_4_4-segment_2.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/5_stewart_0_4_4-segment_2.mp4"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "67a1fe00d07c47fe7b272f53"
+      },
+      "type": "video",
+      "name": "Page 25 of 25",
+      "question": "Pairwise Comparison of Gesture Generation AI Model Studies",
+      "selected": {},
+      "actions": [],
+      "systems": [
+        "BA",
+        "SA"
+      ],
+      "videos": [
+        {
+          "_id": {
+            "$oid": "67a1bbb17066df0f68554ea0"
+          },
+          "systemname": "BA",
+          "inputcode": "5_stewart_0_5_5-segment_4",
+          "path": "videos/original/BA/5_stewart_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T07:03:12.397Z",
+          "systemid": "678d04de3febc50fe3c557b6",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/BA/5_stewart_0_5_5-segment_4.mp4"
+        },
+        {
+          "_id": {
+            "$oid": "67a1d5457066df0f68555694"
+          },
+          "inputcode": "5_stewart_0_5_5-segment_4",
+          "systemname": "SA",
+          "path": "videos/original/SA/5_stewart_0_5_5-segment_4.mp4",
+          "submitat": "2025-02-04T08:52:20.628Z",
+          "systemid": "678d05193febc50fe3c557b9",
+          "url": "https://genealeaderboard.s3.us-east-005.backblazeb2.com/videos/original/SA/5_stewart_0_5_5-segment_4.mp4"
+        }
+      ]
+    },
+    {
+      "type": "finish",
+      "name": "Finish page",
+      "question": "",
+      "selected": {},
+      "systems": [],
+      "actions": [],
+      "videos": []
+    }
+  ],
+  "time_start": {
+    "$date": "2025-02-04T11:46:09.772Z"
+  },
+  "type": "pairwise-human-likeness",
+  "global_actions": []
+}
