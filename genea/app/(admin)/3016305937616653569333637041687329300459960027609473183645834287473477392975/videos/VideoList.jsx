@@ -10,7 +10,7 @@ const VideoList = memo(function VideoList({ videos }) {
           <th className="py-2 pl-4 font-semibold">Video Path</th>
           <th className="py-2 pl-4 font-semibold">Video</th>
           <th className="py-2 pl-4 font-semibold">System Name</th>
-          <th className="py-2 pl-4 font-semibold">Submit At</th>
+          <th className="py-2 pl-4 font-semibold">Created time</th>
         </tr>
       </thead>
       <tbody className="align-baseline text-gray-900 dark:text-gray-100">
@@ -23,7 +23,7 @@ const VideoList = memo(function VideoList({ videos }) {
               <td className="py-2 pl-4">{index + 1}</td>
               <td className="py-2 pl-4">
                 <div className="max-w-28">
-                <code>{video.inputcode}</code>
+                  <code>{video.inputcode}</code>
                 </div>
               </td>
               <td className="py-2 pl-4">
@@ -39,7 +39,7 @@ const VideoList = memo(function VideoList({ videos }) {
               <td className="py-2 pl-4 h-14">{video.systemname}</td>
               <td className="py-2 pl-4">
                 <p className="truncate w-20">
-                  {new Date(video.submitat).toLocaleString()}
+                  {new Date(video.createdat).toLocaleString()}
                 </p>
               </td>
             </tr>
