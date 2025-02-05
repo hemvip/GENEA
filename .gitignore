@@ -44,3 +44,5 @@ genea/.env.test
 
 # Local Netlify folder
 .netlify
+
+genea/out/
