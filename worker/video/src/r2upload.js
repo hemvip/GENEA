@@ -27,7 +27,7 @@ export async function handleR2Upload(request, env) {
 
 	try {
 		const uniqueKey = `videos/original/${systemname}/${fileName}`
-		const rsupload = await env.MY_BUCKET.put(uniqueKey, file.stream())
+		const rsupload = await env.R2_BUCKET.put(uniqueKey, file.stream())
 
 		const inputcode = fileName.replace(/\.[^.]+$/, "")
 		return new Response(
