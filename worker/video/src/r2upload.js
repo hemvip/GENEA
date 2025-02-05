@@ -3,7 +3,7 @@ import { corsHeaders } from "./cors.js"
 import { getClient } from "./s3client.js"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INIT MULTIPART UPLOAD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export async function handleUpload(request, env) {
+export async function handleR2Upload(request, env) {
 	const formData = await request.formData()
 	const systemname = formData.get("systemname")
 	const fileName = formData.get("fileName")
@@ -27,25 +27,9 @@ export async function handleUpload(request, env) {
 
 	try {
 		const uniqueKey = `videos/original/${systemname}/${fileName}`
-
-		const upload = new Upload({
-			client: s3Client,
-			params: {
-				Bucket: env.R2_BUCKET_NAME,
-				Key: uniqueKey,
-				Body: file.stream(),
-				ContentType: "video/mp4",
-			},
-			leavePartsOnError: false, // Optional: Ensure partial uploads are cleaned up on failure
-		})
-
-		// Perform the upload
-		const rsupload = await upload.done()
-		console.log("rsupload", rsupload)
-		console.log("rsupload", rsupload.Location)
+		const rsupload = await env.MY_BUCKET.put(uniqueKey, file.stream())
 
 		const inputcode = fileName.replace(/\.[^.]+$/, "")
-		// `https://pub-${env.R2_BUCKET_URL_ID}.r2.dev/${uniqueKey}`,
 		return new Response(
 			JSON.stringify({
 				success: true,

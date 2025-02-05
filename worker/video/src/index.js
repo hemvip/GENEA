@@ -3,6 +3,7 @@ import { handleStartUpload } from "./video/upload-start"
 import { handleUploadChunk } from "./video/upload-chunk"
 import { handleCompleteUpload } from "./video/upload-complete"
 import { handleUpload } from "./simpleupload"
+import { handleR2Upload } from "./r2upload"
 
 export default {
 	async fetch(request, env, ctx) {
@@ -19,7 +20,7 @@ export default {
 			const url = new URL(request.url)
 
 			if (url.pathname === "/upload") {
-				return handleUpload(request, env)
+				return handleR2Upload(request, env)
 			}
 
 			// Npy upload
